@@ -20,7 +20,7 @@
   <div class=line></div>
 
   <h1 class=codeTitle>Enter Pack Code Here <span id="menuUsername"></span>:</h1>
-  <p><strong>Username:</strong> <span id="menuUsername"></span></p>
+  <p><strong>Username:</strong> <div id="menuUsername"></div></p>
   <input type="text" id="packCode" name="Pack Code" placeholder="Pack Code">
   <button id="enter" name="enter" onclick="checkCode()">Enter</button>
   <img class=pack src="Pack.png" onclick="openPack()"></img>
@@ -66,8 +66,15 @@
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    document.getElementById('menuUsername').textContent = currentUser.username;
+    window.onload = function() {
+          const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+          if (currentUser) {
+              document.getElementById('menuUsername').textContent = currentUser.username;
+          } else {
+              // If no user is logged in, redirect to login page
+              window.location.href = 'index.html';
+          }
+      }
 
     function handleLogout() {
         localStorage.removeItem('isLoggedIn');
