@@ -47,8 +47,7 @@
         }
 
         input[type="text"],
-        input[type="password"],
-        input[type="email"] {
+        input[type="password"]{
             padding: 10px;
             font-size: 16px;
             background: transparent;
@@ -150,12 +149,8 @@
                 <input type="text" id="registerUsername" required>
             </div>
             <div class="input-group">
-                <label for="registerEmail">Email</label>
-                <input type="email" id="registerEmail" required>
-            </div>
-            <div class="input-group">
                 <label for="registerPassword">Password</label>
-                <input type="password" id="registerPassword" required minlength="8">
+                <input type="password" id="registerPassword" required minlength="1">
             </div>
             <div class="input-group">
                 <label for="confirmPassword">Confirm Password</label>
@@ -182,7 +177,7 @@
 
             // Check if already logged in
             if (localStorage.getItem('isLoggedIn') === 'true') {
-                window.location.href = 'challenge.html';
+                window.location.href = 'index.html';
             }
         }
 
@@ -234,7 +229,6 @@
                 localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('currentUser', JSON.stringify({
                     username: user.username,
-                    email: user.email
                 }));
                 
                 window.location.href = 'index.html';
@@ -249,7 +243,6 @@
             event.preventDefault();
             
             const username = document.getElementById('registerUsername').value;
-            const email = document.getElementById('registerEmail').value;
             const password = document.getElementById('registerPassword').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
             
@@ -264,7 +257,7 @@
                 return false;
             }
             
-            if (password.length < 8) {
+            if (password.length < 1) {
                 showMessage('registerMessage', 'Password must be at least 8 characters long');
                 return false;
             }
@@ -272,7 +265,6 @@
             // Add new user
             users.push({
                 username,
-                email,
                 password
             });
             
