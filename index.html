@@ -24,6 +24,7 @@
   <input type="text" id="packCode" name="Pack Code" placeholder="Pack Code">
   <button id="enter" name="enter" onclick="checkCode()">Enter</button>
   <img class=pack src="Pack.png" onclick="openPack()"></img>
+  <button class="logout-button" onclick="handleLogout()">Logout</button>
 
   <h2 class=resultTitle><u>Pack Results!</u></h2>
   <h3 class=cardsList>Cards: </h3>
@@ -67,6 +68,12 @@
 
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     document.getElementById('menuUsername').textContent = currentUser.username;
+
+    function handleLogout() {
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('currentUser');
+        window.location.href = 'index.html';
+    }
   </script>
   
 </body>
