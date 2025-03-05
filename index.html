@@ -10,6 +10,11 @@
 </head>
 
 <body>
+  <script>
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+  </script>
 
   <div class=logoBack><a class=logoLink href="collections.html"><img class=logo src="BCC_Logo.png"></img></a></div>
   <div class=line></div>
