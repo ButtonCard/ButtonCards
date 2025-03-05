@@ -19,7 +19,7 @@
   <div class=logoBack><a class=logoLink href="collections.html"><img class=logo src="BCC_Logo.png"></img></a></div>
   <div class=line></div>
 
-  <h1 class=codeTitle>Enter Pack Code Here:</h1>
+  <h1 class=codeTitle>Enter Pack Code Here <span id="menuUsername"></span>:</h1>
   <input type="text" id="packCode" name="Pack Code" placeholder="Pack Code">
   <button id="enter" name="enter" onclick="checkCode()">Enter</button>
   <img class=pack src="Pack.png" onclick="openPack()"></img>
@@ -63,6 +63,9 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
+
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    document.getElementById('menuUsername').textContent = currentUser.username;
   </script>
   <script src="scriptCollect.js"></script>
 </body>
