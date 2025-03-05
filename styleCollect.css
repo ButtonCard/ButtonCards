@@ -1,0 +1,225 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background-color:#00CCEE;
+  text-align:center;
+  margin:0;
+}
+
+.logo{
+  width:60%;
+  float:true;
+  margin-top:10px;
+}
+
+.logoBack{
+  width:100%;
+  height:10%;
+  background-color:white;
+}
+
+.line{
+  width:100%;
+  height:5px;
+  background-color:darkblue;
+}
+
+.pack{
+  margin-top:0px;
+  width:0px;
+  margin-bottom:0px;
+}
+
+body{
+  font-family:Arial;
+  color:darkblue;
+  
+}
+
+.compare{
+  margin-left:10px;
+  margin-bottom:20px;
+  margin-top:20px;
+  border:darkblue 2px solid;
+  padding:5px;
+  border-radius:7px;
+  background-color:blue;
+  color:white;
+  font-weight:bold;
+}
+
+.resultList{
+  background-color:blue;
+  border:4px darkblue solid;
+  width:95%;
+  padding:0;
+  margin:auto;
+  padding-left:6px;
+  padding-right:6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.resultList li{
+  width: 106px; 
+  margin:6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexMe li img{
+  width: 100%; 
+  height: auto;
+  float:left;
+}
+
+.resultList img{
+  width:0px;
+}
+
+
+.resultTitle{
+  text-align:center;
+  font-size:40px;
+  font-family:Helvetica;
+  color:darkblue;
+  margin-bottom:10px;
+}
+
+
+.resultList2{
+  background-color:blue;
+  border:4px darkblue solid;
+  width:40%;
+  padding:0;
+  margin:auto;
+  float:left;
+  margin-left:2%;
+  padding-left:6px;
+  padding-right:6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.resultList2 li{
+  width: 106px; 
+  margin:6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultList2 img{
+  width:0px;
+}
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #0033BB;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family:Arial;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  font-weight:bold;
+}
+
+.topnav a.active {
+  background-color: #0077DD;
+  color: white;
+}
+
+.aboutMission{
+  font-size:20px;
+  font-weight:bold;
+  font-family:Arial;
+  margin:20px;
+}
+
+.card0{
+  width:100px;
+}
+
+.card1{
+  width:100px;
+  margin-left:6px;
+  margin-right:3px;
+}
+
+.card2{
+  width:100px;
+  margin-left:3px;
+  margin-right:6px;
+}
+
+.card3{
+  width:100px;
+}
+
+.missionReward{
+  width:100px;
+}
+
+.owned{
+  color:#00CCEE;
+}
+
+
+.set{
+/*   background-color:blue;
+  border:4px darkblue solid; */
+  width:95%;
+  padding:0;
+  margin:auto;
+  padding-left:6px;
+  padding-right:6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.set li{
+  width: 106px; 
+  margin:6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.set img{
+  width:0px;
+}
+
+.selectButton{
+  margin-left:10px;
+  margin-bottom:20px;
+  margin-top:5px;
+  border:darkblue 2px solid;
+  padding:5px;
+  border-radius:7px;
+  background-color:blue;
+  color:white;
+  font-weight:bold;
+}
+
