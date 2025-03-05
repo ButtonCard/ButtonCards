@@ -1,0 +1,962 @@
+let CHILLYcards = ["02-3", "06-2", "01-4", "04-6", "03-2", "V2-5", "F1-08", "V2-5", "01-2", "F1-07", "05-4", "F1-01", "12-1", "F1-12", "01-3", "07-3", "07-3", "08-1", "05-1", "M1-2", "M2-7", "V1-5", "07-5", "07-4", "M2-3", "07-6", "12-6", "12-2", "06-3", "05-1", "12-4", "03-1", "03-3", "06-4", "07-1", "V2-7", "02-1", "05-3", "M2-8", "03-6", "V2-4", "V3-3", "F1-15", "V5-7", "B-2", "01-5", "06-3", "F1-09", "V2-1", "03-5", "V2-3", "B-5", "07-2", "01-1", "12-3", "03-4", "07-7", "02-2", "05-4", "07-5", "B-A", "B-1", "F1-14", "05-3", "V2-8", "M2-5", "03-1", "13-1", "V4-3", "12-5", "M3-1", "V3-1", "12-4", "03-2", "09-2", "03-5", "06-5", "V4-8", "06-2", "08-6", "04-SA", "08-1", "04-3", "V6-2", "05-5", "04-1", "08-2", "F1-21", "V6-6", "13-2", "V6-4", "09-1", "F1-19", "V6-8", "M1-9", "07-5", "05-4", "01-3", "14-3", "06-1", "06-5", "03-7", "02-4", "14-4", "04-4", "09-4", "V7-5", "14-4", "M1-3", "11-5", "15-5", "06-1", "05-6", "06-3", "08-1", "04-4", "01-5", "12-2", "05-1", "02-2", "V2-3", "03-3", "11-3", "V8-6", "V8-3", "V8-5", "V8-5", "01-1", "09-8", "T-03", "11-6", "09-1", "05-3", "01-1", "02-2", "V7-1", "04-4", "09-6", "11-5", "14-6", "15-6", "V7-3", "V7-3", "16-6", "M3-6", "V3-2", "09-5", "05-6", "08-5", "11-3", "V7-4", "17-3", "10-7", "09-7", "M2-4", "11-3", "V9-1", "02-2", "10-2", "10-5", "09-4"];
+let GEMcards = ["F1-10", "06-4", "B-5", "B-6", "03-6", "03-6", "07-6", "F1-04", "V2-6", "V3-4", "F1-11", "V1-3", "B-1", "01-8", "01-2", "12-5", "04-4", "01-4", "V1-4", "06-4", "V1-6", "02-1", "F1-05", "01-6", "05-SA", "V1-8", "V3-5", "M2-9", "V5-7", "V5-6", "V5-5", "V5-3", "V5-1", "06-SA", "F1-03", "V2-1", "01-7", "01-1", "01-5", "09-4", "M1-6", "V2-8", "P-03", "V3-6", "13-5", "V1-7", "M3-3", "03-4", "V4-8", "F1-17", "07-7", "07-6", "F1-16", "03-3", "V4-1", "09-7", "10-8", "04-5", "V6-5", "F1-18", "V6-3", "F1-20", "F1-22", "06-3", "09-7", "M3-4", "14-5", "09-6", "07-5", "05-3", "V5-5", "F1-02", "09-6", "12-3", "V6-1", "V7-8", "08-3", "06-7", "V6-7", "01-3", "M3-8", "03-1", "10-3", "09-5", "07-3", "V7-6", "M3-5", "V7-8", "10-6", "04-3", "14-2", "03-2", "T-05", "03-4", "10-1", "05-4", "V5-3", "05-5", "11-5", "05-4", "V8-2", "V8-8", "01-1", "07-9", "09-2", "15-4", "14-3", "04-7", "06-1", "06-3", "M4-9", "T-01", "V4-5", "T-06", "M4-3", "10-9", "V3-2", "15-5", "05-5", "V7-6", "V7-2", "09-3", "T-02", "10-7", "14-5", "16-1", "04-1", "15-2", "16-2", "15-6", "09-6", "16-6", "V9-1", "10-5", "16-6", "16-7", "10-6", "15-6", "M4-7", "11-5", "13-3", "15-5", "13-1", "17-5", "01-2", "05-5", "17-5", "V9-3"];
+let DCcards = ["05-3", "04-3", "01-2", "06-2", "07-6", "01-6", "04-6", "M1-1", "02-3", "08-2", "01-5", "F1-13", "06-1", "06-4", "04-4", "03-5", "F1-06", "06-6", "08-4", "04-5", "05-6", "M2-2", "07-4", "04-5", "06-4", "08-1", "06-4", "08-3", "01-3", "06-1", "09-1", "12-2", "01-4", "V5-2", "V5-6", "09-3", "07-5", "07-4", "09-2", "06-5", "08-5", "08-4", "04-1", "03-4", "07-6", "01-3", "M1-8", "V1-A", "04-2", "04-4", "08-3", "09-1", "09-3", "06-4", "08-6", "07-2", "V4-4", "13-4", "05-5", "05-1", "08-4", "10-6", "10-3", "06-1", "12-5", "14-8", "13-5", "V6-8", "F1-11", "P-02", "09-2", "09-4", "14-4", "01-1", "08-1", "V4-7", "02-SA", "09-7", "13-6", "07-7", "V3-3", "10-2", "09-3", "07-5", "13-4", "01-3", "14-3", "12-5", "V4-7", "04-3", "11-4", "01-3", "02-2", "V4-3", "04-1", "04-1", "15-4", "V8-1", "V8-5", "V8-7", "V8-4", "08-1", "V7-4", "14-2", "09-1", "09-2", "03-5", "12-2", "10-2", "03-1", "13-2", "V7-7", "15-7", "01-7", "09-1", "08-1", "01-1", "09-3", "V4-2", "12-3", "10-7", "14-6", "V2-2", "V7-4", "05-7", "15-6", "10-7", "10-4", "13-5", "10-2", "08-3", "12-3", "14-1", "10-8", "16-3", "06-2", "10-3"];
+let VOIDcards = ["01-2", "07-7", "02-5", "01-1", "07-2", "06-5", "07-7", "03-6", "04-6", "01-2", "V1-1", "07-8", "01-4", "07-6", "V2-6", "F1-12", "02-4", "07-2", "08-4", "03-2", "08-4", "05-4", "04-2", "07-3", "M1-4", "04-1", "07-4", "V2-7", "04-5", "07-1", "07-8", "12-4", "07-6", "06-4", "07-4", "08-4", "02-4", "08-5", "06-4", "07-4", "08-4", "01-5", "02-4", "08-5", "03-4", "06-4", "12-4", "12-4", "12-5", "07-2", "09-1", "03-4", "06-2", "06-1", "09-2", "V5-8", "V3-4", "V3-5", "03-6", "07-7", "M3-7", "05-1", "12-6", "03-3", "V3-8", "04-2", "V3-1", "03-1", "03-3", "07-5", "04-1", "10-2", "V4-6", "03-3", "05-3", "02-3", "09-3", "14-4", "01-6", "04-4", "06-1", "03-3", "03-3", "01-4", "10-1", "V6-2", "02-1", "07-5", "13-7", "14-4", "V4-2", "05-4", "V8-4", "V8-3", "V8-8", "V8-6", "V8-1", "V7-1", "V4-4", "V4-6", "10-5", "01-3", "08-5", "V2-4", "V7-7", "02-5", "13-6", "14-5", "14-6", "V7-5", "06-3", "09-3", "10-3", "13-4", "13-3", "09-6", "M3-2", "10-7", "T-04", "03-1", "09-4", "14-2", "03-1", "03-1", "16-2", "09-5", "16-5", "13-3", "09-6", "05-3", "10-4"];
+let ZAVcards = ["07-1", "07-1", "04-2", "02-2", "06-1", "04-5", "04-3", "04-1", "06-4", "06-2", "02-4", "M1-5", "05-1", "B-2", "06-2", "07-3", "04-3", "07-4", "08-3", "M2-6", "07-7", "V1-2", "07-4", "04-3", "12-1", "M1-7", "V3-8", "08-2", "08-1", "06-2", "12-3", "P-01", "13-3", "13-4", "V5-4", "03-6", "06-3", "09-5", "13-6", "02-3", "12-1", "04-3", "V3-7", "03-5", "02-3", "04-2", "06-5", "01-1", "V3-6", "12-4", "13-1", "09-2", "V3-7", "06-3", "07-6", "12-6", "09-3", "14-1", "V4-1", "14-6", "02-1", "10-5", "01-1", "13-2", "10-1", "13-3", "12-1", "14-1", "V6-3", "F1-23", "08-2", "05-4", "02-3", "08-1", "04-4", "03-4", "12-4", "M4-4", "12-2", "13-1", "02-1", "09-4", "12-4", "03-4", "15-4", "V4-5", "M4-6", "F1-24", "V7-2", "V8-7", "V8-2", "F1-26", "08-6", "02-3", "08-3", "08-4", "15-5", "08-2", "12-1", "M4-2", "05-1", "02-3", "03-1", "14-3", "14-1", "13-1", "13-4", "15-4", "09-5", "09-5", "V2-2", "14-6", "05-3", "M2-1", "01-7", "01-6", "10-4", "16-1", "01-6", "01-1", "06-1", "M4-1", "14-5", "15-6", "V9-7", "04-1", "04-1", "07-1", "11-6", "14-3", "13-2", "17-4", "11-1"];
+
+
+
+let CODES = [2025];
+let specialCODES = [];
+
+let addRain = false;
+//addRain = true;
+let addSnow = false;
+addSnow = true;
+let addLightning = false;
+//addLightning=true;
+
+
+let VARmiss = ["14-5", "02-4", "08-5", "06-6", "V5-1"];
+
+
+let C = ["01-1", "01-2", "02-1", "02-2", "03-1", "03-2", "04-1", "04-2", "05-1", "05-2", "06-1", "06-2", "07-1", "07-2", "07-3", "08-1", "08-2", "09-1", "09-2", "10-1", "10-2", "10-3", "11-1", "11-2", "12-1", "12-2", "13-1", "13-2", "14-1", "14-2", "14-3", "15-1", "15-2", "16-1", "16-2", "17-1", "17-2", "18-1", "18-2"];
+let U = ["01-3", "01-4", "02-3", "03-3", "03-4", "04-3", "04-4", "05-3", "05-4", "06-3", "06-4", "07-4", "07-5", "08-3", "08-4", "09-3", "09-4", "10-4", "10-5", "10-6", "11-3", "11-4", "12-3", "12-4", "13-3", "13-4", "14-4", "14-5", "15-3", "15-4", "15-5", "16-3", "16-4", "16-5", "17-3", "17-4", "18-3", "18-4", "18-5"];
+let R = ["01-5", "01-6", "02-4", "03-5", "04-5", "05-5", "06-5", "07-6", "07-7", "08-5", "09-5", "09-6", "10-7", "11-5", "12-5", "13-5", "14-6", "15-6", "16-6", "17-5", "18-6", "18-7"];
+let E = ["01-7", "02-5", "03-6", "04-6", "05-6", "06-6", "07-8", "08-6", "09-7", "10-8", "11-6", "12-6", "13-6", "14-7", "15-7", "16-7", "17-6", "18-8"];
+let L = ["01-8", "02-6", "03-7", "04-7", "05-7", "06-7", "07-9", "08-7", "09-8", "10-9", "11-7", "12-7", "13-7", "14-8", "15-8", "16-8", "17-7", "18-9"];
+let Gl = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8"];
+let Ra = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8"];
+let Sn = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8"];
+let Ch = ["V4-1", "V4-2", "V4-3", "V4-4", "V4-5", "V4-6", "V4-7", "V4-8"];
+let Ba = ["V5-1", "V5-2", "V5-3", "V5-4", "V5-5", "V5-6", "V5-7", "V5-8"];
+let Pt = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8"];
+let Mt1 = ["V7-1", "V7-2", "V7-3", "V7-4", "V7-5", "V7-6", "V7-7", "V7-8"];
+let Bt = ["V8-1", "V8-2", "V8-3", "V8-4", "V8-5", "V8-6", "V8-7", "V8-8"];
+let Ln = ["V9-1", "V9-2", "V9-3", "V9-4", "V9-5", "V9-6", "V9-7", "V9-8"];
+let F = ["F1-01", "F1-02", "F1-03", "F1-04", "F1-05", "F1-06", "F1-07", "F1-08", "F1-09", "F1-10", "F1-14", "F1-16", "F1-24"];
+let M = ["M1-1", "M1-2", "M1-3", "M1-4", "M1-5", "M1-6", "M1-7", "M1-8", "M1-9", "M2-1", "M2-2", "M2-3", "M2-4", "M2-5", "M2-6", "M2-7", "M2-8", "M2-9", "M3-1", "M3-2", "M3-3", "M3-4", "M3-5", "M3-6", "M3-7", "M3-8", "M3-9", "M4-1", "M4-2", "M4-3", "M4-4", "M4-5", "M4-6", "M4-7", "M4-8", "M4-9"];
+let P = ["P-01", "P-02", "P-03"];
+let T = ["T-01", "T-02", "T-03", "T-04", "T-05", "T-06"];
+let V = [];
+//let Fx = ["F1-19", "F1-21"];
+
+
+V = V.concat(Ch, Mt1);
+if (addRain) {
+  V = V.concat(Ra);
+}
+if (addSnow) {
+  V = V.concat(Sn);
+}
+if (addLightning) {
+  //V = V.concat(Ln);
+}
+
+let inDeck = ["05-1", "05-2", "05-3", "05-4", "05-5", "05-6", "05-7", "06-1", "06-2", "06-3", "06-4", "06-5", "06-6", "06-7", "B-1", "B-2", "B-3", "B-4", "B-5", "B-6", "V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8", "04-1", "04-2", "04-3", "04-4", "04-5", "04-6", "04-7", "02-1", "02-2", "02-3", "02-4", "02-5", "02-6"];
+
+CHILLYcards.sort();
+GEMcards.sort();
+DCcards.sort();
+VOIDcards.sort();
+ZAVcards.sort();
+let OWNEDcards = CHILLYcards.concat(GEMcards, DCcards, VOIDcards, ZAVcards).sort();
+
+let List01 = ["01-1", "01-2", "01-3", "01-4", "01-5", "01-6", "01-7", "01-8", "01-A", "01-SA"];
+let List02 = ["02-1", "02-2", "02-3", "02-4", "02-5", "02-6", "02-A", "02-SA"];
+let List03 = ["03-1", "03-2", "03-3", "03-4", "03-5", "03-6", "03-7", "03-A", "03-SA"];
+let List04 = ["04-1", "04-2", "04-3", "04-4", "04-5", "04-6", "04-7", "04-A", "04-SA"];
+let List05 = ["05-1", "05-2", "05-3", "05-4", "05-5", "05-6", "05-7", "05-A", "05-SA"];
+let List06 = ["06-1", "06-2", "06-3", "06-4", "06-5", "06-6", "06-7", "06-A", "06-SA"];
+let List07 = ["07-1", "07-2", "07-3", "07-4", "07-5", "07-6", "07-7", "07-8", "07-9", "07-A", "07-SA"];
+let List08 = ["08-1", "08-2", "08-3", "08-4", "08-5", "08-6", "08-7", "08-A", "08-SA"];
+let List09 = ["09-1", "09-2", "09-3", "09-4", "09-5", "09-6", "09-7", "09-8", "09-A", "09-SA"];
+let List10 = ["10-1", "10-2", "10-3", "10-4", "10-5", "10-6", "10-7", "10-8", "10-9", "10-A", "10-SA"];
+let List11 = ["11-1", "11-2", "11-3", "11-4", "11-5", "11-6", "11-7", "11-A", "11-SA"];
+let List12 = ["12-1", "12-2", "12-3", "12-4", "12-5", "12-6", "12-7", "12-A", "12-SA"];
+let List13 = ["13-1", "13-2", "13-3", "13-4", "13-5", "13-6", "13-7", "13-A", "13-SA"];
+let List14 = ["14-1", "14-2", "14-3", "14-4", "14-5", "14-6", "14-7", "14-8", "14-A", "14-SA"];
+let List15 = ["15-1", "15-2", "15-3", "15-4", "15-5", "15-6", "15-7", "15-8", "15-A", "15-SA"];
+let List16 = ["16-1", "16-2", "16-3", "16-4", "16-5", "16-6", "16-7", "16-8", "16-A", "16-SA"];
+let List17 = ["17-1", "17-2", "17-3", "17-4", "17-5", "17-6", "17-7", "17-A", "17-SA"];
+let List18 = ["18-1", "18-2", "18-3", "18-4", "18-5", "18-6", "18-7", "18-8", "18-9", "18-A", "18-SA"];
+let ListF1 = ["F1-01", "F1-02", "F1-03", "F1-04", "F1-05", "F1-06", "F1-07", "F1-08", "F1-09", "F1-10", "F1-11", "F1-12", "F1-13", "F1-14", "F1-15", "F1-16", "F1-17", "F1-18", "F1-19", "F1-20"];
+let ListF2 = ["F1-21", "F1-22", "F1-23", "F1-24", "F1-26"];
+//let ListFS = ["FS-01", "FS-02", "FS-03"];
+let ListM1 = ["M1-1", "M1-2", "M1-3", "M1-4", "M1-5", "M1-6", "M1-7", "M1-8", "M1-9", "M1-A"];
+let ListM2 = ["M2-1", "M2-2", "M2-3", "M2-4", "M2-5", "M2-6", "M2-7", "M2-8", "M2-9", "M2-A"];
+let ListM3 = ["M3-1", "M3-2", "M3-3", "M3-4", "M3-5", "M3-6", "M3-7", "M3-8", "M3-9", "M3-A"];
+let ListM4 = ["M4-1", "M4-2", "M4-3", "M4-4", "M4-5", "M4-6", "M4-7", "M4-8", "M4-9", "M4-A"];
+let ListV1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8", "V1-A"];
+let ListV2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8", "V2-A"];
+let ListV3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8", "V3-A"];
+let ListV4 = ["V4-1", "V4-2", "V4-3", "V4-4", "V4-5", "V4-6", "V4-7", "V4-8", "V4-A"];
+let ListV5 = ["V5-1", "V5-2", "V5-3", "V5-4", "V5-5", "V5-6", "V5-7", "V5-8", "V5-A"];
+let ListV6 = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8", "V6-A"];
+let ListV7 = ["V7-1", "V7-2", "V7-3", "V7-4", "V7-5", "V7-6", "V7-7", "V7-8", "V7-A"];
+let ListV8 = ["V8-1", "V8-2", "V8-3", "V8-4", "V8-5", "V8-6", "V8-7", "V8-8", "V8-A"];
+let ListV9 = ["V9-1", "V9-2", "V9-3", "V9-4", "V9-5", "V9-6", "V9-7", "V9-8", "V9-A"];
+let ListP1 = ["P-01", "P-02", "P-03"];
+let ListT = ["T-01", "T-02", "T-03", "T-04", "T-05", "T-06", "T-A1"];
+let ListB = ["B-1", "B-2", "B-3", "B-4", "B-5", "B-6", "B-A"];
+
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, ListF1, ListF2, ListP1, ListT, ListM1, ListM2, ListM3, ListM4, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV8, ListV9, ListB];
+let FULLcards = List01.concat(List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, ListF1, ListF2, ListP1, ListT, ListM1, ListM2, ListM3, ListM4, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV8, ListV9, ListB).sort();
+
+let AllV = ListV1.concat(ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV8, ListV9);
+let SP = P.concat(T);
+CODES = CODES.concat(specialCODES);
+
+let pageLogo = document.querySelector(".logoLink").getAttribute("href");
+let player;
+
+let FULLdupes = FULLcards.slice(0);
+for (let i = 0; i < FULLdupes.length; i++) {
+  FULLdupes[i] = 0;
+}
+for (let i = 0; i < OWNEDcards.length; i++) {
+  FULLdupes[FULLcards.indexOf(OWNEDcards[i])]++;
+}
+
+
+if (pageLogo != "collections.html") {
+  player = document.querySelector(".active").getAttribute("href");
+  collectTab();
+}
+
+
+
+
+function collectTab() {
+  let pastCard = "";
+  if (player == "collectChilly.html") {
+    for (let i = 0; i < CHILLYcards.length; i++) {
+      console.log(CHILLYcards[i]);
+      let cardResult = document.querySelector(".c" + i);
+      cardResult.src = "img/" + CHILLYcards[i] + ".png";
+      cardResult.style.width = "110px";
+      if (CHILLYcards[i] == pastCard) {
+        let lastCardResult = document.querySelector(".c" + (i - 1));
+        lastCardResult.style.border = "2px yellow solid";
+        cardResult.style.border = "2px yellow solid";
+      }
+      pastCard = CHILLYcards[i];
+    }
+  }
+
+  if (player == "collectGem.html") {
+    for (let i = 0; i < GEMcards.length; i++) {
+      console.log(i);
+      let cardResult = document.querySelector(".c" + i);
+      cardResult.src = "img/" + GEMcards[i] + ".png";
+      cardResult.style.width = "110px";
+      if (GEMcards[i] == pastCard) {
+        let lastCardResult = document.querySelector(".c" + (i - 1));
+        lastCardResult.style.border = "2px yellow solid";
+        cardResult.style.border = "2px yellow solid";
+      }
+      pastCard = GEMcards[i];
+    }
+  }
+
+  if (player == "collectDC.html") {
+    for (let i = 0; i < DCcards.length; i++) {
+      console.log(i);
+      let cardResult = document.querySelector(".c" + i);
+      cardResult.src = "img/" + DCcards[i] + ".png";
+      cardResult.style.width = "110px";
+      if (DCcards[i] == pastCard) {
+        let lastCardResult = document.querySelector(".c" + (i - 1));
+        lastCardResult.style.border = "2px yellow solid";
+        cardResult.style.border = "2px yellow solid";
+      }
+      pastCard = DCcards[i];
+    }
+  }
+
+  if (player == "collectVoid.html") {
+    for (let i = 0; i < VOIDcards.length; i++) {
+      console.log(i);
+      let cardResult = document.querySelector(".c" + i);
+      cardResult.src = "img/" + VOIDcards[i] + ".png";
+      cardResult.style.width = "110px";
+      if (VOIDcards[i] == pastCard) {
+        let lastCardResult = document.querySelector(".c" + (i - 1));
+        lastCardResult.style.border = "2px yellow solid";
+        cardResult.style.border = "2px yellow solid";
+      }
+      pastCard = VOIDcards[i];
+    }
+  }
+
+  if (player == "collectZav.html") {
+    for (let i = 0; i < ZAVcards.length; i++) {
+      console.log(i);
+      let cardResult = document.querySelector(".c" + i);
+      cardResult.src = "img/" + ZAVcards[i] + ".png";
+      cardResult.style.width = "110px";
+      if (ZAVcards[i] == pastCard) {
+        let lastCardResult = document.querySelector(".c" + (i - 1));
+        lastCardResult.style.border = "2px yellow solid";
+        cardResult.style.border = "2px yellow solid";
+      }
+      pastCard = ZAVcards[i];
+    }
+  }
+
+  if (player == "collectAll.html") {
+    for (let i = 0; i < OWNEDcards.length; i++) {
+      console.log(i);
+      let cardResult = document.querySelector(".c" + i);
+      cardResult.src = "img/" + OWNEDcards[i] + ".png";
+      cardResult.style.width = "110px";
+      if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 2) {
+        if (U.includes(OWNEDcards[i]) && FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 8) {
+          cardResult.style.border = "2px darkorange solid";
+          if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 8 + 1) {
+            cardResult.style.border = "2px purple solid";
+          }
+        }
+        else if (R.includes(OWNEDcards[i]) && FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 5) {
+          cardResult.style.border = "2px darkorange solid";
+          if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 5 + 1) {
+            cardResult.style.border = "2px purple solid";
+          }
+        }
+        else if (E.includes(OWNEDcards[i]) && FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 3) {
+          cardResult.style.border = "2px darkorange solid";
+          if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 3 + 1) {
+            cardResult.style.border = "2px purple solid";
+          }
+        }
+        else if (L.includes(OWNEDcards[i]) && FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 1) {
+          cardResult.style.border = "2px darkorange solid";
+          if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 2 + 1) {
+            cardResult.style.border = "2px purple solid";
+          }
+        }
+        else if ((ListF1.includes(OWNEDcards[i]) || ListF2.includes(OWNEDcards[i])) && FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 1) {
+          cardResult.style.border = "2px darkorange solid";
+          if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 1 + 1) {
+            cardResult.style.border = "2px purple solid";
+          }
+        }
+        else if (M.includes(OWNEDcards[i]) && FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 1) {
+          cardResult.style.border = "2px darkorange solid";
+          if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 1 + 1) {
+            cardResult.style.border = "2px purple solid";
+          }
+        }
+        else if (P.includes(OWNEDcards[i]) && FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 1) {
+          cardResult.style.border = "2px darkorange solid";
+          if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 1 + 1) {
+            cardResult.style.border = "2px purple solid";
+          }
+        }
+        else if (AllV.includes(OWNEDcards[i]) && FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 1) {
+          cardResult.style.border = "2px darkorange solid";
+          if (FULLdupes[FULLcards.indexOf(OWNEDcards[i])] >= 2 + 1) {
+            cardResult.style.border = "2px purple solid";
+          }
+        }
+        else {
+          cardResult.style.border = "2px yellow solid";
+        }
+      }
+      pastCard = OWNEDcards[i];
+    }
+
+    let print = [];
+    let wait = false;
+    //UNCOMMON
+    while (!wait) {
+      let randNum = Math.floor(Math.random() * U.length);
+      if (OWNEDcards.includes(U[randNum])) {
+        print.push(U[randNum]);
+        wait = true;
+      }
+    }
+    wait = false;
+    //RARE
+    while (!wait) {
+      let randNum = Math.floor(Math.random() * R.length);
+      if (OWNEDcards.includes(R[randNum])) {
+        print.push(R[randNum]);
+        wait = true;
+      }
+    }
+    wait = false;
+    while (!wait) {
+      let randNum = Math.floor(Math.random() * R.length);
+      if (OWNEDcards.includes(R[randNum])) {
+        print.push(R[randNum]);
+        wait = true;
+      }
+    }
+    wait = false;
+    //EPIC
+    while (!wait) {
+      let randNum = Math.floor(Math.random() * E.length);
+      if (OWNEDcards.includes(E[randNum])) {
+        print.push(E[randNum]);
+        wait = true;
+      }
+    }
+    //VARIANT
+    let randNum = Math.floor(Math.random() * V.length);
+    print.push(V[randNum]);
+
+
+    console.log(print);
+  }
+
+  if (player == "collectSets.html") {
+
+    updateP();
+  }
+
+  if (player == "collectMission.html") {
+    for (let i = 0; i < VARmiss.length - 1; i++) {
+      console.log(i);
+      let cardResult = document.querySelector(".card" + i);
+      cardResult.src = "img/" + VARmiss[i] + ".png";
+    }
+
+    document.querySelector(".missionReward").src = "img/" + VARmiss[VARmiss.length - 1] + ".png";
+  }
+}
+
+function updateP() {
+  let compareCards;
+  let filledCards;
+  let listName = document.querySelector(".players");
+
+  if (listName.value == "chilly") {
+    compareCards = CHILLYcards;
+    filledCards = OWNEDcards.concat(inDeck);
+  }
+  if (listName.value == "gem") {
+    compareCards = GEMcards;
+    filledCards = OWNEDcards.concat(inDeck);
+  }
+  if (listName.value == "dc") {
+    compareCards = DCcards;
+    filledCards = OWNEDcards.concat(inDeck);
+  }
+  if (listName.value == "void") {
+    compareCards = VOIDcards;
+    filledCards = OWNEDcards.concat(inDeck);
+  }
+  if (listName.value == "zav") {
+    compareCards = ZAVcards;
+    filledCards = OWNEDcards.concat(inDeck);
+  }
+  if (listName.value == "all") {
+    compareCards = OWNEDcards;
+    filledCards = inDeck;
+  }
+
+  console.log("HERE");
+
+  for (let setList = 1; setList < allSets.length; setList++) {
+    let setBox = document.querySelector(".s" + setList);
+    setBox.style.backgroundColor = "blue";
+    setBox.style.border = "4px darkblue solid";
+    let setCards = allSets[setList];
+    console.log(setCards);
+
+    for (let i = 0; i < setCards.length; i++) {
+      let cardResult = document.querySelector(".s" + setList + "c" + i);
+      cardResult.style.border = "none";
+      cardResult.style.opacity = "1";
+
+      if (compareCards.includes(setCards[i])) {
+        cardResult.src = "img/" + setCards[i] + ".png";
+        cardResult.style.width = "110px";
+      }
+      else {
+        if (filledCards.includes(setCards[i])) {
+          cardResult.src = "img/" + setCards[i] + ".png";
+          cardResult.style.border = "2px lightcyan solid";
+          cardResult.style.opacity = "0.6";
+        }
+        else {
+          cardResult.src = "Back.png";
+        }
+        cardResult.style.width = "110px";
+      }
+      if (setCards[i].includes("-A")) {
+        let cardResult = document.querySelector(".s" + setList + "c" + i);
+        cardResult.style.border = "2px red solid";
+      }
+      if (setCards[i].includes("-SA")) {
+        let cardResult = document.querySelector(".s" + setList + "c" + i);
+        cardResult.style.border = "2px black solid";
+      }
+    }
+  }
+}
+
+
+function select() {
+
+  for (let i = 0; i < 99; i++) {
+    let cardResult = document.querySelector(".c" + i);
+    cardResult.src = "Pack.png";
+    cardResult.style.width = "0px";
+    cardResult.style.border = "0";
+  }
+
+
+  let LlistName = document.querySelector(".Lplayers");
+  let RlistName = document.querySelector(".Rplayers");
+  let Llist;
+  let Rlist;
+  if (LlistName.value == "chilly") {
+    Llist = CHILLYcards;
+  }
+  if (LlistName.value == "gem") {
+    Llist = GEMcards;
+  }
+  if (LlistName.value == "dc") {
+    Llist = DCcards;
+  }
+  if (LlistName.value == "void") {
+    Llist = VOIDcards;
+  }
+  if (LlistName.value == "zav") {
+    Llist = ZAVcards;
+  }
+  if (LlistName.value == "miss") {
+    let VARmissNeeds = [...VARmiss];
+    VARmissNeeds.pop();
+    Llist = VARmissNeeds;
+    console.log(VARmissNeeds);
+  }
+  if (RlistName.value == "chilly") {
+    Rlist = CHILLYcards;
+  }
+  if (RlistName.value == "gem") {
+    Rlist = GEMcards;
+  }
+  if (RlistName.value == "dc") {
+    Rlist = DCcards;
+  }
+  if (RlistName.value == "void") {
+    Rlist = VOIDcards;
+  }
+  if (RlistName.value == "zav") {
+    Rlist = ZAVcards;
+  }
+
+  console.log(Llist + " " + Rlist);
+
+
+  let noLdupes = [];
+  let Ldupes = [];
+  let prevCard = null;
+  for (let i = 0; i < Llist.length; i++) {
+    if (Llist[i] != prevCard) {
+      noLdupes.push(Llist[i]);
+    }
+    else {
+      Ldupes.push(Llist[i]);
+    }
+    prevCard = Llist[i];
+  }
+
+  console.log(noLdupes);
+
+  let num = 0;
+  for (let i = 0; i < noLdupes.length; i++) {
+    if (!Rlist.includes(noLdupes[i])) {
+      console.log("test");
+      let cardResult = document.querySelector(".c" + num);
+      cardResult.src = "img/" + noLdupes[i] + ".png";
+      cardResult.style.width = "110px";
+      if (Ldupes.includes(noLdupes[i])) {
+        cardResult.style.border = "2px yellow solid";
+      }
+      num++;
+    }
+  }
+}
+
+
+
+
+function enlarge(card) {
+  console.log("enlarge" + card + "<-");
+  let cardImg = document.querySelector("." + card);
+  let hidePack = document.querySelector(".pack");
+  hidePack.src = cardImg.src;
+  hidePack.style.width = "300px";
+  hidePack.style.marginTop = "25px";
+  window.scrollTo(0, 0);
+  let owners = document.querySelector(".owned");
+  owners.style.color = "darkblue";
+  owners.style.marginBottom = "0px";
+  owners.innerHTML = "";
+
+  let imgIndex = cardImg.src.indexOf("img/");
+  let imgName;
+  if (imgIndex !== -1) {
+    imgName = cardImg.src.substring(imgIndex + 4, cardImg.src.indexOf(".png"));
+    console.log(imgName);
+  }
+
+  console.log(cardImg.src);
+  console.log(imgName);
+  if (CHILLYcards.includes(imgName)) {
+    owners.innerHTML += "Chilly, ";
+  }
+  if (DCcards.includes(imgName)) {
+    owners.innerHTML += "DCMetro, ";
+  }
+  if (GEMcards.includes(imgName)) {
+    owners.innerHTML += "DCGem, ";
+  }
+  if (VOIDcards.includes(imgName)) {
+    owners.innerHTML += "VoidMax, ";
+  }
+  if (ZAVcards.includes(imgName)) {
+    owners.innerHTML += "Zaveeya, ";
+  }
+  console.log("hi");
+  owners.innerHTML = owners.innerHTML.substring(0, owners.innerHTML.length - 2);
+}
+
+function hide() {
+  console.log("hide");
+  let hidePack = document.querySelector(".pack");
+  hidePack.src = "Pack.png";
+  hidePack.style.width = "0px";
+  hidePack.style.marginTop = "0px";
+  let owners = document.querySelector(".owned");
+  owners.style.color = "#00CCEE";
+  owners.innerHTML = "";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let packSize = 0;
+let num = 0;
+let pack = [];
+let code = "";
+
+
+
+function openPack() {
+
+  let cardPic = document.querySelector(".pack");
+  if (num != 0) {
+    cardPic.addEventListener("click", flipCard(cardPic, pack));
+    return;
+  }
+
+  let inPack = 0;
+
+  //MEGA
+  if (inPack < packSize && Math.floor(Math.random() * 8) + 1 == 1) {
+    let randCard;
+    let backUp = 0;
+    let cleared = true;
+    while (cleared && backUp <= 100) {
+      randCard = M[Math.floor(Math.random() * (M.length))];
+      if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
+        cleared = false;
+      }
+      backUp++;
+    }
+    if (backUp <= 99) {
+      pack.push(randCard + ".png");
+      inPack++;
+    }
+    console.log(randCard);
+  }
+
+  //FIGURE
+  if (inPack < packSize && Math.floor(Math.random() * 14) + 1 == 1) {
+    let randCard;
+    let backUp = 0;
+    let cleared = true;
+    while (cleared && backUp <= 100) {
+      randCard = F[Math.floor(Math.random() * (F.length))];
+      if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
+        cleared = false;
+      }
+      backUp++;
+    }
+    if (backUp <= 99) {
+      pack.push(randCard + ".png");
+      inPack++;
+    }
+    console.log(randCard);
+  }
+
+  //SPECIAL
+  if (inPack < packSize && Math.floor(Math.random() * 12) + 1 == 1) {
+    console.log("SPECIAL");
+    let randCard;
+    let backUp = 0;
+    let cleared = true;
+    while (cleared && backUp <= 100) {
+      randCard = SP[Math.floor(Math.random() * (SP.length))];
+      if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
+        cleared = false;
+        console.log("Got Special");
+      }
+      backUp++;
+    }
+    if (backUp <= 99) {
+      pack.push(randCard + ".png");
+      inPack++;
+    }
+    console.log(randCard);
+  }
+
+  //VARIANT
+  for (let i = 0; i < packSize; i++) {
+    if (inPack < packSize && Math.floor(Math.random() * 10) + 1 == 1) {
+      let randCard;
+      let backUp = 0;
+      let cleared = true;
+      while (cleared && backUp <= 100) {
+        randCard = V[Math.floor(Math.random() * (V.length))];
+        if (FULLdupes[FULLcards.indexOf(randCard)] < 2) {
+          cleared = false;
+        }
+        backUp++;
+      }
+      if (backUp <= 99) {
+        pack.push(randCard + ".png");
+        inPack++;
+      }
+      console.log(randCard);
+    }
+  }
+
+  //LEGENDARY
+  if (inPack < packSize && Math.floor(Math.random() * 12) + 1 == 1) {
+    let randCard;
+    let backUp = 0;
+    let cleared = true;
+    while (cleared && backUp <= 100) {
+      randCard = L[Math.floor(Math.random() * (L.length))];
+      if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
+        cleared = false;
+      }
+      backUp++;
+    }
+    if (backUp <= 99) {
+      pack.push(randCard + ".png");
+      inPack++;
+    }
+    console.log(randCard);
+  }
+
+  //EPIC
+  for (let i = 0; i < packSize; i++) {
+    if (inPack < packSize && Math.floor(Math.random() * 20) + 1 == 1) {
+      let randCard;
+      let backUp = 0;
+      let cleared = true;
+      while (cleared && backUp <= 100) {
+        randCard = E[Math.floor(Math.random() * (E.length))];
+        if (FULLdupes[FULLcards.indexOf(randCard)] < 3) {
+          cleared = false;
+        }
+        backUp++;
+      }
+      if (backUp <= 99) {
+        pack.push(randCard + ".png");
+        inPack++;
+      }
+      console.log(randCard);
+    }
+  }
+
+  //RARE
+  for (let i = 0; i < packSize; i++) {
+    if (inPack < packSize && Math.floor(Math.random() * 7) + 1 == 1) {
+      let randCard;
+      let backUp = 0;
+      let cleared = true;
+      while (cleared && backUp <= 100) {
+        randCard = R[Math.floor(Math.random() * (R.length))];
+        if (FULLdupes[FULLcards.indexOf(randCard)] < 5) {
+          cleared = false;
+        }
+        backUp++;
+      }
+      if (backUp <= 99) {
+        pack.push(randCard + ".png");
+        inPack++;
+      }
+      console.log(randCard);
+    }
+  }
+
+  //UNCOMMON
+  for (let i = 0; i < packSize; i++) {
+    if (inPack < packSize && Math.floor(Math.random() * 3) + 1 == 1) {
+      let randCard;
+      let backUp = 0;
+      let cleared = true;
+      while (cleared && backUp <= 100) {
+        randCard = U[Math.floor(Math.random() * (U.length))];
+        if (FULLdupes[FULLcards.indexOf(randCard)] < 8) {
+          cleared = false;
+        }
+        backUp++;
+      }
+      if (backUp <= 99) {
+        pack.push(randCard + ".png");
+        inPack++;
+      }
+      console.log(randCard);
+    }
+  }
+
+  //COMMON
+  for (let i = inPack; i < packSize; i++) {
+    pack.push(C[Math.floor(Math.random() * (C.length))] + ".png");
+  }
+
+
+  //pack.push("R-" + (Math.floor(Math.random() * 6) + 1) + ".png");
+
+
+  shuffle(pack);
+  console.log(pack);
+
+  cardPic.addEventListener("click", flipCard(cardPic, pack));
+}
+
+function flipCard(cardPic, pack) {
+  if (num == pack.length) {
+    cardPic.src = "Pack.png";
+    cardPic.style.width = "0";
+    console.log("results");
+    results(pack);
+    return;
+  }
+
+  cardPic.src = "img/" + pack[num];
+  console.log(num);
+  num++;
+}
+
+function results(pack) {
+  console.log(pack);
+  let resultBack = document.querySelector(".resultList");
+  resultBack.style.backgroundColor = "#000044";
+  resultBack.style.border = "4px solid blue";
+
+  let resTitle = document.querySelector(".resultTitle");
+  resTitle.style.color = "darkblue";
+  resTitle.style.marginTop = "-85px";
+
+  let ID = document.querySelector(".UPID");
+  const d = new Date();
+  let time = d.getTime();
+  let rand = Math.floor(Math.random() * 9) + 1;
+
+  let newID = rand * time;
+  ID.innerHTML = "UPID: " + rand + (Math.floor(Math.random() * 999) + 1) + newID + (Math.floor(Math.random() * 999) + 2);
+  ID.style.color = "black";
+
+  let cardsOut = document.querySelector(".cardsList");
+  cardsOut.innerHTML = "Cards: [";
+  for (let i = 0; i < pack.length; i++) {
+    cardsOut.innerHTML = cardsOut.innerHTML + pack[i].substring(0, pack[i].length - 4) + ", ";
+  }
+  cardsOut.innerHTML = cardsOut.innerHTML.substring(0, cardsOut.innerHTML.length - 2) + "]";
+  cardsOut.style.color = "black";
+
+  let PCodeOut = document.querySelector(".PCode");
+  PCodeOut.innerHTML = "Pack Code: " + code;
+  PCodeOut.style.color = "#555555";
+
+  for (let i = 0; i < pack.length; i++) {
+    console.log(i);
+    let cardResult = document.querySelector(".i" + i);
+    cardResult.src = "img/" + pack[i];
+    cardResult.style.width = "100px";
+  }
+}
+
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+
+function checkCode() {
+
+
+  code = document.getElementById("packCode").value;
+  let valid = false;
+  console.log("Check");
+
+  //OVERRIDE
+  if (code == "Bday26") {
+    console.log("Win");
+    let codeTitle = document.querySelector(".codeTitle");
+    codeTitle.innerHTML = "";
+
+    let codeBox = document.querySelector("#packCode");
+    codeBox.style.width = 0;
+    codeBox.style.padding = 0;
+    codeBox.style.border = 0;
+
+    let enterButton = document.querySelector("#enter");
+    enterButton.style.width = 0;
+    enterButton.style.padding = 0;
+    enterButton.style.border = 0;
+    enterButton.innerHTML = "";
+
+    let cardPic = document.querySelector(".pack");
+    cardPic.style.width = "300px";
+    winPack();
+    return;
+  }
+
+
+  for (let i = 0; i < CODES.length; i++) {
+    console.log("Checking");
+    if (code == CODES[i]) {
+      valid = true;
+      packSize = code % 10;
+    }
+  }
+
+  console.log("Check3");
+  //if (valid && localStorage.getItem("redeemedCode") != code) {
+  if (valid) {
+    let codeTitle = document.querySelector(".codeTitle");
+    codeTitle.innerHTML = "";
+
+    let codeBox = document.querySelector("#packCode");
+    codeBox.style.width = 0;
+    codeBox.style.padding = 0;
+    codeBox.style.border = 0;
+
+    let enterButton = document.querySelector("#enter");
+    enterButton.style.width = 0;
+    enterButton.style.padding = 0;
+    enterButton.style.border = 0;
+    enterButton.innerHTML = "";
+
+    let cardPic = document.querySelector(".pack");
+    cardPic.style.width = "300px";
+
+    localStorage.setItem("redeemedCode", code);
+  }
+  else if (localStorage.getItem("redeemedCode") == code) {
+    console.log("Redeemed");
+    let box = document.querySelector("#packCode");
+    box.value = "";
+    box.style.backgroundColor = "orange";
+    setTimeout(function() { box.style.backgroundColor = "white"; }, 500);
+  }
+  else {
+    console.log("Wrong");
+    let box = document.querySelector("#packCode");
+    box.value = "";
+    box.style.backgroundColor = "red";
+    setTimeout(function() { box.style.backgroundColor = "white"; }, 500);
+  }
+}
+
+function enlargePack(card) {
+  console.log("enlargePack");
+  let cardImg = document.querySelector("." + card);
+  let hidePack = document.querySelector(".pack");
+  hidePack.src = cardImg.src;
+  hidePack.style.width = "300px";
+  hidePack.style.marginTop = "25px";
+  hidePack.style.marginBottom = "50px";
+}
+
+function hidePack() {
+  console.log("hidePack");
+  let hidePack = document.querySelector(".pack");
+  hidePack.src = "Pack.png";
+  hidePack.style.width = "0px";
+  hidePack.style.marginTop = "0px";
+  hidePack.style.marginBottom = "0px";
+}
+
+
+function winPack() {
+
+  let cardPic = document.querySelector(".pack");
+  if (num != 0) {
+    cardPic.addEventListener("click", flipCard(cardPic, pack));
+    return;
+  }
+
+  let inPack = 0;
+
+  //Exclusive2
+  if (inPack < 1 && Math.floor(Math.random() * 20) + 1 == 1) {
+    pack.push("F1-26.png");
+    inPack++;
+  }
+
+  if (inPack < 1 && Math.floor(Math.random() * 4) + 1 == 1) {
+    pack.push(Bt[Math.floor(Math.random() * (Bt.length))] + ".png");
+    inPack++;
+  }
+
+  if (inPack < 1) {
+    pack.push("Nothing.png");
+    inPack++;
+  }
+
+
+
+
+
+
+  // //Banana2
+  // if (inPack < 2 && Math.floor(Math.random() * 4) + 1 == 1) {
+  //   pack.push(Ba[Math.floor(Math.random() * (Ba.length))] + ".png");
+  //   inPack++;
+  // }
+
+  // //UNCOMMON
+  // if (inPack < 2 && Math.floor(Math.random() * 3) + 1 == 1) {
+  //   pack.push(U[Math.floor(Math.random() * (U.length))] + ".png");
+  //   inPack++;
+  // }
+
+  //COMMON
+  // for (let i = inPack; i < 1; i++) {
+  //   pack.push(C[Math.floor(Math.random() * (C.length))] + ".png");
+  // }
+
+  shuffle(pack);
+  cardPic.addEventListener("click", flipCard(cardPic, pack));
+}
+
+// let C = ["1-1","1-2" ,"2-1","2-2" ,"3-1","3-2" ,"4-1","4-2" ,"5-1","5-2" ,"6-1","6-2" ,"7-1","7-2","7-3" ];
+// let U = ["1-3","1-4" ,"2-3"       ,"3-3","3-4" ,"4-3","4-4" ,"5-3","5-4" ,"6-3","6-4" ,"7-4","7-5"       ];
+// let R = ["1-5","1-6" ,"2-4"       ,"3-5"       ,"4-5"       ,"5-5"       ,"6-5"       ,"7-6","7-7"       ];
+// let E = ["1-7"       ,"2-5"       ,"3-6"       ,"4-6"       ,"5-6"       ,"6-6"       ,"7-8"             ];
+// let L = ["1-8"       ,"2-6"       ,"3-7"       ,"4-7"       ,"5-7"       ,"6-7"       ,"7-9"             ];
+// let V = ["V1-1","V1-2","V1-3","V1-4","V1-5","V1-6","V1-7","V1-8"];
+// let F = ["F1-1","F1-2","F1-3","F1-4","F1-5","F1-6","F1-7","F1-8","F1-9","F1-10"];
+
