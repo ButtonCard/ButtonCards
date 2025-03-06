@@ -84,7 +84,7 @@
 
     async function updateCards() {
       const userRef = db.collection('users');
-
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
       await userRef.add({
           cards1: currentUser.username,
