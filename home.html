@@ -84,10 +84,7 @@
 
     async function updateCards() {
       const userRef = db.collection('users');
-      const userQuery = await userRef
-          .where('cards1', '==', currentUser.username)
-          .where('cards2', '>=', firebase.firestore.Timestamp.fromDate(today))
-          .get();
+
 
       await userRef.add({
           cards1: currentUser.username,
