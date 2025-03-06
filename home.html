@@ -91,6 +91,7 @@
       
       if (!userQuery.empty) {
             const doc = userQuery.docs[0];
+            const userDoc = await getDoc(doc.ref);
             const currentLogins = userDoc.data().logins || 0;
             const newLogins = currentLogins + 1;
             
