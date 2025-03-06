@@ -86,15 +86,15 @@
       const userRef = db.collection('users');
       const currentUser = JSON.parse(localStorage.getItem('currentUser'));
       const userQuery = await userRef
-            .where('username', '==', currentUser.username)
+            .where('cards1', '==', currentUser.username)
             .get();
       
       if (!userQuery.empty) {
             const doc = userQuery.docs[0];
             await doc.ref.update({
-                completionTime: completionTime,
-                username: currentUser.username,
-                date: currentDate
+                cards1: currentUser.username,
+                cards2: 'cards2 testing 2',
+                cards3: 'hello updateder'
             });
       } else {
       await userRef.add({
