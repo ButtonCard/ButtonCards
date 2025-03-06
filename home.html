@@ -81,21 +81,23 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
+    async function updateCards() {
+      const userRef = db.collection('users');
+      const userQuery = await userRef
+          .where('cards1', '==', currentUser.username)
+          .where('cards2', '>=', firebase.firestore.Timestamp.fromDate(today))
+          .get();
+
+      await userRef.add({
+          cards1: currentUser.username,
+          cards2: 'cards2 testing',
+          cards3: 'hello'
+      });
+    }
+
     function handleLogout() {
 
-        const userRef = db.collection('users');
-      
-        
-        const userQuery = await userRef
-            .where('cards1', '==', currentUser.username)
-            .where('cards2', '>=', firebase.firestore.Timestamp.fromDate(today))
-            .get();
-
-        await userRef.add({
-            cards1: currentUser.username,
-            cards2: 'cards2 testing',
-            cards3: 'hello'
-        });
+        updateCards();
         localStorage.removeItem('isLoggedIn');
         localStorage.removeItem('currentUser');
         window.location.href = 'index.html';
