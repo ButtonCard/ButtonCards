@@ -92,10 +92,11 @@
       if (!userQuery.empty) {
             const doc = userQuery.docs[0];
             const currentLogins = userDoc.data().logins || 0;
+            const newLogins = currentLogins + 1;
             
             await doc.ref.update({
-                cards: 'cards2 testing 2',
-                logins: currentLogins + 1
+                cards: 'carder',
+                logins: newLogins
             });
       } else {
       await userRef.add({
