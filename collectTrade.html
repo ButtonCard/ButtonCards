@@ -318,7 +318,7 @@
       const tradeSlotImage = tradeSlot.querySelector("img");
     
       // Ensure tradeSlotImage exists before accessing src
-      if (tradeSlotImage && tradeSlotImage.src !== "Pack.png") {
+      if (tradeSlotImage.width > 0) {
         console.log('removing');
         // Find the index of the card in tradeCards array and remove it
         const cardIndex = tradeCards.indexOf(tradeSlotImage.src);
