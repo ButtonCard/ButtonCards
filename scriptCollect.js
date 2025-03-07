@@ -741,7 +741,7 @@ async function results(pack) {
   cardsOut.innerHTML = "Cards: [";
   for (let i = 0; i < pack.length; i++) {
     cardsOut.innerHTML = cardsOut.innerHTML + pack[i].substring(0, pack[i].length - 4) + ", ";
-    newCards = currentCards.concat([pack[i].substring(0, pack[i].length - 4)]);
+    newCards = newCards.concat([pack[i].substring(0, pack[i].length - 4)]);
   }
   cardsOut.innerHTML = cardsOut.innerHTML.substring(0, cardsOut.innerHTML.length - 2) + "]";
   cardsOut.style.color = "black";
