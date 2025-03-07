@@ -558,7 +558,7 @@ async function selectTrade() {
   let prevCard = null;
   for (let i = 0; i < Tlist.length; i++) {
     if (Tlist[i] != prevCard) {
-      noLdupes.push(Tlist[i]);
+      noTdupes.push(Tlist[i]);
     }
     else {
       Tdupes.push(Tlist[i]);
