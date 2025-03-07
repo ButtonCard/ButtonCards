@@ -200,7 +200,7 @@ async function collectTab() {
           .get();
     
     let OWNEDcards = userQuery.docs[0].data().cards.concat(userQuery.docs[1].data().cards, userQuery.docs[2].data().cards);
-    console.log(doc.data());
+    console.log('owned');
     
     for (let i = 0; i < OWNEDcards.length; i++) {
       console.log(i);
