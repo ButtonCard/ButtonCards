@@ -341,10 +341,13 @@
     function findEmptyTradeSlot() {
       console.log('find empty');
       const tradeListItems = document.querySelectorAll(".tradeList li");
+    
       for (let i = 0; i < tradeListItems.length; i++) {
         console.log('search');
         const tradeSlotImage = tradeListItems[i].querySelector("img");
-        if (tradeSlotImage && tradeSlotImage.src === "Pack.png") {
+    
+        if (tradeSlotImage.width === 0) {
+          console.log('found');
           return tradeListItems[i];
         }
       }
