@@ -95,18 +95,20 @@
 
         
             const currentLogins = doc.data().logins;
+            const currentCards = doc.data().cards;
             const newLogins = currentLogins + 1;
+            const newCards = currentCards + ["01-5"];
             console.log(doc.data());
             console.log(doc.data().logins);
             
             await doc.ref.update({
-                cards: 'cards two',
+                cards: newCards,
                 logins: newLogins
             });
       } else {
       await userRef.add({
           name: currentUser.username.toLowerCase(),
-          cards: 'card',
+          cards: [],
           logins: 0
       });
       }
