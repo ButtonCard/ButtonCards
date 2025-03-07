@@ -158,6 +158,14 @@ async function collectTab() {
   }
 
   if (player == "collectVoid.html") {
+    const userQuery = await userRef
+          .where('name', '==', 'void')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    let VOIDcards = doc.data().cards.sort();
+    console.log(doc.data());
+    
     for (let i = 0; i < VOIDcards.length; i++) {
       console.log(i);
       let cardResult = document.querySelector(".c" + i);
@@ -199,7 +207,7 @@ async function collectTab() {
     const userQuery = await userRef
           .get();
     
-    let OWNEDcards = userQuery.docs[0].data().cards.concat(userQuery.docs[1].data().cards, userQuery.docs[2].data().cards).sort();
+    let OWNEDcards = userQuery.docs[0].data().cards.concat(userQuery.docs[1].data().cards, userQuery.docs[2].data().cards, userQuery.docs[3].data().cards).sort();
     console.log('owned');
     
     for (let i = 0; i < OWNEDcards.length; i++) {
