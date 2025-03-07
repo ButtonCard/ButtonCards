@@ -733,8 +733,8 @@ async function results(pack) {
         .get();
 
     const doc = userQuery.docs[0];
-    const currentCards = doc.data().cards;
-    const newCards = currentCards;
+    let currentCards = doc.data().cards;
+    let newCards = currentCards;
     console.log(doc.data());
   
   let cardsOut = document.querySelector(".cardsList");
