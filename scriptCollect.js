@@ -725,10 +725,15 @@ function flipCard(cardPic, pack) {
     cardPic.src = "Pack.png";
     cardPic.style.width = "0";
     console.log("results");
-    //results(pack);
+    results(pack);
+    num++;
+    return;
+  } else if (num>=pack.length){
+    cardPic.src = "Pack.png";
+    cardPic.style.width = "0";
+    console.log("remove");
     return;
   }
-
   cardPic.src = "img/" + pack[num];
   console.log(num);
   num++;
