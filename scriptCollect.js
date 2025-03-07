@@ -504,7 +504,7 @@ async function select() {
 }
 
 
-async function select() {
+async function selectTrade() {
 
   for (let i = 0; i < 99; i++) {
     let cardResult = document.querySelector(".c" + i);
