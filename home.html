@@ -94,10 +94,14 @@
             const doc = userQuery.docs[0];
             const currentLogins = doc.ref.logins;
             const newLogins = currentLogins + 1;
+            console.log(doc.ref.logins);
+            console.log(doc.ref.get.logins);
+            console.log(doc.ref.get(logins));
+            console.log(doc.logins);
             
             await doc.ref.update({
                 cards: 'carder',
-                logins: newLogins
+                logins: 100
             });
       } else {
       await userRef.add({
