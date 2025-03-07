@@ -100,8 +100,8 @@
             console.log(doc.data().logins);
             
             await doc.ref.update({
-                cards: 'carderst',
-                logins: 100
+                cards: 'cards two',
+                logins: newLogins
             });
       } else {
       await userRef.add({
