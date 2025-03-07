@@ -384,7 +384,7 @@ function updateP() {
 }
 
 
-function select() {
+async function select() {
 
   for (let i = 0; i < 99; i++) {
     let cardResult = document.querySelector(".c" + i);
