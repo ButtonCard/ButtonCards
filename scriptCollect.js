@@ -199,7 +199,7 @@ async function collectTab() {
     const userQuery = await userRef
           .get();
     
-    let OWNEDcards = userQuery.docs[0].data().cards.concat(userQuery.docs[1].data().cards, userQuery.docs[3].data().cards);
+    let OWNEDcards = userQuery.docs[0].data().cards.concat(userQuery.docs[1].data().cards, userQuery.docs[2].data().cards);
     console.log(doc.data());
     
     for (let i = 0; i < OWNEDcards.length; i++) {
