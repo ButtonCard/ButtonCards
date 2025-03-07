@@ -316,7 +316,7 @@ async function collectTab() {
   }
 }
 
-function updateP() {
+async function updateP() {
   let compareCards;
   let filledCards;
   let listName = document.querySelector(".players");
