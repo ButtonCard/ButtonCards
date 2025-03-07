@@ -92,7 +92,11 @@
       
       if (!userQuery.empty) {
             const doc = userQuery.docs[0];
-            const currentLogins = doc.ref.logins;
+
+            DocumentSnapshot ds = await Firestore.instance.collection('users').document('f1PpHeT3GE5GHfXjUYRY').get();
+            String photoy = ds.data['logins'];
+        
+            const currentLogins = ds.data['logins'];
             const newLogins = currentLogins + 1;
             console.log(doc.ref.logins);
             console.log(doc.ref.get.logins);
@@ -100,7 +104,7 @@
             console.log(doc.logins);
             
             await doc.ref.update({
-                cards: 'carder',
+                cards: 'carderst',
                 logins: 100
             });
       } else {
