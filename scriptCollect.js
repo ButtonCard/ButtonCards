@@ -95,21 +95,6 @@ async function collectTab() {
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   let pastCard = "";
-  
-  if (player == "collectChilly.html") {
-    for (let i = 0; i < CHILLYcards.length; i++) {
-      console.log(CHILLYcards[i]);
-      let cardResult = document.querySelector(".c" + i);
-      cardResult.src = "img/" + CHILLYcards[i] + ".png";
-      cardResult.style.width = "110px";
-      if (CHILLYcards[i] == pastCard) {
-        let lastCardResult = document.querySelector(".c" + (i - 1));
-        lastCardResult.style.border = "2px yellow solid";
-        cardResult.style.border = "2px yellow solid";
-      }
-      pastCard = CHILLYcards[i];
-    }
-  }
 
   if (player == "collectGem.html") {
     const userQuery = await userRef
@@ -336,10 +321,6 @@ function updateP() {
   let filledCards;
   let listName = document.querySelector(".players");
 
-  if (listName.value == "chilly") {
-    compareCards = CHILLYcards;
-    filledCards = OWNEDcards.concat(inDeck);
-  }
   if (listName.value == "gem") {
     compareCards = GEMcards;
     filledCards = OWNEDcards.concat(inDeck);
