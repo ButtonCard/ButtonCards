@@ -196,6 +196,12 @@ async function collectTab() {
   }
 
   if (player == "collectAll.html") {
+    const userQuery = await userRef
+          .get();
+    
+    let OWNEDcards = userQuery.docs[0].data().cards.concat(userQuery.docs[1].data().cards, userQuery.docs[3].data().cards);
+    console.log(doc.data());
+    
     for (let i = 0; i < OWNEDcards.length; i++) {
       console.log(i);
       let cardResult = document.querySelector(".c" + i);
