@@ -504,6 +504,84 @@ async function select() {
 }
 
 
+async function select() {
+
+  for (let i = 0; i < 99; i++) {
+    let cardResult = document.querySelector(".c" + i);
+    cardResult.src = "Pack.png";
+    cardResult.style.width = "0px";
+    cardResult.style.border = "0";
+  }
+
+
+  let TlistName = document.querySelector(".Tplayers");
+  let Tlist;
+  const userRef = db.collection('users');
+  if (TlistName.value == "gem") {
+    const userQuery = await userRef
+          .where('name', '==', 'gem')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    Tlist = doc.data().cards.sort();
+  }
+  if (TlistName.value == "dc") {
+    const userQuery = await userRef
+          .where('name', '==', 'dc')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    Tlist = doc.data().cards.sort();
+  }
+  if (TlistName.value == "void") {
+    const userQuery = await userRef
+          .where('name', '==', 'void')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    Tlist = doc.data().cards.sort();
+  }
+  if (TlistName.value == "zav") {
+    const userQuery = await userRef
+          .where('name', '==', 'zav')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    Tlist = doc.data().cards.sort();
+  }
+
+  console.log(Tlist);
+
+
+  let noTdupes = [];
+  let Tdupes = [];
+  let prevCard = null;
+  for (let i = 0; i < Tlist.length; i++) {
+    if (Tlist[i] != prevCard) {
+      noLdupes.push(Tlist[i]);
+    }
+    else {
+      Tdupes.push(Tlist[i]);
+    }
+    prevCard = Tlist[i];
+  }
+
+  console.log(noTdupes);
+
+  let num = 0;
+  for (let i = 0; i < noTdupes.length; i++) {
+    console.log("test");
+    let cardResult = document.querySelector(".c" + num);
+    cardResult.src = "img/" + noTdupes[i] + ".png";
+    cardResult.style.width = "110px";
+    if (Tdupes.includes(noTdupes[i])) {
+      cardResult.style.border = "2px yellow solid";
+    }
+    num++;
+  }
+}
+
+
 
 
 function enlarge(card) {
