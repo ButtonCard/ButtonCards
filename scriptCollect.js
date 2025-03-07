@@ -398,6 +398,7 @@ async function select() {
   let RlistName = document.querySelector(".Rplayers");
   let Llist;
   let Rlist;
+  const userRef = db.collection('users');
   if (LlistName.value == "gem") {
     const userQuery = await userRef
           .where('name', '==', 'gem')
