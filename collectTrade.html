@@ -35,12 +35,12 @@
 
   <h3>Your Trade List:</h3>
   <ul class=tradeList>
-    <li><img class=c0 src="Pack.png" onClick="removeFromTradeList('c0')" /></li>
-    <li><img class=c1 src="Pack.png" onClick="removeFromTradeList('c1')" /></li>
-    <li><img class=c2 src="Pack.png" onClick="removeFromTradeList('c2')" /></li>
-    <li><img class=c3 src="Pack.png" onClick="removeFromTradeList('c3')" /></li>
-    <li><img class=c4 src="Pack.png" onClick="removeFromTradeList('c4')" /></li>
-    <li><img class=c5 src="Pack.png" onClick="removeFromTradeList('c5')" /></li>
+    <li><img class=d0 src="Pack.png" onClick="removeFromTradeList('d0')" /></li>
+    <li><img class=d1 src="Pack.png" onClick="removeFromTradeList('d1')" /></li>
+    <li><img class=d2 src="Pack.png" onClick="removeFromTradeList('d2')" /></li>
+    <li><img class=d3 src="Pack.png" onClick="removeFromTradeList('d3')" /></li>
+    <li><img class=d4 src="Pack.png" onClick="removeFromTradeList('d4')" /></li>
+    <li><img class=d5 src="Pack.png" onClick="removeFromTradeList('d5')" /></li>
   </ul>
 
   Trading with
@@ -282,6 +282,7 @@
     
     // Move the card to the trade list when clicked in resultList
     function moveToTradeList(cardClass) {
+      console.log('move');
       const cardElement = document.querySelector(`.${cardClass}`);
       
       // If the card is already selected (faded), remove it from the trade list
@@ -311,6 +312,7 @@
     
     // Remove the card from the trade list when clicked
     function removeFromTradeList(cardClass) {
+      console.log('remove');
       const tradeSlot = document.querySelector(`.${cardClass}`);
       const tradeSlotImage = tradeSlot.querySelector("img");
     
@@ -335,6 +337,7 @@
     
     // Find the first empty slot in the tradeList
     function findEmptyTradeSlot() {
+      console.log('find empty');
       const tradeListItems = document.querySelectorAll(".tradeList li");
       for (let i = 0; i < tradeListItems.length; i++) {
         const tradeSlotImage = tradeListItems[i].querySelector("img");
