@@ -50,6 +50,8 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
   
   <script>
+    import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+    
     window.onload = function() {
           const currentUser = JSON.parse(localStorage.getItem('currentUser'));
           console.log(currentUser);
