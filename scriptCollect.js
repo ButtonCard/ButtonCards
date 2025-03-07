@@ -117,7 +117,7 @@ async function collectTab() {
           .get();
     
     const doc = userQuery.docs[0];
-    let GEMcards = doc.data().cards;
+    let GEMcards = doc.data().cards.sort();
     console.log(doc.data());
     
     for (let i = 0; i < GEMcards.length; i++) {
@@ -140,7 +140,7 @@ async function collectTab() {
           .get();
     
     const doc = userQuery.docs[0];
-    let DCcards = doc.data().cards;
+    let DCcards = doc.data().cards.sort();
     console.log(doc.data());
     
     for (let i = 0; i < DCcards.length; i++) {
