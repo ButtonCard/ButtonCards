@@ -284,12 +284,6 @@
     function moveToTradeList(cardClass) {
       console.log('move');
       const cardElement = document.querySelector(`.${cardClass}`);
-      
-      // If the card is already selected (faded), remove it from the trade list
-      if (cardElement.style.opacity === "0.5") {
-        removeFromTradeList(cardClass);
-        return;
-      }
     
       // Add the card to the trade list
       const cardImage = cardElement.src; // Get the image source of the card
@@ -317,23 +311,25 @@
         const tradeSlot = document.querySelector(`.${cardClass}`);
         const tradeSlotImage = tradeSlot.querySelector("img");
       
-        console.log('removing ' + tradeSlot);
+        console.log('removing ' + tradeSlotImage);
         // Ensure tradeSlotImage exists before accessing src
         if (tradeSlotImage) {
           console.log('remover');
       
           // Find the index of the card in tradeCards array and remove it
           const cardIndex = tradeCards.indexOf(tradeSlotImage.src);
+          
           if (cardIndex !== -1) {
             tradeCards.splice(cardIndex, 1);
           }
-      
+          
+          console.log('remover' + tradeSlotImage.src);
           // Reset the trade slot to default (hide image and set to "Pack.png")
           tradeSlotImage.src = "Pack.png";
           tradeSlotImage.style.width = "0px";  // Hide image
       
           // Find a trade slot with the matching src to restore opacity
-          const slotToRestore = findMatchingTradeSlot(tradeSlotImage.src); // Find a trade slot with the matching src
+          const slotToRestore = findMatchingResultSlot(tradeSlotImage.src); // Find a trade slot with the matching src
           if (slotToRestore) {
             const cardElement = slotToRestore.querySelector("img");
             // Set opacity back to 1 and restore visibility in the result list
@@ -343,16 +339,16 @@
         }
       }
       
-      function findMatchingTradeSlot(src) {
-        console.log('find matching trade slot');
-        const tradeListItems = document.querySelectorAll(".tradeList li");
+      function findMatchingResultSlot(src) {
+        console.log('find matching result slot');
+        const resultListItems = document.querySelectorAll(".resultList li");
         
-        for (let i = 0; i < tradeListItems.length; i++) {
-          const tradeSlotImage = tradeListItems[i].querySelector("img");
+        for (let i = 0; i < resultListItems.length; i++) {
+          const resultSlotImage = resultListItems[i].querySelector("img");
           
           // If a slot with matching src is found, return it
-          if (tradeSlotImage && tradeSlotImage.src === src) {
-            return tradeListItems[i];
+          if (resultSlotImage && resultSlotImage.src === src) {
+            return resultListItems[i];
           }
         }
         
