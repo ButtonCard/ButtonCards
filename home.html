@@ -97,7 +97,7 @@
             const currentLogins = doc.data().logins;
             const currentCards = doc.data().cards;
             const newLogins = currentLogins + 1;
-            const newCards = currentCards + ["01-5"];
+            const newCards = currentCards.concat(["01-5"]);
             console.log(doc.data());
             console.log(doc.data().logins);
             
