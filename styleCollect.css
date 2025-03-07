@@ -83,6 +83,32 @@ body{
   width:0px;
 }
 
+.tradeList{
+  background-color:blue;
+  border:4px darkblue solid;
+  width:95%;
+  padding:0;
+  margin:auto;
+  padding-left:6px;
+  padding-right:6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.tradeList li{
+  width: 106px; 
+  margin:6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tradeList img{
+  width:0px;
+}
+
 
 .resultTitle{
   text-align:center;
