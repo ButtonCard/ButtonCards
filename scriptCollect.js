@@ -725,7 +725,7 @@ function flipCard(cardPic, pack) {
     cardPic.src = "Pack.png";
     cardPic.style.width = "0";
     console.log("results");
-    results(pack);
+    //results(pack);
     return;
   }
 
