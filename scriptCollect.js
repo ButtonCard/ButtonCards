@@ -320,6 +320,8 @@ async function updateP() {
   let compareCards;
   let filledCards;
   let listName = document.querySelector(".players");
+  const userRef = db.collection('users');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   if (listName.value == "gem") {
     const userQuery = await userRef
