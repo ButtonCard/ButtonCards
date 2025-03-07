@@ -322,19 +322,43 @@ function updateP() {
   let listName = document.querySelector(".players");
 
   if (listName.value == "gem") {
-    compareCards = GEMcards;
+    const userQuery = await userRef
+          .where('name', '==', 'gem')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    compareCards = doc.data().cards.sort();
+
     filledCards = OWNEDcards.concat(inDeck);
   }
   if (listName.value == "dc") {
-    compareCards = DCcards;
+    const userQuery = await userRef
+          .where('name', '==', 'dc')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    compareCards = doc.data().cards.sort();
+    
     filledCards = OWNEDcards.concat(inDeck);
   }
   if (listName.value == "void") {
-    compareCards = VOIDcards;
+    const userQuery = await userRef
+          .where('name', '==', 'void')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    compareCards = doc.data().cards.sort();
+    
     filledCards = OWNEDcards.concat(inDeck);
   }
   if (listName.value == "zav") {
-    compareCards = ZAVcards;
+    const userQuery = await userRef
+          .where('name', '==', 'zav')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    compareCards = doc.data().cards.sort();
+    
     filledCards = OWNEDcards.concat(inDeck);
   }
   if (listName.value == "all") {
