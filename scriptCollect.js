@@ -91,7 +91,7 @@ if (pageLogo != "collections.html") {
 
 
 
-function collectTab() {
+async function collectTab() {
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   let pastCard = "";
