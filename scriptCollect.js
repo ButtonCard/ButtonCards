@@ -4,51 +4,6 @@ let DCcards = [];
 let VOIDcards = [];
 let ZAVcards = [];
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCLjx4Ys4qnzMfRog74NExTUHdZism8u-I",
-  authDomain: "buttoncards.firebaseapp.com",
-  databaseURL: "https://buttoncards-default-rtdb.firebaseio.com",
-  projectId: "buttoncards",
-  storageBucket: "buttoncards.firebasestorage.app",
-  messagingSenderId: "1001795754069",
-  appId: "1:1001795754069:web:1cbf4305a68f9b45eb5cdc",
-  measurementId: "G-F56PTH5YNL"
-};
-  
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-async function updateCards() {
-  const userRef = db.collection('users');
-  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  const userQuery = await userRef
-        .where('name', '==', currentUser.username.toLowerCase())
-        .get();
-  
-  if (!userQuery.empty) {
-    const doc = userQuery.docs[0];
-
-
-    const currentLogins = doc.data().logins;
-    const currentCards = doc.data().cards;
-    const newLogins = currentLogins + 1;
-    const newCards = currentCards.concat(["01-5"]);
-    console.log(doc.data());
-    console.log(doc.data().logins);
-    
-    await doc.ref.update({
-        cards: newCards,
-        logins: newLogins
-    });
-  } else {
-  await userRef.add({
-      name: currentUser.username.toLowerCase(),
-      cards: [],
-      logins: 0
-  });
-  }
-}
 
 let CODES = [2025];
 let specialCODES = [];
