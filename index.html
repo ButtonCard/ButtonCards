@@ -54,7 +54,6 @@
             border: 3px solid #ff0000;
             border-radius: 8px;
             color: white;
-            animation: rainbow 5s linear infinite;
         }
 
         button {
@@ -65,7 +64,6 @@
             border: none;
             cursor: pointer;
             border-radius: 8px;
-            animation: rainbowBackground 5s linear infinite;
             transition: transform 0.2s;
         }
 
@@ -98,25 +96,6 @@
             margin-top: 15px;
         }
 
-        @keyframes rainbow {
-            0% { border-color: #ff0000; }
-            17% { border-color: #ff8800; }
-            33% { border-color: #ffff00; }
-            50% { border-color: #00ff00; }
-            67% { border-color: #0099ff; }
-            83% { border-color: #6633ff; }
-            100% { border-color: #ff0000; }
-        }
-
-        @keyframes rainbowBackground {
-            0% { background-color: #ff0000; }
-            17% { background-color: #ff8800; }
-            33% { background-color: #ffff00; }
-            50% { background-color: #00ff00; }
-            67% { background-color: #0099ff; }
-            83% { background-color: #6633ff; }
-            100% { background-color: #ff0000; }
-        }
     </style>
 </head>
 <body>
@@ -151,10 +130,6 @@
             <div class="input-group">
                 <label for="registerPassword">Password</label>
                 <input type="password" id="registerPassword" required minlength="1">
-            </div>
-            <div class="input-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" required>
             </div>
             <button type="submit">Register</button>
             <p id="registerMessage" class="message"></p>
@@ -244,7 +219,6 @@
             
             const username = document.getElementById('registerUsername').value;
             const password = document.getElementById('registerPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
             
             // Validation
             if (users.some(u => u.username === username)) {
@@ -252,13 +226,8 @@
                 return false;
             }
             
-            if (password !== confirmPassword) {
-                showMessage('registerMessage', 'Passwords do not match');
-                return false;
-            }
-            
             if (password.length < 1) {
-                showMessage('registerMessage', 'Password must be at least 8 characters long');
+                showMessage('registerMessage', 'No Password');
                 return false;
             }
             
