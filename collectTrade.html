@@ -296,6 +296,7 @@
       const tradeSlot = findEmptyTradeSlot();
       
       if (tradeSlot !== null) {
+        console.log('moving');
         // Mark the card as selected (faded) in resultList
         cardElement.style.opacity = "0.5";  // Fade out the card in the resultList
         cardElement.style.pointerEvents = "none";  // Disable further clicking
@@ -318,6 +319,7 @@
     
       // Ensure tradeSlotImage exists before accessing src
       if (tradeSlotImage && tradeSlotImage.src !== "Pack.png") {
+        console.log('removing');
         // Find the index of the card in tradeCards array and remove it
         const cardIndex = tradeCards.indexOf(tradeSlotImage.src);
         if (cardIndex !== -1) {
@@ -340,6 +342,7 @@
       console.log('find empty');
       const tradeListItems = document.querySelectorAll(".tradeList li");
       for (let i = 0; i < tradeListItems.length; i++) {
+        console.log('search');
         const tradeSlotImage = tradeListItems[i].querySelector("img");
         if (tradeSlotImage && tradeSlotImage.src === "Pack.png") {
           return tradeListItems[i];
