@@ -731,12 +731,11 @@ async function results(pack) {
   const userQuery = await userRef
         .where('name', '==', currentUser.username.toLowerCase())
         .get();
-  if (!userQuery.empty) {
+
     const doc = userQuery.docs[0];
     const currentCards = doc.data().cards;
     const newCards = currentCards;
     console.log(doc.data());
-  }
   
   let cardsOut = document.querySelector(".cardsList");
   cardsOut.innerHTML = "Cards: [";
