@@ -35,6 +35,14 @@
 
   <h3>Your Trade List:</h3>
   <ul class="tradeList" id="tradeList"></ul>
+  <ul class="tradeList">
+    <li><img class="c0" src="Pack.png" onClick="removeFromTradeList('c0')" /></li>
+    <li><img class="c1" src="Pack.png" onClick="removeFromTradeList('c1')" /></li>
+    <li><img class="c2" src="Pack.png" onClick="removeFromTradeList('c2')" /></li>
+    <li><img class="c3" src="Pack.png" onClick="removeFromTradeList('c3')" /></li>
+    <li><img class="c4" src="Pack.png" onClick="removeFromTradeList('c4')" /></li>
+    <li><img class="c5" src="Pack.png" onClick="removeFromTradeList('c5')" /></li>
+  </ul>
 
   Trading with
   <select name="Tplayers" class="Tplayers">
@@ -48,17 +56,17 @@
   <button class=compare onClick="selectTrade()">Confirm Trade</button>
 
   <ul class=resultList>
-    <li><img class=c0 src="Pack.png" onClick="manageCard('c0')"></img></li>
-    <li><img class=c1 src="Pack.png" onClick="manageCard('c1')"></img></li>
-    <li><img class=c2 src="Pack.png" onClick="manageCard('c2')"></img></li>
-    <li><img class=c3 src="Pack.png" onClick="manageCard('c3')"></img></li>
-    <li><img class=c4 src="Pack.png" onClick="manageCard('c4')"></img></li>
-    <li><img class=c5 src="Pack.png" onClick="manageCard('c5')"></img></li>
-    <li><img class=c6 src="Pack.png" onClick="manageCard('c6')"></img></li>
-    <li><img class=c7 src="Pack.png" onClick="manageCard('c7')"></img></li>
-    <li><img class=c8 src="Pack.png" onClick="manageCard('c8')"></img></li>
-    <li><img class=c9 src="Pack.png" onClick="manageCard('c9')"></img></li>
-    <li><img class=c10 src="Pack.png" onClick="manageCard('c10')"></img></li>
+    <li><img class=c0 src="Pack.png" onClick="moveToTradeList('c0')"></img></li>
+    <li><img class=c1 src="Pack.png" onClick="moveToTradeList('c1')"></img></li>
+    <li><img class=c2 src="Pack.png" onClick="moveToTradeList('c2')"></img></li>
+    <li><img class=c3 src="Pack.png" onClick="moveToTradeList('c3')"></img></li>
+    <li><img class=c4 src="Pack.png" onClick="moveToTradeList('c4')"></img></li>
+    <li><img class=c5 src="Pack.png" onClick="moveToTradeList('c5')"></img></li>
+    <li><img class=c6 src="Pack.png" onClick="moveToTradeList('c6')"></img></li>
+    <li><img class=c7 src="Pack.png" onClick="moveToTradeList('c7')"></img></li>
+    <li><img class=c8 src="Pack.png" onClick="moveToTradeList('c8')"></img></li>
+    <li><img class=c9 src="Pack.png" onClick="moveToTradeList('c9')"></img></li>
+    <li><img class=c10 src="Pack.png" onClick="moveToTradeList('c10')"></img></li>
     <li><img class=c11 src="Pack.png" onClick="manageCard('c11')"></img></li>
     <li><img class=c12 src="Pack.png" onClick="manageCard('c12')"></img></li>
     <li><img class=c13 src="Pack.png" onClick="manageCard('c13')"></img></li>
@@ -271,49 +279,68 @@
 
   </script>
   <script>
-    let tradeList = [];  // Array to hold selected cards in the format "01-5", "01-6", etc.
-
-    // Manage adding/removing cards from the trade list
-    function manageCard(cardId) {
-      console.log(tradeList);
-      const card = document.querySelector(`.${cardId}`);
-      const cardIndex = tradeList.indexOf(cardId);
-
-      if (cardIndex === -1 && tradeList.length < 6) {
-        // Add card to trade list if not already added and max 6 cards
-        tradeList.push(cardId);
-        addCardToTradeList(cardId);
-        card.style.opacity = 0.5; // Visual indication that the card is added
-      } else if (cardIndex !== -1) {
-        // Remove card from trade list if already added
-        tradeList.splice(cardIndex, 1);
-        removeCardFromTradeList(cardId);
-        card.style.opacity = 1; // Reset opacity when card is removed
+    let tradeCards = []; // Array to store the cards added to the trade list
+    
+    // Move the card to the trade list when clicked in resultList
+    function moveToTradeList(cardClass) {
+      const cardElement = document.querySelector(`.${cardClass}`);
+      
+      // If the card is already selected (faded), remove it from the trade list
+      if (cardElement.style.opacity === "0.5") {
+        removeFromTradeList(cardClass);
+        return;
+      }
+    
+      // Add the card to the trade list
+      const cardImage = cardElement.src; // Get the image source of the card
+      const tradeSlot = findEmptyTradeSlot();
+      
+      if (tradeSlot !== null) {
+        // Mark the card as selected (faded) in resultList
+        cardElement.style.opacity = "0.5";  // Fade out the card in the resultList
+        cardElement.style.pointerEvents = "none";  // Disable further clicking
+        
+        // Store the card in the tradeCards array
+        tradeCards.push(cardImage);
+    
+        // Update the corresponding tradeList slot with the card image
+        const tradeSlotImage = tradeSlot.querySelector("img");
+        tradeSlotImage.src = cardImage;
+        tradeSlotImage.style.width = "110px"; // Set size for image
       }
     }
-
-    // Add card to trade list (DOM)
-    function addCardToTradeList(cardId) {
-      const tradeListUl = document.getElementById("tradeList");
-      const li = document.createElement("li");
-      li.textContent = cardId;  // You can format it like "01-5" if needed
-      li.onclick = function() {
-        removeCardFromTradeList(cardId);
-        const card = document.querySelector(`.${cardId}`);
-        card.style.opacity = 1;
-      };
-      tradeListUl.appendChild(li);
-      console.log('add' + tradeList);
-    }
-
-    // Remove card from trade list (DOM)
-    function removeCardFromTradeList(cardId) {
-      const tradeListUl = document.getElementById("tradeList");
-      const li = [...tradeListUl.children].find(item => item.textContent === cardId);
-      if (li) {
-        tradeListUl.removeChild(li);
+    
+    // Remove the card from the trade list when clicked
+    function removeFromTradeList(cardClass) {
+      const tradeSlot = document.querySelector(`.${cardClass}`);
+      const tradeSlotImage = tradeSlot.querySelector("img");
+    
+      // Find the index of the card in tradeCards array and remove it
+      const cardIndex = tradeCards.indexOf(tradeSlotImage.src);
+      if (cardIndex !== -1) {
+        tradeCards.splice(cardIndex, 1);
       }
-      console.log('rem' + tradeList);
+    
+      // Reset the trade slot to default
+      tradeSlotImage.src = "Pack.png";
+      tradeSlotImage.style.width = "0px";  // Hide image
+    
+      // Find the card in resultList and restore it
+      const cardElement = document.querySelector(`.${cardClass}`);
+      cardElement.style.opacity = "1";  // Restore opacity
+      cardElement.style.pointerEvents = "auto";  // Re-enable clicking
+    }
+    
+    // Find the first empty slot in the tradeList
+    function findEmptyTradeSlot() {
+      const tradeListItems = document.querySelectorAll(".tradeList li");
+      for (let i = 0; i < tradeListItems.length; i++) {
+        const tradeSlotImage = tradeListItems[i].querySelector("img");
+        if (tradeSlotImage.src === "Pack.png") {
+          return tradeListItems[i];
+        }
+      }
+      return null; // No empty slots available
     }
   </script>
   <script src="scriptCollect.js"></script>
