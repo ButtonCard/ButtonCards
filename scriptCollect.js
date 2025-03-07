@@ -4,7 +4,51 @@ let DCcards = [];
 let VOIDcards = [];
 let ZAVcards = [];
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCLjx4Ys4qnzMfRog74NExTUHdZism8u-I",
+  authDomain: "buttoncards.firebaseapp.com",
+  databaseURL: "https://buttoncards-default-rtdb.firebaseio.com",
+  projectId: "buttoncards",
+  storageBucket: "buttoncards.firebasestorage.app",
+  messagingSenderId: "1001795754069",
+  appId: "1:1001795754069:web:1cbf4305a68f9b45eb5cdc",
+  measurementId: "G-F56PTH5YNL"
+};
+  
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
+async function updateCards() {
+  const userRef = db.collection('users');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const userQuery = await userRef
+        .where('name', '==', currentUser.username.toLowerCase())
+        .get();
+  
+  if (!userQuery.empty) {
+    const doc = userQuery.docs[0];
+
+
+    const currentLogins = doc.data().logins;
+    const currentCards = doc.data().cards;
+    const newLogins = currentLogins + 1;
+    const newCards = currentCards.concat(["01-5"]);
+    console.log(doc.data());
+    console.log(doc.data().logins);
+    
+    await doc.ref.update({
+        cards: newCards,
+        logins: newLogins
+    });
+  } else {
+  await userRef.add({
+      name: currentUser.username.toLowerCase(),
+      cards: [],
+      logins: 0
+  });
+  }
+}
 
 let CODES = [2025];
 let specialCODES = [];
@@ -502,27 +546,10 @@ function hide() {
   owners.innerHTML = "";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let packSize = 0;
 let num = 0;
 let pack = [];
 let code = "";
-
-
 
 function openPack() {
 
@@ -725,7 +752,7 @@ function flipCard(cardPic, pack) {
   num++;
 }
 
-function results(pack) {
+async function results(pack) {
   console.log(pack);
   let resultBack = document.querySelector(".resultList");
   resultBack.style.backgroundColor = "#000044";
@@ -744,13 +771,30 @@ function results(pack) {
   ID.innerHTML = "UPID: " + rand + (Math.floor(Math.random() * 999) + 1) + newID + (Math.floor(Math.random() * 999) + 2);
   ID.style.color = "black";
 
+  const userRef = db.collection('users');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const userQuery = await userRef
+        .where('name', '==', currentUser.username.toLowerCase())
+        .get();
+  if (!userQuery.empty) {
+    const doc = userQuery.docs[0];
+    const currentCards = doc.data().cards;
+    const newCards = currentCards;
+    console.log(doc.data());
+  }
+  
   let cardsOut = document.querySelector(".cardsList");
   cardsOut.innerHTML = "Cards: [";
   for (let i = 0; i < pack.length; i++) {
     cardsOut.innerHTML = cardsOut.innerHTML + pack[i].substring(0, pack[i].length - 4) + ", ";
+    newCards = currentCards.concat([pack[i].substring(0, pack[i].length - 4)]);
   }
   cardsOut.innerHTML = cardsOut.innerHTML.substring(0, cardsOut.innerHTML.length - 2) + "]";
   cardsOut.style.color = "black";
+  
+  await doc.ref.update({
+      cards: newCards
+  });
 
   let PCodeOut = document.querySelector(".PCode");
   PCodeOut.innerHTML = "Pack Code: " + code;
