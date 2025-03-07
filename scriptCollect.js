@@ -16,7 +16,7 @@ let addLightning = false;
 //addLightning=true;
 
 
-let VARmiss = ["14-5", "02-4", "08-5", "06-6", "V5-1"];
+let VARmiss = ["01-5", "01-4", "01-1", "01-3", "01-2"];
 
 
 let C = ["01-1", "01-2"];
