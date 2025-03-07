@@ -318,7 +318,7 @@
       const tradeSlotImage = tradeSlot.querySelector("img");
     
       // Ensure tradeSlotImage exists before accessing src
-      if (tradeSlotImage.style.width > 0) {
+      //if (tradeSlotImage.style.width > 0) {
         console.log('removing');
         // Find the index of the card in tradeCards array and remove it
         const cardIndex = tradeCards.indexOf(tradeSlotImage.src);
@@ -334,7 +334,7 @@
         const cardElement = document.querySelector(`.${cardClass}`);
         cardElement.style.opacity = "1";  // Restore opacity
         cardElement.style.pointerEvents = "auto";  // Re-enable clicking
-      }
+      //}
     }
     
     // Find the first empty slot in the tradeList
