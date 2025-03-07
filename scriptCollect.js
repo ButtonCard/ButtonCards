@@ -92,7 +92,10 @@ if (pageLogo != "collections.html") {
 
 
 function collectTab() {
+  const userRef = db.collection('users');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   let pastCard = "";
+  
   if (player == "collectChilly.html") {
     for (let i = 0; i < CHILLYcards.length; i++) {
       console.log(CHILLYcards[i]);
@@ -109,6 +112,14 @@ function collectTab() {
   }
 
   if (player == "collectGem.html") {
+    const userQuery = await userRef
+          .where('name', '==', 'gem')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    let GEMcards = doc.data().cards;
+    console.log(doc.data());
+    
     for (let i = 0; i < GEMcards.length; i++) {
       console.log(i);
       let cardResult = document.querySelector(".c" + i);
@@ -124,6 +135,14 @@ function collectTab() {
   }
 
   if (player == "collectDC.html") {
+    const userQuery = await userRef
+          .where('name', '==', 'dc')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    let DCcards = doc.data().cards;
+    console.log(doc.data());
+    
     for (let i = 0; i < DCcards.length; i++) {
       console.log(i);
       let cardResult = document.querySelector(".c" + i);
@@ -154,6 +173,14 @@ function collectTab() {
   }
 
   if (player == "collectZav.html") {
+    const userQuery = await userRef
+          .where('name', '==', 'zav')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    let ZAVcards = doc.data().cards;
+    console.log(doc.data());
+    
     for (let i = 0; i < ZAVcards.length; i++) {
       console.log(i);
       let cardResult = document.querySelector(".c" + i);
@@ -732,10 +759,10 @@ async function results(pack) {
         .where('name', '==', currentUser.username.toLowerCase())
         .get();
 
-    const doc = userQuery.docs[0];
-    let currentCards = doc.data().cards;
-    let newCards = currentCards;
-    console.log(doc.data());
+  const doc = userQuery.docs[0];
+  let currentCards = doc.data().cards;
+  let newCards = currentCards;
+  console.log(doc.data());
   
   let cardsOut = document.querySelector(".cardsList");
   cardsOut.innerHTML = "Cards: [";
