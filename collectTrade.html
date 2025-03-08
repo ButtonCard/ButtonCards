@@ -387,31 +387,32 @@
       tradeListItems.forEach((tradeSlot) => {
         console.log('resetting ' + tradeSlot);
         const tradeSlotImage = tradeSlot.querySelector("img");
-        const slotToRestore = findFadedResultSlot(tradeSlotImage.src);
-        const imgElement = slotToRestore.querySelector("img");
+        console.log(findFadedResultSlot(tradeSlotImage.src));
         console.log('resetted ' + tradeSlotImage.src);
         tradeSlotImage.src = "Pack.png";  // Set image to "pack.png"
         tradeSlotImage.style.width = "0px";  // Set image width to 0px
-        imgElement.style.opacity = "1";  // Restore opacity
-        imgElement.style.pointerEvents = "auto";  // Re-enable clicking
       });
     }
 
     function findFadedResultSlot(src) {
-      console.log('find faded result slot');
-      const resultListItems = document.querySelectorAll(".resultList li");
-      
-      for (let i = 0; i < resultListItems.length; i++) {
-        const resultSlotImage = resultListItems[i].querySelector("img");
+      if(src === "pack.png"){
+        console.log('find faded result slot');
+        const resultListItems = document.querySelectorAll(".resultList li");
         
-        // If a slot with matching src is found, return it
-        if (resultSlotImage && resultSlotImage.src === src && resultSlotImage.style.pointerEvents !== "auto") {
-          console.log('YESS' + i);
-          return resultListItems[i];
+        for (let i = 0; i < resultListItems.length; i++) {
+          const resultSlotImage = resultListItems[i].querySelector("img");
+          
+          // If a slot with matching src is found, fix it
+          if (resultSlotImage && resultSlotImage.src === src) {
+            
+            resultSlotImage.style.opacity = "1";  // Restore opacity
+            resultSlotImage.style.pointerEvents = "auto";  // Re-enable clicking
+            console.log('YESS' + i);
+          }
         }
+        return true;
       }
-      
-      return null; // No matching slot found
+      return false; // No matching slot found
     }
   </script>
   <script src="scriptCollect.js"></script>
