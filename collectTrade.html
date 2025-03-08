@@ -430,9 +430,9 @@
       let saveCards = tradeCards.filter(card => card !== "");
       let cardsString = saveCards.join(',');
       //get name padded to 4 characters
-      let name = document.querySelector(".Tplayers").padEnd(4, ' ');
+      let name = document.querySelector(".Tplayers");
       // Combine the name and the cards string
-      savedTrade = name + cardsString;
+      savedTrade = name + " " + cardsString;
       console.log(savedTrade);
     }
   </script>
