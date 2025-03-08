@@ -124,6 +124,33 @@ body{
   width:0px;
 }
 
+.yourList{
+  background-color:blue;
+  border:4px darkblue solid;
+  width:95%;
+  padding:0;
+  margin:auto;
+  padding-left:6px;
+  padding-right:6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.yourList li{
+  width: 106px; 
+  margin:6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.yourList img{
+  width:0px;
+}
+
 .tradeText{
   display: inline;
 }
