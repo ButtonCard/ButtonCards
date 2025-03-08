@@ -318,7 +318,7 @@
           console.log('remover');
       
           // Find the index of the card in tradeCards array and remove it
-          const cardIndex = tradeCards[parseInt(cardClass.replace(/\D/g, ''), 10)];
+          const cardIndex = parseInt(cardClass.replace(/\D/g, ''), 10);
           
           console.log('remover' + tradeSlot.src);
           // Reset the trade slot to default (hide image and set to "Pack.png")
