@@ -376,6 +376,26 @@
       }
       return null; // No empty slots available
     }
+
+    // Reset the trade list to be empty
+    function resetTradeList() {
+      // Empty the tradeCards array
+      tradeCards = [];
+      console.log('reset');
+      // Reset each trade list slot
+      const tradeListItems = document.querySelectorAll(".tradeList li");
+      tradeListItems.forEach((tradeSlot) => {
+        console.log('resetting ' + tradeSlot);
+        const tradeSlotImage = tradeSlot.querySelector("img");
+        const slotToRestore = findMatchingResultSlot(tradeSlotImage.src);
+        const imgElement = slotToRestore.querySelector("img");
+        console.log('resetted ' + tradeSlotImage.src);
+        tradeSlotImage.src = "Pack.png";  // Set image to "pack.png"
+        tradeSlotImage.style.width = "0px";  // Set image width to 0px
+        imgElement.style.opacity = "1";  // Restore opacity
+        imgElement.style.pointerEvents = "auto";  // Re-enable clicking
+      });
+    }
   </script>
   <script src="scriptCollect.js"></script>
 </body>
