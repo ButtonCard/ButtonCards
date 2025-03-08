@@ -309,7 +309,7 @@
     function removeFromTradeList(cardClass) {
         console.log('remove ' + cardClass);
         console.log(`.d${cardClass}`);
-        const tradeSlot = document.querySelector(`.d${cardClass}`);
+        const tradeSlot = document.querySelector(`${cardClass}`);
         const tradeSlotImage = tradeSlot.querySelector("img");
       
         console.log('removing ' + tradeSlot);
