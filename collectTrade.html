@@ -347,19 +347,20 @@
       }
       
       function findMatchingResultSlot(src,index) {
-        console.log('find matching result slot');
-        const resultListItems = document.querySelectorAll(".resultList li");
-        
-        for (let i = 0; i < resultListItems.length; i++) {
-          const resultSlotImage = resultListItems[i].querySelector("img");
+        if(src !== "pack.png"){
+          console.log('find matching result slot' + index);
+          const resultListItems = document.querySelectorAll(".resultList li");
           
-          // If a slot with matching src is found, return it
-          if (i == index) {
-            console.log('YES ' + i);
-            return resultListItems[i];
+          for (let i = 0; i < resultListItems.length; i++) {
+            const resultSlotImage = resultListItems[i].querySelector("img");
+            
+            // If a slot with matching src is found, return it
+            if (i == index) {
+              console.log('YES ' + i);
+              return resultListItems[i];
+            }
           }
         }
-        
         return null; // No matching slot found
       }
     
