@@ -53,6 +53,7 @@
 
   <button class=compare onClick="resetTradeList(); selectTrade();">Search</button>
   <button class=compare onClick="saveTrade(); updatePage();">Confirm Trade</button>
+  <button class=send onClick="">Send Trade</button>
 
   <ul class=resultList>
     <li><img class=c0 src="Pack.png" onClick="moveToTradeList('c0')"></img></li>
@@ -458,15 +459,9 @@
       const confirmTradeButton = document.querySelectorAll('.compare')[1]; // We target the second button here
       confirmTradeButton.style.display = "none";
     
-      // Create and show the "Send Trade" button
-      const sendTradeButton = document.createElement('button');
-      sendTradeButton.classList.add('compare');
-      sendTradeButton.textContent = "Send Trade";
-      sendTradeButton.onclick = function() {
-        // Placeholder for Send Trade functionality (it doesn't need to do anything yet)
-        console.log('Send Trade button clicked');
-      };
-      document.body.appendChild(sendTradeButton); // Append the button to the body or wherever appropriate
+      // Make Send Trade button visible
+      const sendTradeButton = document.querySelector('.send');
+      sendTradeButton.style.display = "inline-block";
     }
   </script>
   <script src="scriptCollect.js"></script>
