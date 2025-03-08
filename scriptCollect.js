@@ -575,9 +575,6 @@ async function selectTrade() {
     Tlist = doc.data().cards.sort();
   }
 
-  console.log(Tlist);
-
-
   let noTdupes = [];
   let Tdupes = [];
   let prevCard = null;
@@ -594,12 +591,12 @@ async function selectTrade() {
   console.log(noTdupes);
 
   let num = 0;
-  for (let i = 0; i < noTdupes.length; i++) {
+  for (let i = 0; i < Tlist.length; i++) {
     console.log("test");
     let cardResult = document.querySelector(".c" + num);
-    cardResult.src = "img/" + noTdupes[i] + ".png";
+    cardResult.src = "img/" + Tlist[i] + ".png";
     cardResult.style.width = "110px";
-    if (Tdupes.includes(noTdupes[i])) {
+    if (Tdupes.includes(Tlist[i])) {
       cardResult.style.border = "2px yellow solid";
     }
     num++;
