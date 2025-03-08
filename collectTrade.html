@@ -383,31 +383,32 @@
     // Reset the trade list to be empty
     function resetTradeList() {
       // Empty the tradeCards array
-      tradeCards = [];
-      indexCards = [];
       console.log('reset + tradeSlotImage.src');
       // Reset each trade list slot
       const tradeListItems = document.querySelectorAll(".tradeList li");
       tradeListItems.forEach((tradeSlot) => {
         console.log('resetting ' + tradeSlot);
         const tradeSlotImage = tradeSlot.querySelector("img");
-        console.log(findFadedResultSlot(tradeSlotImage.src));
+        console.log(findFadedResultSlot(tradeSlotImage.src,indexCards[tradeCards.indexOf(tradeSlotImage.src)]));
         console.log('resetted ' + tradeSlotImage.src);
         tradeSlotImage.src = "Pack.png";  // Set image to "pack.png"
         tradeSlotImage.style.width = "0px";  // Set image width to 0px
       });
+
+      tradeCards = [];
+      indexCards = [];
     }
 
-    function findFadedResultSlot(src) {
+    function findFadedResultSlot(src,index) {
       if(src !== "pack.png"){
-        console.log('find faded result slot');
+        console.log('find faded result slot ' + index);
         const resultListItems = document.querySelectorAll(".resultList li");
         
         for (let i = 0; i < resultListItems.length; i++) {
           const resultSlotImage = resultListItems[i].querySelector("img");
           
           // If a slot with matching src is found, fix it
-          if (i == indexCards) {
+          if (i == index) {
             
             resultSlotImage.style.opacity = "1";  // Restore opacity
             resultSlotImage.style.pointerEvents = "auto";  // Re-enable clicking
