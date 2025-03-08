@@ -333,8 +333,8 @@
           tradeSlot.src = "Pack.png";
           tradeSlot.style.width = "0px";  // Hide image
       
-          // Find a trade slot with the matching src to restore opacity
-          const slotToRestore = findMatchingResultSlot(tradeSlotSrc); // Find a trade slot with the matching src
+          // Find a result slot with the matching src to restore opacity
+          const slotToRestore = findMatchingResultSlot(tradeSlotSrc,indexCards[parseInt(cardClass.replace(/\D/g, ''), 10)]);
           if (slotToRestore) {
             console.log('FOUND matching result slot');
             const cardElement = slotToRestore.querySelector("img");
@@ -346,7 +346,7 @@
         }
       }
       
-      function findMatchingResultSlot(src) {
+      function findMatchingResultSlot(src,index) {
         console.log('find matching result slot');
         const resultListItems = document.querySelectorAll(".resultList li");
         
@@ -354,8 +354,8 @@
           const resultSlotImage = resultListItems[i].querySelector("img");
           
           // If a slot with matching src is found, return it
-          if (resultSlotImage && resultSlotImage.src === src) {
-            console.log('YES');
+          if (i == index) {
+            console.log('YES ' + i);
             return resultListItems[i];
           }
         }
