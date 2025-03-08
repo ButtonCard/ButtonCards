@@ -278,8 +278,8 @@
 
   </script>
   <script>
-    let tradeCards = []; // Array to store the cards added to the trade list
-    let indexCards = [];
+    let tradeCards = ["","","","","",""]; // Array to store the cards added to the trade list
+    let indexCards = [0,0,0,0,0,0];
     
     // Move the card to the trade list when clicked in resultList
     function moveToTradeList(cardClass) {
@@ -361,7 +361,7 @@
       }
     
     // Find the first empty slot in the tradeList
-    function findEmptyTradeSlot() {
+    function findEmptyTradeSlot(tradeVal, indexVal) {
       console.log('find empty');
       const tradeListItems = document.querySelectorAll(".tradeList li");
     
@@ -371,8 +371,8 @@
     
         if (tradeSlotImage.width === 0) {
           console.log('found');
-          tradeCards.push(cardImage); // Store the card in the tradeCards array
-          indexCards.push(parseInt(cardClass.replace(/\D/g, ''), 10)); //get index in resultList
+          tradeCards[i]=tradeVal; // Store the card in the tradeCards array
+          indexCards[i]=indexVal; //get index in resultList
           return tradeListItems[i];
         }
       }
@@ -394,8 +394,8 @@
         tradeSlotImage.style.width = "0px";  // Set image width to 0px
       });
 
-      tradeCards = [];
-      indexCards = [];
+      tradeCards = ["","","","","",""];
+      indexCards = [0,0,0,0,0,0];
     }
 
     function findFadedResultSlot(src,index) {
