@@ -405,7 +405,7 @@
         const resultSlotImage = resultListItems[i].querySelector("img");
         
         // If a slot with matching src is found, return it
-        if (resultSlotImage && resultSlotImage.src === src && imgElement.style.opacity !== 1) {
+        if (resultSlotImage && resultSlotImage.src === src && resultSlotImage.style.opacity !== 1) {
           console.log('YES');
           return resultListItems[i];
         }
