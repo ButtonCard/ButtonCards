@@ -52,7 +52,7 @@
   </select>
 
   <button class=compare onClick="resetTradeList(); selectTrade();">Search</button>
-  <button class=compare onClick="saveTrade()">Confirm Trade</button>
+  <button class=compare onClick="saveTrade(); updatePage();">Confirm Trade</button>
 
   <ul class=resultList>
     <li><img class=c0 src="Pack.png" onClick="moveToTradeList('c0')"></img></li>
@@ -439,6 +439,34 @@
       // Combine the name and the cards string
       savedTrade = name + " " + cardsString;
       console.log(savedTrade);
+    }
+
+    function updatePage() {
+      // Change the "Trading with" text
+      const tradingText = document.querySelector('h3');
+      tradingText.textContent = "Select your cards to trade:";
+    
+      // Hide the Tplayers selector
+      const tPlayersSelect = document.querySelector('.Tplayers');
+      tPlayersSelect.style.display = "none";
+    
+      // Hide the Search button
+      const searchButton = document.querySelector('.compare');
+      searchButton.style.display = "none";
+    
+      // Hide the Confirm Trade button
+      const confirmTradeButton = document.querySelectorAll('.compare')[1]; // We target the second button here
+      confirmTradeButton.style.display = "none";
+    
+      // Create and show the "Send Trade" button
+      const sendTradeButton = document.createElement('button');
+      sendTradeButton.classList.add('compare');
+      sendTradeButton.textContent = "Send Trade";
+      sendTradeButton.onclick = function() {
+        // Placeholder for Send Trade functionality (it doesn't need to do anything yet)
+        console.log('Send Trade button clicked');
+      };
+      document.body.appendChild(sendTradeButton); // Append the button to the body or wherever appropriate
     }
   </script>
   <script src="scriptCollect.js"></script>
