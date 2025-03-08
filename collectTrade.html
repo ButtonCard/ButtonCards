@@ -428,9 +428,14 @@
     function saveTrade() {
       // Join the cards array into a single string with commas
       let saveCards = tradeCards.filter(card => card !== "");
+      saveCards = saveCards.map(cardurl => {
+        // Use a regular expression to match the part after the last '/' and before '.png'
+        let match = cardurl.match(/\/([^\/]+)\.png$/);
+        return match ? match[1] : cardurl;  // Return the shortened part if a match is found
+      });
       let cardsString = saveCards.join(',');
       //get name padded to 4 characters
-      let name = document.querySelector(".Tplayers");
+      let name = document.querySelector(".Tplayers").value;
       // Combine the name and the cards string
       savedTrade = name + " " + cardsString;
       console.log(savedTrade);
