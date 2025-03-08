@@ -279,6 +279,7 @@
   </script>
   <script>
     let tradeCards = []; // Array to store the cards added to the trade list
+    let indexCards = [];
     
     // Move the card to the trade list when clicked in resultList
     function moveToTradeList(cardClass) {
@@ -297,6 +298,7 @@
         
         // Store the card in the tradeCards array
         tradeCards.push(cardImage);
+        indexCards.push(parseInt(cardClass.replace(/\D/g, ''), 10)); //get index in resultList
     
         // Update the corresponding tradeList slot with the card image
         const tradeSlotImage = tradeSlot.querySelector("img");
@@ -323,6 +325,7 @@
           
           if (cardIndex !== -1) {
             tradeCards.splice(cardIndex, 1);
+            indexCards.splice(cardIndex, 1);
           }
           
           console.log('remover' + tradeSlot.src);
@@ -381,6 +384,7 @@
     function resetTradeList() {
       // Empty the tradeCards array
       tradeCards = [];
+      indexCards = [];
       console.log('reset + tradeSlotImage.src');
       // Reset each trade list slot
       const tradeListItems = document.querySelectorAll(".tradeList li");
@@ -403,7 +407,7 @@
           const resultSlotImage = resultListItems[i].querySelector("img");
           
           // If a slot with matching src is found, fix it
-          if (resultSlotImage && resultSlotImage.src === src) {
+          if (i == indexCards) {
             
             resultSlotImage.style.opacity = "1";  // Restore opacity
             resultSlotImage.style.pointerEvents = "auto";  // Re-enable clicking
