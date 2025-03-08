@@ -282,7 +282,7 @@
     
     // Move the card to the trade list when clicked in resultList
     function moveToTradeList(cardClass) {
-      console.log('move');
+      console.log('move ' + cardClass);
       const cardElement = document.querySelector(`.${cardClass}`);
     
       // Add the card to the trade list
@@ -307,8 +307,8 @@
     
     // Remove the card from the trade list when clicked
     function removeFromTradeList(cardClass) {
-        cardClass = 'd' + cardClass;
-        const tradeSlot = document.querySelector(`.${cardClass}`);
+        console.log('remove ' + cardClass);
+        const tradeSlot = document.querySelector(`.d${cardClass}`);
         const tradeSlotImage = tradeSlot.querySelector("img");
       
         console.log('removing ' + tradeSlotImage);
