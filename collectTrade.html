@@ -308,11 +308,12 @@
     // Remove the card from the trade list when clicked
     function removeFromTradeList(cardClass) {
         console.log('remove ' + cardClass);
-        console.log(`.d${cardClass}`);
-        const tradeSlot = document.querySelector(`${cardClass}`);
+        const tradeSlot = document.querySelector(`.${cardClass}`);
+        const tradeSlotSrc = tradeSlot.src;
         const tradeSlotImage = tradeSlot.querySelector("img");
       
         console.log('removing ' + tradeSlot);
+        console.log('removing ' + tradeSlotSrc);
         // Ensure tradeSlotImage exists before accessing src
         if (tradeSlotImage) {
           console.log('remover');
