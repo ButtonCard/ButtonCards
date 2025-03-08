@@ -323,11 +323,6 @@
           // Find the index of the card in tradeCards array and remove it
           const cardIndex = tradeCards.indexOf(tradeSlot.src);
           
-          if (cardIndex !== -1) {
-            tradeCards.splice(cardIndex, 1);
-            indexCards.splice(cardIndex, 1);
-          }
-          
           console.log('remover' + tradeSlot.src);
           // Reset the trade slot to default (hide image and set to "Pack.png")
           tradeSlot.src = "Pack.png";
@@ -343,6 +338,11 @@
             cardElement.style.opacity = "1";  // Restore opacity
             cardElement.style.pointerEvents = "auto";  // Re-enable clicking
           }
+        }
+
+        if (cardIndex !== -1) {
+          tradeCards.splice(cardIndex, 1);
+          indexCards.splice(cardIndex, 1);
         }
       }
       
