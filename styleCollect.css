@@ -51,6 +51,19 @@ body{
   font-weight:bold;
 }
 
+.send{
+  margin-left:10px;
+  margin-bottom:20px;
+  margin-top:20px;
+  border:darkblue 2px solid;
+  padding:5px;
+  border-radius:7px;
+  background-color:blue;
+  color:white;
+  font-weight:bold;
+  display:none;
+}
+
 .resultList{
   background-color:blue;
   border:4px darkblue solid;
