@@ -331,7 +331,7 @@
           tradeSlot.style.width = "0px";  // Hide image
       
           // Find a trade slot with the matching src to restore opacity
-          const slotToRestore = findMatchingResultSlot(tradeSlot.src); // Find a trade slot with the matching src
+          const slotToRestore = findMatchingResultSlot(tradeSlotSrc); // Find a trade slot with the matching src
           if (slotToRestore) {
             console.log('FOUND matching result slot');
             const cardElement = slotToRestore.querySelector("img");
