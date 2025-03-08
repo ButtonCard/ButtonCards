@@ -334,10 +334,10 @@
           const slotToRestore = findMatchingResultSlot(tradeSlot.src); // Find a trade slot with the matching src
           if (slotToRestore) {
             console.log('FOUND matching result slot');
-            const cardElement = slotToRestore.querySelector("img");
+            //const cardElement = slotToRestore.querySelector("img");
             // Set opacity back to 1 and restore visibility in the result list
-            cardElement.style.opacity = "1";  // Restore opacity
-            cardElement.style.pointerEvents = "auto";  // Re-enable clicking
+            slotToRestore.style.opacity = "1";  // Restore opacity
+            slotToRestore.style.pointerEvents = "auto";  // Re-enable clicking
           }
         }
       }
