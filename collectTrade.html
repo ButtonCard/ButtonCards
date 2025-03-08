@@ -400,7 +400,7 @@
     }
 
     function findFadedResultSlot(src,index) {
-      tradeCards[index]="";
+      tradeCards[indexCards.indexOf(index)]="";
       if(src !== "pack.png"){
         console.log('find faded result slot ' + index);
         const resultListItems = document.querySelectorAll(".resultList li");
