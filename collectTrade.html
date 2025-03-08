@@ -43,7 +43,7 @@
     <li><img class=d5 src="Pack.png" onClick="removeFromTradeList('d5')"></img></li>
   </ul>
 
-  Trading with
+  <p>Trading with</p>
   <select name="Tplayers" class="Tplayers">
     <option class=t2 value="dc">DCMetro</option>
     <option class=t3 value="gem">DCGem</option>
@@ -444,7 +444,7 @@
 
     function updatePage() {
       // Change the "Trading with" text
-      const tradingText = document.querySelector('h3');
+      const tradingText = document.querySelector('p');
       tradingText.textContent = "Select your cards to trade:";
     
       // Hide the Tplayers selector
