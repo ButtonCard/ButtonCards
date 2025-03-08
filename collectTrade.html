@@ -288,17 +288,13 @@
     
       // Add the card to the trade list
       const cardImage = cardElement.src; // Get the image source of the card
-      const tradeSlot = findEmptyTradeSlot();
+      const tradeSlot = findEmptyTradeSlot(cardImage,parseInt(cardClass.replace(/\D/g, ''), 10));
       
       if (tradeSlot !== null) {
         console.log('moving');
         // Mark the card as selected (faded) in resultList
         cardElement.style.opacity = "0.5";  // Fade out the card in the resultList
         cardElement.style.pointerEvents = "none";  // Disable further clicking
-        
-        // Store the card in the tradeCards array
-        tradeCards.push(cardImage);
-        indexCards.push(parseInt(cardClass.replace(/\D/g, ''), 10)); //get index in resultList
     
         // Update the corresponding tradeList slot with the card image
         const tradeSlotImage = tradeSlot.querySelector("img");
@@ -375,6 +371,8 @@
     
         if (tradeSlotImage.width === 0) {
           console.log('found');
+          tradeCards.push(cardImage); // Store the card in the tradeCards array
+          indexCards.push(parseInt(cardClass.replace(/\D/g, ''), 10)); //get index in resultList
           return tradeListItems[i];
         }
       }
