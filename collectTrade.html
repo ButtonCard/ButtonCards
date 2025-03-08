@@ -280,6 +280,7 @@
   <script>
     let tradeCards = ["","","","","",""]; // Array to store the cards added to the trade list
     let indexCards = [0,0,0,0,0,0];
+    let savedTrade = "";
     
     // Move the card to the trade list when clicked in resultList
     function moveToTradeList(cardClass) {
@@ -418,6 +419,21 @@
         return true;
       }
       return false; // No matching slot found
+    }
+
+
+
+
+
+    function saveTrade() {
+      // Join the cards array into a single string with commas
+      let saveCards = tradeCards.filter(card => card !== "");
+      let cardsString = saveCards.join(',');
+      //get name padded to 4 characters
+      let name = document.querySelector(".Tplayers").padEnd(4, ' ');
+      // Combine the name and the cards string
+      savedTrade = name + cardsString;
+      console.log(savedTrade);
     }
   </script>
   <script src="scriptCollect.js"></script>
