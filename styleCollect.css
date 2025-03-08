@@ -124,6 +124,9 @@ body{
   width:0px;
 }
 
+.tradeText{
+  display: inline;
+}
 
 .resultTitle{
   text-align:center;
