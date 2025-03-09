@@ -922,6 +922,7 @@
             const currentTrades = doc.data().trades;
             const newTrades = currentTrades.push(savedTrade);
             console.log(doc.data().trades);
+            console.log(newTrades);
             
             await doc.ref.update({
                 trades: newTrades
