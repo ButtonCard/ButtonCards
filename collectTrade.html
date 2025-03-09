@@ -478,6 +478,10 @@
       const sendTradeButton = document.querySelector('.send');
       sendTradeButton.style.display = "inline-block";
 
+      // Hide the resultList
+      const resultListHide = document.querySelector('.resultList');
+      resultListHide.style.display = "none";
+
       const tradeListItems = document.querySelectorAll(".tradeList li");
       tradeListItems.forEach((tradeSlot) => {
         console.log('resetting ' + tradeSlot);
