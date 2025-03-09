@@ -131,6 +131,15 @@
     }
 
     function changeTrade(){
+          for (let i = 0; i < 6; i++) {
+            let tRem = document.querySelector(".d" + i);
+            let yRem = document.querySelector(".e" + i);
+            tRem.src = "Pack.png";
+            tRem.style.width = "0px";
+            yRem.src = "Pack.png";
+            yRem.style.width = "0px";
+          }
+      
         let tradesSelect = document.querySelector(".tradesSelect");
         let selectedOption = tradesSelect.selectedOptions[0];
         let classValue = selectedOption.className;
