@@ -97,7 +97,7 @@ body{
   width:0px;
 }
 
-.tradeList{
+.tradeList,.viewTheirList,.viewYourList{
   background-color:blue;
   border:4px darkblue solid;
   width:95%;
@@ -111,7 +111,7 @@ body{
   justify-content: flex-start;
 }
 
-.tradeList li{
+.tradeList li,.viewTheirList li,.viewYourList li{
   width: 106px; 
   margin:6px;
   display: flex;
@@ -120,7 +120,7 @@ body{
   opacity: 1;
 }
 
-.tradeList img{
+.tradeList img,.viewTheirList img,.viewYourList img{
   width:0px;
 }
 
