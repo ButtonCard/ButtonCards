@@ -94,7 +94,10 @@
     let fromNames = [];
     let theirTradeCards = [];
     let yourTradeCards = [];
-    window.onload = getTrades;
+    window.onload = async () => {
+      await getTrades();
+      populateTradesSelect();
+    };
     
     async function getTrades() {
       const userRef = db.collection('users');
@@ -115,7 +118,21 @@
           console.log(yourTradeCards);
       }
     }
-    
+
+    // Function to populate the tradesSelect dropdown
+    function populateTradesSelect() {
+      const tradesSelect = document.querySelector('.tradesSelect');  // Get the select element
+      fromNames.forEach((name, index) => {
+        // Create a new option element for each name
+        const option = document.createElement('option');
+        option.value = name; // Set the value of the option to the name
+        option.textContent = name; // Set the text content of the option to the name
+        option.classList.add(`t${index + 1}`); // Add a class like t1, t2, t3, ...
+        
+        // Append the option to the select element
+        tradesSelect.appendChild(option);
+      });
+    }
   </script>
   <script src="scriptCollect.js"></script>
 </body>
