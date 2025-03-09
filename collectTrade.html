@@ -42,7 +42,7 @@
     <li><img class=d4 src="Pack.png" onClick="removeFromTradeList('d4')"></img></li>
     <li><img class=d5 src="Pack.png" onClick="removeFromTradeList('d5')"></img></li>
   </ul>
-  <h3>Your cards:</h3>
+  <h3 class=yours>Your cards:</h3>
   <ul class=yourList>
     <li><img class=e0 src="Pack.png" onClick="removeFromTradeList('e0')"></img></li>
     <li><img class=e1 src="Pack.png" onClick="removeFromTradeList('e1')"></img></li>
@@ -467,6 +467,12 @@
       // Hide the Confirm Trade button
       const confirmTradeButton = document.querySelectorAll('.compare')[1]; // We target the second button here
       confirmTradeButton.style.display = "none";
+
+      // Make Your Cards: text and yourList visible
+      const searchButton = document.querySelector('.yours');
+      searchButton.style.display = "inline-block";
+      const searchButton = document.querySelector('.yourList');
+      searchButton.style.display = "inline-block";
     
       // Make Send Trade button visible
       const sendTradeButton = document.querySelector('.send');
