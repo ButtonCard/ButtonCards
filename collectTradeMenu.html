@@ -115,26 +115,6 @@
           console.log(yourTradeCards);
       }
     }
-
-    async function deTrade() {
-
-      const userRef = db.collection('users');
-      const userQuery = await userRef
-            .where('name', '==', tradeTo)
-            .get();
-      if (!userQuery.empty) {
-          const doc = userQuery.docs[0];        
-          let currentTrades = doc.data().trades;
-          currentTrades.push(savedTrade);
-          console.log(doc.data().trades);
-          console.log(currentTrades);
-          
-          await doc.ref.update({
-              trades: currentTrades
-          });
-      }
-      location.reload();
-    }
     
   </script>
   <script src="scriptCollect.js"></script>
