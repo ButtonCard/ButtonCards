@@ -136,6 +136,7 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  display: none;
 }
 
 .yourList li{
@@ -149,6 +150,10 @@ body{
 
 .yourList img{
   width:0px;
+}
+
+.yours{
+  display: none;
 }
 
 .tradeText{
