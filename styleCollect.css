@@ -124,7 +124,7 @@ body{
   width:0px;
 }
 
-.yourList{
+.yourList,.myList{
   background-color:blue;
   border:4px darkblue solid;
   width:95%;
@@ -139,7 +139,7 @@ body{
   display: none;
 }
 
-.yourList li{
+.yourList li,.myList li{
   width: 106px; 
   margin:6px;
   display: flex;
@@ -148,7 +148,7 @@ body{
   opacity: 1;
 }
 
-.yourList img{
+.yourList img,.myList img{
   width:0px;
 }
 
