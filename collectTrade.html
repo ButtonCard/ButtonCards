@@ -700,7 +700,7 @@
       const yoursFix = document.querySelector('.yours');
       yoursFix.style.display = "inline-block";
       const yourListFix = document.querySelector('.yourList');
-      yourListFix.style.display = "inline-block";
+      yourListFix.style.display = "inline";
     
       // Make Send Trade button visible
       const sendTradeButton = document.querySelector('.send');
@@ -712,7 +712,7 @@
 
       //Make myList visible
       const myListFix = document.querySelector('.myList');
-      myListFix.style.display = "inline-block";
+      myListFix.style.display = "inline";
 
       const tradeListItems = document.querySelectorAll(".tradeList li");
       tradeListItems.forEach((tradeSlot) => {
@@ -918,16 +918,17 @@
             .where('name', '==', tradeTo)
             .get();
       if (!userQuery.empty) {
-            const doc = userQuery.docs[0];        
-            let currentTrades = doc.data().trades;
-            currentTrades.push(savedTrade);
-            console.log(doc.data().trades);
-            console.log(currentTrades);
-            
-            await doc.ref.update({
-                trades: currentTrades
-            });
+          const doc = userQuery.docs[0];        
+          let currentTrades = doc.data().trades;
+          currentTrades.push(savedTrade);
+          console.log(doc.data().trades);
+          console.log(currentTrades);
+          
+          await doc.ref.update({
+              trades: currentTrades
+          });
       }
+      location.reload();
     }
   </script>
   <script src="scriptCollect.js"></script>
