@@ -496,6 +496,25 @@
 
   </script>
   <script>
+    window.onload = function() {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      const currentUsername = currentUser.username.toLowerCase();
+      // Get the select menu element
+      const selectMenu = document.querySelector('select[name="Tplayers"]');
+      
+      // Loop through each option in the select menu
+      const options = selectMenu.querySelectorAll('option');
+      
+      options.forEach(option => {
+        // Compare the value of the option with the current user's username
+        if (option.value.toLowerCase() === currentUsername) {
+          // Remove the option if it matches
+          option.remove();
+        }
+      });
+    }
+
+    
     let tradeCards = ["","","","","",""]; // Array to store the cards added to the trade list
     let indexCards = [0,0,0,0,0,0];
     let savedTrade = "";
