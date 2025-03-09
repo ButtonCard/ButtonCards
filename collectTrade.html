@@ -66,7 +66,7 @@
   </select>
 
   <button class=compare onClick="resetTradeList(); selectTrade();">Search</button>
-  <button class=compare onClick="saveTrade(); updatePage();">Confirm Trade</button>
+  <button class=compare onClick="saveTrade(); updatePage(); addYourCards();">Confirm Trade</button>
   <button class=send onClick="sendTrade()">Send Trade</button>
 
   <ul class=resultList>
@@ -722,6 +722,82 @@
         console.log('resetted ' + tradeSlotImage.src);
       });
     }
+
+    async function addYourCards() {
+
+      for (let i = 0; i < 99; i++) {
+        let cardResult = document.querySelector(".f" + i);
+        cardResult.src = "Pack.png";
+        cardResult.style.width = "0px";
+        cardResult.style.border = "0";
+      }
+    
+    
+      let TlistName = currentUsername;
+      let Tlist;
+      const userRef = db.collection('users');
+      if (TlistName == "gem") {
+        const userQuery = await userRef
+              .where('name', '==', 'gem')
+              .get();
+        
+        const doc = userQuery.docs[0];
+        Tlist = doc.data().cards.sort();
+      }
+      if (TlistName == "dc") {
+        const userQuery = await userRef
+              .where('name', '==', 'dc')
+              .get();
+        
+        const doc = userQuery.docs[0];
+        Tlist = doc.data().cards.sort();
+      }
+      if (TlistName == "void") {
+        const userQuery = await userRef
+              .where('name', '==', 'void')
+              .get();
+        
+        const doc = userQuery.docs[0];
+        Tlist = doc.data().cards.sort();
+      }
+      if (TlistName == "zav") {
+        const userQuery = await userRef
+              .where('name', '==', 'zav')
+              .get();
+        
+        const doc = userQuery.docs[0];
+        Tlist = doc.data().cards.sort();
+      }
+    
+      let noTdupes = [];
+      let Tdupes = [];
+      let prevCard = null;
+      for (let i = 0; i < Tlist.length; i++) {
+        if (Tlist[i] != prevCard) {
+          noTdupes.push(Tlist[i]);
+        }
+        else {
+          Tdupes.push(Tlist[i]);
+        }
+        prevCard = Tlist[i];
+      }
+    
+      console.log(noTdupes);
+    
+      let num = 0;
+      for (let i = 0; i < Tlist.length; i++) {
+        console.log("test");
+        let cardResult = document.querySelector(".f" + num);
+        cardResult.src = "img/" + Tlist[i] + ".png";
+        cardResult.style.width = "110px";
+        if (Tdupes.includes(Tlist[i])) {
+          cardResult.style.border = "2px yellow solid";
+        }
+        num++;
+      }
+    }
+
+    
 
 
     let yourCards = ["","","","","",""]; // Array to store the cards added to the your list
