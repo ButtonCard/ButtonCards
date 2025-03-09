@@ -919,13 +919,13 @@
             .get();
       if (!userQuery.empty) {
             const doc = userQuery.docs[0];        
-            const currentTrades = doc.data().trades;
-            const newTrades = currentTrades.push(savedTrade);
+            let currentTrades = doc.data().trades;
+            currentTrades.push(savedTrade);
             console.log(doc.data().trades);
-            console.log(newTrades);
+            console.log(currentTrades);
             
             await doc.ref.update({
-                trades: newTrades
+                trades: currentTrades
             });
       }
     }
