@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ButtonCraft Cards ONLINE!</title>
+  <link href="styleCollect.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="BCC_Icon.png">
+</head>
+
+<body oncontextmenu="return false;">
+  <script>
+      if (localStorage.getItem('isLoggedIn') !== 'true') {
+          window.location.href = 'index.html';
+      }
+  </script>
+
+  <div class=logoBack><a class=logoLink href="index.html"><img class=logo src="BCC_Logo.png"></img></a></div>
+  <div class=line></div>
+
+  <div class="topnav">
+    <a href="collectAll.html">All Cards</a>
+    <a href="collectSets.html">Sets Checklist</a>
+    <a href="collectCompare.html">Compare</a>
+    <a class="active" href="collectTrade.html">Trading</a>
+    <a href="collectMission.html">Mission</a>
+    <a href="collectGem.html">DCGem</a>
+    <a href="collectDC.html">DCMetro</a>
+    <a href="collectVoid.html">VoidMax</a>
+    <a href="collectZav.html">Zaveeya</a>
+  </div>
+
+  <div class=line></div>
+
+  <img class=pack src="Pack.png" onClick="hide()"></img>
+  <h3 class=owned></h3>
+
+  <h2 class=resultTitle>Recieved Trades</h2>
+
+  <h3>Their cards:</h3>
+  <ul class=viewTheirList>
+    <li><img class=d0 src="Pack.png" onClick="enlarge('d0')"></img></li>
+    <li><img class=d1 src="Pack.png" onClick="enlarge('d1')"></img></li>
+    <li><img class=d2 src="Pack.png" onClick="enlarge('d2')"></img></li>
+    <li><img class=d3 src="Pack.png" onClick="enlarge('d3')"></img></li>
+    <li><img class=d4 src="Pack.png" onClick="enlarge('d4')"></img></li>
+    <li><img class=d5 src="Pack.png" onClick="enlarge('d5')"></img></li>
+  </ul>
+  <h3 class=yours>Your cards:</h3>
+  <ul class=viewYourList>
+    <li><img class=e0 src="Pack.png" onClick="enlarge('e0')"></img></li>
+    <li><img class=e1 src="Pack.png" onClick="enlarge('e1')"></img></li>
+    <li><img class=e2 src="Pack.png" onClick="enlarge('e2')"></img></li>
+    <li><img class=e3 src="Pack.png" onClick="enlarge('e3')"></img></li>
+    <li><img class=e4 src="Pack.png" onClick="enlarge('e4')"></img></li>
+    <li><img class=e5 src="Pack.png" onClick="enlarge('e5')"></img></li>
+  </ul>
+
+  <button class=compare onClick="acceptTrade()">Accept Trade</button>
+  <button class=compare onClick="declineTrade()">Decline Trade</button>
+  <br>
+  <select name="Tplayers" class="Tplayers">
+    <option class=t2 value="dc">DCMetro</option>
+    <option class=t3 value="gem">DCGem</option>
+    <option class=t4 value="void">VoidMax</option>
+    <option class=t5 value="zav">Zaveeya</option>
+  </select>
+
+  
+
+  
+  <script src="scriptCollect.js"></script>
+</body>
+
+</html>
