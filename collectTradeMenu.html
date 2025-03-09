@@ -129,6 +129,28 @@
         tradesSelect.appendChild(option);
       });
     }
+
+    function changeTrade(){
+        let tradesSelect = document.querySelector(".tradesSelect");
+        let tradeNum = parseInt(tradesSelect.class.substring(1));
+        let tCards = theirTradeCards[tradeNum];
+        let yCards = yourTradeCards[tradeNum];
+      
+        let num = 0;
+        for (let i = 0; i < tCards.length; i++) {
+          console.log("test");
+          //their cars setting
+          let tCard = document.querySelector(".d" + num);
+          tCard.src = "img/" + tCards[i] + ".png";
+          tCard.style.width = "110px";
+
+          //your cards setting
+          let yCard = document.querySelector(".e" + num);
+          yCard.src = "img/" + yCards[i] + ".png";
+          yCard.style.width = "110px";
+          num++;
+        }
+    }
   </script>
   <script src="scriptCollect.js"></script>
 </body>
