@@ -824,7 +824,7 @@
       return null; // No empty slots available
     }
 
-    function sendTrade() {
+    async function sendTrade() {
       // Join the cards array into a single string with commas
       let sendCards = yourCards.filter(card => card !== "");
       sendCards = sendCards.map(cardurl => {
