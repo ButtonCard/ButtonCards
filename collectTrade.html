@@ -477,6 +477,14 @@
       // Make Send Trade button visible
       const sendTradeButton = document.querySelector('.send');
       sendTradeButton.style.display = "inline-block";
+
+      const tradeListItems = document.querySelectorAll(".tradeList li");
+      tradeListItems.forEach((tradeSlot) => {
+        console.log('resetting ' + tradeSlot);
+        const tradeSlotImage = tradeSlot.querySelector("img");
+        console.log(findFadedResultSlot(tradeSlotImage.src,indexCards[tradeCards.indexOf(tradeSlotImage.src)]));
+        console.log('resetted ' + tradeSlotImage.src);
+      });
     }
   </script>
   <script src="scriptCollect.js"></script>
