@@ -10,6 +10,11 @@
 </head>
 
 <body oncontextmenu="return false;">
+  <script>
+      if (localStorage.getItem('isLoggedIn') !== 'true') {
+          window.location.href = 'index.html';
+      }
+  </script>
 
   <div class=logoBack><a class=logoLink href="index.html"><img class=logo src="BCC_Logo.png"></img></a></div>
   <div class=line></div>
