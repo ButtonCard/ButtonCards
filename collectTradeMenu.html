@@ -178,11 +178,11 @@
       if (!userQuery.empty) {
           const doc = userQuery.docs[0];        
           let currentTrades = doc.data().trades;
-          let newTrades = currentTrades.splice(curTradeNum,1);
+          currentTrades.splice(curTradeNum,1);
           curTradeNum = -1;
         
           await doc.ref.update({
-              trades: newTrades
+              trades: currentTrades
           });
       }
       location.reload();
