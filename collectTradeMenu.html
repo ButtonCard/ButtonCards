@@ -90,6 +90,7 @@
     let fromNames = [];
     let theirTradeCards = [];
     let yourTradeCards = [];
+    let curTradeNum = -1;
     window.onload = async () => {
       await getTrades();
       populateTradesSelect();
@@ -144,6 +145,7 @@
         let selectedOption = tradesSelect.selectedOptions[0];
         let classValue = selectedOption.className;
         let tradeNum = parseInt(classValue.substring(1))-1;
+        curTradeNum = tradeNum
         let tCards = theirTradeCards[tradeNum];
         let yCards = yourTradeCards[tradeNum];
         console.log(tCards + " " + tradeNum);
@@ -166,6 +168,23 @@
           }
           num++;
         }
+    }
+
+    async function deleteTrade(){
+      const userRef = db.collection('users');
+      const userQuery = await userRef
+            .where('name', '==', currentUsername)
+            .get();
+      if (!userQuery.empty) {
+          const doc = userQuery.docs[0];        
+          let currentTrades = doc.data().trades;
+          let newTrades = currentTrades.splice(curTradeNum);
+          curTradeNum = -1;
+        
+          await doc.ref.update({
+              trades: newTrades
+          });
+      }
     }
   </script>
   <script src="scriptCollect.js"></script>
