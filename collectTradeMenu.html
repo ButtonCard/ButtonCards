@@ -170,7 +170,7 @@
         }
     }
 
-    async function deleteTrade(){
+    async function declineTrade(){
       const userRef = db.collection('users');
       const userQuery = await userRef
             .where('name', '==', currentUsername)
@@ -185,6 +185,7 @@
               trades: newTrades
           });
       }
+      location.reload();
     }
   </script>
   <script src="scriptCollect.js"></script>
