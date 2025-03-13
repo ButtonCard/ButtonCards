@@ -173,6 +173,7 @@
     async function acceptTrade(){
       console.log("accept");
       if (curTradeNum=-1){
+        console.log("ret -1");
         return;
       }
       const userRef = db.collection('users');
@@ -214,6 +215,7 @@
     }
 
     function removeCardsArray(playCards, remCards) {
+      console.log("remCardArray");
       remCards.forEach(str => {
         const index = playCards.indexOf(str);
         if (index !== -1) {
