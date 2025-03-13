@@ -184,7 +184,7 @@
             .get();
       if (!userQuery.empty) {
           const doc = userQuery.docs[0];
-          let curtheirCards = doc.data().cards;
+          let curTheirCards = doc.data().cards;
           const theirQuery = await userRef
             .where('name', '==', fromNames[curTradeNum])
             .get();
