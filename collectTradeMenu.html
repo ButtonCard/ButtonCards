@@ -183,14 +183,16 @@
             .where('name', '==', currentUsername)
             .get();
       if (!userQuery.empty) {
-          const doc = userQuery.docs[0];        
+          const doc = userQuery.docs[0];
           let curYourCards = doc.data().cards;
           const theirQuery = await userRef
             .where('name', '==', fromNames[curTradeNum])
             .get();
           const doc2 = theirQuery.docs[0];        
           let curTheirCards = doc2.data().cards;
-          if (compareArrays(yourTradeCards, curYourCards) && compareArrays(theirTradeCards,curTheirCards)){
+          console.log(compareArrays(yourTradeCards, curYourCards));
+          console.log(compareArrays(theirTradeCards, curTheirCards));
+          if (compareArrays(yourTradeCards, curYourCards) && compareArrays(theirTradeCards, curTheirCards)){
             const newYourCards = removeCardsArray(curYourCards, yourTradeCards);
             const newTheirCards = removeCardsArray(curTheirCards, theirTradeCards);
           }
@@ -217,27 +219,30 @@
     }
 
     function compareArrays(smallerArray, largerArray) {
-    // Create an object to count occurrences of each string in the smaller array
-    const smallerCount = smallerArray.reduce((acc, str) => {
-        acc[str] = (acc[str] || 0) + 1;
-        return acc;
-    }, {});
-
-    // Create an object to count occurrences of each string in the larger array
-    const largerCount = largerArray.reduce((acc, str) => {
-        acc[str] = (acc[str] || 0) + 1;
-        return acc;
-    }, {});
-
-    // Check if every string in the smaller array has enough occurrences in the larger array
-    for (const str in smallerCount) {
-        if (smallerCount[str] > (largerCount[str] || 0)) {
-            return false;  // If there's not enough of a string, return false
+        // Create an object to count occurrences of each string in the smaller array
+        const smallerCount = smallerArray.reduce((acc, str) => {
+            acc[str] = (acc[str] || 0) + 1;
+            return acc;
+        }, {});
+        console.log(smallerCount);
+    
+        // Create an object to count occurrences of each string in the larger array
+        const largerCount = largerArray.reduce((acc, str) => {
+            acc[str] = (acc[str] || 0) + 1;
+            return acc;
+        }, {});
+        console.log(largerCount);
+    
+        // Check if every string in the smaller array has enough occurrences in the larger array
+        for (const str in smallerCount) {
+            if (smallerCount[str] > largerCount[str]) {
+                console.log("fail count");
+                return false;  // If there's not enough of a string, return false
+            }
         }
+    
+        return true;  // If all strings in the smaller array are accounted for, return true
     }
-
-    return true;  // If all strings in the smaller array are accounted for, return true
-}
 
     function removeCardsArray(playCards, remCards) {
       console.log("remCardArray");
