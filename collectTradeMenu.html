@@ -132,6 +132,7 @@
     }
 
     function changeTrade(){
+          console.log("change");
           for (let i = 0; i < 6; i++) {
             let tRem = document.querySelector(".d" + i);
             let yRem = document.querySelector(".e" + i);
@@ -146,6 +147,7 @@
         let classValue = selectedOption.className;
         let tradeNum = parseInt(classValue.substring(1));
         curTradeNum = tradeNum;
+        console.log("changed to " + curTradeNum);
         let tCards = theirTradeCards[tradeNum];
         let yCards = yourTradeCards[tradeNum];
         console.log(tCards + " " + tradeNum);
