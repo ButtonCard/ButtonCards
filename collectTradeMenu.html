@@ -38,7 +38,7 @@
 
   <h2 class=resultTitle>Recieved Trades</h2>
 
-  <h3>Their cards:</h3>
+  <h3>Your cards: (You Lose)</h3>
   <ul class=viewTheirList>
     <li><img class=d0 src="Pack.png" onClick="enlarge('d0')"></img></li>
     <li><img class=d1 src="Pack.png" onClick="enlarge('d1')"></img></li>
@@ -47,7 +47,7 @@
     <li><img class=d4 src="Pack.png" onClick="enlarge('d4')"></img></li>
     <li><img class=d5 src="Pack.png" onClick="enlarge('d5')"></img></li>
   </ul>
-  <h3>Your cards:</h3>
+  <h3>Their cards: (You Gain)</h3>
   <ul class=viewYourList>
     <li><img class=e0 src="Pack.png" onClick="enlarge('e0')"></img></li>
     <li><img class=e1 src="Pack.png" onClick="enlarge('e1')"></img></li>
@@ -157,14 +157,14 @@
           console.log("test");
           //their cars setting
           if(tCards[i]!=null){
-            let tCard = document.querySelector(".e" + num);
+            let tCard = document.querySelector(".d" + num);
             tCard.src = "img/" + tCards[i] + ".png";
             tCard.style.width = "110px";
           }
 
           //your cards setting
           if(yCards[i]!=null){
-            let yCard = document.querySelector(".d" + num);
+            let yCard = document.querySelector(".e" + num);
             yCard.src = "img/" + yCards[i] + ".png";
             yCard.style.width = "110px";
           }
