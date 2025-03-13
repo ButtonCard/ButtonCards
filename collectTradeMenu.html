@@ -252,6 +252,7 @@
       remCards.forEach(str => {
         const index = playCards.indexOf(str);
         if (index !== -1) {
+            console.log(playCards[index] + " removedArray");
             playCards.splice(index, 1); // Remove the first occurrence of the string
         }
       });
