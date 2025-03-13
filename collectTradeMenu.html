@@ -193,8 +193,8 @@
           console.log(compareArrays(yourTradeCards, curYourCards));
           console.log(compareArrays(theirTradeCards, curTheirCards));
           if (compareArrays(yourTradeCards, curYourCards) && compareArrays(theirTradeCards, curTheirCards)){
-            const newYourCards = removeCardsArray(curYourCards, yourTradeCards);
-            const newTheirCards = removeCardsArray(curTheirCards, theirTradeCards);
+            let newYourCards = removeCardsArray(curYourCards, yourTradeCards);
+            let newTheirCards = removeCardsArray(curTheirCards, theirTradeCards);
             newTheirCards = newTheirCards.concat(curYourCards);
             newYourCards = newYourCards.concat(curTheirCards);
             await doc.ref.update({
