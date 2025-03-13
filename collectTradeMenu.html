@@ -200,7 +200,9 @@
             newTheirCards = newYourCards.concat(thisTheirTradeCards);
             newYourCards = newTheirCards.concat(thisYourTradeCards);
             console.log(thisTheirTradeCards);
+            console.log(newTheirCards);
             console.log(thisYourTradeCards);
+            console.log(newYourCards);
             await doc.ref.update({
                 cards: newYourCards
             });
