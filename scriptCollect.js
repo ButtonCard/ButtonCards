@@ -1026,8 +1026,9 @@ function hidePack() {
 
 
 function winPack() {
-
+    
   let cardPic = document.querySelector(".pack");
+  cardPic.style.width = "300px";
   if (num != 0) {
     cardPic.addEventListener("click", flipCard(cardPic, pack));
     return;
