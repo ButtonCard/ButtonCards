@@ -195,7 +195,17 @@
           if (compareArrays(yourTradeCards, curYourCards) && compareArrays(theirTradeCards, curTheirCards)){
             const newYourCards = removeCardsArray(curYourCards, yourTradeCards);
             const newTheirCards = removeCardsArray(curTheirCards, theirTradeCards);
-          }
+            newTheirCards = newTheirCards.concat(curYourCards);
+            newYourCards = newYourCards.concat(curTheirCards);
+            await doc.ref.update({
+              cards: newYourCards
+            });
+            await doc2.ref.update({
+                cards: newTheirCards
+            });
+            console.log("accepted");
+            declineTrade();
+            }
           else {
             console.log("fail accept");
             if (window.confirm("One side of the trade does not have all the cards. Click OK to decline the trade. Click cancel to keep the trade.")){
@@ -203,18 +213,7 @@
             }
             return;
           }
-          newTheirCards = newTheirCards.concat(curYourCards);
-          newYourCards = newYourCards.concat(curTheirCards);
-        
-          await doc.ref.update({
-              cards: newYourCards
-          });
-          await doc2.ref.update({
-              cards: newTheirCards
-          });
-          console.log("accepted");
       }
-      declineTrade();
       return;
     }
 
