@@ -196,10 +196,12 @@
           console.log(theirTradeCards);
           if (compareArrays(thisYourTradeCards, curTheirCards) && compareArrays(thisTheirTradeCards, curYourCards)){
             let newYourCards = removeCardsArray(curYourCards, thisYourTradeCards);
+            console.log(newYourCards);
             let newTheirCards = removeCardsArray(curTheirCards, thisTheirTradeCards);
-            newTheirCards = newYourCards.concat(thisTheirTradeCards);
-            newYourCards = newTheirCards.concat(thisYourTradeCards);
-            console.log(thisTheirTradeCards);
+            newYourCards = newYourCards.concat(thisTheirTradeCards);
+            console.log(newYourCards);
+            newTheirCards = newTheirCards.concat(thisYourTradeCards);
+            console.log("HERE " + thisTheirTradeCards);
             console.log(newTheirCards);
             console.log(thisYourTradeCards);
             console.log(newYourCards);
