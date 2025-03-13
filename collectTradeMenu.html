@@ -184,21 +184,21 @@
             .get();
       if (!userQuery.empty) {
           const doc = userQuery.docs[0];
-          let curYourCards = doc.data().cards;
+          let curtheirCards = doc.data().cards;
           const theirQuery = await userRef
             .where('name', '==', fromNames[curTradeNum])
             .get();
           const doc2 = theirQuery.docs[0];        
-          let curTheirCards = doc2.data().cards;
+          let curYourCards = doc2.data().cards;
           let thisYourTradeCards = yourTradeCards[curTradeNum];
           let thisTheirTradeCards = theirTradeCards[curTradeNum];
           console.log(yourTradeCards);
           console.log(theirTradeCards);
           if (compareArrays(thisYourTradeCards, curTheirCards) && compareArrays(thisTheirTradeCards, curYourCards)){
-            let newYourCards = removeCardsArray(curYourCards, thisTheirTradeCards);
-            let newTheirCards = removeCardsArray(curTheirCards, thisYourTradeCards);
-            newTheirCards = newYourCards.concat(thisYourTradeCards);
-            newYourCards = newTheirCards.concat(thisTheirTradeCards);
+            let newYourCards = removeCardsArray(curYourCards, thisYourTradeCards);
+            let newTheirCards = removeCardsArray(curTheirCards, thisTheirTradeCards);
+            newTheirCards = newYourCards.concat(thisTheirTradeCards);
+            newYourCards = newTheirCards.concat(thisYourTradeCards);
             console.log(thisTheirTradeCards);
             console.log(newTheirCards);
             console.log(thisYourTradeCards);
