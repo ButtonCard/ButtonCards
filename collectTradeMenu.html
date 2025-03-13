@@ -195,8 +195,8 @@
           console.log(yourTradeCards);
           console.log(theirTradeCards);
           if (compareArrays(thisYourTradeCards, curYourCards) && compareArrays(thisTheirTradeCards, curTheirCards)){
-            let newTheirCards = removeCardsArray(curYourCards, thisYourTradeCards);
-            let newYourCards = removeCardsArray(curTheirCards, thisTheirTradeCards);
+            let newTheirCards = removeCardsArray(curYourCards, thisTheirTradeCards);
+            let newYourCards = removeCardsArray(curTheirCards, thisYourTradeCards);
             newTheirCards = newTheirCards.concat(thisTheirTradeCards);
             newYourCards = newYourCards.concat(thisYourTradeCards);
             console.log(thisTheirTradeCards);
