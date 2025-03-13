@@ -145,7 +145,7 @@
         let tradesSelect = document.querySelector(".tradesSelect");
         let selectedOption = tradesSelect.selectedOptions[0];
         let classValue = selectedOption.className;
-        let tradeNum = parseInt(classValue.substring(1));
+        let tradeNum = parseInt(classValue.substring(1))-1;
         curTradeNum = tradeNum;
         console.log("changed to " + curTradeNum);
         let tCards = theirTradeCards[tradeNum];
