@@ -226,7 +226,7 @@
     }
 
     function compareArrays(smallerArray, largerArray) {
-        if(smallerArray.every(element => largerArray.includes(element))){
+        if(!(smallerArray.every(element => largerArray.includes(element)))){
           return false;
         }
       
