@@ -157,14 +157,14 @@
           console.log("test");
           //their cars setting
           if(tCards[i]!=null){
-            let tCard = document.querySelector(".d" + num);
+            let tCard = document.querySelector(".e" + num);
             tCard.src = "img/" + tCards[i] + ".png";
             tCard.style.width = "110px";
           }
 
           //your cards setting
           if(yCards[i]!=null){
-            let yCard = document.querySelector(".e" + num);
+            let yCard = document.querySelector(".d" + num);
             yCard.src = "img/" + yCards[i] + ".png";
             yCard.style.width = "110px";
           }
@@ -190,15 +190,17 @@
             .get();
           const doc2 = theirQuery.docs[0];        
           let curTheirCards = doc2.data().cards;
+          let thisYourTradeCards = yourTradeCards[curTradeNum];
+          let thisTheirTradeCards = theirTradeCards[curTradeNum];
           console.log(yourTradeCards);
           console.log(theirTradeCards);
-          if (compareArrays(yourTradeCards, curYourCards) && compareArrays(theirTradeCards, curTheirCards)){
-            let newYourCards = removeCardsArray(curYourCards, yourTradeCards);
-            let newTheirCards = removeCardsArray(curTheirCards, theirTradeCards);
-            newTheirCards = newTheirCards.concat(yourTradeCards);
-            newYourCards = newYourCards.concat(theirTradeCards);
-            console.log(theirTradeCards);
-            console.log(yourTradeCards);
+          if (compareArrays(thisYourTradeCards, curYourCards) && compareArrays(thisTheirTradeCards, curTheirCards)){
+            let newYourCards = removeCardsArray(curYourCards, thisYourTradeCards);
+            let newTheirCards = removeCardsArray(curTheirCards, thisTheirTradeCards);
+            newTheirCards = newTheirCards.concat(thisYourTradeCards);
+            newYourCards = newYourCards.concat(thisTheirTradeCards);
+            console.log(thisTheirTradeCards);
+            console.log(thisYourTradeCards);
             await doc.ref.update({
                 cards: newYourCards
             });
