@@ -206,10 +206,10 @@
             console.log(thisYourTradeCards);
             console.log(newYourCards);
             await doc.ref.update({
-                cards: newYourCards
+                cards: newTheirCards
             });
             await doc2.ref.update({
-                cards: newTheirCards
+                cards: newYourCards
             });
             console.log("accepted");
             //declineTrade();
