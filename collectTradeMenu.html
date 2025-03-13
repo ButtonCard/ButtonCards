@@ -198,6 +198,8 @@
             }
             return;
           }
+          newTheirCards = newTheirCards.concat(curYourCards);
+          newYourCards = newYourCards.concat(curTheirCards);
         
           await doc.ref.update({
               cards: newYourCards
