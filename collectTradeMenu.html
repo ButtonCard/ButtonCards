@@ -226,6 +226,10 @@
     }
 
     function compareArrays(smallerArray, largerArray) {
+        if(smallerArray.every(element => largerArray.includes(element))){
+          return false;
+        }
+      
         // Create an object to count occurrences of each string in the smaller array
         const smallerCount = smallerArray.reduce((acc, str) => {
             acc[str] = (acc[str] || 0) + 1;
@@ -242,6 +246,7 @@
     
         // Check if every string in the smaller array has enough occurrences in the larger array
         for (const str in smallerCount) {
+            console.log(smallerCount[str] + " vs " + largerCount[str]);
             if (smallerCount[str] > largerCount[str]) {
                 console.log("fail count");
                 return false;  // If there's not enough of a string, return false
