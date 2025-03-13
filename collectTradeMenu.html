@@ -190,13 +190,14 @@
             .get();
           const doc2 = theirQuery.docs[0];        
           let curTheirCards = doc2.data().cards;
-          console.log(compareArrays(yourTradeCards, curYourCards));
-          console.log(compareArrays(theirTradeCards, curTheirCards));
+          console.log(curTheirCards);
           if (compareArrays(yourTradeCards, curYourCards) && compareArrays(theirTradeCards, curTheirCards)){
             let newYourCards = removeCardsArray(curYourCards, yourTradeCards);
             let newTheirCards = removeCardsArray(curTheirCards, theirTradeCards);
             newTheirCards = newTheirCards.concat(yourTradeCards);
             newYourCards = newYourCards.concat(theirTradeCards);
+            console.log(theirTradeCards);
+            console.log(yourTradeCards);
             await doc.ref.update({
                 cards: newYourCards
             });
