@@ -190,7 +190,8 @@
             .get();
           const doc2 = theirQuery.docs[0];        
           let curTheirCards = doc2.data().cards;
-          console.log(curTheirCards);
+          console.log(yourTradeCards);
+          console.log(theirTradeCards);
           if (compareArrays(yourTradeCards, curYourCards) && compareArrays(theirTradeCards, curTheirCards)){
             let newYourCards = removeCardsArray(curYourCards, yourTradeCards);
             let newTheirCards = removeCardsArray(curTheirCards, theirTradeCards);
