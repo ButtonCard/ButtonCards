@@ -1024,15 +1024,10 @@ function hidePack() {
 }
 
 function showPack(){
-  packSize = code % 10;
+  packSize = 6;
   
   let codeTitle = document.querySelector(".codeTitle");
   codeTitle.innerHTML = "";
-
-  let codeBox = document.querySelector("#packCode");
-  codeBox.style.width = 0;
-  codeBox.style.padding = 0;
-  codeBox.style.border = 0;
 
   let enterButton = document.querySelector("#enter");
   enterButton.style.width = 0;
