@@ -4,7 +4,6 @@ let DCcards = [];
 let VOIDcards = [];
 let ZAVcards = [];
 
-
 let CODES = [2025];
 let specialCODES = [];
 
