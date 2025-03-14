@@ -1024,6 +1024,8 @@ function hidePack() {
 }
 
 function showPack(){
+  packSize = code % 10;
+  
   let codeTitle = document.querySelector(".codeTitle");
   codeTitle.innerHTML = "";
 
