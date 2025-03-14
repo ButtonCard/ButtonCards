@@ -1029,11 +1029,11 @@ function showPack(){
   let codeTitle = document.querySelector(".codeTitle");
   codeTitle.innerHTML = "";
 
-  let enterButton = document.querySelector("#enter");
+  /*let enterButton = document.querySelector("#enter");
   enterButton.style.width = 0;
   enterButton.style.padding = 0;
   enterButton.style.border = 0;
-  enterButton.innerHTML = "";
+  enterButton.innerHTML = "";*/
 
   let cardPic = document.querySelector(".pack");
   cardPic.style.width = "300px";
