@@ -1023,6 +1023,24 @@ function hidePack() {
   hidePack.style.marginBottom = "0px";
 }
 
+function showPack(){
+  let codeTitle = document.querySelector(".codeTitle");
+  codeTitle.innerHTML = "";
+
+  let codeBox = document.querySelector("#packCode");
+  codeBox.style.width = 0;
+  codeBox.style.padding = 0;
+  codeBox.style.border = 0;
+
+  let enterButton = document.querySelector("#enter");
+  enterButton.style.width = 0;
+  enterButton.style.padding = 0;
+  enterButton.style.border = 0;
+  enterButton.innerHTML = "";
+
+  let cardPic = document.querySelector(".pack");
+  cardPic.style.width = "300px";
+}
 
 function winPack() {
     
