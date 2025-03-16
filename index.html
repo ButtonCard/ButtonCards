@@ -110,31 +110,9 @@
                 <label for="loginPassword">Password</label>
                 <input type="password" id="loginPassword" required>
             </div>
-            <div class="checkbox-group">
-                <input type="checkbox" id="rememberMe">
-                <label for="rememberMe">Remember me</label>
-            </div>
             <button type="submit">Login</button>
             <p id="loginMessage" class="message"></p>
         </form>
-        <p class="toggle-form" onclick="toggleForms()">Register Account Name</p>
-    </div>
-
-    <div class="container" id="registerContainer" style="display: none;">
-        <h2 style="text-align: center;">Register Account Name</h2>
-        <form class="form" id="registerForm" onsubmit="return handleRegister(event)">
-            <div class="input-group">
-                <label for="registerUsername">Username</label>
-                <input type="text" id="registerUsername" required>
-            </div>
-            <div class="input-group">
-                <label for="registerPassword">Password</label>
-                <input type="password" id="registerPassword" required minlength="1">
-            </div>
-            <button type="submit">Register</button>
-            <p id="registerMessage" class="message"></p>
-        </form>
-        <p class="toggle-form" onclick="toggleForms()">Login here</p>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
@@ -174,26 +152,6 @@
             }
         }
 
-        /*
-        function toggleForms() {
-            const loginContainer = document.getElementById('loginContainer');
-            const registerContainer = document.getElementById('registerContainer');
-            
-            if (loginContainer.style.display === 'none') {
-                loginContainer.style.display = 'block';
-                registerContainer.style.display = 'none';
-            } else {
-                loginContainer.style.display = 'none';
-                registerContainer.style.display = 'block';
-            }
-            
-            // Clear messages and forms
-            document.getElementById('loginMessage').style.display = 'none';
-            document.getElementById('registerMessage').style.display = 'none';
-            document.getElementById('loginForm').reset();
-            document.getElementById('registerForm').reset();
-        }*/
-
         function showMessage(elementId, message, isError = true) {
             const messageElement = document.getElementById(elementId);
             messageElement.textContent = message;
@@ -221,11 +179,7 @@
                 const userPass = doc.data().password;
                 
                 if (userPass==password) {
-                    if (rememberMe) {
-                        localStorage.setItem('rememberedUser', JSON.stringify({ username: username }));
-                    } else {
-                        localStorage.removeItem('rememberedUser');
-                    }
+                    localStorage.setItem('rememberedUser', JSON.stringify({ username: username }));
                     
                     localStorage.setItem('isLoggedIn', 'true');
                     localStorage.setItem('currentUser', JSON.stringify({
@@ -241,43 +195,6 @@
             }
             return false;
         }
-
-        /*function handleRegister(event) {
-            event.preventDefault();
-            
-            const username = document.getElementById('registerUsername').value;
-            const password = document.getElementById('registerPassword').value;
-            
-            // Validation
-            if (users.some(u => u.username === username)) {
-                showMessage('registerMessage', 'Username already exists');
-                return false;
-            }
-            
-            if (password.length < 1) {
-                showMessage('registerMessage', 'No Password');
-                return false;
-            }
-            
-            // Add new user
-            users.push({
-                username,
-                password
-            });
-            
-            // Save updated users array
-            localStorage.setItem('users', JSON.stringify(users));
-            
-            showMessage('registerMessage', 'Registration successful! Please login.', false);
-            
-            // Clear form and switch to login after short delay
-            setTimeout(() => {
-                document.getElementById('registerForm').reset();
-                toggleForms();
-            }, 2000);
-            
-            return false;
-        }*/
     </script>
 </body>
 </html>
