@@ -69,11 +69,11 @@ body{
 
 .pageTitle {
   text-align:center;
-  font-size:34px;
+  font-size:38px;
   font-family:Helvetica;
   color:darkblue;
   margin-bottom:0px;
-  margin-top:20px;
+  margin-top:25px;
   text-decoration: underline;
 }
 
@@ -82,7 +82,7 @@ body{
   display: flex;
   justify-content: center;
   gap: 80px; /* Space between the options */
-  margin-top: 30px;
+  margin-top: 25px;
   flex-wrap: wrap;
 }
 
