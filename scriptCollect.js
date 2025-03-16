@@ -660,7 +660,7 @@ function hide() {
 
 // ----- OPENING PACKS FUNCTION -----
 
-let packSize = 0;
+let packSize = 6;
 let num = 0;
 let pack = [];
 let code = "";
@@ -673,7 +673,7 @@ function openPack(packNum) {
     return;
   }
 
-  let packOptions = document.querySelector(".pack-image");
+  let packOptions = document.querySelector(".pack-options");
   packOptions.style.display = "none";
   let codeTitle = document.querySelector(".codeTitle");
   codeTitle.style.display = "none";
@@ -935,6 +935,7 @@ function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
+/*
 function checkCode() {
 
 
@@ -1010,7 +1011,7 @@ function checkCode() {
     box.style.backgroundColor = "red";
     setTimeout(function() { box.style.backgroundColor = "white"; }, 500);
   }
-}
+}*/
 
 function enlargePack(card) {
   console.log("enlargePack");
