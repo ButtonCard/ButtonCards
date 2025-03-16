@@ -48,18 +48,18 @@ body{
   font-family: Helvetica;
   font-weight: bold;
   color: black;
-  font-size: 2vw; /* Font size based on viewport width */
+  font-size: 1.5vw; /* Font size based on viewport width */
 }
 
 .logout-button {
   margin-top: 1vh;
   border: darkblue 2px solid;
   border-radius: 7px;
-  padding: 0.5vh 0.5vw; /* Padding proportional to viewport size */
+  padding: 0vh 0.5vw; /* Padding proportional to viewport size */
   background-color: blue;
   color: white;
   font-weight: bold;
-  font-size: 2vw; /* Font size based on viewport width */
+  font-size: 1.5vw; /* Font size based on viewport width */
   width: auto;
   cursor: pointer;
   transition: background-color 0.3s ease;
