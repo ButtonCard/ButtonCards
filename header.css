@@ -10,8 +10,8 @@
   background-color: #070552ff;
   position: relative;
   display: flex;
-  justify-content: center; /* Center logo */
-  align-items: center; /* Center all other content */
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -24,7 +24,7 @@
 .user-info {
   position: absolute;
   top: 10px; 
-  right: 10px; /* Position it at the top-right corner */
+  right: 10px;
   color: darkblue;
   text-align: right;
   font-family: Helvetica;
@@ -35,17 +35,17 @@
   font-family: Helvetica;
   font-weight: bold;
   color: #acd4f5;
-  font-size: 1.7vw; /* Font size based on viewport width */
+  font-size: 1.7vw;
 }
 
 .logout-button {
   border: #990000 2px solid;
   border-radius: 0.4vw;
-  padding: 0.2vh 0.5vw; /* Padding proportional to viewport size */
+  padding: 0.2vh 0.5vw;
   background-color: #660000ff;
   color: white;
   font-weight: bold;
-  font-size: 1.2vw; /* Font size based on viewport width */
+  font-size: 1.2vw;
   width: auto;
   cursor: pointer;
   transition: background-color 0.2s ease;
