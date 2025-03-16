@@ -172,14 +172,6 @@ body{
   
 }
 
-.UPID{
-  text-align:center;
-  font-size:20px;
-  font-family:Helvetica;
-  color:#00CCEE;
-  margin-bottom:-14px;
-}
-
 .cardsList{
   text-align:center;
   font-size:28px;
@@ -187,14 +179,6 @@ body{
   color:#00CCEE;
   margin-bottom:-18px;
   margin-top:10px;
-}
-
-.PCode{
-  text-align:center;
-  font-size:16px;
-  font-family:Helvetica;
-  color:#00CCEE;
-  margin-bottom:7px;
 }
 
 
