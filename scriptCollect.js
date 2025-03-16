@@ -917,6 +917,7 @@ async function results(pack) {
     let cardResult = document.querySelector(".i" + i);
     cardResult.src = "img/" + pack[i];
     cardResult.style.width = "100px";
+    cardResult.style.margin = "5px";
   }
 }
 
