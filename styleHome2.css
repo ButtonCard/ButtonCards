@@ -51,10 +51,10 @@ body{
 }
 
 .logout-button {
-  margin-top: -0.5vw;
+  margin-top: 0.1vw;
   border: #990000 2px solid;
   border-radius: 0.5vw;
-  padding: 0.2vh 0.2vw; /* Padding proportional to viewport size */
+  padding: 0.2vh 0.5vw; /* Padding proportional to viewport size */
   background-color: #660000ff;
   color: white;
   font-weight: bold;
