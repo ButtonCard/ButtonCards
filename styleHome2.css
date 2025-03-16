@@ -183,7 +183,6 @@ body{
 
 .resultList li{
   width:fit-content; 
-  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,4 +190,5 @@ body{
 
 .resultList img{
   width:0px;
+  margin:5px;
 }
