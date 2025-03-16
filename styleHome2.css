@@ -46,7 +46,7 @@ body{
   font-family: Helvetica;
   font-weight: bold;
   color: #acd4f5;
-  font-size: 1.5vw; /* Font size based on viewport width */
+  font-size: 1.7vw; /* Font size based on viewport width */
 }
 
 .logout-button {
