@@ -50,7 +50,7 @@ body{
   font-size: 1.5vw; /* Font size based on viewport width */
 }
 
-.user-info:nth-child(2) .open-pack {
+.user-info:nth-child(2) p {
   margin-bottom: 1vw;
 }
 
