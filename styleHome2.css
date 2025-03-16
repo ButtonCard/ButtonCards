@@ -182,9 +182,9 @@ body{
 }
 
 .resultList li{
-  width: 100px; 
+  width:fit-content; 
   margin: 5px;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
