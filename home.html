@@ -79,13 +79,13 @@
           const currentUser = JSON.parse(localStorage.getItem('currentUser'));
           console.log(currentUser);
           if (currentUser) {
-              if(currentUser=="dc"){
+              if(currentUser.username=="dc"){
                 document.getElementById('username').textContent = `Username: DCMetro`;
-              } else if(currentUser=="gem"){
+              } else if(currentUser.username=="gem"){
                 document.getElementById('username').textContent = `Username: DCGemmaster`;
-              } else if(currentUser=="void"){
+              } else if(currentUser.username=="void"){
                 document.getElementById('username').textContent = `Username: Voidmaxmph`;
-              } else if(currentUser=="zav"){
+              } else if(currentUser.username=="zav"){
                 document.getElementById('username').textContent = `Username: zaveeya785`;
               } else{
                 document.getElementById('username').textContent = `Username: SketchyMan`;
