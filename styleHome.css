@@ -91,7 +91,7 @@ body{
   color: darkblue;
   font-family: Helvetica;
   width: 300px;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 .pack-image {
@@ -110,6 +110,7 @@ body{
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: -5px;
 }
 
 .open-pack:hover {
