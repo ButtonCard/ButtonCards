@@ -32,10 +32,28 @@
   </div>
   <div class=line></div>
 
-  <h1 class="codeTitle">Open Your Packs Here:</h1>
-  <button id="enter" name="enter" onclick="showPack()">Open Pack</button>
+  <h1 class="codeTitle">Choose a Pack to Open:</h1>
+  <div class="pack-options">
+    <div class="pack-option">
+      <h3>Pack 1</h3>
+      <img class="pack-image" src="Pack1.png" alt="Pack 1">
+      <button class="open-pack" style="background-color: #FF5733;" onclick="openPack(1)">Open Pack</button>
+    </div>
+  
+    <div class="pack-option">
+      <h3>Pack 2</h3>
+      <img class="pack-image" src="Pack2.png" alt="Pack 2">
+      <button class="open-pack" style="background-color: #33FF57;" onclick="openPack(2)">Open Pack</button>
+    </div>
+  
+    <div class="pack-option">
+      <h3>Pack 3</h3>
+      <img class="pack-image" src="Pack3.png" alt="Pack 3">
+      <button class="open-pack" style="background-color: #3357FF;" onclick="openPack(3)">Open Pack</button>
+    </div>
+  </div>
+  
   <img class=pack src="Pack.png" onclick="openPack()"></img>
-
   <h2 class=resultTitle><u>Pack Results!</u></h2>
   <h3 class=cardsList>Cards: </h3>
   <h3 class=UPID>UPID: </h3>
