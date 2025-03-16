@@ -215,11 +215,12 @@ body{
   color: white;
 }
 
-.codeTitle {
+.pageTitle {
   text-align:center;
   font-size:34px;
   font-family:Helvetica;
   color:darkblue;
   margin-bottom:0px;
   margin-top:20px;
+  text-decoration: underline;
 }
