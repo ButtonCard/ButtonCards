@@ -172,6 +172,8 @@ body{
 .resultList{
   padding:0;
   margin:auto;
+  margin-left:2.5%;
+  margin-right:2.5%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
