@@ -87,14 +87,14 @@ body{
 }
 
 .pack-option h3 {
-  font-size: 22px;
+  font-size: 24px;
   color: darkblue;
   font-family: Helvetica;
 }
 
 .pack-image {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 15px;
   margin-bottom: 10px;
 }
@@ -103,7 +103,7 @@ body{
   border: black 2px solid;
   border-radius: 10px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   font-weight: bold;
   cursor: pointer;
