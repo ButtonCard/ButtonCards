@@ -896,15 +896,21 @@ async function results(pack) {
   let currentCards = doc.data().cards;
   let newCards = currentCards;
   console.log(doc.data());
+
   
   let cardsOut = document.querySelector(".resultCards");
   cardsOut.innerHTML = "Cards: [";
   for (let i = 0; i < pack.length; i++) {
     cardsOut.innerHTML = cardsOut.innerHTML + pack[i].substring(0, pack[i].length - 4) + ", ";
     newCards = newCards.concat([pack[i].substring(0, pack[i].length - 4)]);
+
+    let j = i+1;
+    let curResultCard = document.querySelector(".resultList:nth-child(" + j + ")");
+    curResultCard.style.display = "flex";
   }
   cardsOut.innerHTML = cardsOut.innerHTML.substring(0, cardsOut.innerHTML.length - 2) + "]";
   cardsOut.style.display = "block";
+
   
   await doc.ref.update({
       cards: newCards
