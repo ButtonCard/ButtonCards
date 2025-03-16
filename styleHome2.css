@@ -190,11 +190,7 @@ body{
   align-items: center;
 }
 
-.flexMe li img{
-  width: 100%; 
-  height: auto;
-}
-
 .resultList img{
+  float:left;
   width:0px;
 }
