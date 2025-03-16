@@ -669,6 +669,7 @@ function openPack(packNum) {
 
   let cardPic = document.querySelector(".pack");
   if (num != 0) {
+    cardPic.style.width = "300px";
     cardPic.addEventListener("click", flipCard(cardPic, pack));
     return;
   }
@@ -853,11 +854,6 @@ function openPack(packNum) {
 
   shuffle(pack);
   console.log(pack);
-
-  let cardPic = document.querySelector(".pack");
-  cardPic.style.width = "300px";
-
-  cardPic.addEventListener("click", flipCard(cardPic, pack));
 }
 
 function flipCard(cardPic, pack) {
