@@ -903,10 +903,6 @@ async function results(pack) {
   for (let i = 0; i < pack.length; i++) {
     cardsOut.innerHTML = cardsOut.innerHTML + pack[i].substring(0, pack[i].length - 4) + ", ";
     newCards = newCards.concat([pack[i].substring(0, pack[i].length - 4)]);
-
-    let j = i+1;
-    let curResultCard = document.querySelector(".resultList:nth-child(" + j + ")");
-    curResultCard.style.display = "flex";
   }
   cardsOut.innerHTML = cardsOut.innerHTML.substring(0, cardsOut.innerHTML.length - 2) + "]";
   cardsOut.style.display = "block";
