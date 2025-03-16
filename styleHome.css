@@ -102,11 +102,6 @@ body{
   border: black 4px solid;
 }
 
-.pack-image:hover {
-  border: white 4px solid;
-  opacity: 80%;
-}
-
 .open-pack {
   border: black 3px solid;
   border-radius: 10px;
@@ -121,7 +116,8 @@ body{
 
 .open-pack:hover {
   border: white 3px solid;
-  background-color: black;
+  color: black;
+  opacity:80%;
 }
 
 /* Add custom colors for each pack */
