@@ -24,7 +24,6 @@ body{
   justify-content: center; /* Center logo */
   align-items: center; /* Center all other content */
   flex-direction: column;
-  padding-top: 20px;
 }
 
 .line{
