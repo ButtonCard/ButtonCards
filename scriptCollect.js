@@ -69,7 +69,7 @@ let AllV = [];
 let SP = P.concat(T);
 CODES = CODES.concat(specialCODES);
 
-//let pageLogo = document.querySelector(".logoLink").getAttribute("href");
+let pageLogo = document.querySelector(".logoLink").getAttribute("href");
 let player;
 
 let FULLdupes = FULLcards.slice(0);
@@ -84,7 +84,7 @@ for (let i = 0; i < OWNEDcards.length; i++) {
 if (pageLogo != "collections.html") {
   player = document.querySelector(".active").getAttribute("href");
   collectTab();
-}
+}*/
 
 
 
