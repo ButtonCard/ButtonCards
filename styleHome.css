@@ -167,3 +167,8 @@ input{
   color:white;
   font-weight:bold;
 }
+
+.username, .token {
+  font-weight: bold;
+  color: black;
+}
