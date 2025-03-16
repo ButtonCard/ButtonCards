@@ -3,7 +3,6 @@ html {
   width: 100%;
 }
 
-
 body{
   background-color:#00CCEE;
   text-align:center;
@@ -122,7 +121,7 @@ body{
 
 /* Add custom colors for each pack */
 .pack-option:nth-child(1) .open-pack {
-  background-color: #FF5799; /* Red for Pack 1 */
+  background-color: #FF5733; /* Red for Pack 1 */
 }
 
 .pack-option:nth-child(2) .open-pack {
