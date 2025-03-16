@@ -12,7 +12,7 @@ body{
 .logo{
   width:60%;
   float:true;
-  margin-top:5px;
+  margin-top:10px;
 }
 
 .logoBack {
@@ -51,21 +51,22 @@ body{
 }
 
 .logout-button {
-  margin-top: 0.5vw;
-  border: darkblue 2px solid;
+  margin-top: 0.3vw;
+  border: #990000 2px solid;
   border-radius: 0.5vw;
   padding: 0vh 0.5vw; /* Padding proportional to viewport size */
-  background-color: blue;
+  background-color: #660000ff;
   color: white;
   font-weight: bold;
-  font-size: 1.5vw; /* Font size based on viewport width */
+  font-size: 1.2vw; /* Font size based on viewport width */
   width: auto;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .logout-button:hover {
-  background-color: black;
+  background-color: red;
+  border: white 2px solid;
 }
 
 /* New Section for Pack Options */
