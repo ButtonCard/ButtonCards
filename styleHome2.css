@@ -50,9 +50,8 @@ body{
 }
 
 .logout-button {
-  margin-top: -5px;
   border: #990000 2px solid;
-  border-radius: 0.5vw;
+  border-radius: 0.7vw;
   padding: 0.2vh 0.5vw; /* Padding proportional to viewport size */
   background-color: #660000ff;
   color: white;
@@ -60,12 +59,12 @@ body{
   font-size: 1.2vw; /* Font size based on viewport width */
   width: auto;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .logout-button:hover {
-  background-color: red;
-  border: white 2px solid;
+  background-color: #cc0000ff;
+  border: black 2px solid;
 }
 
 /* New Section for Pack Options */
@@ -184,7 +183,7 @@ body{
   text-align:center;
   font-size:28px;
   font-family:Helvetica;
-  color:darkblue;
+  color:black;
   margin-bottom:18px;
   margin-top:10px;
   display:none;
