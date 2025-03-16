@@ -69,7 +69,7 @@ let AllV = [];
 let SP = P.concat(T);
 CODES = CODES.concat(specialCODES);
 
-let pageLogo = document.querySelector(".logoLink").getAttribute("href");
+//let pageLogo = document.querySelector(".logoLink").getAttribute("href");
 let player;
 
 let FULLdupes = FULLcards.slice(0);
