@@ -658,7 +658,7 @@ function hide() {
 }
 
 
-// ----- OPENING PACKS FUNCTION -----
+// ---------- OPENING PACKS FUNCTION ----------
 
 let packSize = 6;
 let num = 0;
@@ -854,6 +854,9 @@ function openPack(packNum) {
 
   shuffle(pack);
   console.log(pack);
+
+  cardPic.style.width = "300px";
+  cardPic.addEventListener("click", flipCard(cardPic, pack));
 }
 
 function flipCard(cardPic, pack) {
