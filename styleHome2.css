@@ -12,7 +12,7 @@ body{
 .logo{
   width:60%;
   float:true;
-  margin-top:10px;
+  margin-top:7px;
 }
 
 .logoBack {
@@ -46,15 +46,15 @@ body{
   margin: 0;
   font-family: Helvetica;
   font-weight: bold;
-  color: darkblue;
+  color: #acd4f5;
   font-size: 1.5vw; /* Font size based on viewport width */
 }
 
 .logout-button {
-  margin-top: 0.3vw;
+  margin-top: -0.5vw;
   border: #990000 2px solid;
   border-radius: 0.5vw;
-  padding: 0vh 0.5vw; /* Padding proportional to viewport size */
+  padding: 0.2vh 0.2vw; /* Padding proportional to viewport size */
   background-color: #660000ff;
   color: white;
   font-weight: bold;
