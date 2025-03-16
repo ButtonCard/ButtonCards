@@ -123,22 +123,13 @@ body{
 .pack-option:nth-child(1) .open-pack {
   background-color: #FF5733; /* Red for Pack 1 */
 }
-.pack-option:nth-child(1) .h3 {
-  innerHTML: "HELLO"; /* Red for Pack 1 */
-}
 
 .pack-option:nth-child(2) .open-pack {
   background-color: #33FF57; /* Green for Pack 2 */
 }
-.pack-option:nth-child(2) .h3 {
-  innerHTML: waiting; /* Red for Pack 1 */
-}
 
 .pack-option:nth-child(3) .open-pack {
   background-color: #3357FF; /* Blue for Pack 3 */
-}
-.pack-option:nth-child(3) .h3 {
-  innerHTML: "HEY"; /* Red for Pack 1 */
 }
 
 .pack{
