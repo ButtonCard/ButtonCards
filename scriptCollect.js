@@ -886,7 +886,7 @@ async function results(pack) {
 
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.color = "darkblue";
-  resTitle.style.marginTop = "30px";
+  resTitle.style.marginTop = "4px";
 
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
