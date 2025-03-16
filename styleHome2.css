@@ -141,49 +141,19 @@ body{
   background-color: #cc0000ff; /* Blue for Pack 3 */
 }
 
+/* Opening Pack Cards */
 .pack{
   margin-top:25px;
   width:0px;
   margin-bottom:10px;
 }
 
-.resultList{
-  /*background-color:#00CCEE;*/
-  width:95%;
-  padding:0;
-  margin:auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  background-color: #000044;
-  border: 4px solid blue;
-  display:none;
-}
-
-.resultList li{
-  width: 100px; 
-  margin:5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flexMe li img{
-  width: 100%; 
-  height: auto;
-  float:left;
-}
-
-.resultList img{
-  width:0px;
-}
-
+/* Results Page */
 .resultTitle{
   text-align:center;
   font-size:40px;
   font-family:Helvetica;
-  color:darkblue;
+  color:#070552ff;
   margin-bottom:-12px;
   margin-top:4px;  
   display:none;
@@ -199,28 +169,33 @@ body{
   display:none;
 }
 
-
-
-.topnav {
-  overflow: hidden;
-  background-color: darkblue;
+.resultList{
+  width:80%;
+  padding:0;
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: #070552ff;
+  border: 4px solid #ffce00ff;
+  display:none;
 }
 
-.topnav a {
+.resultList li{
+  width: 100px; 
+  margin:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexMe li img{
+  width: 100%; 
+  height: auto;
   float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: darkcyan;
-  color: white;
+.resultList img{
+  width:0px;
 }
