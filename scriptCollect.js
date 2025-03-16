@@ -881,12 +881,10 @@ function flipCard(cardPic, pack) {
 async function results(pack) {
   console.log(pack);
   let resultBack = document.querySelector(".resultList");
-  resultBack.style.backgroundColor = "#000044";
-  resultBack.style.border = "4px solid blue";
+  resultBack.style.display = "block";
 
   let resTitle = document.querySelector(".resultTitle");
-  resTitle.style.color = "darkblue";
-  resTitle.style.marginTop = "4px";
+  resTitle.style.display = "block";
 
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -924,84 +922,6 @@ function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
-/*
-function checkCode() {
-
-
-  code = document.getElementById("packCode").value;
-  let valid = false;
-  console.log("Check");
-
-  //OVERRIDE
-  if (code == "Bday26") {
-    console.log("Win");
-    let codeTitle = document.querySelector(".codeTitle");
-    codeTitle.innerHTML = "";
-
-    let codeBox = document.querySelector("#packCode");
-    codeBox.style.width = 0;
-    codeBox.style.padding = 0;
-    codeBox.style.border = 0;
-
-    let enterButton = document.querySelector("#enter");
-    enterButton.style.width = 0;
-    enterButton.style.padding = 0;
-    enterButton.style.border = 0;
-    enterButton.innerHTML = "";
-
-    let cardPic = document.querySelector(".pack");
-    cardPic.style.width = "300px";
-    winPack();
-    return;
-  }
-
-
-  for (let i = 0; i < CODES.length; i++) {
-    console.log("Checking");
-    if (code == CODES[i]) {
-      valid = true;
-      packSize = code % 10;
-    }
-  }
-
-  console.log("Check3");
-  //if (valid && localStorage.getItem("redeemedCode") != code) {
-  if (valid) {
-    let codeTitle = document.querySelector(".codeTitle");
-    codeTitle.innerHTML = "";
-
-    let codeBox = document.querySelector("#packCode");
-    codeBox.style.width = 0;
-    codeBox.style.padding = 0;
-    codeBox.style.border = 0;
-
-    let enterButton = document.querySelector("#enter");
-    enterButton.style.width = 0;
-    enterButton.style.padding = 0;
-    enterButton.style.border = 0;
-    enterButton.innerHTML = "";
-
-    let cardPic = document.querySelector(".pack");
-    cardPic.style.width = "300px";
-
-    localStorage.setItem("redeemedCode", code);
-  }
-  else if (localStorage.getItem("redeemedCode") == code) {
-    console.log("Redeemed");
-    let box = document.querySelector("#packCode");
-    box.value = "";
-    box.style.backgroundColor = "orange";
-    setTimeout(function() { box.style.backgroundColor = "white"; }, 500);
-  }
-  else {
-    console.log("Wrong");
-    let box = document.querySelector("#packCode");
-    box.value = "";
-    box.style.backgroundColor = "red";
-    setTimeout(function() { box.style.backgroundColor = "white"; }, 500);
-  }
-}*/
-
 function enlargePack(card) {
   console.log("enlargePack");
   let cardImg = document.querySelector("." + card);
@@ -1029,59 +949,6 @@ function showPack(){
 
   let cardPic = document.querySelector(".pack");
   cardPic.style.width = "300px";
-}
-
-function winPack() {
-    
-  let cardPic = document.querySelector(".pack");
-  cardPic.style.width = "300px";
-  if (num != 0) {
-    cardPic.addEventListener("click", flipCard(cardPic, pack));
-    return;
-  }
-
-  let inPack = 0;
-
-  //Exclusive2
-  if (inPack < 1 && Math.floor(Math.random() * 20) + 1 == 1) {
-    pack.push("F1-26.png");
-    inPack++;
-  }
-
-  if (inPack < 1 && Math.floor(Math.random() * 4) + 1 == 1) {
-    pack.push(Bt[Math.floor(Math.random() * (Bt.length))] + ".png");
-    inPack++;
-  }
-
-  if (inPack < 1) {
-    pack.push("Nothing.png");
-    inPack++;
-  }
-
-
-
-
-
-
-  // //Banana2
-  // if (inPack < 2 && Math.floor(Math.random() * 4) + 1 == 1) {
-  //   pack.push(Ba[Math.floor(Math.random() * (Ba.length))] + ".png");
-  //   inPack++;
-  // }
-
-  // //UNCOMMON
-  // if (inPack < 2 && Math.floor(Math.random() * 3) + 1 == 1) {
-  //   pack.push(U[Math.floor(Math.random() * (U.length))] + ".png");
-  //   inPack++;
-  // }
-
-  //COMMON
-  // for (let i = inPack; i < 1; i++) {
-  //   pack.push(C[Math.floor(Math.random() * (C.length))] + ".png");
-  // }
-
-  shuffle(pack);
-  cardPic.addEventListener("click", flipCard(cardPic, pack));
 }
 
 // let C = ["1-1","1-2" ,"2-1","2-2" ,"3-1","3-2" ,"4-1","4-2" ,"5-1","5-2" ,"6-1","6-2" ,"7-1","7-2","7-3" ];
