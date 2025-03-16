@@ -24,7 +24,6 @@ body{
   justify-content: center; /* Center logo */
   align-items: center; /* Center all other content */
   flex-direction: column;
-  padding: 10px 0;
 }
 
 .line{
@@ -34,13 +33,12 @@ body{
 }
 
 .user-info {
+  position: absolute;
+  top: 10px; 
+  right: 10px; /* Position it at the top-right corner */
   color: darkblue;
   text-align: right;
   font-family: Helvetica;
-  margin-bottom: 0.3vw;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
 }
 
 .user-info p {
@@ -49,6 +47,7 @@ body{
   font-weight: bold;
   color: #acd4f5;
   font-size: 1.5vw; /* Font size based on viewport width */
+  margin-bottom: -0.1vw;
 }
 
 .logout-button {
