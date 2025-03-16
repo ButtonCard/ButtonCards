@@ -47,11 +47,10 @@ body{
   font-weight: bold;
   color: #acd4f5;
   font-size: 1.5vw; /* Font size based on viewport width */
-  margin-bottom: -0.1vw;
 }
 
 .logout-button {
-  margin-top: 0.3vw;
+  margin-top: 0.2vw;
   border: #990000 2px solid;
   border-radius: 0.5vw;
   padding: 0.2vh 0.5vw; /* Padding proportional to viewport size */
