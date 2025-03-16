@@ -676,8 +676,8 @@ function openPack(packNum) {
 
   let packOptions = document.querySelector(".pack-options");
   packOptions.style.display = "none";
-  let codeTitle = document.querySelector(".codeTitle");
-  codeTitle.style.display = "none";
+  let pageTitle = document.querySelector(".pageTitle");
+  pageTitle.style.display = "none";
 
   let inPack = 0;
 
