@@ -23,9 +23,8 @@
     <a class="logoLink" href="collections.html">
       <img class="logo" src="BCC_Logo.png" alt="Logo">
     </a>
-    <!-- Username and "Thank you" Message -->
     <div class="user-info">
-      <p id="username">Username: Missingno</p>
+      <p id="username">Username: Loading</p>
       <p id="token">Pack Tokens: 100</p>
       <button class="logout-button" onclick="handleLogout()">LOGOUT</button>
     </div>
@@ -80,7 +79,17 @@
           const currentUser = JSON.parse(localStorage.getItem('currentUser'));
           console.log(currentUser);
           if (currentUser) {
-              document.getElementById('username').textContent = `Username: ${currentUser.username}`;
+              if(currentUser=="dc"){
+                document.getElementById('username').textContent = `Username: DCMetro`;
+              } else if(currentUser=="gem"){
+                document.getElementById('username').textContent = `Username: DCGemmaster`;
+              } else if(currentUser=="void"){
+                document.getElementById('username').textContent = `Username: Voidmaxmph`;
+              } else if(currentUser=="zav"){
+                document.getElementById('username').textContent = `Username: zaveeya785`;
+              } else{
+                document.getElementById('username').textContent = `Username: SketchyMan`;
+              }
           } else {
               // If no user is logged in, redirect to login page
               //window.location.href = 'index.html';
@@ -107,37 +116,6 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-
-    async function updateCards() {
-      const userRef = db.collection('users');
-      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      const userQuery = await userRef
-            .where('name', '==', currentUser.username.toLowerCase())
-            .get();
-      
-      if (!userQuery.empty) {
-            const doc = userQuery.docs[0];
-
-        
-            const currentLogins = doc.data().logins;
-            const currentCards = doc.data().cards;
-            const newLogins = currentLogins + 1;
-            const newCards = currentCards.concat(["01-5"]);
-            console.log(doc.data());
-            console.log(doc.data().logins);
-            
-            await doc.ref.update({
-                cards: newCards,
-                logins: newLogins
-            });
-      } else {
-      await userRef.add({
-          name: currentUser.username.toLowerCase(),
-          cards: [],
-          logins: 0
-      });
-      }
-    }
 
     function handleLogout() {
         localStorage.removeItem('isLoggedIn');
