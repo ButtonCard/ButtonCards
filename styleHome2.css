@@ -50,8 +50,9 @@ body{
 }
 
 .logout-button {
+  top:2vw;
   border: #990000 2px solid;
-  border-radius: 0.7vw;
+  border-radius: 0.5vw;
   padding: 0.2vh 0.5vw; /* Padding proportional to viewport size */
   background-color: #660000ff;
   color: white;
@@ -108,14 +109,14 @@ body{
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease;
   margin-bottom: -5px;
 }
 
 .open-pack:hover {
   border: white 3px solid;
   color: black;
-  opacity:80%;
+  opacity: 80%;
 }
 
 /* Add custom colors for each pack */
