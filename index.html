@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - BCCO</title>
+    <title>Login - BUTTON Cards</title>
+    <link rel="icon" type="image/png" href="BC_Icon.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -99,7 +100,7 @@
 </head>
 <body>
     <div class="container" id="loginContainer">
-        <h2 style="text-align: center;">Login to ButtonCraft Cards ONLINE</h2>
+        <h2 style="text-align: center;">Login to BUTTON Cards</h2>
         <form class="form" id="loginForm" onsubmit="return handleLogin(event)">
             <div class="input-group">
                 <label for="loginUsername">Username</label>
@@ -136,6 +137,24 @@
         <p class="toggle-form" onclick="toggleForms()">Login here</p>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyCLjx4Ys4qnzMfRog74NExTUHdZism8u-I",
+          authDomain: "buttoncards.firebaseapp.com",
+          databaseURL: "https://buttoncards-default-rtdb.firebaseio.com",
+          projectId: "buttoncards",
+          storageBucket: "buttoncards.firebasestorage.app",
+          messagingSenderId: "1001795754069",
+          appId: "1:1001795754069:web:1cbf4305a68f9b45eb5cdc",
+          measurementId: "G-F56PTH5YNL"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
     <script>
         // Initialize users array from localStorage or create empty array
         let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -155,6 +174,7 @@
             }
         }
 
+        /*
         function toggleForms() {
             const loginContainer = document.getElementById('loginContainer');
             const registerContainer = document.getElementById('registerContainer');
@@ -172,7 +192,7 @@
             document.getElementById('registerMessage').style.display = 'none';
             document.getElementById('loginForm').reset();
             document.getElementById('registerForm').reset();
-        }
+        }*/
 
         function showMessage(elementId, message, isError = true) {
             const messageElement = document.getElementById(elementId);
@@ -190,30 +210,39 @@
             const username = document.getElementById('loginUsername').value;
             const password = document.getElementById('loginPassword').value;
             const rememberMe = document.getElementById('rememberMe').checked;
-            
-            const user = users.find(u => u.username === username && u.password === password);
-            
-            if (user) {
-                if (rememberMe) {
-                    localStorage.setItem('rememberedUser', JSON.stringify({ username: username }));
+
+            const userRef = db.collection('users');
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const userQuery = await userRef
+                .where('name', '==', username.toLowerCase())
+                .get();
+            if (!userQuery.empty) {
+                const doc = userQuery.docs[0];
+                const userPass = doc.data().password;
+                
+                if (userPass==password) {
+                    if (rememberMe) {
+                        localStorage.setItem('rememberedUser', JSON.stringify({ username: username }));
+                    } else {
+                        localStorage.removeItem('rememberedUser');
+                    }
+                    
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('currentUser', JSON.stringify({
+                        username: user.username
+                    }));
+                    
+                    window.location.href = 'home.html';
                 } else {
-                    localStorage.removeItem('rememberedUser');
+                    showMessage('loginMessage', 'Invalid Password');
                 }
-                
-                localStorage.setItem('isLoggedIn', 'true');
-                localStorage.setItem('currentUser', JSON.stringify({
-                    username: user.username
-                }));
-                
-                window.location.href = 'home.html';
             } else {
-                showMessage('loginMessage', 'Invalid username or password');
+                showMessage('loginMessage', 'User Does Not Exist');
             }
-            
             return false;
         }
 
-        function handleRegister(event) {
+        /*function handleRegister(event) {
             event.preventDefault();
             
             const username = document.getElementById('registerUsername').value;
@@ -248,7 +277,7 @@
             }, 2000);
             
             return false;
-        }
+        }*/
     </script>
 </body>
 </html>
