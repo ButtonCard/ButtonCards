@@ -40,6 +40,7 @@ body{
   text-align: right;
   font-family: Helvetica;
   font-size: 18px;
+  margin-bottom: -0.1vw;
 }
 
 .user-info p {
@@ -51,7 +52,7 @@ body{
 }
 
 .logout-button {
-  margin-top: 0.1vw;
+  margin-top: 0.3vw;
   border: #990000 2px solid;
   border-radius: 0.5vw;
   padding: 0.2vh 0.5vw; /* Padding proportional to viewport size */
