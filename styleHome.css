@@ -216,14 +216,14 @@ body{
 
 .codeTitle {
   text-align:center;
-  font-size:30px;
+  font-size:34px;
   font-family:Helvetica;
   color:darkblue;
   margin-bottom:0px;
   margin-top:20px;
 }
 
-input{
+/*input{
   margin-bottom:30px;
   height:40px;
   width:190px;
@@ -232,9 +232,9 @@ input{
   border-radius:10px;
   padding-left:12px;
   float:true;
-}
+}*/
 
-#enter{
+/*#enter{
   margin-bottom:30px;
   border:darkblue 2px solid;
   border-radius:7px;
@@ -243,4 +243,4 @@ input{
   background-color:blue;
   color:white;
   font-weight:bold;
-}
+}*/
