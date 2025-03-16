@@ -50,7 +50,7 @@ body{
 }
 
 .logout-button {
-  margin-top: 0.2vw;
+  margin-top: -5px;
   border: #990000 2px solid;
   border-radius: 0.5vw;
   padding: 0.2vh 0.5vw; /* Padding proportional to viewport size */
@@ -180,13 +180,14 @@ body{
   display:none;
 }
 
-.cardsList{
+.resultCards{
   text-align:center;
   font-size:28px;
   font-family:Helvetica;
-  color:#00CCEE;
+  color:darkblue;
   margin-bottom:18px;
   margin-top:10px;
+  display:none;
 }
 
 
