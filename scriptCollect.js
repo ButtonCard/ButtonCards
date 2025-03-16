@@ -881,7 +881,7 @@ function flipCard(cardPic, pack) {
 async function results(pack) {
   console.log(pack);
   let resultBack = document.querySelector(".resultList");
-  resultBack.style.display = "block";
+  resultBack.style.display = "flex";
 
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.display = "block";
