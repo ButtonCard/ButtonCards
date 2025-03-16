@@ -84,7 +84,7 @@ for (let i = 0; i < OWNEDcards.length; i++) {
 if (pageLogo != "collections.html") {
   player = document.querySelector(".active").getAttribute("href");
   collectTab();
-}*/
+}
 
 
 
