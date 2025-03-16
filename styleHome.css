@@ -99,6 +99,12 @@ body{
   height: 200px;
   border-radius: 15px;
   margin-bottom: 10px;
+  border: black 4px solid;
+}
+
+.pack-image:hover {
+  border: white 4px solid;
+  opacity: 80%;
 }
 
 .open-pack {
