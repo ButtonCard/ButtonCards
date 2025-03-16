@@ -912,10 +912,6 @@ async function results(pack) {
       cards: newCards
   });
 
-  let PCodeOut = document.querySelector(".PCode");
-  PCodeOut.innerHTML = "Pack Code: " + code;
-  PCodeOut.style.color = "#555555";
-
   for (let i = 0; i < pack.length; i++) {
     console.log(i);
     let cardResult = document.querySelector(".i" + i);
