@@ -886,16 +886,7 @@ async function results(pack) {
 
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.color = "darkblue";
-  resTitle.style.marginTop = "-85px";
-
-  let ID = document.querySelector(".UPID");
-  const d = new Date();
-  let time = d.getTime();
-  let rand = Math.floor(Math.random() * 9) + 1;
-
-  let newID = rand * time;
-  ID.innerHTML = "UPID: " + rand + (Math.floor(Math.random() * 999) + 1) + newID + (Math.floor(Math.random() * 999) + 2);
-  ID.style.color = "black";
+  resTitle.style.marginTop = "30px";
 
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
