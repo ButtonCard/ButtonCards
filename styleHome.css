@@ -69,6 +69,64 @@ body{
   background-color: black;
 }
 
+/* New Section for Pack Options */
+.pack-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between the options */
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.pack-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pack-option h3 {
+  font-size: 2.5vw;
+  color: darkblue;
+  font-family: Helvetica;
+}
+
+.pack-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.open-pack {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.5vw;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.open-pack:hover {
+  opacity: 0.9;
+}
+
+/* Add custom colors for each pack */
+.open-pack:nth-child(1) {
+  background-color: #FF5733; /* Red for Pack 1 */
+}
+
+.open-pack:nth-child(2) {
+  background-color: #33FF57; /* Green for Pack 2 */
+}
+
+.open-pack:nth-child(3) {
+  background-color: #3357FF; /* Blue for Pack 3 */
+}
+
 .pack{
   margin-top:25px;
   width:0px;
