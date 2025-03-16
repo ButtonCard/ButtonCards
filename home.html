@@ -11,11 +11,6 @@
 </head>
 
 <body>
-  <script>
-        /*if (localStorage.getItem('isLoggedIn') !== 'true') {
-            window.location.href = 'index.html';
-        }*/
-  </script>
   
   <!-- Header Section -->
   <div class="logoBack">
@@ -30,6 +25,7 @@
   </div>
   <div class=line></div>
 
+  <!-- Pack Store Options -->
   <h1 class="pageTitle">Pack Store</h1>
   <div class="pack-options">
     <div class="pack-option">
@@ -50,8 +46,11 @@
       <button class="open-pack" onclick="openPack(3)">Open Pack</button>
     </div>
   </div>
-  
+
+  <!-- Pack Opening -->
   <img class=pack src="Pack.png" onclick="openPack()"></img>
+
+  <!-- Pack Results -->
   <h2 class=resultTitle><u>Pack Results!</u></h2>
   <h3 class=resultCards>Cards: </h3>
   <ul class=resultList>
@@ -66,11 +65,12 @@
     <li><img class=i8 src="Pack.png" onClick="enlargePack('i8')"></img></li>
     <li><img class=i9 src="Pack.png" onClick="enlargePack('i9')"></img></li>
   </ul>
-  
+
+  <!-- Scripts -->
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
-  <script src="scriptCollect.js"></script>
   <script src="header.js"></script>
+  <script src="scriptCollect.js"></script>
 </body>
 
 </html>
