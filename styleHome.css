@@ -42,6 +42,23 @@ body{
   margin: 0;
 }
 
+.logout-button {
+  margin-top: 10px;
+  border: darkblue 2px solid;
+  border-radius: 7px;
+  padding: 6px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  width: 150px; /* Make it a consistent width */
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout-button:hover {
+  background-color: black;
+}
+
 .pack{
   margin-top:25px;
   width:0px;
