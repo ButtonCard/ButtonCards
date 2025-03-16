@@ -121,15 +121,15 @@ body{
 }
 
 /* Add custom colors for each pack */
-.open-pack:nth-child(0) {
-  background-color: #FF5733; /* Red for Pack 1 */
-}
-
 .open-pack:nth-child(1) {
-  background-color: #33FF57; /* Green for Pack 2 */
+  background-color: #FF5799; /* Red for Pack 1 */
 }
 
 .open-pack:nth-child(2) {
+  background-color: #33FF57; /* Green for Pack 2 */
+}
+
+.open-pack:nth-child(3) {
   background-color: #3357FF; /* Blue for Pack 3 */
 }
 
