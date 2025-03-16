@@ -191,5 +191,6 @@ body{
 }
 
 .resultList img{
-  width:0px;
+  width:100%;
+  height:auto;
 }
