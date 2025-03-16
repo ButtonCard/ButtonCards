@@ -657,18 +657,24 @@ function hide() {
   owners.innerHTML = "";
 }
 
+
+// ----- OPENING PACKS FUNCTION -----
+
 let packSize = 0;
 let num = 0;
 let pack = [];
 let code = "";
 
-function openPack() {
+function openPack(packNum) {
 
   let cardPic = document.querySelector(".pack");
   if (num != 0) {
     cardPic.addEventListener("click", flipCard(cardPic, pack));
     return;
   }
+
+  let packOptions = document.querySelector(".pack-image");
+  packOptions.style.display = none;
 
   let inPack = 0;
 
@@ -1028,12 +1034,6 @@ function showPack(){
   
   let codeTitle = document.querySelector(".codeTitle");
   codeTitle.innerHTML = "";
-
-  /*let enterButton = document.querySelector("#enter");
-  enterButton.style.width = 0;
-  enterButton.style.padding = 0;
-  enterButton.style.border = 0;
-  enterButton.innerHTML = "";*/
 
   let cardPic = document.querySelector(".pack");
   cardPic.style.width = "300px";
