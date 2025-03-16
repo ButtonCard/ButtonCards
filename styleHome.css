@@ -73,7 +73,7 @@ body{
 .pack-options {
   display: flex;
   justify-content: center;
-  gap: 50px; /* Space between the options */
+  gap: 80px; /* Space between the options */
   margin-top: 30px;
   flex-wrap: wrap;
 }
