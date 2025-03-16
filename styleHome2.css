@@ -50,7 +50,6 @@ body{
 }
 
 .logout-button {
-  top:2vw;
   border: #990000 2px solid;
   border-radius: 0.5vw;
   padding: 0.2vh 0.5vw; /* Padding proportional to viewport size */
