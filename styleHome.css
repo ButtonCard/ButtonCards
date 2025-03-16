@@ -74,7 +74,7 @@ body{
   display: flex;
   justify-content: center;
   gap: 80px; /* Space between the options */
-  margin-top: 20px;
+  margin-top: 30px;
   flex-wrap: wrap;
 }
 
@@ -91,6 +91,7 @@ body{
   color: darkblue;
   font-family: Helvetica;
   width: 300px;
+  margin-top: -10px;
 }
 
 .pack-image {
@@ -101,7 +102,7 @@ body{
 }
 
 .open-pack {
-  border: black 2px solid;
+  border: black 3px solid;
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 18px;
@@ -112,8 +113,8 @@ body{
 }
 
 .open-pack:hover {
-  border: white 2px solid;
-  color: black;
+  border: white 3px solid;
+  background-color: black;
 }
 
 /* Add custom colors for each pack */
