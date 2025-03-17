@@ -23,8 +23,8 @@ window.onload = function() {
           .where('name', '==', currentUser.username)
           .get();
       const doc = userQuery.docs[0];
-      let token = doc.data().tokens;
-      document.getElementById('token').textContent = `Pack Tokens: ` + token;
+      let tokens = doc.data().tokens;
+      document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
       
       if (currentUser) {
           if(currentUser.username=="dc"){
