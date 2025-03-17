@@ -27,6 +27,8 @@
   float: center;
   width: 106px; 
   margin: 6px;
+  justify-content: center;
+  align-items: center;
 }
 
 .collectionList img{
