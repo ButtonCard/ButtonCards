@@ -68,12 +68,27 @@ body{
   border: black 2px solid;
 }
 
-.pageTitle {
-  text-align:center;
-  font-size:38px;
-  font-family:Helvetica;
-  color:darkblue;
-  margin-bottom:0px;
-  margin-top:25px;
-  text-decoration: underline;
+.topnav {
+  overflow: hidden;
+  background-color: #242c37ff;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #c6cacdff;
+  color: black;
+  font-weight:bold;
+}
+
+.topnav a.active {
+  background-color: #485867ff;
+  color: white;
 }
