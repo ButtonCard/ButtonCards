@@ -9,7 +9,8 @@
     <style>
         h1 {
             text-align: center;
-            color: #070552ff;
+            color: darkblue;
+            font-size:40px;
         }
         
         .container {
@@ -18,7 +19,7 @@
             padding: 20px;
             border-radius: 15px;
             margin: auto;
-            margin-top: 50px;
+            margin-top: 25px;
         }
 
         .form {
@@ -33,29 +34,34 @@
             gap: 5px;
         }
 
-        input[type="text"],
-        input[type="password"]{
+        input {
             padding: 10px;
             font-size: 16px;
-            background-color: black;
-            border: white;
+            background-color: white;
+            border: #070552ff 2px solid;
             border-radius: 8px;
             color: white;
+        }
+
+        input:hover {
+            background-color: #dddddd;
+            border: #070552ff 2px solid;
         }
 
         button {
             padding: 10px 20px;
-            font-size: 16px;
-            background-color: #222222;
+            font-size: 18px;
+            font-weight:bold;
+            background-color: blue;
             color: white;
-            border: none;
+            border: #070552ff 2px solid;
             cursor: pointer;
             border-radius: 8px;
-            transition: transform 0.2s;
+            width:50%;
         }
 
         button:hover {
-            transform: scale(1.05);
+            background-color: darkblue;
         }
 
         .message {
@@ -97,14 +103,14 @@
         <h1>Login to BUTTON Cards</h1>
         <form class="form" id="loginForm" onsubmit="return handleLogin(event)">
             <div class="input-group">
-                <label for="loginUsername">Username</label>
-                <input type="text" id="loginUsername" required>
+                <label for="loginUsername">Username:</label>
+                <input type="username" id="loginUsername" placeholder="Username" required>
             </div>
             <div class="input-group">
-                <label for="loginPassword">Password</label>
-                <input type="password" id="loginPassword" required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" placeholder="Password" required>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit">LOGIN</button>
             <p id="loginMessage" class="message"></p>
         </form>
     </div>
