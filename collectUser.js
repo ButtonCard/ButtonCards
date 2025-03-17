@@ -1,4 +1,4 @@
-collect(
+//USER'S COLLECTION FUNCTIONS
 
 //Loads in Cards to List from User's Collection
 window.onload = async function() {
