@@ -11,6 +11,7 @@ async function loadCards() {
   let colList = document.querySelector('.collectionList');
   let userList = colList.id;
   if(userList!=="all"){
+    console.log(userList);
     const userQuery = await userRef
           .where('name', '==', userList)
           .get();
