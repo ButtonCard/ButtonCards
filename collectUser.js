@@ -10,7 +10,7 @@ async function loadCards() {
 
   let colList = document.querySelector('.collectionList');
   let userList = colList.id;
-  if(userList!=="all"){
+  if(userList!=="all" && userList!=="sets"){
     console.log(userList);
     const userQuery = await userRef
           .where('name', '==', userList)
@@ -25,11 +25,6 @@ async function loadCards() {
       userQuery.docs[3].data().cards).sort();
   }
   if(userList=="sets"){
-    const userQuery = await userRef.get();
-    userCards = userQuery.docs[0].data().cards.concat(
-    userQuery.docs[1].data().cards, 
-    userQuery.docs[2].data().cards, 
-    userQuery.docs[3].data().cards).sort();
     loadSets(userCards);
     return;
   }
