@@ -4,21 +4,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>ButtonCraft Cards ONLINE!</title>
-  <link href="styleCollect.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="BCC_Icon.png">
+  <title>Gem's Collection - BUTTON Cards</title>
+  <link rel="icon" type="image/png" href="BC_Icon.png">
+  <link href="collectUser.css" rel="stylesheet" type="text/css" />
+  <link href="header.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body oncontextmenu="return false;">
 
-  <div class=logoBack><a class=logoLink href="index.html"><img class=logo src="BCC_Logo.png"></img></a></div>
+  <!-- Header Section -->
+  <div class="logoBack">
+    <a class="logoLink" href="home.html">
+      <img class="logo" src="BC_Logo.png" alt="Logo">
+    </a>
+    <div class="user-info">
+      <p id="username">User: Loading</p>
+      <p id="token">Pack Tokens: -</p>
+      <button class="logout-button" onclick="handleLogout()">LOGOUT</button>
+    </div>
+  </div>
   <div class=line></div>
-
-  
   <div class="topnav">
+    <a href="home.html">Pack Store</a>
     <a href="collectAll.html">All Cards</a>
     <a href="collectSets.html">Sets Checklist</a>
-    <a href="collectCompare.html">Compare</a>
     <a href="collectTrade.html">Trading</a>
     <a href="collectMission.html">Mission</a>
     <a class="active" href="collectGem.html">DCGem</a>
@@ -26,14 +35,14 @@
     <a href="collectVoid.html">VoidMax</a>
     <a href="collectZav.html">Zaveeya</a>
   </div>
-
   <div class=line></div>
 
-  <img class=pack src="Pack.png" onClick="hide()"></img>
-  <h3 class=owned></h3>
+  <!-- Enlarged Card -->
+  <img class=large src="Pack.png" onClick="hide()"></img>
 
-  <h2 class=resultTitle>DCGem's Collection!</h2>
-  <ul class=resultList>
+  <!-- Card Collection List -->
+  <h2 class=collectionTitle>DCGemmaster's Collection!</h2>
+  <ul class=collectionList id="gem">
     <li><img class=c0 src="Pack.png" onClick="enlarge('c0')"></img></li>
     <li><img class=c1 src="Pack.png" onClick="enlarge('c1')"></img></li>
     <li><img class=c2 src="Pack.png" onClick="enlarge('c2')"></img></li>
@@ -236,27 +245,11 @@
     <li><img class=c199 src="Pack.png" onClick="enlarge('c199')"></img></li>
   </ul>
 
-
+  <!-- Scripts -->
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
-    <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCLjx4Ys4qnzMfRog74NExTUHdZism8u-I",
-      authDomain: "buttoncards.firebaseapp.com",
-      databaseURL: "https://buttoncards-default-rtdb.firebaseio.com",
-      projectId: "buttoncards",
-      storageBucket: "buttoncards.firebasestorage.app",
-      messagingSenderId: "1001795754069",
-      appId: "1:1001795754069:web:1cbf4305a68f9b45eb5cdc",
-      measurementId: "G-F56PTH5YNL"
-    };
-  
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-  </script>
-  <script src="scriptCollect.js"></script>
+  <script src="header.js"></script>
+  <script src="collectUser.js"></script>
 </body>
 
 </html>
