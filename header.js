@@ -1,9 +1,31 @@
 //HEADER FUNCTIONS
 
+//Required Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCLjx4Ys4qnzMfRog74NExTUHdZism8u-I",
+  authDomain: "buttoncards.firebaseapp.com",
+  databaseURL: "https://buttoncards-default-rtdb.firebaseio.com",
+  projectId: "buttoncards",
+  storageBucket: "buttoncards.firebasestorage.app",
+  messagingSenderId: "1001795754069",
+  appId: "1:1001795754069:web:1cbf4305a68f9b45eb5cdc",
+  measurementId: "G-F56PTH5YNL"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 //Load Usernmae into Header
 window.onload = function() {
       const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      console.log(currentUser);
+
+      const userQuery = await userRef
+          .where('name', '==', currentUser.username)
+          .get();
+      const doc = userQuery.docs[0];
+      let token = doc.data().tokens;
+      document.getElementById('token').textContent = `Pack Tokens: ` + token;
+      
       if (currentUser) {
           if(currentUser.username=="dc"){
             document.getElementById('username').textContent = `Username: DCMetro`;
@@ -20,22 +42,7 @@ window.onload = function() {
           // If no user is logged in, redirect to login page
           window.location.href = 'index.html';
       }
-  }
-
-//Required Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyCLjx4Ys4qnzMfRog74NExTUHdZism8u-I",
-  authDomain: "buttoncards.firebaseapp.com",
-  databaseURL: "https://buttoncards-default-rtdb.firebaseio.com",
-  projectId: "buttoncards",
-  storageBucket: "buttoncards.firebasestorage.app",
-  messagingSenderId: "1001795754069",
-  appId: "1:1001795754069:web:1cbf4305a68f9b45eb5cdc",
-  measurementId: "G-F56PTH5YNL"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+}
 
 //Logout Button Click
 function handleLogout() {
