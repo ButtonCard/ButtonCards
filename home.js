@@ -26,7 +26,7 @@ async function openPack(packNum) {
     alert("Not Enough Pack Tokens!");
     return;
   }
-  if(cards==[]){
+  if(pack==[]){
     let newTokens = curTokens - 1;
     await doc.ref.update({
       tokens: newTokens
