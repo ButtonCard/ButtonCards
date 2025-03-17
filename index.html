@@ -123,7 +123,6 @@
             if (rememberedUser) {
                 const user = JSON.parse(rememberedUser);
                 document.getElementById('loginUsername').value = user.username;
-                document.getElementById('rememberMe').checked = true;
             }
 
             if (localStorage.getItem('isLoggedIn') === 'true') {
