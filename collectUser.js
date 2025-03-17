@@ -6,15 +6,24 @@ async function loadCards() {
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   let prevCard = "";
+  let userCards;
 
   let colList = document.querySelector('.collectionList');
   let userList = colList.id;
-  const userQuery = await userRef
-        .where('name', '==', userList)
-        .get();
-  const doc = userQuery.docs[0];
-  let userCards = doc.data().cards.sort();
-  console.log(userCards);
+  if(userList!=="all"){
+    const userQuery = await userRef
+          .where('name', '==', userList)
+          .get();
+    const doc = userQuery.docs[0];
+    userCards = doc.data().cards.sort();
+    console.log(userCards);
+  } else{
+    const userQuery = await userRef.get();
+    let userCards = userQuery.docs[0].data().cards.concat(
+      userQuery.docs[1].data().cards, 
+      userQuery.docs[2].data().cards, 
+      userQuery.docs[3].data().cards).sort();
+  }
   
   for (let i = 0; i < userCards.length; i++) {
     console.log(i);
