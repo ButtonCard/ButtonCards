@@ -15,7 +15,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-//Load Usernmae into Header
+//Load Username into Header
 window.onload = async function() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (!currentUser) {
