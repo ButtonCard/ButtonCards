@@ -80,8 +80,7 @@
 .resultTitle{
   text-align:center;
   font-size:40px;
-  font-family:Helvetica;
-  color:#070552ff;
+  color:darkblue;
   margin-bottom:-12px;
   margin-top:4px;  
   display:none;
@@ -90,7 +89,6 @@
 .resultCards{
   text-align:center;
   font-size:22px;
-  font-family:Helvetica;
   color:black;
   margin-bottom:15px;
   margin-top:20px;
