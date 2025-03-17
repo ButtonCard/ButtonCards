@@ -2,7 +2,8 @@
 
 //All Sets Current Available
 let List01 = ["01-1", "01-2", "01-3", "01-4", "01-5", "01-6", "01-7", "01-8", "01-A", "01-SA"];
-let allSets = [null, List01];
+let List01 = ["01-4", "01-5", "01-6"];
+let allSets = [null, List01, List02];
 
 //Loads in Cards to List from User's Collection
 loadCards();
@@ -29,6 +30,7 @@ async function loadCards() {
       userQuery.docs[3].data().cards).sort();
   }
   if(userList=="sets"){
+    colList.style.display = "none";
     loadSets(userCards);
     return;
   }
