@@ -1,4 +1,13 @@
 /* ----- Pack Store Page ----- */
+.pageTitle {
+  text-align:center;
+  font-size:38px;
+  color:darkblue;
+  margin-bottom:0px;
+  margin-top:25px;
+  text-decoration: underline;
+}
+
 .pack-options {
   display: flex;
   justify-content: center;
@@ -18,7 +27,6 @@
 .pack-option h3 {
   font-size: 24px;
   color: darkblue;
-  font-family: Helvetica;
   width: 300px;
   margin-top: -5px;
 }
