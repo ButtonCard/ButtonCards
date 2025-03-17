@@ -39,6 +39,7 @@
 .large{
   margin-top: 25px;
   width: 300px;
-  margin-bottom: 0px;
+  margin-bottom: 25px;
+  justify-content: center;
   display: none;
 }
