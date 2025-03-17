@@ -1,3 +1,14 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background-color:#acd4f5ff;
+  text-align:center;
+  margin:0;
+}
+
 .logo{
   width:60%;
   float:true;
