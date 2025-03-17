@@ -23,6 +23,14 @@ async function loadCards() {
       userQuery.docs[2].data().cards, 
       userQuery.docs[3].data().cards).sort();
   }
+  if(userList=="sets"){
+    const userQuery = await userRef.get();
+    userCards = userQuery.docs[0].data().cards.concat(
+    userQuery.docs[1].data().cards, 
+    userQuery.docs[2].data().cards, 
+    userQuery.docs[3].data().cards).sort();
+    loadsets(userCards);
+  }
   console.log(userCards);
   
   for (let i = 0; i < userCards.length; i++) {
@@ -36,6 +44,69 @@ async function loadCards() {
       cardResult.style.border = "2px yellow solid";
     }
     prevCard = userCards[i];
+  }
+}
+
+//Loads All Sets if That Collect Sets Page is Opened
+async function loadCards(allCards) {
+  let compareCards;
+  let filledCards;
+  let listName = document.querySelector(".players");
+  const userRef = db.collection('users');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+  if (listName.value == "all") {
+    compareCards = allCards;
+    filledCards = inDeck;
+  } else {
+    const userQuery = await userRef
+          .where('name', '==', currentUser.username)
+          .get();
+    
+    const doc = userQuery.docs[0];
+    compareCards = doc.data().cards.sort();
+
+    filledCards = allCards.concat(inDeck);
+  }
+
+  console.log("HERE");
+
+  for (let setList = 1; setList < allSets.length; setList++) {
+    let setBox = document.querySelector(".s" + setList);
+    setBox.style.backgroundColor = "blue";
+    setBox.style.border = "4px darkblue solid";
+    let setCards = allSets[setList];
+    console.log(setCards);
+
+    for (let i = 0; i < setCards.length; i++) {
+      let cardResult = document.querySelector(".s" + setList + "c" + i);
+      cardResult.style.border = "none";
+      cardResult.style.opacity = "1";
+
+      if (compareCards.includes(setCards[i])) {
+        cardResult.src = "img/" + setCards[i] + ".png";
+        cardResult.style.width = "110px";
+      }
+      else {
+        if (filledCards.includes(setCards[i])) {
+          cardResult.src = "img/" + setCards[i] + ".png";
+          cardResult.style.border = "2px lightcyan solid";
+          cardResult.style.opacity = "0.6";
+        }
+        else {
+          cardResult.src = "Back.png";
+        }
+        cardResult.style.width = "110px";
+      }
+      if (setCards[i].includes("-A")) {
+        let cardResult = document.querySelector(".s" + setList + "c" + i);
+        cardResult.style.border = "2px red solid";
+      }
+      if (setCards[i].includes("-SA")) {
+        let cardResult = document.querySelector(".s" + setList + "c" + i);
+        cardResult.style.border = "2px black solid";
+      }
+    }
   }
 }
 
