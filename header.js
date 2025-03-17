@@ -17,31 +17,32 @@ const db = firebase.firestore();
 
 //Load Usernmae into Header
 window.onload = async function() {
-      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-      const userQuery = await userRef
-          .where('name', '==', currentUser.username)
-          .get();
-      const doc = userQuery.docs[0];
-      let tokens = doc.data().tokens;
-      document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
-      
-      if (currentUser) {
-          if(currentUser.username=="dc"){
-            document.getElementById('username').textContent = `Username: DCMetro`;
-          } else if(currentUser.username=="gem"){
-            document.getElementById('username').textContent = `Username: DCGemmaster`;
-          } else if(currentUser.username=="void"){
-            document.getElementById('username').textContent = `Username: Voidmaxmph`;
-          } else if(currentUser.username=="zav"){
-            document.getElementById('username').textContent = `Username: zaveeya785`;
-          } else{
-            document.getElementById('username').textContent = `Username: SketchyMan`;
-          }
-      } else {
-          // If no user is logged in, redirect to login page
-          window.location.href = 'index.html';
-      }
+    const userRef = db.collection('users');
+    const userQuery = await userRef
+        .where('name', '==', currentUser.username)
+        .get();
+    const doc = userQuery.docs[0];
+    let tokens = doc.data().tokens;
+    document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
+    
+    if (currentUser) {
+        if(currentUser.username=="dc"){
+          document.getElementById('username').textContent = `Username: DCMetro`;
+        } else if(currentUser.username=="gem"){
+          document.getElementById('username').textContent = `Username: DCGemmaster`;
+        } else if(currentUser.username=="void"){
+          document.getElementById('username').textContent = `Username: Voidmaxmph`;
+        } else if(currentUser.username=="zav"){
+          document.getElementById('username').textContent = `Username: zaveeya785`;
+        } else{
+          document.getElementById('username').textContent = `Username: SketchyMan`;
+        }
+    } else {
+        // If no user is logged in, redirect to login page
+        window.location.href = 'index.html';
+    }
 }
 
 //Logout Button Click
