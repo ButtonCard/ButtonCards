@@ -26,7 +26,6 @@ async function openPack(packNum) {
     alert("Not Enough Pack Tokens!");
     return;
   }
-  let newTokens = curTokens - 1;
   await doc.ref.update({
     tokens: newTokens
   });
@@ -35,6 +34,7 @@ async function openPack(packNum) {
   if (num != 0) {
     cardPic.style.width = "300px";
     cardPic.addEventListener("click", flipCard(cardPic, pack));
+    let newTokens = curTokens - 1;
     return;
   }
 
