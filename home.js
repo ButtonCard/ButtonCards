@@ -139,9 +139,9 @@ async function openPack(packNum) {
     let cleared = true;
     while (cleared && backUp <= 100) {
       randCard = L[Math.floor(Math.random() * (L.length))];
-      if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
+      /*if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
         cleared = false;
-      }
+      }*/
       backUp++;
     }
     if (backUp <= 99) {
@@ -159,9 +159,9 @@ async function openPack(packNum) {
       let cleared = true;
       while (cleared && backUp <= 100) {
         randCard = E[Math.floor(Math.random() * (E.length))];
-        if (FULLdupes[FULLcards.indexOf(randCard)] < 3) {
+        /*if (FULLdupes[FULLcards.indexOf(randCard)] < 3) {
           cleared = false;
-        }
+        }*/
         backUp++;
       }
       if (backUp <= 99) {
@@ -180,9 +180,9 @@ async function openPack(packNum) {
       let cleared = true;
       while (cleared && backUp <= 100) {
         randCard = R[Math.floor(Math.random() * (R.length))];
-        if (FULLdupes[FULLcards.indexOf(randCard)] < 5) {
+        /*if (FULLdupes[FULLcards.indexOf(randCard)] < 5) {
           cleared = false;
-        }
+        }*/
         backUp++;
       }
       if (backUp <= 99) {
@@ -201,9 +201,9 @@ async function openPack(packNum) {
       let cleared = true;
       while (cleared && backUp <= 100) {
         randCard = U[Math.floor(Math.random() * (U.length))];
-        if (FULLdupes[FULLcards.indexOf(randCard)] < 8) {
+        /*if (FULLdupes[FULLcards.indexOf(randCard)] < 8) {
           cleared = false;
-        }
+        }*/
         backUp++;
       }
       if (backUp <= 99) {
