@@ -9,10 +9,12 @@ body{
   margin:0;
 }
 
+
+/* ----- Pack Store Page ----- */
 .pack-options {
   display: flex;
   justify-content: center;
-  gap: 80px; /* Space between the options */
+  gap: 80px;
   margin-top: 25px;
   flex-wrap: wrap;
 }
@@ -59,27 +61,28 @@ body{
   opacity: 80%;
 }
 
-/* Add custom colors for each pack */
 .pack-option:nth-child(1) .open-pack {
-  background-color: #1155ccff; /* Red for Pack 1 */
+  background-color: #1155ccff;
 }
 
 .pack-option:nth-child(2) .open-pack {
-  background-color: #38761dff; /* Green for Pack 2 */
+  background-color: #38761dff;
 }
 
 .pack-option:nth-child(3) .open-pack {
-  background-color: #cc0000ff; /* Blue for Pack 3 */
+  background-color: #cc0000ff;
 }
 
-/* Opening Pack Cards */
+
+/* ----- Opening Pack ----- */
 .pack{
   margin-top:25px;
   width:0px;
   margin-bottom:10px;
 }
 
-/* Results Page */
+
+/* ----- Results Page ----- */
 .resultTitle{
   text-align:center;
   font-size:40px;
