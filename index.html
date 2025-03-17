@@ -7,13 +7,17 @@
     <title>Login - BUTTON Cards</title>
     <link rel="icon" type="image/png" href="BC_Icon.png">
     <style>
+        h1 {
+            text-align: center;
+            color: #070552ff;
+        }
+        
         .container {
             max-width: 400px;
             width: 100%;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin: auto;
             margin-top: 50px;
         }
 
@@ -90,7 +94,7 @@
 
     <!-- Login Menu -->
     <div class="container" id="loginContainer">
-        <h2 style="text-align: center;">Login to BUTTON Cards</h2>
+        <h1>Login to BUTTON Cards</h1>
         <form class="form" id="loginForm" onsubmit="return handleLogin(event)">
             <div class="input-group">
                 <label for="loginUsername">Username</label>
