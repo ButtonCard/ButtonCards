@@ -72,6 +72,9 @@ body{
   overflow: hidden;
   background-color: #242c37ff;
   height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .topnav a {
@@ -82,6 +85,8 @@ body{
   text-decoration: none;
   font-size: 17px;
   height: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .topnav a:hover {
