@@ -37,7 +37,8 @@
 
 /* ----- Enlarged Card ----- */
 .large{
-  margin-top: 0px;
-  width: 0px;
+  margin-top: 25px;
+  width: 300px;
   margin-bottom: 0px;
+  display: none;
 }
