@@ -35,6 +35,10 @@
   width: 0px;
 }
 
+.set{
+  display: "none";
+}
+
 /* ----- Set List Title ----- */
 .sete{
   background-color: #070552ff;
