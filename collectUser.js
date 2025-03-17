@@ -76,8 +76,7 @@ async function loadSets(allCards) {
 
   for (let setList = 1; setList < allSets.length; setList++) {
     let setBox = document.querySelector(".s" + setList);
-    setBox.style.backgroundColor = "blue";
-    setBox.style.border = "4px darkblue solid";
+    setBox.style.display = "block";
     let setCards = allSets[setList];
     console.log(setCards);
 
