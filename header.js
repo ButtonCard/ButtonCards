@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 //Load Usernmae into Header
-window.onload = function() {
+window.onload = async function() {
       const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
       const userQuery = await userRef
