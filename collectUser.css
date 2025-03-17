@@ -10,11 +10,13 @@
 .collectionList{
   background-color: #070552ff;
   border: 4px solid #ffce00ff;
+  border-radius: 5px;
   width: 95%;
   padding: 0;
   margin: auto;
   padding-left: 6px;
   padding-right: 6px;
+  padding-top: 6px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -23,7 +25,7 @@
 
 .collectionList li{
   width: 106px; 
-  margin:6px;
+  margin: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
