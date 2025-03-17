@@ -57,7 +57,7 @@ async function loadCards(allCards) {
 
   if (listName.value == "all") {
     compareCards = allCards;
-    filledCards = inDeck;
+    filledCards = allCards;
   } else {
     const userQuery = await userRef
           .where('name', '==', currentUser.username)
@@ -66,7 +66,7 @@ async function loadCards(allCards) {
     const doc = userQuery.docs[0];
     compareCards = doc.data().cards.sort();
 
-    filledCards = allCards.concat(inDeck);
+    filledCards = allCards;
   }
 
   console.log("HERE");
