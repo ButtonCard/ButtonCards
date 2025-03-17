@@ -29,7 +29,8 @@ async function loadCards() {
     userQuery.docs[1].data().cards, 
     userQuery.docs[2].data().cards, 
     userQuery.docs[3].data().cards).sort();
-    loadsets(userCards);
+    loadSets(userCards);
+    return;
   }
   console.log(userCards);
   
@@ -48,7 +49,7 @@ async function loadCards() {
 }
 
 //Loads All Sets if That Collect Sets Page is Opened
-async function loadCards(allCards) {
+async function loadSets(allCards) {
   let compareCards;
   let filledCards;
   let listName = document.querySelector(".players");
