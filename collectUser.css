@@ -15,6 +15,7 @@
   padding: 0;
   margin: auto;
   padding-top: 6px;
+  padding-left: -3px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -26,8 +27,6 @@
   float: center;
   width: 106px; 
   margin: 6px;
-  justify-content: center;
-  align-items: center;
 }
 
 .collectionList img{
