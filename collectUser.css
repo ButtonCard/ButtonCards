@@ -24,9 +24,9 @@
 }
 
 .collectionList li{
-  float: center;
   width: 106px; 
   margin: 6px;
+  display:flex;
   justify-content: center;
   align-items: center;
 }
