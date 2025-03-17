@@ -71,7 +71,7 @@ body{
 .topnav {
   overflow: hidden;
   background-color: #242c37ff;
-  height: 30px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,6 @@ body{
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  height: 30px;
   display: flex;
   align-items: center;
 }
