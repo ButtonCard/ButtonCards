@@ -31,13 +31,6 @@
   align-items: center;
 }
 
-/*
-.flexMe li img{
-  width: 100%; 
-  height: auto;
-  float:left;
-}*/
-
 .collectionList img{
   width: 0px;
 }
