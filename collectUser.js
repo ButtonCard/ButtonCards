@@ -76,7 +76,7 @@ async function loadSets(allCards) {
 
   for (let setList = 1; setList < allSets.length; setList++) {
     let setBox = document.querySelector(".s" + setList);
-    setBox.style.display = "block";
+    setBox.style.display = "flex";
     let setCards = allSets[setList];
     console.log(setCards);
 
