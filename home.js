@@ -5,6 +5,13 @@ let packSizes = [4,5,6];
 let num = 0;
 let pack = [];
 
+//Cards Available Sorted by Rarity:
+let C = ["01-1", "01-2"];
+let U = ["01-3", "01-4"];
+let R = ["01-5", "01-6"];
+let E = ["01-7"];
+let L = ["01-8"];
+
 //Opens Pack and Changes Page to Start Pack Opening Sequence
 function openPack(packNum) {
   
@@ -24,6 +31,7 @@ function openPack(packNum) {
   let packSize = packSizes[packNum];
 
   //MEGA
+  /*
   if (inPack < packSize && Math.floor(Math.random() * 8) + 1 == 1) {
     let randCard;
     let backUp = 0;
@@ -40,9 +48,10 @@ function openPack(packNum) {
       inPack++;
     }
     console.log(randCard);
-  }
+  }*/
 
   //FIGURE
+  /*
   if (inPack < packSize && Math.floor(Math.random() * 14) + 1 == 1) {
     let randCard;
     let backUp = 0;
@@ -59,9 +68,10 @@ function openPack(packNum) {
       inPack++;
     }
     console.log(randCard);
-  }
+  }*/
 
   //SPECIAL
+  /*
   if (inPack < packSize && Math.floor(Math.random() * 12) + 1 == 1) {
     console.log("SPECIAL");
     let randCard;
@@ -81,8 +91,10 @@ function openPack(packNum) {
     }
     console.log(randCard);
   }
+  */
 
   //VARIANT
+  /*
   for (let i = 0; i < packSize; i++) {
     if (inPack < packSize && Math.floor(Math.random() * 10) + 1 == 1) {
       let randCard;
@@ -102,6 +114,7 @@ function openPack(packNum) {
       console.log(randCard);
     }
   }
+  */
 
   //LEGENDARY
   if (inPack < packSize && Math.floor(Math.random() * 12) + 1 == 1) {
