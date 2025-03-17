@@ -71,7 +71,7 @@ body{
 .topnav {
   overflow: hidden;
   background-color: #242c37ff;
-  height: 35px;
+  height: fit-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
