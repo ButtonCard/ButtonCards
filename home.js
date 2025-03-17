@@ -12,8 +12,24 @@ let R = ["01-5", "01-6"];
 let E = ["01-7"];
 let L = ["01-8"];
 
-//Opens Pack and Changes Page to Start Pack Opening Sequence
-function openPack(packNum) {
+//Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
+async function openPack(packNum) {
+  const userRef = db.collection('users');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const userQuery = await userRef
+    .where('name', '==', currentUser.username.toLowerCase())
+    .get();
+  
+  const doc = userQuery.docs[0];
+  let curTokens = doc.data().tokens;
+  if(curTokens<=0){
+    alert("Not Enough Pack Tokens!");
+    return;
+  }
+  let newTokens = curTokens - 1;
+  await doc.ref.update({
+    tokens: newTokens
+  });
   
   let cardPic = document.querySelector(".pack");
   if (num != 0) {
