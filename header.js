@@ -18,7 +18,11 @@ const db = firebase.firestore();
 //Load Usernmae into Header
 window.onload = async function() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
+    if (!currentUser) {
+        // If no user is logged in, redirect to login page
+        window.location.href = 'index.html';
+    }
+  
     const userRef = db.collection('users');
     const userQuery = await userRef
         .where('name', '==', currentUser.username)
@@ -27,21 +31,16 @@ window.onload = async function() {
     let tokens = doc.data().tokens;
     document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
     
-    if (currentUser) {
-        if(currentUser.username=="dc"){
-          document.getElementById('username').textContent = `User: DCMetro`;
-        } else if(currentUser.username=="gem"){
-          document.getElementById('username').textContent = `User: DCGemmaster`;
-        } else if(currentUser.username=="void"){
-          document.getElementById('username').textContent = `User: Voidmaxmph`;
-        } else if(currentUser.username=="zav"){
-          document.getElementById('username').textContent = `User: zaveeya785`;
-        } else{
-          document.getElementById('username').textContent = `User: SketchyMan`;
-        }
-    } else {
-        // If no user is logged in, redirect to login page
-        window.location.href = 'index.html';
+    if(currentUser.username=="dc"){
+      document.getElementById('username').textContent = `User: DCMetro`;
+    } else if(currentUser.username=="gem"){
+      document.getElementById('username').textContent = `User: DCGemmaster`;
+    } else if(currentUser.username=="void"){
+      document.getElementById('username').textContent = `User: Voidmaxmph`;
+    } else if(currentUser.username=="zav"){
+      document.getElementById('username').textContent = `User: zaveeya785`;
+    } else{
+      document.getElementById('username').textContent = `User: SketchyMan`;
     }
 }
 
