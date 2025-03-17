@@ -1,5 +1,8 @@
 //USER'S COLLECTION FUNCTIONS
 
+//All Sets Current Available
+let allSets = [null, List01];
+
 //Loads in Cards to List from User's Collection
 loadCards();
 async function loadCards() {
