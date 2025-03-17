@@ -29,15 +29,15 @@ window.onload = async function() {
     
     if (currentUser) {
         if(currentUser.username=="dc"){
-          document.getElementById('username').textContent = `Username: DCMetro`;
+          document.getElementById('username').textContent = `User: DCMetro`;
         } else if(currentUser.username=="gem"){
-          document.getElementById('username').textContent = `Username: DCGemmaster`;
+          document.getElementById('username').textContent = `User: DCGemmaster`;
         } else if(currentUser.username=="void"){
-          document.getElementById('username').textContent = `Username: Voidmaxmph`;
+          document.getElementById('username').textContent = `User: Voidmaxmph`;
         } else if(currentUser.username=="zav"){
-          document.getElementById('username').textContent = `Username: zaveeya785`;
+          document.getElementById('username').textContent = `User: zaveeya785`;
         } else{
-          document.getElementById('username').textContent = `Username: SketchyMan`;
+          document.getElementById('username').textContent = `User: SketchyMan`;
         }
     } else {
         // If no user is logged in, redirect to login page
