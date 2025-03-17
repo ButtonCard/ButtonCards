@@ -291,3 +291,24 @@ async function results(pack) {
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
+
+//Enlarges a Card from the Pack Results
+function enlargePack(card) {
+  console.log("enlargePack");
+  let cardImg = document.querySelector("." + card);
+  let hidePack = document.querySelector(".pack");
+  hidePack.src = cardImg.src;
+  hidePack.style.width = "300px";
+  hidePack.style.marginTop = "25px";
+  hidePack.style.marginBottom = "50px";
+}
+
+//Hides a Card from the Pack Results
+function hidePack() {
+  console.log("hidePack");
+  let hidePack = document.querySelector(".pack");
+  hidePack.src = "Pack.png";
+  hidePack.style.width = "0px";
+  hidePack.style.marginTop = "0px";
+  hidePack.style.marginBottom = "0px";
+}
