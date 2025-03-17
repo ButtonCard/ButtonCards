@@ -6,80 +6,8 @@
     <meta name="viewport" content="width=device-width">
     <title>Login - BUTTON Cards</title>
     <link rel="icon" type="image/png" href="BC_Icon.png">
-    <style>
-        h1 {
-            text-align: center;
-            color: darkblue;
-            font-size:30px;
-        }
-        
-        .container {
-            width: 350px;
-            padding: 20px;
-            border-radius: 15px;
-            margin: auto;
-            margin-top: 10px;
-        }
-
-        .form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        input {
-            padding: 10px;
-            font-size: 16px;
-            background-color: white;
-            border: #070552ff 2px solid;
-            border-radius: 8px;
-            width: 250px;
-            color: black;
-            margin: auto;
-        }
-
-        input:hover {
-            background-color: #dddddd;
-            border: #070552ff 2px solid;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            font-weight:bold;
-            background-color: blue;
-            color: white;
-            border: #070552ff 2px solid;
-            cursor: pointer;
-            border-radius: 8px;
-            width:100px;
-            margin: auto;
-        }
-
-        button:hover {
-            background-color: darkblue;
-        }
-
-        .message {
-            text-align: center;
-            padding: 10px;
-            border-radius: 5px;
-            width: 250px;
-            display: none;
-            color: black;
-            margin: auto;
-            background-color: rgba(255, 51, 51, 0.5);
-            color: darkred;
-        }
-        
-    </style>
     <link href="header.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
 </head>
     
 <body>
@@ -91,7 +19,6 @@
     <div class="user-info">
       <p id="username"></p>
       <p id="token"></p>
-      <button class="logout-button" onclick="handleLogout()">LOGOUT</button>
     </div>
   </div>
   <div class=line></div>
@@ -127,64 +54,6 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
     <script src="header.js"></script>
-    <script>
-
-        //Check if User is Already Signed In
-        window.onload = function() {
-            const rememberedUser = localStorage.getItem('rememberedUser');
-            if (rememberedUser) {
-                const user = JSON.parse(rememberedUser);
-                document.getElementById('loginUsername').value = user.username;
-            }
-
-            if (localStorage.getItem('isLoggedIn') === 'true') {
-                window.location.href = 'home.html';
-            }
-        }
-
-        //Show Message
-        function showMessage(elementId, message, isError = true) {
-            const messageElement = document.getElementById(elementId);
-            messageElement.textContent = message;
-            messageElement.style.display = 'block';
-            setTimeout(() => {
-                messageElement.style.display = 'none';
-            }, 3000);
-        }
-
-        //Login User
-        async function handleLogin(event) {
-            event.preventDefault();
-            
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-
-            const userRef = db.collection('users');
-            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            const userQuery = await userRef
-                .where('name', '==', username.toLowerCase())
-                .get();
-            if (!userQuery.empty) {
-                const doc = userQuery.docs[0];
-                const userPass = doc.data().password;
-                
-                if (userPass==password) {
-                    localStorage.setItem('rememberedUser', JSON.stringify({ username: username }));
-                    
-                    localStorage.setItem('isLoggedIn', 'true');
-                    localStorage.setItem('currentUser', JSON.stringify({
-                        username: doc.data().name
-                    }));
-                    
-                    window.location.href = 'home.html';
-                } else {
-                    showMessage('loginMessage', 'Invalid Password');
-                }
-            } else {
-                showMessage('loginMessage', 'User Does Not Exist');
-            }
-            return false;
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
