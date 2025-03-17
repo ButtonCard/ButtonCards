@@ -2,22 +2,32 @@
 <html>
 
 <head>
-  <meta char"set="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>ButtonCraft Cards ONLINE!</title>
-  <link href="styleCollect.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="BCC_Icon.png">
+  <title>All Sets - BUTTON Cards</title>
+  <link rel="icon" type="image/png" href="BC_Icon.png">
+  <link href="collectUser.css" rel="stylesheet" type="text/css" />
+  <link href="header.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body oncontextmenu="return false;">
 
-  <div class=logoBack><a class=logoLink href="index.html"><img class=logo src="BCC_Logo.png"></img></a></div>
+  <!-- Header Section -->
+  <div class="logoBack">
+    <a class="logoLink" href="home.html">
+      <img class="logo" src="BC_Logo.png" alt="Logo">
+    </a>
+    <div class="user-info">
+      <p id="username">User: Loading</p>
+      <p id="token">Pack Tokens: -</p>
+      <button class="logout-button" onclick="handleLogout()">LOGOUT</button>
+    </div>
+  </div>
   <div class=line></div>
-
   <div class="topnav">
-    <a href="collectAll.html">All Cards</a>
-    <a class=active href="collectSets.html">Sets Checklist</a>
-    <a href="collectCompare.html">Compare</a>
+    <a href="home.html">Pack Store</a>
+    <a class="active" href="collectAll.html">All Cards</a>
+    <a href="collectSets.html">Sets Checklist</a>
     <a href="collectTrade.html">Trading</a>
     <a href="collectMission.html">Mission</a>
     <a href="collectGem.html">DCGem</a>
@@ -25,13 +35,12 @@
     <a href="collectVoid.html">VoidMax</a>
     <a href="collectZav.html">Zaveeya</a>
   </div>
-
   <div class=line></div>
 
-  <img class=pack src="Pack.png" onClick="hide()"></img>
-  <h3 class=owned></h3>
+  <!-- Enlarged Card -->
+  <img class=large src="Pack.png" onClick="hide()"></img>
 
-  <h2 class=resultTitle>Sets:</h2>
+  <h2 class=collectionTitle>Sets:</h2>
   <select name="players" class="players">
     <option class=p0 value="all">All</option>
     <option class=p2 value="dc">DCMetro</option>
@@ -40,7 +49,7 @@
     <option class=p5 value="zav">Zaveeya</option>
   </select>
   <button class=selectButton onClick="updateP()">Select</button>
-
+  <ul class=collectionList id="sets"></ul>
   <ul class="set s1">
     <li><img class=s1c0 src="Pack.png" onClick="enlarge('s1c0')"></img></li>
     <li><img class=s1c1 src="Pack.png" onClick="enlarge('s1c1')"></img></li>
@@ -52,17 +61,6 @@
     <li><img class=s1c7 src="Pack.png" onClick="enlarge('s1c7')"></img></li>
     <li><img class=s1c8 src="Pack.png" onClick="enlarge('s1c8')"></img></li>
     <li><img class=s1c9 src="Pack.png" onClick="enlarge('s1c9')"></img></li>
-    <li><img class=s1c10 src="Pack.png" onClick="enlarge('s1c10')"></img></li>
-    <li><img class=s1c11 src="Pack.png" onClick="enlarge('s1c11')"></img></li>
-    <li><img class=s1c12 src="Pack.png" onClick="enlarge('s1c12')"></img></li>
-    <li><img class=s1c13 src="Pack.png" onClick="enlarge('s1c13')"></img></li>
-    <li><img class=s1c14 src="Pack.png" onClick="enlarge('s1c14')"></img></li>
-    <li><img class=s1c15 src="Pack.png" onClick="enlarge('s1c15')"></img></li>
-    <li><img class=s1c16 src="Pack.png" onClick="enlarge('s1c16')"></img></li>
-    <li><img class=s1c17 src="Pack.png" onClick="enlarge('s1c17')"></img></li>
-    <li><img class=s1c18 src="Pack.png" onClick="enlarge('s1c18')"></img></li>
-    <li><img class=s1c19 src="Pack.png" onClick="enlarge('s1c19')"></img></li>
-    <li><img class=s1c20 src="Pack.png" onClick="enlarge('s1c20')"></img></li>
   </ul>
   <ul class="set s2">
     <li><img class=s2c0 src="Pack.png" onClick="enlarge('s2c0')"></img></li>
@@ -75,18 +73,6 @@
     <li><img class=s2c7 src="Pack.png" onClick="enlarge('s2c7')"></img></li>
     <li><img class=s2c8 src="Pack.png" onClick="enlarge('s2c8')"></img></li>
     <li><img class=s2c9 src="Pack.png" onClick="enlarge('s2c9')"></img></li>
-    <li><img class=s2c10 src="Pack.png" onClick="enlarge('s2c10')"></img></li>
-    <li><img class=s2c11 src="Pack.png" onClick="enlarge('s2c11')"></img></li>
-    <li><img class=s2c12 src="Pack.png" onClick="enlarge('s2c12')"></img></li>
-    <li><img class=s2c13 src="Pack.png" onClick="enlarge('s2c13')"></img></li>
-    <li><img class=s2c14 src="Pack.png" onClick="enlarge('s2c14')"></img></li>
-    <li><img class=s2c15 src="Pack.png" onClick="enlarge('s2c15')"></img></li>
-    <li><img class=s2c16 src="Pack.png" onClick="enlarge('s2c16')"></img></li>
-    <li><img class=s2c17 src="Pack.png" onClick="enlarge('s2c17')"></img></li>
-    <li><img class=s2c18 src="Pack.png" onClick="enlarge('s2c18')"></img></li>
-    <li><img class=s2c19 src="Pack.png" onClick="enlarge('s2c19')"></img></li>
-    <li><img class=s2c20 src="Pack.png" onClick="enlarge('s2c20')"></img></li>
-
   </ul>
   <ul class="set s3">
     <li><img class=s3c0 src="Pack.png" onClick="enlarge('s3c0')"></img></li>
@@ -99,17 +85,6 @@
     <li><img class=s3c7 src="Pack.png" onClick="enlarge('s3c7')"></img></li>
     <li><img class=s3c8 src="Pack.png" onClick="enlarge('s3c8')"></img></li>
     <li><img class=s3c9 src="Pack.png" onClick="enlarge('s3c9')"></img></li>
-    <li><img class=s3c10 src="Pack.png" onClick="enlarge('s3c10')"></img></li>
-    <li><img class=s3c11 src="Pack.png" onClick="enlarge('s3c11')"></img></li>
-    <li><img class=s3c12 src="Pack.png" onClick="enlarge('s3c12')"></img></li>
-    <li><img class=s3c13 src="Pack.png" onClick="enlarge('s3c13')"></img></li>
-    <li><img class=s3c14 src="Pack.png" onClick="enlarge('s3c14')"></img></li>
-    <li><img class=s3c15 src="Pack.png" onClick="enlarge('s3c15')"></img></li>
-    <li><img class=s3c16 src="Pack.png" onClick="enlarge('s3c16')"></img></li>
-    <li><img class=s3c17 src="Pack.png" onClick="enlarge('s3c17')"></img></li>
-    <li><img class=s3c18 src="Pack.png" onClick="enlarge('s3c18')"></img></li>
-    <li><img class=s3c19 src="Pack.png" onClick="enlarge('s3c19')"></img></li>
-    <li><img class=s3c20 src="Pack.png" onClick="enlarge('s3c20')"></img></li>
   </ul>
   <ul class="set s4">
     <li><img class="s4c0" src="Pack.png" onClick="enlarge('s4c0')"></img></li>
@@ -122,17 +97,6 @@
     <li><img class="s4c7" src="Pack.png" onClick="enlarge('s4c7')"></img></li>
     <li><img class="s4c8" src="Pack.png" onClick="enlarge('s4c8')"></img></li>
     <li><img class="s4c9" src="Pack.png" onClick="enlarge('s4c9')"></img></li>
-    <li><img class="s4c10" src="Pack.png" onClick="enlarge('s4c10')"></img></li>
-    <li><img class="s4c11" src="Pack.png" onClick="enlarge('s4c11')"></img></li>
-    <li><img class="s4c12" src="Pack.png" onClick="enlarge('s4c12')"></img></li>
-    <li><img class="s4c13" src="Pack.png" onClick="enlarge('s4c13')"></img></li>
-    <li><img class="s4c14" src="Pack.png" onClick="enlarge('s4c14')"></img></li>
-    <li><img class="s4c15" src="Pack.png" onClick="enlarge('s4c15')"></img></li>
-    <li><img class="s4c16" src="Pack.png" onClick="enlarge('s4c16')"></img></li>
-    <li><img class="s4c17" src="Pack.png" onClick="enlarge('s4c17')"></img></li>
-    <li><img class="s4c18" src="Pack.png" onClick="enlarge('s4c18')"></img></li>
-    <li><img class="s4c19" src="Pack.png" onClick="enlarge('s4c19')"></img></li>
-    <li><img class="s4c20" src="Pack.png" onClick="enlarge('s4c20')"></img></li>
   </ul>
   <ul class="set s5">
     <li><img class="s5c0" src="Pack.png" onClick="enlarge('s5c0')"></img></li>
@@ -145,17 +109,6 @@
     <li><img class="s5c7" src="Pack.png" onClick="enlarge('s5c7')"></img></li>
     <li><img class="s5c8" src="Pack.png" onClick="enlarge('s5c8')"></img></li>
     <li><img class="s5c9" src="Pack.png" onClick="enlarge('s5c9')"></img></li>
-    <li><img class="s5c10" src="Pack.png" onClick="enlarge('s5c10')"></img></li>
-    <li><img class="s5c11" src="Pack.png" onClick="enlarge('s5c11')"></img></li>
-    <li><img class="s5c12" src="Pack.png" onClick="enlarge('s5c12')"></img></li>
-    <li><img class="s5c13" src="Pack.png" onClick="enlarge('s5c13')"></img></li>
-    <li><img class="s5c14" src="Pack.png" onClick="enlarge('s5c14')"></img></li>
-    <li><img class="s5c15" src="Pack.png" onClick="enlarge('s5c15')"></img></li>
-    <li><img class="s5c16" src="Pack.png" onClick="enlarge('s5c16')"></img></li>
-    <li><img class="s5c17" src="Pack.png" onClick="enlarge('s5c17')"></img></li>
-    <li><img class="s5c18" src="Pack.png" onClick="enlarge('s5c18')"></img></li>
-    <li><img class="s5c19" src="Pack.png" onClick="enlarge('s5c19')"></img></li>
-    <li><img class="s5c20" src="Pack.png" onClick="enlarge('s5c20')"></img></li>
   </ul>
   <ul class="set s6">
     <li><img class="s6c0" src="Pack.png" onClick="enlarge('s6c0')"></img></li>
@@ -168,17 +121,6 @@
     <li><img class="s6c7" src="Pack.png" onClick="enlarge('s6c7')"></img></li>
     <li><img class="s6c8" src="Pack.png" onClick="enlarge('s6c8')"></img></li>
     <li><img class="s6c9" src="Pack.png" onClick="enlarge('s6c9')"></img></li>
-    <li><img class="s6c10" src="Pack.png" onClick="enlarge('s6c10')"></img></li>
-    <li><img class="s6c11" src="Pack.png" onClick="enlarge('s6c11')"></img></li>
-    <li><img class="s6c12" src="Pack.png" onClick="enlarge('s6c12')"></img></li>
-    <li><img class="s6c13" src="Pack.png" onClick="enlarge('s6c13')"></img></li>
-    <li><img class="s6c14" src="Pack.png" onClick="enlarge('s6c14')"></img></li>
-    <li><img class="s6c15" src="Pack.png" onClick="enlarge('s6c15')"></img></li>
-    <li><img class="s6c16" src="Pack.png" onClick="enlarge('s6c16')"></img></li>
-    <li><img class="s6c17" src="Pack.png" onClick="enlarge('s6c17')"></img></li>
-    <li><img class="s6c18" src="Pack.png" onClick="enlarge('s6c18')"></img></li>
-    <li><img class="s6c19" src="Pack.png" onClick="enlarge('s6c19')"></img></li>
-    <li><img class="s6c20" src="Pack.png" onClick="enlarge('s6c20')"></img></li>
   </ul>
   <ul class="set s7">
     <li><img class="s7c0" src="Pack.png" onClick="enlarge('s7c0')"></img></li>
@@ -191,17 +133,6 @@
     <li><img class="s7c7" src="Pack.png" onClick="enlarge('s7c7')"></img></li>
     <li><img class="s7c8" src="Pack.png" onClick="enlarge('s7c8')"></img></li>
     <li><img class="s7c9" src="Pack.png" onClick="enlarge('s7c9')"></img></li>
-    <li><img class="s7c10" src="Pack.png" onClick="enlarge('s7c10')"></img></li>
-    <li><img class="s7c11" src="Pack.png" onClick="enlarge('s7c11')"></img></li>
-    <li><img class="s7c12" src="Pack.png" onClick="enlarge('s7c12')"></img></li>
-    <li><img class="s7c13" src="Pack.png" onClick="enlarge('s7c13')"></img></li>
-    <li><img class="s7c14" src="Pack.png" onClick="enlarge('s7c14')"></img></li>
-    <li><img class="s7c15" src="Pack.png" onClick="enlarge('s7c15')"></img></li>
-    <li><img class="s7c16" src="Pack.png" onClick="enlarge('s7c16')"></img></li>
-    <li><img class="s7c17" src="Pack.png" onClick="enlarge('s7c17')"></img></li>
-    <li><img class="s7c18" src="Pack.png" onClick="enlarge('s7c18')"></img></li>
-    <li><img class="s7c19" src="Pack.png" onClick="enlarge('s7c19')"></img></li>
-    <li><img class="s7c20" src="Pack.png" onClick="enlarge('s7c20')"></img></li>
   </ul>
   <ul class="set s8">
     <li><img class="s8c0" src="Pack.png" onClick="enlarge('s8c0')"></img></li>
@@ -214,17 +145,6 @@
     <li><img class="s8c7" src="Pack.png" onClick="enlarge('s8c7')"></img></li>
     <li><img class="s8c8" src="Pack.png" onClick="enlarge('s8c8')"></img></li>
     <li><img class="s8c9" src="Pack.png" onClick="enlarge('s8c9')"></img></li>
-    <li><img class="s8c10" src="Pack.png" onClick="enlarge('s8c10')"></img></li>
-    <li><img class="s8c11" src="Pack.png" onClick="enlarge('s8c11')"></img></li>
-    <li><img class="s8c12" src="Pack.png" onClick="enlarge('s8c12')"></img></li>
-    <li><img class="s8c13" src="Pack.png" onClick="enlarge('s8c13')"></img></li>
-    <li><img class="s8c14" src="Pack.png" onClick="enlarge('s8c14')"></img></li>
-    <li><img class="s8c15" src="Pack.png" onClick="enlarge('s8c15')"></img></li>
-    <li><img class="s8c16" src="Pack.png" onClick="enlarge('s8c16')"></img></li>
-    <li><img class="s8c17" src="Pack.png" onClick="enlarge('s8c17')"></img></li>
-    <li><img class="s8c18" src="Pack.png" onClick="enlarge('s8c18')"></img></li>
-    <li><img class="s8c19" src="Pack.png" onClick="enlarge('s8c19')"></img></li>
-    <li><img class="s8c20" src="Pack.png" onClick="enlarge('s8c20')"></img></li>
   </ul>
   <ul class="set s9">
     <li><img class="s9c0" src="Pack.png" onClick="enlarge('s9c0')"></img></li>
@@ -237,17 +157,6 @@
     <li><img class="s9c7" src="Pack.png" onClick="enlarge('s9c7')"></img></li>
     <li><img class="s9c8" src="Pack.png" onClick="enlarge('s9c8')"></img></li>
     <li><img class="s9c9" src="Pack.png" onClick="enlarge('s9c9')"></img></li>
-    <li><img class="s9c10" src="Pack.png" onClick="enlarge('s9c10')"></img></li>
-    <li><img class="s9c11" src="Pack.png" onClick="enlarge('s9c11')"></img></li>
-    <li><img class="s9c12" src="Pack.png" onClick="enlarge('s9c12')"></img></li>
-    <li><img class="s9c13" src="Pack.png" onClick="enlarge('s9c13')"></img></li>
-    <li><img class="s9c14" src="Pack.png" onClick="enlarge('s9c14')"></img></li>
-    <li><img class="s9c15" src="Pack.png" onClick="enlarge('s9c15')"></img></li>
-    <li><img class="s9c16" src="Pack.png" onClick="enlarge('s9c16')"></img></li>
-    <li><img class="s9c17" src="Pack.png" onClick="enlarge('s9c17')"></img></li>
-    <li><img class="s9c18" src="Pack.png" onClick="enlarge('s9c18')"></img></li>
-    <li><img class="s9c19" src="Pack.png" onClick="enlarge('s9c19')"></img></li>
-    <li><img class="s9c20" src="Pack.png" onClick="enlarge('s9c20')"></img></li>
   </ul>
   <ul class="set s10">
     <li><img class="s10c0" src="Pack.png" onClick="enlarge('s10c0')"></img></li>
@@ -260,17 +169,6 @@
     <li><img class="s10c7" src="Pack.png" onClick="enlarge('s10c7')"></img></li>
     <li><img class="s10c8" src="Pack.png" onClick="enlarge('s10c8')"></img></li>
     <li><img class="s10c9" src="Pack.png" onClick="enlarge('s10c9')"></img></li>
-    <li><img class="s10c10" src="Pack.png" onClick="enlarge('s10c10')"></img></li>
-    <li><img class="s10c11" src="Pack.png" onClick="enlarge('s10c11')"></img></li>
-    <li><img class="s10c12" src="Pack.png" onClick="enlarge('s10c12')"></img></li>
-    <li><img class="s10c13" src="Pack.png" onClick="enlarge('s10c13')"></img></li>
-    <li><img class="s10c14" src="Pack.png" onClick="enlarge('s10c14')"></img></li>
-    <li><img class="s10c15" src="Pack.png" onClick="enlarge('s10c15')"></img></li>
-    <li><img class="s10c16" src="Pack.png" onClick="enlarge('s10c16')"></img></li>
-    <li><img class="s10c17" src="Pack.png" onClick="enlarge('s10c17')"></img></li>
-    <li><img class="s10c18" src="Pack.png" onClick="enlarge('s10c18')"></img></li>
-    <li><img class="s10c19" src="Pack.png" onClick="enlarge('s10c19')"></img></li>
-    <li><img class="s10c20" src="Pack.png" onClick="enlarge('s10c20')"></img></li>
   </ul>
   <ul class="set s11">
     <li><img class="s11c0" src="Pack.png" onClick="enlarge('s11c0')"></img></li>
@@ -283,17 +181,6 @@
     <li><img class="s11c7" src="Pack.png" onClick="enlarge('s11c7')"></img></li>
     <li><img class="s11c8" src="Pack.png" onClick="enlarge('s11c8')"></img></li>
     <li><img class="s11c9" src="Pack.png" onClick="enlarge('s11c9')"></img></li>
-    <li><img class="s11c10" src="Pack.png" onClick="enlarge('s11c10')"></img></li>
-    <li><img class="s11c11" src="Pack.png" onClick="enlarge('s11c11')"></img></li>
-    <li><img class="s11c12" src="Pack.png" onClick="enlarge('s11c12')"></img></li>
-    <li><img class="s11c13" src="Pack.png" onClick="enlarge('s11c13')"></img></li>
-    <li><img class="s11c14" src="Pack.png" onClick="enlarge('s11c14')"></img></li>
-    <li><img class="s11c15" src="Pack.png" onClick="enlarge('s11c15')"></img></li>
-    <li><img class="s11c16" src="Pack.png" onClick="enlarge('s11c16')"></img></li>
-    <li><img class="s11c17" src="Pack.png" onClick="enlarge('s11c17')"></img></li>
-    <li><img class="s11c18" src="Pack.png" onClick="enlarge('s11c18')"></img></li>
-    <li><img class="s11c19" src="Pack.png" onClick="enlarge('s11c19')"></img></li>
-    <li><img class="s11c20" src="Pack.png" onClick="enlarge('s11c20')"></img></li>
   </ul>
   <ul class="set s12">
     <li><img class="s12c0" src="Pack.png" onClick="enlarge('s12c0')"></img></li>
@@ -306,17 +193,6 @@
     <li><img class="s12c7" src="Pack.png" onClick="enlarge('s12c7')"></img></li>
     <li><img class="s12c8" src="Pack.png" onClick="enlarge('s12c8')"></img></li>
     <li><img class="s12c9" src="Pack.png" onClick="enlarge('s12c9')"></img></li>
-    <li><img class="s12c10" src="Pack.png" onClick="enlarge('s12c10')"></img></li>
-    <li><img class="s12c11" src="Pack.png" onClick="enlarge('s12c11')"></img></li>
-    <li><img class="s12c12" src="Pack.png" onClick="enlarge('s12c12')"></img></li>
-    <li><img class="s12c13" src="Pack.png" onClick="enlarge('s12c13')"></img></li>
-    <li><img class="s12c14" src="Pack.png" onClick="enlarge('s12c14')"></img></li>
-    <li><img class="s12c15" src="Pack.png" onClick="enlarge('s12c15')"></img></li>
-    <li><img class="s12c16" src="Pack.png" onClick="enlarge('s12c16')"></img></li>
-    <li><img class="s12c17" src="Pack.png" onClick="enlarge('s12c17')"></img></li>
-    <li><img class="s12c18" src="Pack.png" onClick="enlarge('s12c18')"></img></li>
-    <li><img class="s12c19" src="Pack.png" onClick="enlarge('s12c19')"></img></li>
-    <li><img class="s12c20" src="Pack.png" onClick="enlarge('s12c20')"></img></li>
   </ul>
   <ul class="set s13">
     <li><img class="s13c0" src="Pack.png" onClick="enlarge('s13c0')"></img></li>
@@ -329,17 +205,6 @@
     <li><img class="s13c7" src="Pack.png" onClick="enlarge('s13c7')"></img></li>
     <li><img class="s13c8" src="Pack.png" onClick="enlarge('s13c8')"></img></li>
     <li><img class="s13c9" src="Pack.png" onClick="enlarge('s13c9')"></img></li>
-    <li><img class="s13c10" src="Pack.png" onClick="enlarge('s13c10')"></img></li>
-    <li><img class="s13c11" src="Pack.png" onClick="enlarge('s13c11')"></img></li>
-    <li><img class="s13c12" src="Pack.png" onClick="enlarge('s13c12')"></img></li>
-    <li><img class="s13c13" src="Pack.png" onClick="enlarge('s13c13')"></img></li>
-    <li><img class="s13c14" src="Pack.png" onClick="enlarge('s13c14')"></img></li>
-    <li><img class="s13c15" src="Pack.png" onClick="enlarge('s13c15')"></img></li>
-    <li><img class="s13c16" src="Pack.png" onClick="enlarge('s13c16')"></img></li>
-    <li><img class="s13c17" src="Pack.png" onClick="enlarge('s13c17')"></img></li>
-    <li><img class="s13c18" src="Pack.png" onClick="enlarge('s13c18')"></img></li>
-    <li><img class="s13c19" src="Pack.png" onClick="enlarge('s13c19')"></img></li>
-    <li><img class="s13c20" src="Pack.png" onClick="enlarge('s13c20')"></img></li>
   </ul>
   <ul class="set s14">
     <li><img class="s14c0" src="Pack.png" onClick="enlarge('s14c0')"></img></li>
@@ -352,17 +217,6 @@
     <li><img class="s14c7" src="Pack.png" onClick="enlarge('s14c7')"></img></li>
     <li><img class="s14c8" src="Pack.png" onClick="enlarge('s14c8')"></img></li>
     <li><img class="s14c9" src="Pack.png" onClick="enlarge('s14c9')"></img></li>
-    <li><img class="s14c10" src="Pack.png" onClick="enlarge('s14c10')"></img></li>
-    <li><img class="s14c11" src="Pack.png" onClick="enlarge('s14c11')"></img></li>
-    <li><img class="s14c12" src="Pack.png" onClick="enlarge('s14c12')"></img></li>
-    <li><img class="s14c13" src="Pack.png" onClick="enlarge('s14c13')"></img></li>
-    <li><img class="s14c14" src="Pack.png" onClick="enlarge('s14c14')"></img></li>
-    <li><img class="s14c15" src="Pack.png" onClick="enlarge('s14c15')"></img></li>
-    <li><img class="s14c16" src="Pack.png" onClick="enlarge('s14c16')"></img></li>
-    <li><img class="s14c17" src="Pack.png" onClick="enlarge('s14c17')"></img></li>
-    <li><img class="s14c18" src="Pack.png" onClick="enlarge('s14c18')"></img></li>
-    <li><img class="s14c19" src="Pack.png" onClick="enlarge('s14c19')"></img></li>
-    <li><img class="s14c20" src="Pack.png" onClick="enlarge('s14c20')"></img></li>
   </ul>
   <ul class="set s15">
     <li><img class="s15c0" src="Pack.png" onClick="enlarge('s15c0')"></img></li>
@@ -375,17 +229,6 @@
     <li><img class="s15c7" src="Pack.png" onClick="enlarge('s15c7')"></img></li>
     <li><img class="s15c8" src="Pack.png" onClick="enlarge('s15c8')"></img></li>
     <li><img class="s15c9" src="Pack.png" onClick="enlarge('s15c9')"></img></li>
-    <li><img class="s15c10" src="Pack.png" onClick="enlarge('s15c10')"></img></li>
-    <li><img class="s15c11" src="Pack.png" onClick="enlarge('s15c11')"></img></li>
-    <li><img class="s15c12" src="Pack.png" onClick="enlarge('s15c12')"></img></li>
-    <li><img class="s15c13" src="Pack.png" onClick="enlarge('s15c13')"></img></li>
-    <li><img class="s15c14" src="Pack.png" onClick="enlarge('s15c14')"></img></li>
-    <li><img class="s15c15" src="Pack.png" onClick="enlarge('s15c15')"></img></li>
-    <li><img class="s15c16" src="Pack.png" onClick="enlarge('s15c16')"></img></li>
-    <li><img class="s15c17" src="Pack.png" onClick="enlarge('s15c17')"></img></li>
-    <li><img class="s15c18" src="Pack.png" onClick="enlarge('s15c18')"></img></li>
-    <li><img class="s15c19" src="Pack.png" onClick="enlarge('s15c19')"></img></li>
-    <li><img class="s15c20" src="Pack.png" onClick="enlarge('s15c20')"></img></li>
   </ul>
   <ul class="set s16">
     <li><img class="s16c0" src="Pack.png" onClick="enlarge('s16c0')"></img></li>
@@ -398,17 +241,6 @@
     <li><img class="s16c7" src="Pack.png" onClick="enlarge('s16c7')"></img></li>
     <li><img class="s16c8" src="Pack.png" onClick="enlarge('s16c8')"></img></li>
     <li><img class="s16c9" src="Pack.png" onClick="enlarge('s16c9')"></img></li>
-    <li><img class="s16c10" src="Pack.png" onClick="enlarge('s16c10')"></img></li>
-    <li><img class="s16c11" src="Pack.png" onClick="enlarge('s16c11')"></img></li>
-    <li><img class="s16c12" src="Pack.png" onClick="enlarge('s16c12')"></img></li>
-    <li><img class="s16c13" src="Pack.png" onClick="enlarge('s16c13')"></img></li>
-    <li><img class="s16c14" src="Pack.png" onClick="enlarge('s16c14')"></img></li>
-    <li><img class="s16c15" src="Pack.png" onClick="enlarge('s16c15')"></img></li>
-    <li><img class="s16c16" src="Pack.png" onClick="enlarge('s16c16')"></img></li>
-    <li><img class="s16c17" src="Pack.png" onClick="enlarge('s16c17')"></img></li>
-    <li><img class="s16c18" src="Pack.png" onClick="enlarge('s16c18')"></img></li>
-    <li><img class="s16c19" src="Pack.png" onClick="enlarge('s16c19')"></img></li>
-    <li><img class="s16c20" src="Pack.png" onClick="enlarge('s16c20')"></img></li>
   </ul>
   <ul class="set s17">
     <li><img class="s17c0" src="Pack.png" onClick="enlarge('s17c0')"></img></li>
@@ -421,17 +253,6 @@
     <li><img class="s17c7" src="Pack.png" onClick="enlarge('s17c7')"></img></li>
     <li><img class="s17c8" src="Pack.png" onClick="enlarge('s17c8')"></img></li>
     <li><img class="s17c9" src="Pack.png" onClick="enlarge('s17c9')"></img></li>
-    <li><img class="s17c10" src="Pack.png" onClick="enlarge('s17c10')"></img></li>
-    <li><img class="s17c11" src="Pack.png" onClick="enlarge('s17c11')"></img></li>
-    <li><img class="s17c12" src="Pack.png" onClick="enlarge('s17c12')"></img></li>
-    <li><img class="s17c13" src="Pack.png" onClick="enlarge('s17c13')"></img></li>
-    <li><img class="s17c14" src="Pack.png" onClick="enlarge('s17c14')"></img></li>
-    <li><img class="s17c15" src="Pack.png" onClick="enlarge('s17c15')"></img></li>
-    <li><img class="s17c16" src="Pack.png" onClick="enlarge('s17c16')"></img></li>
-    <li><img class="s17c17" src="Pack.png" onClick="enlarge('s17c17')"></img></li>
-    <li><img class="s17c18" src="Pack.png" onClick="enlarge('s17c18')"></img></li>
-    <li><img class="s17c19" src="Pack.png" onClick="enlarge('s17c19')"></img></li>
-    <li><img class="s17c20" src="Pack.png" onClick="enlarge('s17c20')"></img></li>
   </ul>
   <ul class="set s18">
     <li><img class="s18c0" src="Pack.png" onClick="enlarge('s18c0')"></img></li>
@@ -444,17 +265,6 @@
     <li><img class="s18c7" src="Pack.png" onClick="enlarge('s18c7')"></img></li>
     <li><img class="s18c8" src="Pack.png" onClick="enlarge('s18c8')"></img></li>
     <li><img class="s18c9" src="Pack.png" onClick="enlarge('s18c9')"></img></li>
-    <li><img class="s18c10" src="Pack.png" onClick="enlarge('s18c10')"></img></li>
-    <li><img class="s18c11" src="Pack.png" onClick="enlarge('s18c11')"></img></li>
-    <li><img class="s18c12" src="Pack.png" onClick="enlarge('s18c12')"></img></li>
-    <li><img class="s18c13" src="Pack.png" onClick="enlarge('s18c13')"></img></li>
-    <li><img class="s18c14" src="Pack.png" onClick="enlarge('s18c14')"></img></li>
-    <li><img class="s18c15" src="Pack.png" onClick="enlarge('s18c15')"></img></li>
-    <li><img class="s18c16" src="Pack.png" onClick="enlarge('s18c16')"></img></li>
-    <li><img class="s18c17" src="Pack.png" onClick="enlarge('s18c17')"></img></li>
-    <li><img class="s18c18" src="Pack.png" onClick="enlarge('s18c18')"></img></li>
-    <li><img class="s18c19" src="Pack.png" onClick="enlarge('s18c19')"></img></li>
-    <li><img class="s18c20" src="Pack.png" onClick="enlarge('s18c20')"></img></li>
   </ul>
   <ul class="set s19">
     <li><img class=s19c0 src="Pack.png" onClick="enlarge('s19c0')"></img></li>
@@ -467,17 +277,6 @@
     <li><img class=s19c7 src="Pack.png" onClick="enlarge('s19c7')"></img></li>
     <li><img class=s19c8 src="Pack.png" onClick="enlarge('s19c8')"></img></li>
     <li><img class=s19c9 src="Pack.png" onClick="enlarge('s19c9')"></img></li>
-    <li><img class=s19c10 src="Pack.png" onClick="enlarge('s19c10')"></img></li>
-    <li><img class=s19c11 src="Pack.png" onClick="enlarge('s19c11')"></img></li>
-    <li><img class=s19c12 src="Pack.png" onClick="enlarge('s19c12')"></img></li>
-    <li><img class=s19c13 src="Pack.png" onClick="enlarge('s19c13')"></img></li>
-    <li><img class=s19c14 src="Pack.png" onClick="enlarge('s19c14')"></img></li>
-    <li><img class=s19c15 src="Pack.png" onClick="enlarge('s19c15')"></img></li>
-    <li><img class=s19c16 src="Pack.png" onClick="enlarge('s19c16')"></img></li>
-    <li><img class=s19c17 src="Pack.png" onClick="enlarge('s19c17')"></img></li>
-    <li><img class=s19c18 src="Pack.png" onClick="enlarge('s19c18')"></img></li>
-    <li><img class=s19c19 src="Pack.png" onClick="enlarge('s19c19')"></img></li>
-    <li><img class=s19c20 src="Pack.png" onClick="enlarge('s19c20')"></img></li>
   </ul>
   <ul class="set s20">
     <li><img class=s20c0 src="Pack.png" onClick="enlarge('s20c0')"></img></li>
@@ -490,17 +289,6 @@
     <li><img class=s20c7 src="Pack.png" onClick="enlarge('s20c7')"></img></li>
     <li><img class=s20c8 src="Pack.png" onClick="enlarge('s20c8')"></img></li>
     <li><img class=s20c9 src="Pack.png" onClick="enlarge('s20c9')"></img></li>
-    <li><img class=s20c10 src="Pack.png" onClick="enlarge('s20c10')"></img></li>
-    <li><img class=s20c11 src="Pack.png" onClick="enlarge('s20c11')"></img></li>
-    <li><img class=s20c12 src="Pack.png" onClick="enlarge('s20c12')"></img></li>
-    <li><img class=s20c13 src="Pack.png" onClick="enlarge('s20c13')"></img></li>
-    <li><img class=s20c14 src="Pack.png" onClick="enlarge('s20c14')"></img></li>
-    <li><img class=s20c15 src="Pack.png" onClick="enlarge('s20c15')"></img></li>
-    <li><img class=s20c16 src="Pack.png" onClick="enlarge('s20c16')"></img></li>
-    <li><img class=s20c17 src="Pack.png" onClick="enlarge('s20c17')"></img></li>
-    <li><img class=s20c18 src="Pack.png" onClick="enlarge('s20c18')"></img></li>
-    <li><img class=s20c19 src="Pack.png" onClick="enlarge('s20c19')"></img></li>
-    <li><img class=s20c20 src="Pack.png" onClick="enlarge('s20c20')"></img></li>
   </ul>
   <ul class="set s21">
     <li><img class="s21c0" src="Pack.png" onClick="enlarge('s21c0')"></img></li>
@@ -513,17 +301,6 @@
     <li><img class="s21c7" src="Pack.png" onClick="enlarge('s21c7')"></img></li>
     <li><img class="s21c8" src="Pack.png" onClick="enlarge('s21c8')"></img></li>
     <li><img class="s21c9" src="Pack.png" onClick="enlarge('s21c9')"></img></li>
-    <li><img class="s21c10" src="Pack.png" onClick="enlarge('s21c10')"></img></li>
-    <li><img class="s21c11" src="Pack.png" onClick="enlarge('s21c11')"></img></li>
-    <li><img class="s21c12" src="Pack.png" onClick="enlarge('s21c12')"></img></li>
-    <li><img class="s21c13" src="Pack.png" onClick="enlarge('s21c13')"></img></li>
-    <li><img class="s21c14" src="Pack.png" onClick="enlarge('s21c14')"></img></li>
-    <li><img class="s21c15" src="Pack.png" onClick="enlarge('s21c15')"></img></li>
-    <li><img class="s21c16" src="Pack.png" onClick="enlarge('s21c16')"></img></li>
-    <li><img class="s21c17" src="Pack.png" onClick="enlarge('s21c17')"></img></li>
-    <li><img class="s21c18" src="Pack.png" onClick="enlarge('s21c18')"></img></li>
-    <li><img class="s21c19" src="Pack.png" onClick="enlarge('s21c19')"></img></li>
-    <li><img class="s21c20" src="Pack.png" onClick="enlarge('s21c20')"></img></li>
   </ul>
   <ul class="set s22">
     <li><img class="s22c0" src="Pack.png" onClick="enlarge('s22c0')"></img></li>
@@ -536,17 +313,6 @@
     <li><img class="s22c7" src="Pack.png" onClick="enlarge('s22c7')"></img></li>
     <li><img class="s22c8" src="Pack.png" onClick="enlarge('s22c8')"></img></li>
     <li><img class="s22c9" src="Pack.png" onClick="enlarge('s22c9')"></img></li>
-    <li><img class="s22c10" src="Pack.png" onClick="enlarge('s22c10')"></img></li>
-    <li><img class="s22c11" src="Pack.png" onClick="enlarge('s22c11')"></img></li>
-    <li><img class="s22c12" src="Pack.png" onClick="enlarge('s22c12')"></img></li>
-    <li><img class="s22c13" src="Pack.png" onClick="enlarge('s22c13')"></img></li>
-    <li><img class="s22c14" src="Pack.png" onClick="enlarge('s22c14')"></img></li>
-    <li><img class="s22c15" src="Pack.png" onClick="enlarge('s22c15')"></img></li>
-    <li><img class="s22c16" src="Pack.png" onClick="enlarge('s22c16')"></img></li>
-    <li><img class="s22c17" src="Pack.png" onClick="enlarge('s22c17')"></img></li>
-    <li><img class="s22c18" src="Pack.png" onClick="enlarge('s22c18')"></img></li>
-    <li><img class="s22c19" src="Pack.png" onClick="enlarge('s22c19')"></img></li>
-    <li><img class="s22c20" src="Pack.png" onClick="enlarge('s22c20')"></img></li>
   </ul>
   <ul class="set s23">
     <li><img class="s23c0" src="Pack.png" onClick="enlarge('s23c0')"></img></li>
@@ -559,17 +325,6 @@
     <li><img class="s23c7" src="Pack.png" onClick="enlarge('s23c7')"></img></li>
     <li><img class="s23c8" src="Pack.png" onClick="enlarge('s23c8')"></img></li>
     <li><img class="s23c9" src="Pack.png" onClick="enlarge('s23c9')"></img></li>
-    <li><img class="s23c10" src="Pack.png" onClick="enlarge('s23c10')"></img></li>
-    <li><img class="s23c11" src="Pack.png" onClick="enlarge('s23c11')"></img></li>
-    <li><img class="s23c12" src="Pack.png" onClick="enlarge('s23c12')"></img></li>
-    <li><img class="s23c13" src="Pack.png" onClick="enlarge('s23c13')"></img></li>
-    <li><img class="s23c14" src="Pack.png" onClick="enlarge('s23c14')"></img></li>
-    <li><img class="s23c15" src="Pack.png" onClick="enlarge('s23c15')"></img></li>
-    <li><img class="s23c16" src="Pack.png" onClick="enlarge('s23c16')"></img></li>
-    <li><img class="s23c17" src="Pack.png" onClick="enlarge('s23c17')"></img></li>
-    <li><img class="s23c18" src="Pack.png" onClick="enlarge('s23c18')"></img></li>
-    <li><img class="s23c19" src="Pack.png" onClick="enlarge('s23c19')"></img></li>
-    <li><img class="s23c20" src="Pack.png" onClick="enlarge('s23c20')"></img></li>
   </ul>
   <ul class="set s24">
     <li><img class="s24c0" src="Pack.png" onClick="enlarge('s24c0')"></img></li>
@@ -582,17 +337,6 @@
     <li><img class="s24c7" src="Pack.png" onClick="enlarge('s24c7')"></img></li>
     <li><img class="s24c8" src="Pack.png" onClick="enlarge('s24c8')"></img></li>
     <li><img class="s24c9" src="Pack.png" onClick="enlarge('s24c9')"></img></li>
-    <li><img class="s24c10" src="Pack.png" onClick="enlarge('s24c10')"></img></li>
-    <li><img class="s24c11" src="Pack.png" onClick="enlarge('s24c11')"></img></li>
-    <li><img class="s24c12" src="Pack.png" onClick="enlarge('s24c12')"></img></li>
-    <li><img class="s24c13" src="Pack.png" onClick="enlarge('s24c13')"></img></li>
-    <li><img class="s24c14" src="Pack.png" onClick="enlarge('s24c14')"></img></li>
-    <li><img class="s24c15" src="Pack.png" onClick="enlarge('s24c15')"></img></li>
-    <li><img class="s24c16" src="Pack.png" onClick="enlarge('s24c16')"></img></li>
-    <li><img class="s24c17" src="Pack.png" onClick="enlarge('s24c17')"></img></li>
-    <li><img class="s24c18" src="Pack.png" onClick="enlarge('s24c18')"></img></li>
-    <li><img class="s24c19" src="Pack.png" onClick="enlarge('s24c19')"></img></li>
-    <li><img class="s24c20" src="Pack.png" onClick="enlarge('s24c20')"></img></li>
   </ul>
   <ul class="set s25">
     <li><img class="s25c0" src="Pack.png" onClick="enlarge('s25c0')"></img></li>
@@ -605,17 +349,7 @@
     <li><img class="s25c7" src="Pack.png" onClick="enlarge('s25c7')"></img></li>
     <li><img class="s25c8" src="Pack.png" onClick="enlarge('s25c8')"></img></li>
     <li><img class="s25c9" src="Pack.png" onClick="enlarge('s25c9')"></img></li>
-    <li><img class="s25c10" src="Pack.png" onClick="enlarge('s25c10')"></img></li>
-    <li><img class="s25c11" src="Pack.png" onClick="enlarge('s25c11')"></img></li>
-    <li><img class="s25c12" src="Pack.png" onClick="enlarge('s25c12')"></img></li>
-    <li><img class="s25c13" src="Pack.png" onClick="enlarge('s25c13')"></img></li>
-    <li><img class="s25c14" src="Pack.png" onClick="enlarge('s25c14')"></img></li>
-    <li><img class="s25c15" src="Pack.png" onClick="enlarge('s25c15')"></img></li>
-    <li><img class="s25c16" src="Pack.png" onClick="enlarge('s25c16')"></img></li>
-    <li><img class="s25c17" src="Pack.png" onClick="enlarge('s25c17')"></img></li>
-    <li><img class="s25c18" src="Pack.png" onClick="enlarge('s25c18')"></img></li>
-    <li><img class="s25c19" src="Pack.png" onClick="enlarge('s25c19')"></img></li>
-    <li><img class="s25c20" src="Pack.png" onClick="enlarge('s25c20')"></img></li>
+
   </ul>
   <ul class="set s26">
     <li><img class="s26c0" src="Pack.png" onClick="enlarge('s26c0')"></img></li>
@@ -628,17 +362,6 @@
     <li><img class="s26c7" src="Pack.png" onClick="enlarge('s26c7')"></img></li>
     <li><img class="s26c8" src="Pack.png" onClick="enlarge('s26c8')"></img></li>
     <li><img class="s26c9" src="Pack.png" onClick="enlarge('s26c9')"></img></li>
-    <li><img class="s26c10" src="Pack.png" onClick="enlarge('s26c10')"></img></li>
-    <li><img class="s26c11" src="Pack.png" onClick="enlarge('s26c11')"></img></li>
-    <li><img class="s26c12" src="Pack.png" onClick="enlarge('s26c12')"></img></li>
-    <li><img class="s26c13" src="Pack.png" onClick="enlarge('s26c13')"></img></li>
-    <li><img class="s26c14" src="Pack.png" onClick="enlarge('s26c14')"></img></li>
-    <li><img class="s26c15" src="Pack.png" onClick="enlarge('s26c15')"></img></li>
-    <li><img class="s26c16" src="Pack.png" onClick="enlarge('s26c16')"></img></li>
-    <li><img class="s26c17" src="Pack.png" onClick="enlarge('s26c17')"></img></li>
-    <li><img class="s26c18" src="Pack.png" onClick="enlarge('s26c18')"></img></li>
-    <li><img class="s26c19" src="Pack.png" onClick="enlarge('s26c19')"></img></li>
-    <li><img class="s26c20" src="Pack.png" onClick="enlarge('s26c20')"></img></li>
   </ul>
   <ul class="set s27">
     <li><img class="s27c0" src="Pack.png" onClick="enlarge('s27c0')"></img></li>
@@ -651,17 +374,6 @@
     <li><img class="s27c7" src="Pack.png" onClick="enlarge('s27c7')"></img></li>
     <li><img class="s27c8" src="Pack.png" onClick="enlarge('s27c8')"></img></li>
     <li><img class="s27c9" src="Pack.png" onClick="enlarge('s27c9')"></img></li>
-    <li><img class="s27c10" src="Pack.png" onClick="enlarge('s27c10')"></img></li>
-    <li><img class="s27c11" src="Pack.png" onClick="enlarge('s27c11')"></img></li>
-    <li><img class="s27c12" src="Pack.png" onClick="enlarge('s27c12')"></img></li>
-    <li><img class="s27c13" src="Pack.png" onClick="enlarge('s27c13')"></img></li>
-    <li><img class="s27c14" src="Pack.png" onClick="enlarge('s27c14')"></img></li>
-    <li><img class="s27c15" src="Pack.png" onClick="enlarge('s27c15')"></img></li>
-    <li><img class="s27c16" src="Pack.png" onClick="enlarge('s27c16')"></img></li>
-    <li><img class="s27c17" src="Pack.png" onClick="enlarge('s27c17')"></img></li>
-    <li><img class="s27c18" src="Pack.png" onClick="enlarge('s27c18')"></img></li>
-    <li><img class="s27c19" src="Pack.png" onClick="enlarge('s27c19')"></img></li>
-    <li><img class="s27c20" src="Pack.png" onClick="enlarge('s27c20')"></img></li>
   </ul>
   <ul class="set s28">
     <li><img class="s28c0" src="Pack.png" onClick="enlarge('s28c0')"></img></li>
@@ -674,17 +386,6 @@
     <li><img class="s28c7" src="Pack.png" onClick="enlarge('s28c7')"></img></li>
     <li><img class="s28c8" src="Pack.png" onClick="enlarge('s28c8')"></img></li>
     <li><img class="s28c9" src="Pack.png" onClick="enlarge('s28c9')"></img></li>
-    <li><img class="s28c10" src="Pack.png" onClick="enlarge('s28c10')"></img></li>
-    <li><img class="s28c11" src="Pack.png" onClick="enlarge('s28c11')"></img></li>
-    <li><img class="s28c12" src="Pack.png" onClick="enlarge('s28c12')"></img></li>
-    <li><img class="s28c13" src="Pack.png" onClick="enlarge('s28c13')"></img></li>
-    <li><img class="s28c14" src="Pack.png" onClick="enlarge('s28c14')"></img></li>
-    <li><img class="s28c15" src="Pack.png" onClick="enlarge('s28c15')"></img></li>
-    <li><img class="s28c16" src="Pack.png" onClick="enlarge('s28c16')"></img></li>
-    <li><img class="s28c17" src="Pack.png" onClick="enlarge('s28c17')"></img></li>
-    <li><img class="s28c18" src="Pack.png" onClick="enlarge('s28c18')"></img></li>
-    <li><img class="s28c19" src="Pack.png" onClick="enlarge('s28c19')"></img></li>
-    <li><img class="s28c20" src="Pack.png" onClick="enlarge('s28c20')"></img></li>
   </ul>
   <ul class="set s29">
     <li><img class=s29c0 src="Pack.png" onClick="enlarge('s29c0')"></img></li>
@@ -697,17 +398,6 @@
     <li><img class=s29c7 src="Pack.png" onClick="enlarge('s29c7')"></img></li>
     <li><img class=s29c8 src="Pack.png" onClick="enlarge('s29c8')"></img></li>
     <li><img class=s29c9 src="Pack.png" onClick="enlarge('s29c9')"></img></li>
-    <li><img class=s29c10 src="Pack.png" onClick="enlarge('s29c10')"></img></li>
-    <li><img class=s29c11 src="Pack.png" onClick="enlarge('s29c11')"></img></li>
-    <li><img class=s29c12 src="Pack.png" onClick="enlarge('s29c12')"></img></li>
-    <li><img class=s29c13 src="Pack.png" onClick="enlarge('s29c13')"></img></li>
-    <li><img class=s29c14 src="Pack.png" onClick="enlarge('s29c14')"></img></li>
-    <li><img class=s29c15 src="Pack.png" onClick="enlarge('s29c15')"></img></li>
-    <li><img class=s29c16 src="Pack.png" onClick="enlarge('s29c16')"></img></li>
-    <li><img class=s29c17 src="Pack.png" onClick="enlarge('s29c17')"></img></li>
-    <li><img class=s29c18 src="Pack.png" onClick="enlarge('s29c18')"></img></li>
-    <li><img class=s29c19 src="Pack.png" onClick="enlarge('s29c19')"></img></li>
-    <li><img class=s29c20 src="Pack.png" onClick="enlarge('s29c20')"></img></li>
   </ul>
   <ul class="set s30">
     <li><img class=s30c0 src="Pack.png" onClick="enlarge('s30c0')"></img></li>
@@ -720,17 +410,6 @@
     <li><img class=s30c7 src="Pack.png" onClick="enlarge('s30c7')"></img></li>
     <li><img class=s30c8 src="Pack.png" onClick="enlarge('s30c8')"></img></li>
     <li><img class=s30c9 src="Pack.png" onClick="enlarge('s30c9')"></img></li>
-    <li><img class=s30c10 src="Pack.png" onClick="enlarge('s30c10')"></img></li>
-    <li><img class=s30c11 src="Pack.png" onClick="enlarge('s30c11')"></img></li>
-    <li><img class=s30c12 src="Pack.png" onClick="enlarge('s30c12')"></img></li>
-    <li><img class=s30c13 src="Pack.png" onClick="enlarge('s30c13')"></img></li>
-    <li><img class=s30c14 src="Pack.png" onClick="enlarge('s30c14')"></img></li>
-    <li><img class=s30c15 src="Pack.png" onClick="enlarge('s30c15')"></img></li>
-    <li><img class=s30c16 src="Pack.png" onClick="enlarge('s30c16')"></img></li>
-    <li><img class=s30c17 src="Pack.png" onClick="enlarge('s30c17')"></img></li>
-    <li><img class=s30c18 src="Pack.png" onClick="enlarge('s30c18')"></img></li>
-    <li><img class=s30c19 src="Pack.png" onClick="enlarge('s30c19')"></img></li>
-    <li><img class=s30c20 src="Pack.png" onClick="enlarge('s30c20')"></img></li>
   </ul>
   <ul class="set s31">
     <li><img class="s31c0" src="Pack.png" onClick="enlarge('s31c0')"></img></li>
@@ -743,17 +422,6 @@
     <li><img class="s31c7" src="Pack.png" onClick="enlarge('s31c7')"></img></li>
     <li><img class="s31c8" src="Pack.png" onClick="enlarge('s31c8')"></img></li>
     <li><img class="s31c9" src="Pack.png" onClick="enlarge('s31c9')"></img></li>
-    <li><img class="s31c10" src="Pack.png" onClick="enlarge('s31c10')"></img></li>
-    <li><img class="s31c11" src="Pack.png" onClick="enlarge('s31c11')"></img></li>
-    <li><img class="s31c12" src="Pack.png" onClick="enlarge('s31c12')"></img></li>
-    <li><img class="s31c13" src="Pack.png" onClick="enlarge('s31c13')"></img></li>
-    <li><img class="s31c14" src="Pack.png" onClick="enlarge('s31c14')"></img></li>
-    <li><img class="s31c15" src="Pack.png" onClick="enlarge('s31c15')"></img></li>
-    <li><img class="s31c16" src="Pack.png" onClick="enlarge('s31c16')"></img></li>
-    <li><img class="s31c17" src="Pack.png" onClick="enlarge('s31c17')"></img></li>
-    <li><img class="s31c18" src="Pack.png" onClick="enlarge('s31c18')"></img></li>
-    <li><img class="s31c19" src="Pack.png" onClick="enlarge('s31c19')"></img></li>
-    <li><img class="s31c20" src="Pack.png" onClick="enlarge('s31c20')"></img></li>
   </ul>
   <ul class="set s32">
     <li><img class="s32c0" src="Pack.png" onClick="enlarge('s32c0')"></img></li>
@@ -766,17 +434,6 @@
     <li><img class="s32c7" src="Pack.png" onClick="enlarge('s32c7')"></img></li>
     <li><img class="s32c8" src="Pack.png" onClick="enlarge('s32c8')"></img></li>
     <li><img class="s32c9" src="Pack.png" onClick="enlarge('s32c9')"></img></li>
-    <li><img class="s32c10" src="Pack.png" onClick="enlarge('s32c10')"></img></li>
-    <li><img class="s32c11" src="Pack.png" onClick="enlarge('s32c11')"></img></li>
-    <li><img class="s32c12" src="Pack.png" onClick="enlarge('s32c12')"></img></li>
-    <li><img class="s32c13" src="Pack.png" onClick="enlarge('s32c13')"></img></li>
-    <li><img class="s32c14" src="Pack.png" onClick="enlarge('s32c14')"></img></li>
-    <li><img class="s32c15" src="Pack.png" onClick="enlarge('s32c15')"></img></li>
-    <li><img class="s32c16" src="Pack.png" onClick="enlarge('s32c16')"></img></li>
-    <li><img class="s32c17" src="Pack.png" onClick="enlarge('s32c17')"></img></li>
-    <li><img class="s32c18" src="Pack.png" onClick="enlarge('s32c18')"></img></li>
-    <li><img class="s32c19" src="Pack.png" onClick="enlarge('s32c19')"></img></li>
-    <li><img class="s32c20" src="Pack.png" onClick="enlarge('s32c20')"></img></li>
   </ul>
   <ul class="set s33">
     <li><img class="s33c0" src="Pack.png" onClick="enlarge('s33c0')"></img></li>
@@ -789,17 +446,6 @@
     <li><img class="s33c7" src="Pack.png" onClick="enlarge('s33c7')"></img></li>
     <li><img class="s33c8" src="Pack.png" onClick="enlarge('s33c8')"></img></li>
     <li><img class="s33c9" src="Pack.png" onClick="enlarge('s33c9')"></img></li>
-    <li><img class="s33c10" src="Pack.png" onClick="enlarge('s33c10')"></img></li>
-    <li><img class="s33c11" src="Pack.png" onClick="enlarge('s33c11')"></img></li>
-    <li><img class="s33c12" src="Pack.png" onClick="enlarge('s33c12')"></img></li>
-    <li><img class="s33c13" src="Pack.png" onClick="enlarge('s33c13')"></img></li>
-    <li><img class="s33c14" src="Pack.png" onClick="enlarge('s33c14')"></img></li>
-    <li><img class="s33c15" src="Pack.png" onClick="enlarge('s33c15')"></img></li>
-    <li><img class="s33c16" src="Pack.png" onClick="enlarge('s33c16')"></img></li>
-    <li><img class="s33c17" src="Pack.png" onClick="enlarge('s33c17')"></img></li>
-    <li><img class="s33c18" src="Pack.png" onClick="enlarge('s33c18')"></img></li>
-    <li><img class="s33c19" src="Pack.png" onClick="enlarge('s33c19')"></img></li>
-    <li><img class="s33c20" src="Pack.png" onClick="enlarge('s33c20')"></img></li>
   </ul>
   <ul class="set s34">
     <li><img class="s34c0" src="Pack.png" onClick="enlarge('s34c0')"></img></li>
@@ -812,17 +458,6 @@
     <li><img class="s34c7" src="Pack.png" onClick="enlarge('s34c7')"></img></li>
     <li><img class="s34c8" src="Pack.png" onClick="enlarge('s34c8')"></img></li>
     <li><img class="s34c9" src="Pack.png" onClick="enlarge('s34c9')"></img></li>
-    <li><img class="s34c10" src="Pack.png" onClick="enlarge('s34c10')"></img></li>
-    <li><img class="s34c11" src="Pack.png" onClick="enlarge('s34c11')"></img></li>
-    <li><img class="s34c12" src="Pack.png" onClick="enlarge('s34c12')"></img></li>
-    <li><img class="s34c13" src="Pack.png" onClick="enlarge('s34c13')"></img></li>
-    <li><img class="s34c14" src="Pack.png" onClick="enlarge('s34c14')"></img></li>
-    <li><img class="s34c15" src="Pack.png" onClick="enlarge('s34c15')"></img></li>
-    <li><img class="s34c16" src="Pack.png" onClick="enlarge('s34c16')"></img></li>
-    <li><img class="s34c17" src="Pack.png" onClick="enlarge('s34c17')"></img></li>
-    <li><img class="s34c18" src="Pack.png" onClick="enlarge('s34c18')"></img></li>
-    <li><img class="s34c19" src="Pack.png" onClick="enlarge('s34c19')"></img></li>
-    <li><img class="s34c20" src="Pack.png" onClick="enlarge('s34c20')"></img></li>
   </ul>
   <ul class="set s35">
     <li><img class="s35c0" src="Pack.png" onClick="enlarge('s35c0')"></img></li>
@@ -835,17 +470,6 @@
     <li><img class="s35c7" src="Pack.png" onClick="enlarge('s35c7')"></img></li>
     <li><img class="s35c8" src="Pack.png" onClick="enlarge('s35c8')"></img></li>
     <li><img class="s35c9" src="Pack.png" onClick="enlarge('s35c9')"></img></li>
-    <li><img class="s35c10" src="Pack.png" onClick="enlarge('s35c10')"></img></li>
-    <li><img class="s35c11" src="Pack.png" onClick="enlarge('s35c11')"></img></li>
-    <li><img class="s35c12" src="Pack.png" onClick="enlarge('s35c12')"></img></li>
-    <li><img class="s35c13" src="Pack.png" onClick="enlarge('s35c13')"></img></li>
-    <li><img class="s35c14" src="Pack.png" onClick="enlarge('s35c14')"></img></li>
-    <li><img class="s35c15" src="Pack.png" onClick="enlarge('s35c15')"></img></li>
-    <li><img class="s35c16" src="Pack.png" onClick="enlarge('s35c16')"></img></li>
-    <li><img class="s35c17" src="Pack.png" onClick="enlarge('s35c17')"></img></li>
-    <li><img class="s35c18" src="Pack.png" onClick="enlarge('s35c18')"></img></li>
-    <li><img class="s35c19" src="Pack.png" onClick="enlarge('s35c19')"></img></li>
-    <li><img class="s35c20" src="Pack.png" onClick="enlarge('s35c20')"></img></li>
   </ul>
   <ul class="set s36">
     <li><img class="s36c0" src="Pack.png" onClick="enlarge('s36c0')"></img></li>
@@ -858,17 +482,6 @@
     <li><img class="s36c7" src="Pack.png" onClick="enlarge('s36c7')"></img></li>
     <li><img class="s36c8" src="Pack.png" onClick="enlarge('s36c8')"></img></li>
     <li><img class="s36c9" src="Pack.png" onClick="enlarge('s36c9')"></img></li>
-    <li><img class="s36c10" src="Pack.png" onClick="enlarge('s36c10')"></img></li>
-    <li><img class="s36c11" src="Pack.png" onClick="enlarge('s36c11')"></img></li>
-    <li><img class="s36c12" src="Pack.png" onClick="enlarge('s36c12')"></img></li>
-    <li><img class="s36c13" src="Pack.png" onClick="enlarge('s36c13')"></img></li>
-    <li><img class="s36c14" src="Pack.png" onClick="enlarge('s36c14')"></img></li>
-    <li><img class="s36c15" src="Pack.png" onClick="enlarge('s36c15')"></img></li>
-    <li><img class="s36c16" src="Pack.png" onClick="enlarge('s36c16')"></img></li>
-    <li><img class="s36c17" src="Pack.png" onClick="enlarge('s36c17')"></img></li>
-    <li><img class="s36c18" src="Pack.png" onClick="enlarge('s36c18')"></img></li>
-    <li><img class="s36c19" src="Pack.png" onClick="enlarge('s36c19')"></img></li>
-    <li><img class="s36c20" src="Pack.png" onClick="enlarge('s36c20')"></img></li>
   </ul>
   <ul class="set s37">
     <li><img class="s37c0" src="Pack.png" onClick="enlarge('s37c0')"></img></li>
@@ -881,17 +494,6 @@
     <li><img class="s37c7" src="Pack.png" onClick="enlarge('s37c7')"></img></li>
     <li><img class="s37c8" src="Pack.png" onClick="enlarge('s37c8')"></img></li>
     <li><img class="s37c9" src="Pack.png" onClick="enlarge('s37c9')"></img></li>
-    <li><img class="s37c10" src="Pack.png" onClick="enlarge('s37c10')"></img></li>
-    <li><img class="s37c11" src="Pack.png" onClick="enlarge('s37c11')"></img></li>
-    <li><img class="s37c12" src="Pack.png" onClick="enlarge('s37c12')"></img></li>
-    <li><img class="s37c13" src="Pack.png" onClick="enlarge('s37c13')"></img></li>
-    <li><img class="s37c14" src="Pack.png" onClick="enlarge('s37c14')"></img></li>
-    <li><img class="s37c15" src="Pack.png" onClick="enlarge('s37c15')"></img></li>
-    <li><img class="s37c16" src="Pack.png" onClick="enlarge('s37c16')"></img></li>
-    <li><img class="s37c17" src="Pack.png" onClick="enlarge('s37c17')"></img></li>
-    <li><img class="s37c18" src="Pack.png" onClick="enlarge('s37c18')"></img></li>
-    <li><img class="s37c19" src="Pack.png" onClick="enlarge('s37c19')"></img></li>
-    <li><img class="s37c20" src="Pack.png" onClick="enlarge('s37c20')"></img></li>
   </ul>
   <ul class="set s38">
     <li><img class="s38c0" src="Pack.png" onClick="enlarge('s38c0')"></img></li>
@@ -904,17 +506,6 @@
     <li><img class="s38c7" src="Pack.png" onClick="enlarge('s38c7')"></img></li>
     <li><img class="s38c8" src="Pack.png" onClick="enlarge('s38c8')"></img></li>
     <li><img class="s38c9" src="Pack.png" onClick="enlarge('s38c9')"></img></li>
-    <li><img class="s38c10" src="Pack.png" onClick="enlarge('s38c10')"></img></li>
-    <li><img class="s38c11" src="Pack.png" onClick="enlarge('s38c11')"></img></li>
-    <li><img class="s38c12" src="Pack.png" onClick="enlarge('s38c12')"></img></li>
-    <li><img class="s38c13" src="Pack.png" onClick="enlarge('s38c13')"></img></li>
-    <li><img class="s38c14" src="Pack.png" onClick="enlarge('s38c14')"></img></li>
-    <li><img class="s38c15" src="Pack.png" onClick="enlarge('s38c15')"></img></li>
-    <li><img class="s38c16" src="Pack.png" onClick="enlarge('s38c16')"></img></li>
-    <li><img class="s38c17" src="Pack.png" onClick="enlarge('s38c17')"></img></li>
-    <li><img class="s38c18" src="Pack.png" onClick="enlarge('s38c18')"></img></li>
-    <li><img class="s38c19" src="Pack.png" onClick="enlarge('s38c19')"></img></li>
-    <li><img class="s38c20" src="Pack.png" onClick="enlarge('s38c20')"></img></li>
   </ul>
   <ul class="set s39">
     <li><img class=s39c0 src="Pack.png" onClick="enlarge('s39c0')"></img></li>
@@ -927,17 +518,6 @@
     <li><img class=s39c7 src="Pack.png" onClick="enlarge('s39c7')"></img></li>
     <li><img class=s39c8 src="Pack.png" onClick="enlarge('s39c8')"></img></li>
     <li><img class=s39c9 src="Pack.png" onClick="enlarge('s39c9')"></img></li>
-    <li><img class=s39c10 src="Pack.png" onClick="enlarge('s39c10')"></img></li>
-    <li><img class=s39c11 src="Pack.png" onClick="enlarge('s39c11')"></img></li>
-    <li><img class=s39c12 src="Pack.png" onClick="enlarge('s39c12')"></img></li>
-    <li><img class=s39c13 src="Pack.png" onClick="enlarge('s39c13')"></img></li>
-    <li><img class=s39c14 src="Pack.png" onClick="enlarge('s39c14')"></img></li>
-    <li><img class=s39c15 src="Pack.png" onClick="enlarge('s39c15')"></img></li>
-    <li><img class=s39c16 src="Pack.png" onClick="enlarge('s39c16')"></img></li>
-    <li><img class=s39c17 src="Pack.png" onClick="enlarge('s39c17')"></img></li>
-    <li><img class=s39c18 src="Pack.png" onClick="enlarge('s39c18')"></img></li>
-    <li><img class=s39c19 src="Pack.png" onClick="enlarge('s39c19')"></img></li>
-    <li><img class=s39c20 src="Pack.png" onClick="enlarge('s39c20')"></img></li>
   </ul>
   <ul class="set s40">
     <li><img class=s40c0 src="Pack.png" onClick="enlarge('s40c0')"></img></li>
@@ -950,40 +530,13 @@
     <li><img class=s40c7 src="Pack.png" onClick="enlarge('s40c7')"></img></li>
     <li><img class=s40c8 src="Pack.png" onClick="enlarge('s40c8')"></img></li>
     <li><img class=s40c9 src="Pack.png" onClick="enlarge('s40c9')"></img></li>
-    <li><img class=s40c10 src="Pack.png" onClick="enlarge('s40c10')"></img></li>
-    <li><img class=s40c11 src="Pack.png" onClick="enlarge('s40c11')"></img></li>
-    <li><img class=s40c12 src="Pack.png" onClick="enlarge('s40c12')"></img></li>
-    <li><img class=s40c13 src="Pack.png" onClick="enlarge('s40c13')"></img></li>
-    <li><img class=s40c14 src="Pack.png" onClick="enlarge('s40c14')"></img></li>
-    <li><img class=s40c15 src="Pack.png" onClick="enlarge('s40c15')"></img></li>
-    <li><img class=s40c16 src="Pack.png" onClick="enlarge('s40c16')"></img></li>
-    <li><img class=s40c17 src="Pack.png" onClick="enlarge('s40c17')"></img></li>
-    <li><img class=s40c18 src="Pack.png" onClick="enlarge('s40c18')"></img></li>
-    <li><img class=s40c19 src="Pack.png" onClick="enlarge('s40c19')"></img></li>
-    <li><img class=s40c20 src="Pack.png" onClick="enlarge('s40c20')"></img></li>
   </ul>
 
+  <!-- Scripts -->
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
-    <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCLjx4Ys4qnzMfRog74NExTUHdZism8u-I",
-      authDomain: "buttoncards.firebaseapp.com",
-      databaseURL: "https://buttoncards-default-rtdb.firebaseio.com",
-      projectId: "buttoncards",
-      storageBucket: "buttoncards.firebasestorage.app",
-      messagingSenderId: "1001795754069",
-      appId: "1:1001795754069:web:1cbf4305a68f9b45eb5cdc",
-      measurementId: "G-F56PTH5YNL"
-    };
-  
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-  </script>
-  
-  <script src="scriptCollect.js"></script>
+  <script src="header.js"></script>
+  <script src="collectUser.js"></script>
 </body>
 
 </html>
