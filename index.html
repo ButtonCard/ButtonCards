@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Login - BUTTON Cards</title>
     <link rel="icon" type="image/png" href="BC_Icon.png">
     <style>
@@ -38,12 +39,6 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         input[type="text"],
@@ -87,18 +82,24 @@
             background-color: rgba(51, 255, 51, 0.2);
             color: #33ff33;
         }
-
-        .toggle-form {
-            color: #0099ff;
-            text-decoration: underline;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 15px;
-        }
-
     </style>
 </head>
+    
 <body>
+    <!-- Header Section -->
+    <div class="logoBack">
+    <a class="logoLink" href="collections.html">
+      <img class="logo" src="BC_Logo.png" alt="Logo">
+    </a>
+    <div class="user-info">
+      <p id="username">User: Loading</p>
+      <p id="token">Pack Tokens: 100</p>
+      <button class="logout-button" onclick="handleLogout()">LOGOUT</button>
+    </div>
+    </div>
+    <div class=line></div>
+
+    <!-- Login Menu -->
     <div class="container" id="loginContainer">
         <h2 style="text-align: center;">Login to BUTTON Cards</h2>
         <form class="form" id="loginForm" onsubmit="return handleLogin(event)">
@@ -115,29 +116,13 @@
         </form>
     </div>
 
+    <!-- Scripts -->
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="header.js"></script>
     <script>
-        const firebaseConfig = {
-          apiKey: "AIzaSyCLjx4Ys4qnzMfRog74NExTUHdZism8u-I",
-          authDomain: "buttoncards.firebaseapp.com",
-          databaseURL: "https://buttoncards-default-rtdb.firebaseio.com",
-          projectId: "buttoncards",
-          storageBucket: "buttoncards.firebasestorage.app",
-          messagingSenderId: "1001795754069",
-          appId: "1:1001795754069:web:1cbf4305a68f9b45eb5cdc",
-          measurementId: "G-F56PTH5YNL"
-        };
-        
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-    </script>
-    <script>
-        // Initialize users array from localStorage or create empty array
-        let users = JSON.parse(localStorage.getItem('users')) || [];
 
-        // Check for remembered user
+        //Check if User is Already Signed In
         window.onload = function() {
             const rememberedUser = localStorage.getItem('rememberedUser');
             if (rememberedUser) {
@@ -146,12 +131,12 @@
                 document.getElementById('rememberMe').checked = true;
             }
 
-            // Check if already logged in
             if (localStorage.getItem('isLoggedIn') === 'true') {
                 window.location.href = 'home.html';
             }
         }
 
+        //Show Message
         function showMessage(elementId, message, isError = true) {
             const messageElement = document.getElementById(elementId);
             messageElement.textContent = message;
@@ -162,6 +147,7 @@
             }, 3000);
         }
 
+        //Login User
         async function handleLogin(event) {
             event.preventDefault();
             
