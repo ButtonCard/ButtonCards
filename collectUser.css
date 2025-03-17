@@ -21,6 +21,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .collectionList li{
@@ -28,8 +29,6 @@
   width: 106px; 
   margin: 6px;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .collectionList img{
