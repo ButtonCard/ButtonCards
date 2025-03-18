@@ -58,7 +58,7 @@
 }
 
 .selectButton:hover {
-  border: white 2px solid;
+  border: darkblue 2px solid;
   background-color: blue;
 }
 
