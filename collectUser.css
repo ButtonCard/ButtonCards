@@ -67,11 +67,10 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  text-decoration: none;
 }
 
 .tradePageSelect a{
-  /*text-decoration: none;*/
+  text-decoration: none;
 }
 
 .pageSelected {
