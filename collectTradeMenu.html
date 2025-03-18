@@ -117,7 +117,17 @@
         // Create a new option element for each name
         const option = document.createElement('option');
         option.value = name; // Set the value of the option to the name
-        option.textContent = name; // Set the text content of the option to the name
+        if(name=="dc"){
+          option.textContent = "DCMetro";
+        } else if(name=="gem"){
+          option.textContent = "DCGem";
+        } else if(name=="void"){
+          option.textContent = "VoidMax";
+        } else if(name=="zav"){
+          option.textContent = "Zaveeya";
+        } else{
+          option.textContent = "Lurker";
+        }
         option.classList.add(`t${index + 1}`); // Add a class like t1, t2, t3, ...
         
         // Append the option to the select element
