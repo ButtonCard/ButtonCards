@@ -112,10 +112,12 @@ h3 {
 .tradeText{
   display: inline;
   color: darkblue;
-  margin-top: 40px;
 }
 .send, .yours{
   display: none;
+}
+.compare{
+  margin-top: 10px;
 }
 
 /* ----- Enlarged Card ----- */
