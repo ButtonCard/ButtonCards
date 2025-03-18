@@ -63,9 +63,15 @@
 }
 
 .tradePageSelect {
+  margin-top: -10px;
   display: flex;
   justify-content: center;
   gap: 20px;
+  text-decoration: none;
+}
+
+.tradePageSelect a{
+  /*text-decoration: none;*/
 }
 
 .pageSelected {
