@@ -903,6 +903,13 @@
     }
 
     async function sendTrade() {
+      //check yourCards & tradeCards aren't empty
+      console.log(yourCards + " for " + tradeCards);
+      if(yourCards==["","","","","",""] || tradeCards==["","","","","",""]){
+        window.alert("One side of this trade has 0 cards. Please try again.");
+        return;
+      }
+      
       // Join the cards array into a single string with commas
       let sendCards = yourCards.filter(card => card !== "");
       sendCards = sendCards.map(cardurl => {
