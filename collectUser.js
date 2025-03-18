@@ -63,12 +63,11 @@ async function loadSets(allCards) {
     filledCards = allCards;
   } else {
     const userQuery = await userRef
-          .where('name', '==', currentUser.username)
+          .where('name', '==', listName.value)
           .get();
     
     const doc = userQuery.docs[0];
     compareCards = doc.data().cards.sort();
-
     filledCards = allCards;
   }
 
