@@ -7,7 +7,7 @@
   margin-top: 35px;
 }
 
-.collectionList, .set, .tradeList, .yourList, .resultList, .myList{
+.collectionList, .set, .tradeList, .yourList, .resultList, .myList, .viewYourList, .viewTheirList{
   background-color: #070552ff;
   border: 6px solid #ffce00ff;
   border-radius: 5px;
@@ -21,11 +21,11 @@
   justify-content: center;
   align-items: center;
 }
-.yourList, .myList{
+.yourList, .myList, .viewTheirList{
   display: none;
 }
 
-.collectionList li, .set li, .tradeList li, .yourList li, .resultList li, .myList li{
+.collectionList li, .set li, .tradeList li, .yourList li, .resultList li, .myList li, .viewYourList li, .viewTheirList li{
   width: 106px; 
   margin: 6px;
   display:flex;
@@ -33,7 +33,7 @@
   align-items: center;
 }
 
-.collectionList img, .set img, .tradeList img, .yourList img, .resultList img, .myList img{
+.collectionList img, .set img, .tradeList img, .yourList img, .resultList img, .myList img, .viewYourList img, .viewTheirList img{
   width: 0px;
 }
 
