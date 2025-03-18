@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width">
   <title>Trades - BUTTON Cards</title>
   <link rel="icon" type="image/png" href="BC_Icon.png">
-  <link href="styleCollect.css" rel="stylesheet" type="text/css" />
   <link href="collectUser.css" rel="stylesheet" type="text/css" />
   <link href="header.css" rel="stylesheet" type="text/css" />
 </head>
@@ -48,15 +47,7 @@
     <a href="collectTradeMenu.html"><h2 class=pageSelected>View Trades</h2></a>
   </div>
 
-  <h3>Your cards: (You Lose)</h3>
-  <ul class=viewTheirList>
-    <li><img class=d0 src="Pack.png" onClick="enlarge('d0')"></img></li>
-    <li><img class=d1 src="Pack.png" onClick="enlarge('d1')"></img></li>
-    <li><img class=d2 src="Pack.png" onClick="enlarge('d2')"></img></li>
-    <li><img class=d3 src="Pack.png" onClick="enlarge('d3')"></img></li>
-    <li><img class=d4 src="Pack.png" onClick="enlarge('d4')"></img></li>
-    <li><img class=d5 src="Pack.png" onClick="enlarge('d5')"></img></li>
-  </ul>
+  <!-- View Trading Cards List -->
   <h3>Their cards: (You Gain)</h3>
   <ul class=viewYourList>
     <li><img class=e0 src="Pack.png" onClick="enlarge('e0')"></img></li>
@@ -66,7 +57,16 @@
     <li><img class=e4 src="Pack.png" onClick="enlarge('e4')"></img></li>
     <li><img class=e5 src="Pack.png" onClick="enlarge('e5')"></img></li>
   </ul>
-
+  <h3>Your cards: (You Lose)</h3>
+  <ul class=viewTheirList>
+    <li><img class=d0 src="Pack.png" onClick="enlarge('d0')"></img></li>
+    <li><img class=d1 src="Pack.png" onClick="enlarge('d1')"></img></li>
+    <li><img class=d2 src="Pack.png" onClick="enlarge('d2')"></img></li>
+    <li><img class=d3 src="Pack.png" onClick="enlarge('d3')"></img></li>
+    <li><img class=d4 src="Pack.png" onClick="enlarge('d4')"></img></li>
+    <li><img class=d5 src="Pack.png" onClick="enlarge('d5')"></img></li>
+  </ul>
+  
   <button class=compare onClick="acceptTrade()">Accept Trade</button>
   <button class=compare onClick="declineTrade()">Decline Trade</button>
   <br>
