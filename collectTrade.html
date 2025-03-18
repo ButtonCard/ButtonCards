@@ -904,8 +904,9 @@
 
     async function sendTrade() {
       //check yourCards & tradeCards aren't empty
-      console.log(yourCards.filter(card => card !== "") + " for " + tradeCards.filter(card => card !== ""));
-      if(yourCards.filter(card => card !== "")==[] || tradeCards.filter(card => card !== "")==[]){
+      console.log(yourCards.filter(card => card !== "").length + " for " + tradeCards.filter(card => card !== "").length);
+      if(yourCards.filter(card => card !== "").length==0 || tradeCards.filter(card => card !== "").length==0){
+        console.log("zero");
         window.alert("One side of this trade has 0 cards. Please try again.");
         return;
       }
