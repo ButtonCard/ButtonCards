@@ -1,7 +1,8 @@
 //PACK OPENING FUNCTIONS
 
 //Store Info About Pack Opened
-let packSizes = [4,5,6];
+let packSizes = [4,3,4];
+let packCost = [1,1,2];
 let num = 0;
 let pack = [];
 
@@ -22,12 +23,12 @@ async function openPack(packNum) {
   
   const doc = userQuery.docs[0];
   let curTokens = doc.data().tokens;
-  if(curTokens<=0){
+  if(curTokens-packCost[packNum]<0){
     alert("Not Enough Pack Tokens!");
     return;
   }
   if(pack.length==0){
-    let newTokens = curTokens - 1;
+    let newTokens = curTokens - packCost[packNum];
     await doc.ref.update({
       tokens: newTokens
     });
