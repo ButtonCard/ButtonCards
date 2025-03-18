@@ -62,6 +62,20 @@
   background-color: blue;
 }
 
+.tradePageSelect {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pageSelected {
+  text-decoration: underline;
+}
+
+.pageNot {
+  text-decoration: none;
+}
+
 /* ----- Enlarged Card ----- */
 .large{
   margin: auto;
