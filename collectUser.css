@@ -111,6 +111,7 @@ h3 {
 }
 .tradeText{
   display: inline;
+  color: darkblue;
 }
 .send{
   display: none;
