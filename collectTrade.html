@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width">
   <title>Trades - BUTTON Cards</title>
   <link rel="icon" type="image/png" href="BC_Icon.png">
-  <link href="collectUser.css" rel="stylesheet" type="text/css" />
   <link href="styleCollect.css" rel="stylesheet" type="text/css" />
+  <link href="collectUser.css" rel="stylesheet" type="text/css" />
   <link href="header.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -48,6 +48,7 @@
     <a href="collectTradeMenu.html"><h2 class=pageNot>View Trades</h2></a>
   </div>
 
+  <!-- Trading Cards Lists -->
   <h3>Their cards: (You Gain)</h3>
   <ul class=tradeList>
     <li><img class=d0 src="Pack.png" onClick="removeFromTradeList('d0')"></img></li>
@@ -67,6 +68,7 @@
     <li><img class=e5 src="Pack.png" onClick="removeFromYourList('e5')"></img></li>
   </ul>
 
+  <!-- Player Selector -->
   <p class=tradeText>Trading with</p>
   <select name="Tplayers" class="Tplayers">
     <option class=t2 value="dc">DCMetro</option>
@@ -74,12 +76,14 @@
     <option class=t4 value="void">VoidMax</option>
     <option class=t5 value="zav">Zaveeya</option>
   </select>
-
+  
+  <!-- Player Selector -->
   <button class=compare onClick="resetTradeList(); selectTrade();">Search</button>
   <button class=compare onClick="saveTrade(); updatePage(); addYourCards();">Confirm Trade</button>
   <a href="collectTradeMenu.html"><button class=compare>View Recieved Trades</button></a>
   <button class=send onClick="sendTrade()">Send Trade</button>
 
+  <!-- User's Cards Lists -->
   <ul class=resultList>
     <li><img class=c0 src="Pack.png" onClick="moveToTradeList('c0')"></img></li>
     <li><img class=c1 src="Pack.png" onClick="moveToTradeList('c1')"></img></li>
@@ -486,7 +490,7 @@
     <li><img class=f199 src="Pack.png" onClick="moveToYourList('f199')"></img></li>
   </ul>
 
-  
+  <!-- Scripts -->
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
   <script src="header.js"></script>
