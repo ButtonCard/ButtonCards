@@ -113,7 +113,7 @@ h3 {
   display: inline;
   color: darkblue;
 }
-.send, .yours{
+.send, .yours, .yourText{
   display: none;
 }
 .compare{
