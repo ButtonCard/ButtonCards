@@ -69,9 +69,10 @@ button:hover {
   justify-content: center;
   color: darkblue;
   border: 2px solid red; /* Red border */
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 20px; /* Rounded corners */
   overflow: hidden; /* Ensures the inner elements are clipped within the rounded corners */
-  width: 50%; /* Adjust the width of the switch */
+  width: 200px; /* Adjust the width of the switch */
+  height: 20px;
   margin: 0 auto; /* Center the container */
 }
 .tradePageSelect a{
@@ -79,8 +80,8 @@ button:hover {
 }
 
 .pageSelected {
-  background-color: blue; /* Blue background for the selected side */
-  color: white; /* White text */
+  background-color: blue;
+  color: white;
   padding: 10px 20px;
   margin: 0;
   font-size: 24px;
