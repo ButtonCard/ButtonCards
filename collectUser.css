@@ -21,6 +21,9 @@
   justify-content: center;
   align-items: center;
 }
+.yourList{
+  display: none;
+}
 
 .collectionList li, .set li, .tradeList li, .yourList li{
   width: 106px; 
