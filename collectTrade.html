@@ -662,6 +662,13 @@
 
 
     function saveTrade() {
+      //check tradeCards isn't empty
+      if(tradeCards.filter(card => card !== "").length==0){
+        console.log("zero");
+        window.alert("You must select at least 1 Card to trade. Please try again.");
+        return;
+      }
+      
       // Join the cards array into a single string with commas
       let saveCards = tradeCards.filter(card => card !== "");
       saveCards = saveCards.map(cardurl => {
@@ -903,11 +910,10 @@
     }
 
     async function sendTrade() {
-      //check yourCards & tradeCards aren't empty
-      console.log(yourCards.filter(card => card !== "").length + " for " + tradeCards.filter(card => card !== "").length);
-      if(yourCards.filter(card => card !== "").length==0 || tradeCards.filter(card => card !== "").length==0){
+      //check yourCards aren't empty
+      if(yourCards.filter(card => card !== "").length==0){
         console.log("zero");
-        window.alert("One side of this trade has 0 cards. Please try again.");
+        window.alert("You must select at least 1 Card to trade. Please try again.");
         return;
       }
       
