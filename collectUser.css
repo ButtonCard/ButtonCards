@@ -80,11 +80,11 @@ button:hover {
   text-decoration: none;
 }
 
-.pageSelected {
-  background-color: blue;
+.tradePageSelect a h2{
   color: white;
   margin: 0;
   padding: 0;
+  justify-content: center;
   align-items: center;
   display: flex;
   font-size: 20px;
@@ -93,17 +93,11 @@ button:hover {
   width: 150px;
 }
 
+.pageSelected {
+  background-color: blue;
+}
 .pageNot {
   background-color: #292929;
-  color: white;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  display: flex;
-  font-size: 20px;
-  border: none;
-  height: 50px;
-  width: 150px;
 }
 .pageNot:hover {
   background-color: darkblue;
