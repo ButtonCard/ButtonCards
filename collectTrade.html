@@ -905,7 +905,7 @@
     async function sendTrade() {
       //check yourCards & tradeCards aren't empty
       console.log(yourCards + " for " + tradeCards);
-      if(yourCards==["","","","","",""] || tradeCards==["","","","","",""]){
+      if(yourCards.filter(card => card !== "")==[] || tradeCards.filter(card => card !== "")==[]){
         window.alert("One side of this trade has 0 cards. Please try again.");
         return;
       }
