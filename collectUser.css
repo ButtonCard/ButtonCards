@@ -72,7 +72,7 @@ button:hover {
   border-radius: 20px;
   overflow: hidden;
   width: 300px;
-  height: 50px;
+  height: 40px;
   margin: 0 auto;
 }
 .tradePageSelect a{
@@ -85,8 +85,9 @@ button:hover {
   margin: 0;
   font-size: 20px;
   text-align: center;
+  padding: auto;
   border: none;
-  height: 50px;
+  height: 40px;
   width: 150px;
 }
 
@@ -96,6 +97,7 @@ button:hover {
   margin: 0;
   font-size: 20px;
   text-align: center;
+  padding: auto;
   border: none;
   height: 50px;
   width: 150px;
