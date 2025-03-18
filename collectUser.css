@@ -68,8 +68,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: darkblue;
-  border: 2px solid black;
+  border: 4px solid black;
   border-radius: 20px;
   overflow: hidden;
   width: 300px;
@@ -94,13 +93,13 @@ button:hover {
 }
 
 .pageSelected {
-  background-color: blue;
+  background-color: darkblue;
 }
 .pageNot {
   background-color: #292929;
 }
 .pageNot:hover {
-  background-color: darkblue;
+  background-color: #acd4f5ff;
 }
 
 /* ----- Enlarged Card ----- */
