@@ -105,6 +105,17 @@ button:hover {
   background-color: darkblue;
 }
 
+/* ----- Send Trade Page ----- */
+h3 {
+  color: darkblue;
+}
+.tradeText{
+  display: inline;
+}
+.send{
+  display: none;
+}
+
 /* ----- Enlarged Card ----- */
 .large{
   margin: auto;
