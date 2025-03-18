@@ -79,7 +79,7 @@
   
   <!-- Player Selector -->
   <button class=compare onClick="resetTradeList(); selectTrade();">Search</button>
-  <button class=compare onClick="saveTrade(); updatePage(); addYourCards();">Confirm Trade</button>
+  <button class=compare onClick="saveTrade();">Confirm Trade</button>
   <button class=send onClick="sendTrade()">Send Trade</button>
 
   <!-- User's Cards Lists -->
@@ -668,6 +668,8 @@
         window.alert("You must select at least 1 Card to trade. Please try again.");
         return;
       }
+      updatePage();
+      addYourCards();
       
       // Join the cards array into a single string with commas
       let saveCards = tradeCards.filter(card => card !== "");
