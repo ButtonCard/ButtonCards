@@ -66,6 +66,7 @@ button:hover {
 .tradePageSelect {
   margin-top: -20px;
   display: flex;
+  align-items: center;
   justify-content: center;
   color: darkblue;
   border: 2px solid black;
@@ -84,8 +85,6 @@ button:hover {
   color: white;
   margin: 0;
   font-size: 20px;
-  text-align: center;
-  padding: auto;
   border: none;
   height: 40px;
   width: 150px;
@@ -96,8 +95,6 @@ button:hover {
   color: white;
   margin: 0;
   font-size: 20px;
-  text-align: center;
-  padding: auto;
   border: none;
   height: 50px;
   width: 150px;
