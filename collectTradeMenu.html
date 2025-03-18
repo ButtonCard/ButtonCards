@@ -85,10 +85,12 @@
     let theirTradeCards = [];
     let yourTradeCards = [];
     let curTradeNum = -1;
-    window.onload = async () => {
+
+    async function loadTrades(){
       await getTrades();
       populateTradesSelect();
-    };
+    }
+    loadTrades();
     
     async function getTrades() {
       const userRef = db.collection('users');
