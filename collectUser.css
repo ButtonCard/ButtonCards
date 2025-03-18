@@ -7,7 +7,7 @@
   margin-top: 35px;
 }
 
-.collectionList, .set{
+.collectionList, .set, .tradeList, .yourList{
   background-color: #070552ff;
   border: 6px solid #ffce00ff;
   border-radius: 5px;
@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-.collectionList li, .set li{
+.collectionList li, .set li, .tradeList li, .yourList li{
   width: 106px; 
   margin: 6px;
   display:flex;
@@ -30,7 +30,7 @@
   align-items: center;
 }
 
-.collectionList img, .set img{
+.collectionList img, .set img, .tradeList img, .yourList img{
   width: 0px;
 }
 
