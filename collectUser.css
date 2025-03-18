@@ -42,7 +42,7 @@
   display: none;
 }
 
-.selectButton{
+button{
   margin-left: 10px;
   margin-bottom: 16px;
   margin-top: 5px;
@@ -57,29 +57,52 @@
   font-size: 14px;
 }
 
-.selectButton:hover {
+button:hover {
   border: darkblue 2px solid;
   background-color: blue;
 }
 
+/* ----- Trade Page Selector ----- */
 .tradePageSelect {
   margin-top: -20px;
   display: flex;
   justify-content: center;
-  gap: 20px;
   color: darkblue;
+  border: 2px solid red; /* Red border */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Ensures the inner elements are clipped within the rounded corners */
+  width: 50%; /* Adjust the width of the switch */
+  margin: 0 auto; /* Center the container */
 }
-
 .tradePageSelect a{
   text-decoration: none;
 }
 
 .pageSelected {
-  text-decoration: underline;
+  background-color: blue; /* Blue background for the selected side */
+  color: white; /* White text */
+  padding: 10px 20px;
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  width: 50%;
 }
 
 .pageNot {
-  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  width: 50%;
+}
+.pageNot:hover {
+  background-color: darkblue;
 }
 
 /* ----- Enlarged Card ----- */
