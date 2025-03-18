@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: center;
 }
-.yourList, .myList, .viewYourList{
+.yourList, .myList{
   display: none;
 }
 
@@ -113,7 +113,7 @@ h3 {
   display: inline;
   color: darkblue;
 }
-.send, .yours, .yourText{
+.send, .yours{
   display: none;
 }
 .compare{
