@@ -37,7 +37,7 @@ async function openPack(packNum) {
   let cardPic = document.querySelector(".pack");
   if (num != 0) {
     cardPic.style.width = "300px";
-    cardPic.style.boxShadow = '10px 10px 15px ${getRandomColor()}';
+    cardPic.style.filter = 'drop-shadow(10px 10px ${getRandomColor()})';
     cardPic.addEventListener("click", flipCard(cardPic, pack));
     return;
   }
