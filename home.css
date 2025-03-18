@@ -29,6 +29,15 @@
   color: darkblue;
   width: 300px;
   margin-top: -5px;
+  margin-bottom: 0px;
+}
+
+.pack-option h4 {
+  font-size: 16px;
+  color: darkblue;
+  width: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .pack-image {
