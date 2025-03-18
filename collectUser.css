@@ -57,6 +57,11 @@
   font-size: 14px;
 }
 
+.selectButton:hover {
+  border: white 2px solid;
+  background-color: blue;
+}
+
 /* ----- Enlarged Card ----- */
 .large{
   margin: auto;
