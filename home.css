@@ -8,6 +8,10 @@
   text-decoration: underline;
 }
 
+.tokenCount {
+  color: darkblue;
+}
+
 .pack-options {
   display: flex;
   justify-content: center;
