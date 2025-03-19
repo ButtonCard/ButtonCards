@@ -22,9 +22,7 @@ window.onload = async function() {
       .get();
   const doc = userQuery.docs[0];
   let tokens = doc.data().tokens;
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('tokenCount').textContent = `Pack Tokens: ` + tokens;
-  });
+  document.getElementById('tokenCount').textContent = document.getElementById('token').textContent;
 }
 
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
