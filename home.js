@@ -13,6 +13,18 @@ let R = ["01-5", "01-6"];
 let E = ["01-7"];
 let L = ["01-8"];
 
+//Loads in Pack Token Count
+window.onload = async function() {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const userRef = db.collection('users');
+  const userQuery = await userRef
+      .where('name', '==', currentUser.username)
+      .get();
+  const doc = userQuery.docs[0];
+  let tokens = doc.data().tokens;
+  document.getElementById('tokenCount').textContent = 'Pack Tokens: ' + tokens;
+}
+
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
 async function openPack(packNum) {
   const userRef = db.collection('users');
