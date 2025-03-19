@@ -14,7 +14,7 @@ let E = ["01-7"];
 let L = ["01-8"];
 
 //Loads in Pack Token Count
-window.onload = async function() {
+async function loadTokens() {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   const userRef = db.collection('users');
   const userQuery = await userRef
@@ -24,6 +24,7 @@ window.onload = async function() {
   let tokens = doc.data().tokens;
   document.getElementById('tokenCount').textContent = document.getElementById('token').textContent;
 }
+loadTokens();
 
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
 async function openPack(packNum) {
