@@ -1,4 +1,4 @@
-//TRADE SENDING FUNCTIONS
+//CRAFT MENU FUNCTIONS
 
 //load cards into list for user to select from
 async function loadUserCards() {
@@ -42,3 +42,103 @@ async function loadUserCards() {
   }
 }
 await loadUserCards();
+
+
+
+// Move the card to the trade list when clicked in resultList
+function moveToTradeList(cardClass) {
+  console.log('move ' + cardClass);
+  const cardElement = document.querySelector(`.${cardClass}`);
+
+  // Add the card to the trade list
+  const cardImage = cardElement.src; // Get the image source of the card
+  const tradeSlot = findEmptyTradeSlot(cardImage,parseInt(cardClass.replace(/\D/g, ''), 10));
+  
+  if (tradeSlot !== null) {
+    console.log('moving');
+    // Mark the card as selected (faded) in resultList
+    cardElement.style.opacity = "0.5";  // Fade out the card in the resultList
+    cardElement.style.pointerEvents = "none";  // Disable further clicking
+
+    // Update the corresponding tradeList slot with the card image
+    const tradeSlotImage = tradeSlot.querySelector("img");
+    tradeSlotImage.src = cardImage;
+    tradeSlotImage.style.width = "110px"; // Set size for image
+  }
+}
+
+// Remove the card from the trade list when clicked
+function removeFromTradeList(cardClass) {
+    console.log('remove ' + cardClass);
+    const tradeSlot = document.querySelector(`.${cardClass}`);
+    const tradeSlotSrc = tradeSlot.src;
+    //const tradeSlotImage = tradeSlot.querySelector("img");
+  
+    console.log('removing ' + tradeSlot);
+    console.log('removing ' + tradeSlotSrc);
+    // Ensure tradeSlotImage exists before accessing src
+    if (tradeSlot !== null) {
+      console.log('remover');
+  
+      // Find the index of the card in tradeCards array and remove it
+      const cardIndex = parseInt(cardClass.replace(/\D/g, ''), 10);
+      
+      console.log('remover' + tradeSlot.src);
+      // Reset the trade slot to default (hide image and set to "Pack.png")
+      tradeSlot.src = "Pack.png";
+      tradeSlot.style.width = "0px";  // Hide image
+  
+      // Find a result slot with the matching src to restore opacity
+      const slotToRestore = findMatchingResultSlot(tradeSlotSrc,indexCards[parseInt(cardClass.replace(/\D/g, ''), 10)]);
+      if (slotToRestore) {
+        console.log('FOUND matching result slot');
+        const cardElement = slotToRestore.querySelector("img");
+        // Set opacity back to 1 and restore visibility in the result list
+        console.log('FOUND' + cardElement.src);
+        cardElement.style.opacity = "1";  // Restore opacity
+        cardElement.style.pointerEvents = "auto";  // Re-enable clicking
+      }
+
+      if (cardIndex !== -1) {
+        tradeCards[cardIndex]="";
+        indexCards[cardIndex]=0;
+      }
+    }
+  }
+  
+  function findMatchingResultSlot(src,index) {
+    if(src !== "pack.png"){
+      console.log('find matching result slot' + index);
+      const resultListItems = document.querySelectorAll(".resultList li");
+      
+      for (let i = 0; i < resultListItems.length; i++) {
+        const resultSlotImage = resultListItems[i].querySelector("img");
+        
+        // If a slot with matching src is found, return it
+        if (i == index) {
+          console.log('YES ' + i);
+          return resultListItems[i];
+        }
+      }
+    }
+    return null; // No matching slot found
+  }
+
+// Find the first empty slot in the tradeList
+function findEmptyTradeSlot(tradeVal, indexVal) {
+  console.log('find empty');
+  const tradeListItems = document.querySelectorAll(".tradeList li");
+
+  for (let i = 0; i < tradeListItems.length; i++) {
+    console.log('search');
+    const tradeSlotImage = tradeListItems[i].querySelector("img");
+
+    if (tradeSlotImage.width === 0) {
+      console.log('found');
+      tradeCards[i]=tradeVal; // Store the card in the tradeCards array
+      indexCards[i]=indexVal; //get index in resultList
+      return tradeListItems[i];
+    }
+  }
+  return null; // No empty slots available
+}
