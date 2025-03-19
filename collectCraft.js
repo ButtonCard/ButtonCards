@@ -149,7 +149,7 @@ let tradeTo = "";
 
 async function craftCards() {
   //check craftCards is full
-  if(tradeCards.filter(card => card !== "").length!==8){
+  if(tradeCards.filter(card => card !== "").length!==9){
     console.log("notFull");
     window.alert("You must select 9 cards to craft. Please try again.");
     return;
