@@ -3,11 +3,11 @@ let packSizes = [4,3,4];
 let packCost = [1,1,2];
 
 //Pack 1 Image
-document.getElementById('Pack1')='Pack1.png';
+document.getElementById("Pack1")='Pack1.png';
 //Pack 2 Image
-document.getElementById('Pack2')='Pack2.png';
+document.getElementById("Pack2")='Pack2.png';
 //Pack 3 Image
-document.getElementById('Pack3')='Pack3.png';
+document.getElementById("Pack3")='Pack3.png';
 
 //All Cards Available Sorted by Rarity:
 let C = ["01-1", "01-2"];
