@@ -1,5 +1,8 @@
 //PACK OPENING FUNCTIONS
 
+let num = 0;
+let pack = [];
+
 //Loads in Pack Token Count
 async function loadTokens() {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
