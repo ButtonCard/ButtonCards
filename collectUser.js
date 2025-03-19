@@ -1,10 +1,5 @@
 //USER'S COLLECTION FUNCTIONS
 
-//All Sets Current Available
-let List01 = ["01-1", "01-2", "01-3", "01-4", "01-5", "01-6", "01-7", "01-8", "01-A", "01-SA"];
-let List02 = ["01-4", "01-5", "01-6"];
-let allSets = [null, List01, List02];
-
 //Loads in Cards to List from User's Collection
 loadCards();
 async function loadCards() {
