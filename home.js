@@ -33,20 +33,29 @@ async function openPack(packNum) {
   const userQuery = await userRef
     .where('name', '==', currentUser.username.toLowerCase())
     .get();
-  
+
+  const allQuery = await userRef.get();
+  let allCards = allQuery.docs[0].data().cards.concat(
+    userQuery.docs[1].data().cards, 
+    userQuery.docs[2].data().cards, 
+    userQuery.docs[3].data().cards);
+
+  //check if user has enough tokens to open pack
   const doc = userQuery.docs[0];
   let curTokens = doc.data().tokens;
   if(curTokens-packCost[packNum]<0){
     alert("Not Enough Pack Tokens!");
     return;
   }
+  //updates pack token if pack is empty
   if(pack.length==0){
     let newTokens = curTokens - packCost[packNum];
     await doc.ref.update({
       tokens: newTokens
     });
   }
-  
+
+  //shows large card
   let cardPic = document.querySelector(".pack");
   if (num != 0) {
     cardPic.style.width = "300px";
@@ -55,6 +64,7 @@ async function openPack(packNum) {
     return;
   }
 
+  //hide old page features for card opening
   let packOptions = document.querySelector(".pack-options");
   packOptions.style.display = "none";
   let pageTitle = document.querySelector(".pageTitle");
@@ -64,69 +74,6 @@ async function openPack(packNum) {
 
   let inPack = 0;
   let packSize = packSizes[packNum];
-
-  //MEGA
-  /*
-  if (inPack < packSize && Math.floor(Math.random() * 8) + 1 == 1) {
-    let randCard;
-    let backUp = 0;
-    let cleared = true;
-    while (cleared && backUp <= 100) {
-      randCard = M[Math.floor(Math.random() * (M.length))];
-      if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
-        cleared = false;
-      }
-      backUp++;
-    }
-    if (backUp <= 99) {
-      pack.push(randCard + ".png");
-      inPack++;
-    }
-    console.log(randCard);
-  }*/
-
-  //FIGURE
-  /*
-  if (inPack < packSize && Math.floor(Math.random() * 14) + 1 == 1) {
-    let randCard;
-    let backUp = 0;
-    let cleared = true;
-    while (cleared && backUp <= 100) {
-      randCard = F[Math.floor(Math.random() * (F.length))];
-      if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
-        cleared = false;
-      }
-      backUp++;
-    }
-    if (backUp <= 99) {
-      pack.push(randCard + ".png");
-      inPack++;
-    }
-    console.log(randCard);
-  }*/
-
-  //SPECIAL
-  /*
-  if (inPack < packSize && Math.floor(Math.random() * 12) + 1 == 1) {
-    console.log("SPECIAL");
-    let randCard;
-    let backUp = 0;
-    let cleared = true;
-    while (cleared && backUp <= 100) {
-      randCard = SP[Math.floor(Math.random() * (SP.length))];
-      if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
-        cleared = false;
-        console.log("Got Special");
-      }
-      backUp++;
-    }
-    if (backUp <= 99) {
-      pack.push(randCard + ".png");
-      inPack++;
-    }
-    console.log(randCard);
-  }
-  */
 
   //VARIANT
   /*
@@ -152,42 +99,45 @@ async function openPack(packNum) {
   */
 
   //LEGENDARY
-  if (inPack < packSize && Math.floor(Math.random() * 12) + 1 == 1) {
-    let randCard;
-    let backUp = 0;
-    let cleared = true;
-    while (cleared && backUp <= 100) {
-      randCard = L[Math.floor(Math.random() * (L.length))];
-      /*if (FULLdupes[FULLcards.indexOf(randCard)] < 1) {
-        cleared = false;
-      }*/
-      backUp++;
-    }
-    if (backUp <= 99) {
-      pack.push(randCard + ".png");
-      inPack++;
-    }
-    console.log(randCard);
-  }
-
-  //EPIC
   for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * 20) + 1 == 1) {
+    if (inPack < packSize && Math.floor(Math.random() * 40) + 1 == 1) {
       let randCard;
       let backUp = 0;
-      let cleared = true;
-      while (cleared && backUp <= 100) {
-        randCard = E[Math.floor(Math.random() * (E.length))];
-        /*if (FULLdupes[FULLcards.indexOf(randCard)] < 3) {
-          cleared = false;
-        }*/
+      let available = false;
+      while (!available && backUp <= 100) {
+        randCard = L[Math.floor(Math.random() * (L.length))];
+        if (countCards(allCards.concat(pack),randCard) < 1) {
+          available = true;
+        }
         backUp++;
       }
       if (backUp <= 99) {
         pack.push(randCard + ".png");
         inPack++;
+        console.log(randCard);
+        i = packSize; //One L per Pack
       }
-      console.log(randCard);
+    }
+  }
+
+  //EPIC
+  for (let i = 0; i < packSize; i++) {
+    if (inPack < packSize && Math.floor(Math.random() * 10) + 1 == 1) {
+      let randCard;
+      let backUp = 0;
+      let available = false;
+      while (!available && backUp <= 100) {
+        randCard = E[Math.floor(Math.random() * (E.length))];
+        if (countCards(allCards.concat(pack),randCard) < 4) {
+          available = true;
+        }
+        backUp++;
+      }
+      if (backUp <= 99) {
+        pack.push(randCard + ".png");
+        inPack++;
+        console.log(randCard);
+      }
     }
   }
 
@@ -196,40 +146,40 @@ async function openPack(packNum) {
     if (inPack < packSize && Math.floor(Math.random() * 7) + 1 == 1) {
       let randCard;
       let backUp = 0;
-      let cleared = true;
-      while (cleared && backUp <= 100) {
+      let available = false;
+      while (!available && backUp <= 100) {
         randCard = R[Math.floor(Math.random() * (R.length))];
-        /*if (FULLdupes[FULLcards.indexOf(randCard)] < 5) {
-          cleared = false;
-        }*/
+        if (countCards(allCards.concat(pack),randCard) < 8) {
+          available = true;
+        }
         backUp++;
       }
       if (backUp <= 99) {
         pack.push(randCard + ".png");
         inPack++;
+        console.log(randCard);
       }
-      console.log(randCard);
     }
   }
 
   //UNCOMMON
   for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * 3) + 1 == 1) {
+    if (inPack < packSize && Math.floor(Math.random() * 5) + 1 == 1) {
       let randCard;
       let backUp = 0;
-      let cleared = true;
-      while (cleared && backUp <= 100) {
+      let available = false;
+      while (!available && backUp <= 100) {
         randCard = U[Math.floor(Math.random() * (U.length))];
-        /*if (FULLdupes[FULLcards.indexOf(randCard)] < 8) {
-          cleared = false;
-        }*/
+        if (countCards(allCards.concat(pack),randCard) < 12) {
+          available = true;
+        }
         backUp++;
       }
       if (backUp <= 99) {
         pack.push(randCard + ".png");
         inPack++;
+        console.log(randCard);
       }
-      console.log(randCard);
     }
   }
 
@@ -340,4 +290,9 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
+}
+
+//counts amount of a card in the array
+function countCards(curDeck, searchCard) {
+    return curDeck.filter(item => item === searchCard).length;
 }
