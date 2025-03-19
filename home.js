@@ -286,3 +286,18 @@ function getRandomColor() {
 function countCards(curDeck, searchCard) {
     return curDeck.filter(item => item === searchCard).length;
 }
+
+
+//Store Updater
+//Pack 1 Info
+document.getElementById("PackName1").innerHTML=Pack1_Name;
+document.getElementById("PackDesc1").innerHTML=Pack1_Description;
+document.getElementById("Pack1").src=Pack1_Image;
+//Pack 2 Info
+document.getElementById("PackName2").innerHTML=Pack2_Name;
+document.getElementById("PackDesc2").innerHTML=Pack2_Description;
+document.getElementById("Pack2").src=Pack2_Image;
+//Pack 3 Info
+document.getElementById("PackName3").innerHTML=Pack3_Name;
+document.getElementById("PackDesc3").innerHTML=Pack3_Description;
+document.getElementById("Pack3").src=Pack3_Image;
