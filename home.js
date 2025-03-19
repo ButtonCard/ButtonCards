@@ -58,6 +58,8 @@ async function openPack(packNum) {
   packOptions.style.display = "none";
   let pageTitle = document.querySelector(".pageTitle");
   pageTitle.style.display = "none";
+  let tokenCount = document.querySelector(".tokenCount");
+  tokenCount.style.display = "none";
 
   let inPack = 0;
   let packSize = packSizes[packNum];
