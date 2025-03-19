@@ -7,7 +7,6 @@ async function loadUserCards() {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   const currentUsername = currentUser.username.toLowerCase();
   const userRef = db.collection('users');
-  
   const userQuery = await userRef
         .where('name', '==', currentUsername)
         .get();
@@ -141,4 +140,116 @@ function findEmptyTradeSlot(tradeVal, indexVal) {
     }
   }
   return null; // No empty slots available
+}
+
+let tradeCards = ["","","","","",""]; // Array to store the cards added to the trade list
+let indexCards = [0,0,0,0,0,0];
+let savedTrade = "";
+let tradeTo = "";
+
+function craftCards() {
+  //check craftCards is full
+  if(tradeCards.filter(card => card !== "").length!==8){
+    console.log("notFull");
+    window.alert("You must select 9 cards to craft. Please try again.");
+    return;
+  }
+  
+  let saveCards = tradeCards.filter(card => card !== "");
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const currentUsername = currentUser.username.toLowerCase();
+  const userRef = db.collection('users');
+  const userQuery = await userRef
+        .where('name', '==', currentUsername)
+        .get();
+  const doc = userQuery.docs[0];
+  let currentCards = doc.data().cards;
+  console.log(currentCards);
+  for (const curCard of saveCards) {
+    const index = currentCards.indexOf(curCard);
+    console.log(curCard + " " + index);
+    if (index !== -1) {
+        currentCards.splice(index, 1);
+    }
+  }
+  console.log(currentCards);
+
+  let curTokens = doc.data().tokens;
+  let newTokens = curTokens+1;
+  await doc.ref.update({
+    cards: currentCards,
+    tokens: newTokens
+  });
+
+  window.alert("Craft Completed.  +1 Pack Token");
+  location.reload();
+}
+
+async function sendTrade() {
+  
+  if (!userQuery.empty) {
+      const doc = userQuery.docs[0];        
+      let currentTrades = doc.data().trades;
+      currentTrades.push(savedTrade);
+      console.log(doc.data().trades);
+      console.log(currentTrades);
+      
+      await doc.ref.update({
+          trades: currentTrades
+      });
+  }
+  location.reload();
+}
+
+async function acceptTrade(){
+  console.log("accept");
+  if (curTradeNum==-1){
+    console.log("ret -1");
+    return;
+  }
+  const userRef = db.collection('users');
+  const userQuery = await userRef
+        .where('name', '==', currentUsername)
+        .get();
+  if (!userQuery.empty) {
+      const doc = userQuery.docs[0];
+      let curTheirCards = doc.data().cards;
+      const theirQuery = await userRef
+        .where('name', '==', fromNames[curTradeNum])
+        .get();
+      const doc2 = theirQuery.docs[0];        
+      let curYourCards = doc2.data().cards;
+      let thisYourTradeCards = yourTradeCards[curTradeNum];
+      let thisTheirTradeCards = theirTradeCards[curTradeNum];
+      console.log(yourTradeCards);
+      console.log(theirTradeCards);
+      if (compareArrays(thisYourTradeCards, curTheirCards) && compareArrays(thisTheirTradeCards, curYourCards)){
+        let newYourCards = removeCardsArray(curYourCards, thisYourTradeCards);
+        console.log(newYourCards);
+        let newTheirCards = removeCardsArray(curTheirCards, thisTheirTradeCards);
+        newYourCards = newYourCards.concat(thisTheirTradeCards);
+        console.log(newYourCards);
+        newTheirCards = newTheirCards.concat(thisYourTradeCards);
+        console.log("HERE " + thisTheirTradeCards);
+        console.log(newTheirCards);
+        console.log(thisYourTradeCards);
+        console.log(newYourCards);
+        await doc.ref.update({
+            cards: newTheirCards
+        });
+        await doc2.ref.update({
+            cards: newYourCards
+        });
+        console.log("accepted");
+        declineTrade();
+        }
+      else {
+        console.log("fail accept");
+        if (window.confirm("One side of the trade does not have all the cards. Click OK to decline the trade. Click cancel to keep the trade.")){
+          declineTrade();
+        }
+        return;
+      }
+  }
+  return;
 }
