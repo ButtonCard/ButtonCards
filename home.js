@@ -22,7 +22,7 @@ async function loadTokens() {
       .get();
   const doc = userQuery.docs[0];
   let tokens = doc.data().tokens;
-  document.getElementByClassName('.tokenCount').textContent = document.getElementByClassName('.tokens').textContent;
+  document.getElementsByClassName('.tokenCount').textContent = document.getElementsByClassName('.tokens').textContent;
 }
 loadTokens();
 
