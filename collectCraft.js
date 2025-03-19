@@ -40,7 +40,7 @@ async function loadUserCards() {
     num++;
   }
 }
-await loadUserCards();
+loadUserCards();
 
 
 
