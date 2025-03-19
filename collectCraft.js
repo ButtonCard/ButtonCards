@@ -163,11 +163,15 @@ async function craftCards() {
         .where('name', '==', currentUsername)
         .get();
   const doc = userQuery.docs[0];
+  
   let currentCards = doc.data().cards;
   console.log(currentCards);
   for (const curCard of saveCards) {
-    const index = currentCards.indexOf(curCard);
-    console.log(curCard + " " + index);
+    const parts = curCard.split('/');
+    const lastPart = parts[parts.length - 1];
+    const cardCode = lastPart.replace('.png', '');
+    const index = currentCards.indexOf(cardCode);
+    console.log(cardCode + " " + index);
     if (index !== -1) {
         currentCards.splice(index, 1);
     }
