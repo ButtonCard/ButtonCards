@@ -18,10 +18,6 @@ async function loadTokens() {
 }
 loadTokens();
 
-async function checkPack(pack_Num){
-
-}
-
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
 async function openPack(pack_Num) {
   packNum=pack_Num;
