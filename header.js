@@ -61,6 +61,7 @@ window.onload = async function() {
       console.log("No New Token");
     }
 
+    curTokens++;
     document.getElementById('token').textContent = `Pack Tokens: ` + curTokens;
 }
 
