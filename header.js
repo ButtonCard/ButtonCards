@@ -48,19 +48,19 @@ window.onload = async function() {
 
     console.log(now);
     console.log(opened);
-    console.log(now.getTime());
-    console.log(opened.getTime());
+    let tokens = doc.data().tokens;
     // Compare the dates
     if (now - opened >= 86400000) { // 86400000 ms = 1 day
-        console.log("At least one day has passed since opened.");
+      console.log("+1 Token");
+      let newTokens = tokens+1;
+      await doc.ref.update({
+        open: now.getTime()
+        tokens: newTokens
+      });
     } else {
-        console.log("Less than one day has passed since opened.");
+      console.log("No New Token");
     }
-    await doc.ref.update({
-      open: now.getTime()
-    });
 
-    let tokens = doc.data().tokens;
     document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
 }
 
