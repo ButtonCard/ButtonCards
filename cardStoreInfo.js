@@ -7,17 +7,17 @@ let packCost = [1,1,2];
 let Pack1_Name='Standard Pack';
 let Pack1_Description='All Standard Cards Available<br>20% Chance for St. Patricks Day Variant<br>5% Chance for Spring Variant<br>4 Cards<br>Cost: 1 Pack Token';
 let Pack1_Image='Pack1.png';
-let Pack1_Time=1742391900;
+let Pack1_Time=1742391900; //Far Future
 //Pack 2 Info
 let Pack2_Name='St. Patricks Day Exclusive Variant Pack';
 let Pack2_Description='50% Chance for St. Patricks Day Variant!<br>For Sale: Until 3/17/2025<br>3 Cards<br>Cost: 1 Pack Token';
 let Pack2_Image='Pack2.png';
-let Pack2_Time=1742486399;
+let Pack2_Time=1742486399; //3/20
 //Pack 3 Info
 let Pack3_Name='Spring Exclusive Variant Pack';
 let Pack3_Description='75% Chance for Spring Variant!<br>For Sale: Until 6/20/2025<br>4 Cards<br>Cost: 2 Pack Token';
 let Pack3_Image='Pack3.png';
-let Pack3_Time=1742659199;
+let Pack3_Time=1742659199; //3/19
 
 // ----- CARDS -----
 
