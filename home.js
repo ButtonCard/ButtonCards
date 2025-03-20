@@ -235,7 +235,7 @@ async function results(pack) {
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.display = "block";
 
-  let resButton = document.querySelector(".reset");
+  let resButton = document.querySelector(".resetBtn");
   resButton.style.display = "block";
 
   const userRef = db.collection('users');
