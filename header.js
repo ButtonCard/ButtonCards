@@ -45,7 +45,7 @@ window.onload = async function() {
     let now = new Date();
     now.setHours(0, 0, 0, 0);
 
-    SimpleDateFormat sfd = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+    let sfd = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
     sfd.format(new Date(opened));
 
     console.log(now);
