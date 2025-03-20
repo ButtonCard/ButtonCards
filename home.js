@@ -2,6 +2,7 @@
 
 let num = 0;
 let pack = [];
+let packNum=-1;
 
 //Loads in Pack Token Count
 async function loadTokens() {
@@ -17,7 +18,8 @@ async function loadTokens() {
 loadTokens();
 
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
-async function openPack(packNum) {
+async function openPack(pack_Num) {
+  packnum=pack_Num;
   //Check if pack is expired
   if(pack.length==0){
     let timeCompare = 0;
@@ -304,6 +306,17 @@ function getRandomColor() {
 //counts amount of a card in the array
 function countCards(curDeck, searchCard) {
     return curDeck.filter(item => item === searchCard).length;
+}
+
+//resets page to open the same pack again
+function resetPage(){
+  num=0;
+  pack=[];
+  let resList = document.querySelector(".resultList");
+  resList.style.display = "none";
+  let resTitle = document.querySelector(".resultTitle");
+  resTitle.style.display = "none";
+  openPack(packNum);
 }
 
 
