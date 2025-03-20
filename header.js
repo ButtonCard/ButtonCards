@@ -44,7 +44,6 @@ window.onload = async function() {
     let opened = new Date(doc.data().open);
     let now = new Date();
     now.setHours(0, 0, 0, 0);
-
     opened.setHours(0, 0, 0, 0);
 
     console.log(now);
@@ -55,6 +54,9 @@ window.onload = async function() {
     } else {
         console.log("Less than one day has passed since opened.");
     }
+    await doc.ref.update({
+      open: now
+    });
 
     let tokens = doc.data().tokens;
     document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
