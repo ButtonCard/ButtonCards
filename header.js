@@ -48,20 +48,20 @@ window.onload = async function() {
 
     console.log(now);
     console.log(opened);
-    let tokens = doc.data().tokens;
+    let curTokens = doc.data().tokens;
     // Compare the dates
     if (now - opened >= 86400000) { // 86400000 ms = 1 day
       console.log("+1 Token");
-      let newTokens = tokens+1;
+      let newTokens = curTokens+1;
       await doc.ref.update({
-        open: now.getTime()
+        open: now.getTime(),
         tokens: newTokens
       });
     } else {
       console.log("No New Token");
     }
 
-    document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
+    document.getElementById('token').textContent = `Pack Tokens: ` + curTokens;
 }
 
 //Logout Button Click
