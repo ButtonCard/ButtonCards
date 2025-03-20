@@ -235,6 +235,9 @@ async function results(pack) {
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.display = "block";
 
+  let resButton = document.querySelector(".reset");
+  resButton.style.display = "block";
+
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   const userQuery = await userRef
