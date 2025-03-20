@@ -235,7 +235,7 @@ async function results(pack) {
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.display = "block";
 
-  let resButton = document.querySelector(".resetBtn");
+  let resButton = document.querySelector("resetBtn");
   resButton.style.display = "block";
 
   const userRef = db.collection('users');
@@ -319,6 +319,8 @@ function resetPage(){
   resList.style.display = "none";
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.display = "none";
+  let resButton = document.querySelector("resetBtn");
+  resButton.style.display = "none";
   openPack(packNum);
 }
 
