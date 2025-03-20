@@ -41,7 +41,7 @@ window.onload = async function() {
       document.getElementById('username').textContent = `User: SketchyMan`;
     }
 
-    let opened = doc.data().open;
+    let opened = new Date(doc.data().open);
     let now = new Date();
     now.setHours(0, 0, 0, 0);
     opened.setHours(0, 0, 0, 0);
