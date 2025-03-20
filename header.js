@@ -42,7 +42,20 @@ window.onload = async function() {
     }
 
     let opened = doc.data().open;
-    console.log(opened);
+    let now = new Date();
+    now.setHours(0, 0, 0, 0);
+
+    let openedDate = new Date(opened);
+    openedDate.setHours(0, 0, 0, 0);
+
+    console.log(now);
+    console.log(openedDate);
+    // Compare the dates
+    if (now - openedDate >= 86400000) { // 86400000 ms = 1 day
+        console.log("At least one day has passed since opened.");
+    } else {
+        console.log("Less than one day has passed since opened.");
+    }
 
     let tokens = doc.data().tokens;
     document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
