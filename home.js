@@ -19,20 +19,22 @@ loadTokens();
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
 async function openPack(packNum) {
   //Check if pack is expired
-  let timeCompare = 0;
-  if(packNum==0){
-    timeCompare=Pack1_Time;
-  } else if(packNum==1){
-    timeCompare=Pack2_Time;
-  } else if(packNum==2){
-    timeCompare=Pack3_Time;
-  }
-  let now = new Date();
-  console.log(timeCompare);
-  console.log(now.getTime());
-  if(timeCompare<now.getTime()){
-    alert("This pack is expired.");
-    return;
+  if(pack.length==0){
+    let timeCompare = 0;
+    if(packNum==0){
+      timeCompare=Pack1_Time;
+    } else if(packNum==1){
+      timeCompare=Pack2_Time;
+    } else if(packNum==2){
+      timeCompare=Pack3_Time;
+    }
+    let now = new Date();
+    console.log(timeCompare);
+    console.log(now.getTime());
+    if(timeCompare<now.getTime()){
+      alert("This pack is expired.");
+      return;
+    }
   }
   
   const userRef = db.collection('users');
