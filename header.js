@@ -48,6 +48,8 @@ window.onload = async function() {
 
     console.log(now);
     console.log(opened);
+    console.log(now.getTime());
+    console.log(opened.getTime());
     // Compare the dates
     if (now - opened >= 86400000) { // 86400000 ms = 1 day
         console.log("At least one day has passed since opened.");
