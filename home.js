@@ -28,6 +28,8 @@ async function openPack(packNum) {
     timeCompare=Pack3_Time;
   }
   let now = new Date();
+  console.log(timeCompare);
+  console.log(now.getTime());
   if(timeCompare<now.getTime()){
     alert("This pack is expired.");
     return;
