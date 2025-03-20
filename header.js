@@ -55,7 +55,7 @@ window.onload = async function() {
         console.log("Less than one day has passed since opened.");
     }
     await doc.ref.update({
-      open: now
+      open: opened
     });
 
     let tokens = doc.data().tokens;
