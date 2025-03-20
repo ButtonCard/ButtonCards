@@ -57,11 +57,11 @@ window.onload = async function() {
         open: now.getTime(),
         tokens: newTokens
       });
+      curTokens++;
     } else {
       console.log("No New Token");
     }
 
-    curTokens++;
     document.getElementById('token').textContent = `Pack Tokens: ` + curTokens;
 }
 
