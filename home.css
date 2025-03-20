@@ -135,3 +135,17 @@
   width:0px;
   margin:0px;
 }
+
+.reset{
+  margin-top: 5px;
+  border: black 2px solid;
+  padding: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 5px;
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  display: none;
+}
