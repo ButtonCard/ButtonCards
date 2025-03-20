@@ -28,8 +28,6 @@ window.onload = async function() {
         .where('name', '==', currentUser.username)
         .get();
     const doc = userQuery.docs[0];
-    let tokens = doc.data().tokens;
-    document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
     
     if(currentUser.username=="dc"){
       document.getElementById('username').textContent = `User: DCMetro`;
@@ -42,6 +40,12 @@ window.onload = async function() {
     } else{
       document.getElementById('username').textContent = `User: SketchyMan`;
     }
+
+    let opened = doc.data().open;
+    console.log(opened);
+
+    let tokens = doc.data().tokens;
+    document.getElementById('token').textContent = `Pack Tokens: ` + tokens;
 }
 
 //Logout Button Click
