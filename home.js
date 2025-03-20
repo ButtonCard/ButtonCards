@@ -3,6 +3,7 @@
 let num = 0;
 let pack = [];
 let packNum=-1;
+let reopen=false;
 
 //Loads in Pack Token Count
 async function loadTokens() {
@@ -16,6 +17,10 @@ async function loadTokens() {
   document.getElementsByClassName('tokenCount')[0].textContent = 'Pack Tokens: ' + tokens;
 }
 loadTokens();
+
+async function checkPack(pack_Num){
+
+}
 
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
 async function openPack(pack_Num) {
@@ -35,6 +40,9 @@ async function openPack(pack_Num) {
     console.log(now.getTime());
     if(timeCompare<now.getTime()){
       alert("This pack is expired.");
+      if(reopen){
+        location.reload();
+      }
       return;
     }
   }
@@ -56,6 +64,9 @@ async function openPack(pack_Num) {
   let curTokens = doc.data().tokens;
   if(curTokens-packCost[packNum]<0){
     alert("Not Enough Pack Tokens!");
+    if(reopen){
+      location.reload();
+    }
     return;
   }
   //updates pack token if pack is empty
@@ -321,6 +332,8 @@ function resetPage(){
   resTitle.style.display = "none";
   let resetButton = document.querySelector(".resetBtn");
   resetButton.style.display = "none";
+  console.log(packNum);
+  reopen=true;
   openPack(packNum);
 }
 
