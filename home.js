@@ -21,11 +21,11 @@ async function openPack(packNum) {
   //Check if pack is expired
   let timeCompare = 0;
   if(packNum==0){
-    timeCompare=pack1_Time;
+    timeCompare=Pack1_Time;
   } else if(packNum==1){
-    timeCompare=pack2_Time;
+    timeCompare=Pack2_Time;
   } else if(packNum==2){
-    timeCompare=pack3_Time;
+    timeCompare=Pack3_Time;
   }
   let now = new Date();
   if(timeCompare<now.getTime()){
