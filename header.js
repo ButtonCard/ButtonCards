@@ -45,10 +45,12 @@ window.onload = async function() {
     let now = new Date();
     now.setHours(0, 0, 0, 0);
 
-    opened.setHours(0, 0, 0, 0);
+    SimpleDateFormat sfd = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+    sfd.format(new Date(opened));
 
     console.log(now);
     console.log(opened);
+    console.log(sfd);
     // Compare the dates
     if (now - opened >= 86400000) { // 86400000 ms = 1 day
         console.log("At least one day has passed since opened.");
