@@ -235,8 +235,8 @@ async function results(pack) {
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.display = "block";
 
-  let resButton = document.querySelector("resetBtn");
-  resButton.style.display = "block";
+  let resetButton = document.querySelector(".resetBtn");
+  resetButton.style.display = "block";
 
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -319,8 +319,8 @@ function resetPage(){
   resList.style.display = "none";
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.display = "none";
-  let resButton = document.querySelector("resetBtn");
-  resButton.style.display = "none";
+  let resetButton = document.querySelector(".resetBtn");
+  resetButton.style.display = "none";
   openPack(packNum);
 }
 
