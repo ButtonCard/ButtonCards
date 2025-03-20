@@ -136,7 +136,7 @@
   margin:0px;
 }
 
-button{
+.resetBtn{
   margin-top: 5px;
   border: black 2px solid;
   padding: 4px;
@@ -150,7 +150,7 @@ button{
   display: none;
 }
 
-button:hover {
+.resetBtn:hover {
   border: darkblue 2px solid;
   background-color: blue;
 }
