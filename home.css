@@ -137,6 +137,7 @@
 }
 
 .resetBtn{
+  margin: auto;
   margin-top: 5px;
   border: black 2px solid;
   padding: 4px;
