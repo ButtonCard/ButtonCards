@@ -518,6 +518,22 @@ async function selectTrade() {
     const doc = userQuery.docs[0];
     Tlist = doc.data().cards.sort();
   }
+  if (TlistName.value == "jig") {
+    const userQuery = await userRef
+          .where('name', '==', 'jig')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    Tlist = doc.data().cards.sort();
+  }
+  if (TlistName.value == "peach") {
+    const userQuery = await userRef
+          .where('name', '==', 'peach')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    Tlist = doc.data().cards.sort();
+  }
   if (TlistName.value == "void") {
     const userQuery = await userRef
           .where('name', '==', 'void')
