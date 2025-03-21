@@ -146,47 +146,51 @@ async function openPack(pack_Num) {
 
   
   //SPECIAL - Standard
-  for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * Srarity) + 1 == 1) {
-      let randCard;
-      let backUp = 0;
-      let available = false;
-      while (!available && backUp <= 100) {
-        randCard = SpeSet[Math.floor(Math.random() * (SpeSet.length))];
-        if (countCards(allCards.concat(pack),randCard) < Scount) {
-          available = true;
+  if (packNum==1){
+    for (let i = 0; i < packSize; i++) {
+      if (inPack < packSize && Math.floor(Math.random() * Srarity) + 1 == 1) {
+        let randCard;
+        let backUp = 0;
+        let available = false;
+        while (!available && backUp <= 100) {
+          randCard = SpeSet[Math.floor(Math.random() * (SpeSet.length))];
+          if (countCards(allCards.concat(pack),randCard) < Scount) {
+            available = true;
+          }
+          backUp++;
         }
-        backUp++;
-      }
-      if (backUp <= 99) {
-        pack.push(randCard + ".png");
-        inPack++;
-        console.log(randCard);
+        if (backUp <= 99) {
+          pack.push(randCard + ".png");
+          inPack++;
+          console.log(randCard);
+        }
       }
     }
   }
 
   //VARIANT - Standard
-  for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * Vrarity) + 1 == 1) {
-      let randCard;
-      let backUp = 0;
-      let available = false;
-      while (!available && backUp <= 100) {
-        randCard = VarSet[Math.floor(Math.random() * (VarSet.length))];
-        if (countCards(allCards.concat(pack),randCard) < Vcount) {
-          available = true;
+  if (packNum==1){
+    for (let i = 0; i < packSize; i++) {
+      if (inPack < packSize && Math.floor(Math.random() * Vrarity) + 1 == 1) {
+        let randCard;
+        let backUp = 0;
+        let available = false;
+        while (!available && backUp <= 100) {
+          randCard = VarSet[Math.floor(Math.random() * (VarSet.length))];
+          if (countCards(allCards.concat(pack),randCard) < Vcount) {
+            available = true;
+          }
+          backUp++;
         }
-        backUp++;
-      }
-      if (backUp <= 99) {
-        pack.push(randCard + ".png");
-        inPack++;
-        console.log(randCard);
+        if (backUp <= 99) {
+          pack.push(randCard + ".png");
+          inPack++;
+          console.log(randCard);
+        }
       }
     }
   }
-
+    
   //LEGENDARY
   for (let i = 0; i < packSize; i++) {
     if (inPack < packSize && Math.floor(Math.random() * Lrarity) + 1 == 1) {
