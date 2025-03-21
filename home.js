@@ -20,10 +20,11 @@ loadTokens();
 
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
 async function openPack(pack_Num) {
-  packNum=pack_Num;
-  console.log(packNum);
+
   //Check if pack is expired
   if(pack.length==0){
+    packNum=pack_Num;
+    console.log(packNum);
     let timeCompare = 0;
     if(packNum==0){
       timeCompare=Pack1_Time;
