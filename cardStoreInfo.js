@@ -10,15 +10,20 @@ let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
 let Pack2_Name='First Edition Variant Pack';
-let Pack2_Description='50% Chance for First  Variant!<br>For Sale: Until 3/23/2025<br>3 Cards<br>1 Pack Tokens';
+let Pack2_Description='25% Chance for First Edition Variant!<br>For Sale: Until 3/23<br>3 Cards<br>1 Pack Tokens';
 let Pack2_Image='icons/First_Icon.png';
 let Pack2_Time=1742788799000; //3/23
 //Pack 3 Info
-let Pack3_Name='Pack Not Available';
-let Pack3_Description='TBA<br>For Sale: Until N/A<br>N/A Cards<br>N/A Pack Token';
-let Pack3_Image='icons/Null_Icon.png';
-let Pack3_Time=0; //Expired
+let Pack3_Name='BUTTON Memes Special Pack';
+let Pack3_Description='20% Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br>N/A Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Memes_Icon.png';
+let Pack3_Time=1743307199000; //3/29
 //Epoch Time Coverter 23:59:59 in milliseconds
+
+//Unavailable Pack
+// 'Pack Not Available';
+// 'TBA<br>For Sale: Until N/A<br>N/A Cards<br>N/A Pack Token';
+// 'icons/Null_Icon.png';
 
 // ----- CARDS -----
 
