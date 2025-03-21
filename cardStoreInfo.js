@@ -1,21 +1,21 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,3,4];
+let packSizes = [4,3,5];
 let packCost = [1,1,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>Chance for First Edition Variant<br>Chance for BUTTON Meme Cards<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/20 Chance for First Edition Variant!<br>1/30 Chance for BUTTON Meme Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
 let Pack2_Name='First Edition Variant Pack';
-let Pack2_Description='25% Chance for First Edition Variant!<br>For Sale: Until 3/23<br>3 Cards<br>1 Pack Tokens';
+let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until 3/23<br><br>3 Cards<br>1 Pack Tokens';
 let Pack2_Image='icons/First_Icon.png';
 let Pack2_Time=1742788799000; //3/23
 //Pack 3 Info
-let Pack3_Name='BUTTON Memes Pack';
-let Pack3_Description='20% Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br>N/A Cards<br>2 Pack Tokens';
+let Pack3_Name='BUTTON Meme Pack';
+let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br><br>5 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Memes_Icon.png';
 let Pack3_Time=1743307199000; //3/29
 //Epoch Time Coverter 23:59:59 in milliseconds
@@ -66,10 +66,10 @@ let Scount = 2;
 
 //Odds of Each Card Rarity (1/x per Card)
 let Lrarity = 50;
-let Erarity = 30;
-let Rrarity = 15;
-let Urarity = 5;
-let Vrarity = 25;
-let Srarity = 40;
-let P2Vrarity = 15;
-let P3Srarity = 20;
+let Erarity = 24;
+let Rrarity = 12;
+let Urarity = 4;
+let Vrarity = 20;
+let Srarity = 30;
+let P2Vrarity = 10;
+let P3Srarity = 15;
