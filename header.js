@@ -33,6 +33,10 @@ window.onload = async function() {
       document.getElementById('username').textContent = `User: DCMetro`;
     } else if(currentUser.username=="gem"){
       document.getElementById('username').textContent = `User: DCGemmaster`;
+    } else if(currentUser.username=="jig"){
+      document.getElementById('username').textContent = `User: Jiggster`;
+    } else if(currentUser.username=="peach"){
+      document.getElementById('username').textContent = `User: PeachRabbit`;
     } else if(currentUser.username=="void"){
       document.getElementById('username').textContent = `User: Voidmaxmph`;
     } else if(currentUser.username=="zav"){
