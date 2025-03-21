@@ -491,7 +491,7 @@ async function sendTrade() {
 
 async function selectTrade() {
 
-  for (let i = 0; i < 99; i++) {
+  for (let i = 0; i < 199; i++) {
     let cardResult = document.querySelector(".c" + i);
     cardResult.src = "Pack.png";
     cardResult.style.width = "0px";
