@@ -197,6 +197,7 @@ function saveTrade() {
   }
   console.log(tradeCards);
   updatePage();
+  console.log(tradeCards);
   addYourCards();
   
   // Join the cards array into a single string with commas
@@ -260,7 +261,7 @@ function updatePage() {
   tradeListItems.forEach((tradeSlot) => {
     console.log('resetting ' + tradeSlot);
     const tradeSlotImage = tradeSlot.querySelector("img");
-    console.log(findFadedResultSlot(tradeSlotImage.src,indexCards[tradeCards.indexOf(tradeSlotImage.src)]));
+    //console.log(findFadedResultSlot(tradeSlotImage.src,indexCards[tradeCards.indexOf(tradeSlotImage.src)]));
     console.log('resetted ' + tradeSlotImage.src);
   });
 }
