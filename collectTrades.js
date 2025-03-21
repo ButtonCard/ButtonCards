@@ -486,7 +486,7 @@ async function sendTrade() {
           trades: currentTrades
       });
   }
-  location.reload();
+  //location.reload();
 }
 
 async function selectTrade() {
@@ -622,7 +622,7 @@ function populateTradesSelect() {
     } else if(name=="jig"){
       option.textContent = "Jiggster";
     } else if(name=="peach"){
-      option.textContent = "PeachRabbit";
+      option.textContent = "Peach";
     } else if(name=="void"){
       option.textContent = "VoidMax";
     } else if(name=="zav"){
