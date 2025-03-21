@@ -97,38 +97,105 @@ async function openPack(pack_Num) {
   let inPack = 0;
   let packSize = packSizes[packNum];
 
-  //VARIANT
-  /*
+
+  //SPECIAL - Pack 3
+  if (packNum==3){
+    for (let i = 0; i < packSize; i++) {
+      if (inPack < packSize && Math.floor(Math.random() * P3Srarity) + 1 == 1) {
+        let randCard;
+        let backUp = 0;
+        let available = false;
+        while (!available && backUp <= 100) {
+          randCard = SpeSet[Math.floor(Math.random() * (SpeSet.length))];
+          if (countCards(allCards.concat(pack),randCard) < Scount) {
+            available = true;
+          }
+          backUp++;
+        }
+        if (backUp <= 99) {
+          pack.push(randCard + ".png");
+          inPack++;
+          console.log(randCard);
+        }
+      }
+    }
+  }
+  
+  //VARIANT - Pack 2
+  if (packNum==2){
+    for (let i = 0; i < packSize; i++) {
+      if (inPack < packSize && Math.floor(Math.random() * P2Vrarity) + 1 == 1) {
+        let randCard;
+        let backUp = 0;
+        let available = false;
+        while (!available && backUp <= 100) {
+          randCard = VarSet[Math.floor(Math.random() * (VarSet.length))];
+          if (countCards(allCards.concat(pack),randCard) < Vcount) {
+            available = true;
+          }
+          backUp++;
+        }
+        if (backUp <= 99) {
+          pack.push(randCard + ".png");
+          inPack++;
+          console.log(randCard);
+        }
+      }
+    }
+  }
+
+  
+  //SPECIAL - Standard
   for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * 10) + 1 == 1) {
+    if (inPack < packSize && Math.floor(Math.random() * Srarity) + 1 == 1) {
       let randCard;
       let backUp = 0;
-      let cleared = true;
-      while (cleared && backUp <= 100) {
-        randCard = V[Math.floor(Math.random() * (V.length))];
-        if (FULLdupes[FULLcards.indexOf(randCard)] < 2) {
-          cleared = false;
+      let available = false;
+      while (!available && backUp <= 100) {
+        randCard = SpeSet[Math.floor(Math.random() * (SpeSet.length))];
+        if (countCards(allCards.concat(pack),randCard) < Scount) {
+          available = true;
         }
         backUp++;
       }
       if (backUp <= 99) {
         pack.push(randCard + ".png");
         inPack++;
+        console.log(randCard);
       }
-      console.log(randCard);
     }
   }
-  */
+
+  //VARIANT - Standard
+  for (let i = 0; i < packSize; i++) {
+    if (inPack < packSize && Math.floor(Math.random() * Vrarity) + 1 == 1) {
+      let randCard;
+      let backUp = 0;
+      let available = false;
+      while (!available && backUp <= 100) {
+        randCard = VarSet[Math.floor(Math.random() * (VarSet.length))];
+        if (countCards(allCards.concat(pack),randCard) < Vcount) {
+          available = true;
+        }
+        backUp++;
+      }
+      if (backUp <= 99) {
+        pack.push(randCard + ".png");
+        inPack++;
+        console.log(randCard);
+      }
+    }
+  }
 
   //LEGENDARY
   for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * 40) + 1 == 1) {
+    if (inPack < packSize && Math.floor(Math.random() * Lrarity) + 1 == 1) {
       let randCard;
       let backUp = 0;
       let available = false;
       while (!available && backUp <= 100) {
         randCard = L[Math.floor(Math.random() * (L.length))];
-        if (countCards(allCards.concat(pack),randCard) < 1) {
+        if (countCards(allCards.concat(pack),randCard) < Lcount) {
           available = true;
         }
         backUp++;
@@ -144,13 +211,13 @@ async function openPack(pack_Num) {
 
   //EPIC
   for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * 10) + 1 == 1) {
+    if (inPack < packSize && Math.floor(Math.random() * Erarity) + 1 == 1) {
       let randCard;
       let backUp = 0;
       let available = false;
       while (!available && backUp <= 100) {
         randCard = E[Math.floor(Math.random() * (E.length))];
-        if (countCards(allCards.concat(pack),randCard) < 4) {
+        if (countCards(allCards.concat(pack),randCard) < Ecount) {
           available = true;
         }
         backUp++;
@@ -165,13 +232,13 @@ async function openPack(pack_Num) {
 
   //RARE
   for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * 7) + 1 == 1) {
+    if (inPack < packSize && Math.floor(Math.random() * Rrarity) + 1 == 1) {
       let randCard;
       let backUp = 0;
       let available = false;
       while (!available && backUp <= 100) {
         randCard = R[Math.floor(Math.random() * (R.length))];
-        if (countCards(allCards.concat(pack),randCard) < 8) {
+        if (countCards(allCards.concat(pack),randCard) < Rcount) {
           available = true;
         }
         backUp++;
@@ -186,13 +253,13 @@ async function openPack(pack_Num) {
 
   //UNCOMMON
   for (let i = 0; i < packSize; i++) {
-    if (inPack < packSize && Math.floor(Math.random() * 5) + 1 == 1) {
+    if (inPack < packSize && Math.floor(Math.random() * Urarity) + 1 == 1) {
       let randCard;
       let backUp = 0;
       let available = false;
       while (!available && backUp <= 100) {
         randCard = U[Math.floor(Math.random() * (U.length))];
-        if (countCards(allCards.concat(pack),randCard) < 12) {
+        if (countCards(allCards.concat(pack),randCard) < Ucount) {
           available = true;
         }
         backUp++;
