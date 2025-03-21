@@ -14,7 +14,7 @@ let Pack2_Description='50% Chance for St. Patricks Day Variant!<br>For Sale: Unt
 let Pack2_Image='Pack2.png';
 let Pack2_Time=1742992400000; //3/20
 //Pack 3 Info
-let Pack3_Name='Unreleased Set';
+let Pack3_Name='Pack Not Available';
 let Pack3_Description='TBA<br>For Sale: Until N/A<br>N/A Cards<br>Cost: N/A Pack Token';
 let Pack3_Image='Pack3.png';
 let Pack3_Time=1741658400000; //3/19
