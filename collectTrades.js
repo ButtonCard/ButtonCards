@@ -197,12 +197,16 @@ function saveTrade() {
   addYourCards();
   
   // Join the cards array into a single string with commas
+  console.log(tradeCards);
   let saveCards = tradeCards.filter(card => card !== "");
+  console.log(tradeCards);
   saveCards = saveCards.map(cardurl => {
     // Use a regular expression to match the part after the last '/' and before '.png'
     let match = cardurl.match(/\/([^\/]+)\.png$/);
     return match ? match[1] : cardurl;  // Return the shortened part if a match is found
   });
+  console.log(tradeCards);
+  console.log("SAVE " + saveCards);
   let cardsString = saveCards.join(',');
   // Combine the name and the cards string
   tradeTo = document.querySelector(".Tplayers").value;
