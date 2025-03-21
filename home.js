@@ -331,6 +331,8 @@ function resetPage(){
   resList.style.display = "none";
   let resTitle = document.querySelector(".resultTitle");
   resTitle.style.display = "none";
+  let resCards = document.querySelector(".resultCards");
+  resCards.style.display = "none";
   let resetButton = document.querySelector(".resetBtn");
   resetButton.style.display = "none";
   console.log(packNum);
