@@ -188,18 +188,20 @@ function findFadedResultSlot(src,index) {
 
 function saveTrade() {
   //check tradeCards isn't empty
-  if(tradeCards.filter(card => card !== "").length==0){
+  console.log(tradeCards);
+  const tradeCardsCopy = [...tradeCards]
+  if(tradeCardsCopy.filter(card => card !== "").length==0){
     console.log("zero");
     window.alert("You must select at least 1 Card to trade. Please try again.");
     return;
   }
+  console.log(tradeCards);
   updatePage();
   addYourCards();
   
   // Join the cards array into a single string with commas
   console.log(tradeCards);
   let saveCards = tradeCards.filter(card => card !== "");
-  console.log(tradeCards);
   saveCards = saveCards.map(cardurl => {
     // Use a regular expression to match the part after the last '/' and before '.png'
     let match = cardurl.match(/\/([^\/]+)\.png$/);
