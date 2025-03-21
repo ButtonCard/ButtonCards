@@ -271,6 +271,14 @@ async function addYourCards() {
   let TlistName = currentUsername;
   let Tlist;
   const userRef = db.collection('users');
+  if (TlistName == "dc") {
+    const userQuery = await userRef
+          .where('name', '==', 'dc')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    Tlist = doc.data().cards.sort();
+  }
   if (TlistName == "gem") {
     const userQuery = await userRef
           .where('name', '==', 'gem')
@@ -279,9 +287,17 @@ async function addYourCards() {
     const doc = userQuery.docs[0];
     Tlist = doc.data().cards.sort();
   }
-  if (TlistName == "dc") {
+  if (TlistName == "jig") {
     const userQuery = await userRef
-          .where('name', '==', 'dc')
+          .where('name', '==', 'jig')
+          .get();
+    
+    const doc = userQuery.docs[0];
+    Tlist = doc.data().cards.sort();
+  }
+  if (TlistName == "peach") {
+    const userQuery = await userRef
+          .where('name', '==', 'peach')
           .get();
     
     const doc = userQuery.docs[0];
@@ -587,6 +603,10 @@ function populateTradesSelect() {
       option.textContent = "DCMetro";
     } else if(name=="gem"){
       option.textContent = "DCGem";
+    } else if(name=="jig"){
+      option.textContent = "Jiggster";
+    } else if(name=="peach"){
+      option.textContent = "PeachRabbit";
     } else if(name=="void"){
       option.textContent = "VoidMax";
     } else if(name=="zav"){
