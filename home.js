@@ -212,6 +212,7 @@ async function openPack(pack_Num) {
 
   cardPic.style.width = "300px";
   cardPic.addEventListener("click", flipCard(cardPic, pack));
+  console.log(packNum);
 }
 
 //Flips to Next Card When Opening Pack, Calls to Show Results When Pack is Empty
