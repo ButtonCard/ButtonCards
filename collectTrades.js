@@ -708,7 +708,7 @@ async function acceptTrade(){
       let thisTheirTradeCards = theirTradeCards[curTradeNum];
       console.log(yourTradeCards);
       console.log(theirTradeCards);
-      if (compareArrays(thisYourTradeCards, curTheirCards) && compareArrays(thisTheirTradeCards, curYourCards)){
+      if (compareArrays(thisYourTradeCards, curYourCards) && compareArrays(thisTheirTradeCards, curTheirCards)){
         let newYourCards = removeCardsArray(curYourCards, thisYourTradeCards);
         console.log(newYourCards);
         let newTheirCards = removeCardsArray(curTheirCards, thisTheirTradeCards);
@@ -727,8 +727,7 @@ async function acceptTrade(){
         });
         console.log("accepted");
         declineTrade();
-        }
-      else {
+      } else {
         console.log("fail accept");
         if (window.confirm("One side of the trade does not have all the cards. Click OK to decline the trade. Click cancel to keep the trade.")){
           declineTrade();
@@ -741,6 +740,7 @@ async function acceptTrade(){
 
 function compareArrays(smallerArray, largerArray) {
     if(!(smallerArray.every(element => largerArray.includes(element)))){
+      console.log("fail every");
       return false;
     }
   
