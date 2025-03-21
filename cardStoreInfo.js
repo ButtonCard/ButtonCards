@@ -14,22 +14,22 @@ let Pack2_Description='50% Chance for St. Patricks Day Variant!<br>For Sale: Unt
 let Pack2_Image='Pack2.png';
 let Pack2_Time=1742992400000; //3/20
 //Pack 3 Info
-let Pack3_Name='Spring Exclusive Variant Pack';
-let Pack3_Description='75% Chance for Spring Variant!<br>For Sale: Until 6/20/2025<br>4 Cards<br>Cost: 2 Pack Token';
+let Pack3_Name='Unreleased Set';
+let Pack3_Description='TBA<br>For Sale: Until N/A<br>N/A Cards<br>Cost: N/A Pack Token';
 let Pack3_Image='Pack3.png';
 let Pack3_Time=1741658400000; //3/19
 
 // ----- CARDS -----
 
 //All Cards Available Sorted by Rarity:
-let C = ["01-1", "01-2"];
-let U = ["01-3", "01-4"];
-let R = ["01-5", "01-6"];
-let E = ["01-7"];
-let L = ["01-8"];
+let C = ["01-1", "01-2", "02-1", "02-2", "02-3"];
+let U = ["01-3", "01-4", "02-4", "02-5"];
+let R = ["01-5", "01-6", "02-6"];
+let E = ["01-7", "01-8", "02-7"];
+let L = ["01-9", "02-8"];
 
 
 //All Sets Current Available
-let List01 = ["01-1", "01-2", "01-3", "01-4", "01-5", "01-6", "01-7", "01-8", "01-A"];
-let List02 = ["01-4", "01-5", "01-6"];
+let List01 = ["01-1", "01-2", "01-3", "01-4", "01-5", "01-6", "01-7", "01-8", "01-9", "01-A"];
+let List02 = ["02-1", "02-2", "02-3", "02-4", "02-5", "02-6", "02-7", "02-8", "01-A"];
 let allSets = [null, List01, List02];
