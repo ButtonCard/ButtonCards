@@ -133,6 +133,7 @@ function findEmptyTradeSlot(tradeVal, indexVal) {
     if (tradeSlotImage.width === 0) {
       console.log('found');
       tradeCards[i]=tradeVal; // Store the card in the tradeCards array
+      console.log(tradeCards);
       indexCards[i]=indexVal; //get index in resultList
       return tradeListItems[i];
     }
