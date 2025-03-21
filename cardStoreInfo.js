@@ -14,7 +14,7 @@ let Pack2_Description='25% Chance for First Edition Variant!<br>For Sale: Until 
 let Pack2_Image='icons/First_Icon.png';
 let Pack2_Time=1742788799000; //3/23
 //Pack 3 Info
-let Pack3_Name='BUTTON Memes Special Pack';
+let Pack3_Name='BUTTON Memes Pack';
 let Pack3_Description='20% Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br>N/A Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Memes_Icon.png';
 let Pack3_Time=1743307199000; //3/29
