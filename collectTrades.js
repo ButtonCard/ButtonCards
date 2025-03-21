@@ -260,7 +260,7 @@ function updatePage() {
 
 async function addYourCards() {
 
-  for (let i = 0; i < 99; i++) {
+  for (let i = 0; i < 199; i++) {
     let cardResult = document.querySelector(".f" + i);
     cardResult.src = "Pack.png";
     cardResult.style.width = "0px";
