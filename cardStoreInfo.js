@@ -36,6 +36,9 @@ let L = ["01-9", "02-8", "03-8", "04-7", "05-7", "06-7", "07-7", "08-7", "09-7",
 let V1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8"];
 let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
 
+let VarSet = V1; //Pack 2 Variant
+let SpeSet = S1; //Pack 3 Variant
+
 
 //All Sets Current Available
 let List01 = ["01-1", "01-2", "01-3", "01-4", "01-5", "01-6", "01-7", "01-8", "01-9", "01-A"];
@@ -51,3 +54,22 @@ let List10 = ["10-1", "10-2", "10-3", "10-4", "10-5", "10-6", "10-7", "10-A"];
 let ListV1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8", "V1-A"];
 let ListS1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8", "S1-A"];
 let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, ListV1, ListS1];
+
+
+//Counts of Each Card Rarity
+let Lcount = 1;
+let Ecount = 4;
+let Rcount = 8;
+let Ucount = 16;
+let Vcount = 4;
+let Scount = 2;
+
+//Odds of Each Card Rarity (1/x per Card)
+let Lrarity = 50;
+let Erarity = 30;
+let Rrarity = 15;
+let Urarity = 5;
+let Vrarity = 25;
+let Srarity = 40;
+let P2Vrarity = 15;
+let P3Srarity = 20;
