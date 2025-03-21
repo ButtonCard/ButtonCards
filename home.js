@@ -54,7 +54,9 @@ async function openPack(pack_Num) {
   let allCards = allQuery.docs[0].data().cards.concat(
     allQuery.docs[1].data().cards, 
     allQuery.docs[2].data().cards, 
-    allQuery.docs[3].data().cards);
+    allQuery.docs[3].data().cards,
+    allQuery.docs[4].data().cards, 
+    allQuery.docs[5].data().cards);
 
   //check if user has enough tokens to open pack
   const doc = userQuery.docs[0];
