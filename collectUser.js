@@ -22,7 +22,9 @@ async function loadCards() {
     userCards = userQuery.docs[0].data().cards.concat(
       userQuery.docs[1].data().cards, 
       userQuery.docs[2].data().cards, 
-      userQuery.docs[3].data().cards).sort();
+      userQuery.docs[3].data().cards,
+      userQuery.docs[4].data().cards, 
+      userQuery.docs[5].data().cards).sort();
   }
   if(userList=="sets"){
     colList.style.display = "none";
