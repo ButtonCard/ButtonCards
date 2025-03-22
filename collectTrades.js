@@ -494,7 +494,7 @@ async function sendTrade() {
           trades: currentTrades
       });
   }
-  //location.reload();
+  location.reload();
 }
 
 async function selectTrade() {
