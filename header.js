@@ -47,14 +47,14 @@ window.onload = async function() {
 
     let opened = new Date(doc.data().open);
     let now = new Date();
-    now.setHours(0, 0, 0, 0);
-    opened.setHours(0, 0, 0, 0);
+    now.setMinutes(0, 0, 0);
+    opened.setMinutes(0, 0, 0);
 
     console.log(now);
     console.log(opened);
     let curTokens = doc.data().tokens;
     // Compare the dates
-    if (now - opened >= 86400000) { // 86400000 ms = 1 day
+    if (now - opened >= 3600000) { // 86400000 ms = 1 day
       console.log("+1 Token");
       let newTokens = curTokens+1;
       await doc.ref.update({
