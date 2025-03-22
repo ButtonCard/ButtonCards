@@ -60,9 +60,9 @@ async function openPack(pack_Num) {
     allQuery.docs[5].data().cards);
 
   //check if user has enough tokens to open pack
+  const doc = userQuery.docs[0];
+  let curTokens = doc.data().tokens;
   if(pack.length==0){
-    const doc = userQuery.docs[0];
-    let curTokens = doc.data().tokens;
     if(curTokens-packCost[packNum]<0){
       alert("Not Enough Pack Tokens!");
       if(reopen){
