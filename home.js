@@ -99,7 +99,7 @@ async function openPack(pack_Num) {
   console.log(packNum);
 
   //SPECIAL - Pack 3
-  if (packNum==3){
+  if (packNum==2){
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * P3Srarity) + 1 == 1) {
         let randCard;
@@ -122,7 +122,7 @@ async function openPack(pack_Num) {
   }
   
   //VARIANT - Pack 2
-  if (packNum==2){
+  if (packNum==1){
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * P2Vrarity) + 1 == 1) {
         let randCard;
@@ -146,7 +146,7 @@ async function openPack(pack_Num) {
 
   
   //SPECIAL - Standard
-  if (packNum==1){
+  if (packNum==0){
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * Srarity) + 1 == 1) {
         let randCard;
@@ -169,7 +169,7 @@ async function openPack(pack_Num) {
   }
 
   //VARIANT - Standard
-  if (packNum==1){
+  if (packNum==0){
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * Vrarity) + 1 == 1) {
         let randCard;
