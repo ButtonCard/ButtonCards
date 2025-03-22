@@ -96,7 +96,7 @@ async function openPack(pack_Num) {
 
   let inPack = 0;
   let packSize = packSizes[packNum];
-
+  console.log(packNum);
 
   //SPECIAL - Pack 3
   if (packNum==3){
