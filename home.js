@@ -75,7 +75,7 @@ async function openPack(pack_Num) {
     await doc.ref.update({
       tokens: newTokens
     });
-    document.getElementById("token")="Pack Tokens: " + newTokens;
+    document.getElementById("token").innerHTML="Pack Tokens: " + newTokens;
   }
 
   //shows large card
