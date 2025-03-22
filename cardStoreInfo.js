@@ -1,6 +1,6 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,3,5];
+let packSizes = [4,3,6];
 let packCost = [1,1,2];
 
 //Pack 1 Info
@@ -15,7 +15,7 @@ let Pack2_Image='icons/First_Icon.png';
 let Pack2_Time=1742875199000; //3/23
 //Pack 3 Info
 let Pack3_Name='BUTTON Meme Pack';
-let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/30<br><br>5 Cards<br>2 Pack Tokens';
+let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/30<br><br>6 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Memes_Icon.png';
 let Pack3_Time=1743393599000; //3/30
 //Epoch Time Coverter 23:59:59 in milliseconds
