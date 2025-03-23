@@ -22,7 +22,7 @@ let Pack2_Time=1742875199000; //3/23
 
 //Unavailable Pack
 let Pack3_Name='Pack Not Available';
-let Pack3_Description='TBA<br>For Sale: Until N/A<br>N/A Cards<br>N/A Pack Token';
+let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
 let Pack3_Image='icons/Null_Icon.png';
 
 // ----- CARDS -----
