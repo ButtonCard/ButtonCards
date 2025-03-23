@@ -125,3 +125,12 @@ function hide() {
   hideEnlarge.src = "Pack.png";
   hideEnlarge.style.display = "none";
 }
+
+//Clicker Button
+function clicked() {
+  if(Math.floor(Math.random() * 10) + 1 == 1){
+    window.alert("YOU GOT 1 TOKEN (NOT REALLY)");
+  }
+
+}
+
