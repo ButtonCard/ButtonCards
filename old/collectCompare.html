@@ -4,23 +4,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>ButtonCraft Cards ONLINE!</title>
-  <link href="styleCollect.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="BCC_Icon.png">
+  <title>Compare - BUTTON Cards</title>
+  <link rel="icon" type="image/png" href="BC_Icon.png">
+  <link href="collectUser.css" rel="stylesheet" type="text/css" />
+  <link href="header.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body oncontextmenu="return false;">
 
-  <div class=logoBack><a class=logoLink href="index.html"><img class=logo src="BCC_Logo.png"></img></a></div>
+  <!-- Header Section -->
+  <div class="logoBack">
+    <a class="logoLink" href="home.html">
+      <img class="logo" src="BC_Logo.png" alt="Logo">
+    </a>
+    <div class="user-info">
+      <p id="username">User: Loading</p>
+      <p id="token">Pack Tokens: -</p>
+      <button class="logout-button" onclick="handleLogout()">LOGOUT</button>
+    </div>
+  </div>
   <div class=line></div>
-
-  
   <div class="topnav">
+    <a href="home.html">Pack Store</a>
     <a href="collectAll.html">All Cards</a>
     <a href="collectSets.html">Sets Checklist</a>
-    <a class="active" href="collectCompare.html">Compare</a>
     <a href="collectTrade.html">Trading</a>
-    <a href="collectMission.html">Mission</a>
+    <a href="collectCraft.html">Crafting</a>
+    <a class="active" href="collectCompare.html">Compare</a>
     <a href="collectGem.html">DCGem</a>
     <a href="collectDC.html">DCMetro</a>
     <a href="collectJig.html">Jig</a>
@@ -28,13 +38,12 @@
     <a href="collectVoid.html">VoidMax</a>
     <a href="collectZav.html">Zaveeya</a>
   </div>
-
   <div class=line></div>
 
-  <img class=pack src="Pack.png" onClick="hide()"></img>
-  <h3 class=owned></h3>
+  <!-- Enlarged Card -->
+  <img class=large src="Pack.png" onClick="hide()"></img>
 
-  <h2 class=resultTitle>Compare Collections!</h2>
+  <h2 class=collectionTitle>Compare Collections!</h2>
 
   Cards
   <select name="Lplayers" class="Lplayers">
