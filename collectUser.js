@@ -146,7 +146,7 @@ async function clicked() {
     return;
   }
   
-  if(Math.floor(Math.random() * 10000) + 1 == 1){
+  if(Math.floor(Math.random() * 1000) + 1 == 1){
     console.log("+1 Token");
     let newTokens = doc.data().tokens +1;
     await doc.ref.update({
