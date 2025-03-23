@@ -130,7 +130,19 @@ function hide() {
 function clicked() {
   if(Math.floor(Math.random() * 1000) + 1 == 1){
     window.alert("YOU GOT 1 TOKEN (NOT REALLY)");
+  } else {
+    let click = document.querySelector(".clicker");
+    click.backgroundColor=getRandomColor();
   }
+}
 
+//Generates Random Color for Card Shadow
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
