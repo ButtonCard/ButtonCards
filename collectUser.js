@@ -141,7 +141,7 @@ async function clicked() {
   time.setHours(0, 0, 0, 0);
   now.setHours(0, 0, 0, 0);
   console.log(now.getTime());
-  if (!(now - opened >= 86400000)) { // 86400000 ms = 1 day
+  if (!(now - time >= 86400000)) { // 86400000 ms = 1 day
     console.log("You have already earned your Clicker Token today!");
     return;
   }
