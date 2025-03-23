@@ -128,7 +128,7 @@ function hide() {
 
 //Clicker Button
 function clicked() {
-  if(Math.floor(Math.random() * 10) + 1 == 1){
+  if(Math.floor(Math.random() * 1000) + 1 == 1){
     window.alert("YOU GOT 1 TOKEN (NOT REALLY)");
   }
 
