@@ -130,6 +130,7 @@ function hide() {
 async function clicked() {
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  console.log(currentUser);
   const userQuery = await userRef
         .where('name', '==', currentUser)
         .get();
