@@ -140,3 +140,8 @@ h3 {
   font-size: 36px;
 }
 
+.clicker:hover{
+  border: darkblue 6px solid;
+  background-color: blue;
+}
+
