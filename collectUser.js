@@ -127,7 +127,7 @@ function hide() {
 }
 
 //Clicker Button
-function async clicked() {
+async function clicked() {
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   const userQuery = await userRef
