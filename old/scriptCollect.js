@@ -423,7 +423,9 @@ async function select() {
   let Llist;
   let Rlist;
   const userRef = db.collection('users');
-  
+
+  console.log(LlistName);
+  console.log(RlistName);
 
   const userQuery = await userRef
     .where('name', '==', LlistName)
