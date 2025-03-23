@@ -148,7 +148,7 @@ async function clicked() {
   
   if(Math.floor(Math.random() * 10) + 1 == 1){
     console.log("+1 Token");
-    let newTokens = curTokens+1;
+    let newTokens = doc.data().tokens +1;
     await doc.ref.update({
       clickTime: now.getTime(),
       tokens: newTokens
