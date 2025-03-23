@@ -423,76 +423,20 @@ async function select() {
   let Llist;
   let Rlist;
   const userRef = db.collection('users');
-  if (LlistName.value == "gem") {
-    const userQuery = await userRef
-          .where('name', '==', 'gem')
-          .get();
-    
-    const doc = userQuery.docs[0];
-    Llist = doc.data().cards.sort();
-  }
-  if (LlistName.value == "dc") {
-    const userQuery = await userRef
-          .where('name', '==', 'dc')
-          .get();
-    
-    const doc = userQuery.docs[0];
-    Llist = doc.data().cards.sort();
-  }
-  if (LlistName.value == "void") {
-    const userQuery = await userRef
-          .where('name', '==', 'void')
-          .get();
-    
-    const doc = userQuery.docs[0];
-    Llist = doc.data().cards.sort();
-  }
-  if (LlistName.value == "zav") {
-    const userQuery = await userRef
-          .where('name', '==', 'zav')
-          .get();
-    
-    const doc = userQuery.docs[0];
-    Llist = doc.data().cards.sort();
-  }
-  if (LlistName.value == "miss") {
-    let VARmissNeeds = [...VARmiss];
-    VARmissNeeds.pop();
-    Llist = VARmissNeeds;
-    console.log(VARmissNeeds);
-  }
-  if (RlistName.value == "gem") {
-    const userQuery = await userRef
-          .where('name', '==', 'gem')
-          .get();
-    
-    const doc = userQuery.docs[0];
-    Rlist = doc.data().cards.sort();
-  }
-  if (RlistName.value == "dc") {
-    const userQuery = await userRef
-          .where('name', '==', 'dc')
-          .get();
-    
-    const doc = userQuery.docs[0];
-    Rlist = doc.data().cards.sort();
-  }
-  if (RlistName.value == "void") {
-    const userQuery = await userRef
-          .where('name', '==', 'void')
-          .get();
-    
-    const doc = userQuery.docs[0];
-    Rlist = doc.data().cards.sort();
-  }
-  if (RlistName.value == "zav") {
-    const userQuery = await userRef
-          .where('name', '==', 'zav')
-          .get();
-    
-    const doc = userQuery.docs[0];
-    Rlist = doc.data().cards.sort();
-  }
+  
+
+  const userQuery = await userRef
+    .where('name', '==', Llistname)
+    .get();
+  const doc = userQuery.docs[0];
+  Llist = doc.data().cards.sort();
+
+  const userQuery = await userRef
+    .where('name', '==', Rlistname)
+    .get();
+  const doc = userQuery.docs[0];
+  Rlist = doc.data().cards.sort();
+
 
   console.log(Llist + " " + Rlist);
 
