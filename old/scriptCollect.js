@@ -418,8 +418,8 @@ async function select() {
   }
 
 
-  let LlistName = document.querySelector(".Lplayers");
-  let RlistName = document.querySelector(".Rplayers");
+  let LlistName = document.querySelector(".Lplayers").options[document.querySelector(".Lplayers").selectedIndex].value;
+  let RlistName = document.querySelector(".Rplayers").options[document.querySelector(".Rplayers").selectedIndex].value;
   let Llist;
   let Rlist;
   const userRef = db.collection('users');
