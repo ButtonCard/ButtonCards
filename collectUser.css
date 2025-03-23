@@ -134,8 +134,9 @@ h3 {
   margin: auto;
   margin-top: 25px;
   width: 250px;
-  height: 200px;
+  height: 150px;
   border-radius: 10px;
-  font-size:30px;
+  border: black 6px solid
+  font-size: 30px;
 }
 
