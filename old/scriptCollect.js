@@ -426,13 +426,13 @@ async function select() {
   
 
   const userQuery = await userRef
-    .where('name', '==', Llistname)
+    .where('name', '==', LlistName)
     .get();
   const doc = userQuery.docs[0];
   Llist = doc.data().cards.sort();
 
   const userQuery2 = await userRef
-    .where('name', '==', Rlistname)
+    .where('name', '==', RlistName)
     .get();
   const doc2 = userQuery2.docs[0];
   Rlist = doc2.data().cards.sort();
