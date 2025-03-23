@@ -14,16 +14,16 @@ let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until
 let Pack2_Image='icons/First_Icon.png';
 let Pack2_Time=1742875199000; //3/23
 //Pack 3 Info
-let Pack3_Name='BUTTON Meme Pack';
-let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/30<br><br>6 Cards<br>2 Pack Tokens';
-let Pack3_Image='icons/Memes_Icon.png';
-let Pack3_Time=1743393599000; //3/30
+//let Pack3_Name='BUTTON Meme Pack';
+//let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/30<br><br>6 Cards<br>2 Pack Tokens';
+//let Pack3_Image='icons/Memes_Icon.png';
+//let Pack3_Time=1743393599000; //3/30
 //Epoch Time Coverter 23:59:59 in milliseconds
 
 //Unavailable Pack
-// 'Pack Not Available';
-// 'TBA<br>For Sale: Until N/A<br>N/A Cards<br>N/A Pack Token';
-// 'icons/Null_Icon.png';
+let Pack3_Name='Pack Not Available';
+let Pack3_Description='TBA<br>For Sale: Until N/A<br>N/A Cards<br>N/A Pack Token';
+let Pack3_Time='icons/Null_Icon.png';
 
 // ----- CARDS -----
 
