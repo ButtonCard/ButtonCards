@@ -150,7 +150,7 @@ async function clicked() {
     console.log("+1 Token");
     let newTokens = curTokens+1;
     await doc.ref.update({
-      clickTime: now.getTime()
+      clickTime: now.getTime(),
       tokens: newTokens
     });
     window.alert("YOU EARNED 1 PACK TOKEN!");
