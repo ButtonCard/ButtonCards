@@ -135,10 +135,26 @@ async function clicked() {
         .where('name', '==', currentUser.username)
         .get();
   const doc = userQuery.docs[0];
-  let time = doc.data().clickTime;
   
-  if(Math.floor(Math.random() * 1000) + 1 == 1){
-    window.alert("YOU GOT 1 TOKEN (NOT REALLY)");
+  let time = new Date(doc.data().clickTime);
+  let now = new Date();
+  time.setHours(0, 0, 0, 0);
+  now.setHours(0, 0, 0, 0);
+  console.log(now.getTime());
+  if (!(now - opened >= 86400000)) { // 86400000 ms = 1 day
+    console.log("You have already earned your Clicker Token today!");
+    return;
+  }
+  
+  if(Math.floor(Math.random() * 10) + 1 == 1){
+    console.log("+1 Token");
+    let newTokens = curTokens+1;
+    await doc.ref.update({
+      clickTime: now.getTime()
+      tokens: newTokens
+    });
+    window.alert("YOU EARNED 1 PACK TOKEN!");
+    location.reload();
   } else {
     let click = document.querySelector(".clicker");
     click.style.backgroundColor=getRandomColor();
