@@ -128,11 +128,19 @@ function hide() {
 
 //Clicker Button
 function clicked() {
+  const userRef = db.collection('users');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const userQuery = await userRef
+        .where('name', '==', currentUser)
+        .get();
+  const doc = userQuery.docs[0];
+  let time = doc.data().clickTime;
+  
   if(Math.floor(Math.random() * 1000) + 1 == 1){
     window.alert("YOU GOT 1 TOKEN (NOT REALLY)");
   } else {
     let click = document.querySelector(".clicker");
-    click.backgroundColor=getRandomColor();
+    click.style.backgroundColor=getRandomColor();
   }
 }
 
