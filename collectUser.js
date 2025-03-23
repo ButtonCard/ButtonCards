@@ -132,7 +132,7 @@ async function clicked() {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   console.log(currentUser);
   const userQuery = await userRef
-        .where('name', '==', currentUser)
+        .where('name', '==', currentUser.username)
         .get();
   const doc = userQuery.docs[0];
   let time = doc.data().clickTime;
