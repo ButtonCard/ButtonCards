@@ -10,7 +10,7 @@ let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
 let Pack2_Name='First Edition Variant Pack';
-let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until 3/24<br><br>3 Cards<br>1 Pack Tokens';
+let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until 3/24<br>EXPIRES TODAY!<br>3 Cards<br>1 Pack Tokens';
 let Pack2_Image='icons/First_Icon.png';
 let Pack2_Time=1742875199000; //3/23
 //Pack 3 Info
@@ -51,9 +51,11 @@ let List07 = ["07-1", "07-2", "07-3", "07-4", "07-5", "07-6", "07-7", "07-A"];
 let List08 = ["08-1", "08-2", "08-3", "08-4", "08-5", "08-6", "08-7", "08-A"];
 let List09 = ["09-1", "09-2", "09-3", "09-4", "09-5", "09-6", "09-7", "09-A"];
 let List10 = ["10-1", "10-2", "10-3", "10-4", "10-5", "10-6", "10-7", "10-A"];
+let List11 = ["11-1"];
 let ListV1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8", "V1-A"];
+let ListV2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8", "V2-A"];
 let ListS1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8", "S1-A"];
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, ListV1, ListS1];
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, ListV1, ListV2, ListS1];
 
 
 //Counts of Each Card Rarity
