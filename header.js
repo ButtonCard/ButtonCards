@@ -82,7 +82,7 @@ async function checkTrades() {
     return;
   }
   
-  //get the trading a
+  //get the trading selector in the menu
   const links = document.querySelectorAll('a');
   links.forEach(link => {
       if (link.textContent === "Trading") {
@@ -91,6 +91,7 @@ async function checkTrades() {
       }
   });
 }
+checkTrades();
 
 //Logout Button Click
 function handleLogout() {
