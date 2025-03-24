@@ -5,7 +5,7 @@ let packCost = [1,1,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/20 Chance for First Edition Variant!<br>1/30 Chance for BUTTON Meme Card!<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/30 Chance for First Edition Variant!<br>1/40 Chance for BUTTON Meme Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
