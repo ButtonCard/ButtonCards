@@ -69,6 +69,29 @@ window.onload = async function() {
     document.getElementById('token').textContent = `Pack Tokens: ` + curTokens;
 }
 
+
+async function checkTrades() {
+  
+  const userRef = db.collection('users');
+  const userQuery = await userRef
+      .where('name', '==', currentUser.username)
+      .get();
+  const doc = userQuery.docs[0];
+  
+  if(doc.data().trades.length <= 0){
+    return;
+  }
+  
+  //get the trading a
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+      if (link.textContent === "Trading") {
+          //change the background color
+          link.style.backgroundColor = 'red';
+      }
+  });
+}
+
 //Logout Button Click
 function handleLogout() {
     localStorage.removeItem('isLoggedIn');
