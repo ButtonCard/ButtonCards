@@ -88,7 +88,7 @@ async function checkTrades() {
   links.forEach(link => {
       if (link.textContent === "Trading") {
           //change the background color
-          link.style.backgroundColor = 'red';
+          link.style.backgroundColor = 'darkred';
       }
   });
 }
