@@ -72,6 +72,7 @@ window.onload = async function() {
 
 async function checkTrades() {
   
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   const userRef = db.collection('users');
   const userQuery = await userRef
       .where('name', '==', currentUser.username)
