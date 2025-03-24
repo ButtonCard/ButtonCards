@@ -102,7 +102,7 @@ async function loadSets(allCards) {
       }
       if (setCards[i].includes("-P")) {
         let cardResult = document.querySelector(".s" + setList + "c" + i);
-        cardResult.style.border = "2px darkblue solid";
+        cardResult.style.border = "2px blue solid";
       }
     }
   }
