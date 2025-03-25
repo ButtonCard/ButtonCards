@@ -200,8 +200,10 @@ function getRandomColor() {
 //Sorts array of cards by last digit
 function sortByLastDigit(arr) {
     return arr.sort((a, b) => {
-        const lastDigitA = parseInt(a.slice(-1), 10);
-        const lastDigitB = parseInt(b.slice(-1), 10);
+        const lastCharA = a.slice(-1);
+        const lastCharB = b.slice(-1);
+        const lastDigitA = isNaN(lastCharA) ? 20 : parseInt(lastCharA, 10);
+        const lastDigitB = isNaN(lastCharB) ? 20 : parseInt(lastCharB, 10);
         return lastDigitA - lastDigitB;
     });
 }
