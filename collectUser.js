@@ -26,6 +26,8 @@ function loadCards() {
       userCards=userCards.reverse();
     } else if(sortType.value=="rec"){
       userCards=userCards.reverse();
+    } else if(sortType.value!=="old"){
+      userCards=userCards.sort();
     }
     
   } else{
