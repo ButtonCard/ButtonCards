@@ -59,7 +59,7 @@ async function loadCards() {
       cardResult.style.border = "2px yellow solid";
     } else {
       let curStr = userCards.splice(i, 1);
-      if (userCards.includes(curStr)) {
+      if (userCards.includes(curStr[0])) {
         cardResult.style.border = "2px yellow solid";
       }
       userCards.splice(i, 0, curStr);
