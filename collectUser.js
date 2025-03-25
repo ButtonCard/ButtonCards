@@ -59,13 +59,13 @@ async function loadCards() {
       prevCardResult.style.border = "2px yellow solid";
       cardResult.style.border = "2px yellow solid";
     } else {
-      let curStr = userCards.splice(i, 1);
+      let curStr = storeCards.splice(i, 1);
       console.log(storeCards);
       if (storeCards.includes(curStr[0])) {
         console.log(i);
         cardResult.style.border = "2px yellow solid";
       }
-      userCards.splice(i, 0, curStr);
+      userCards.storeCards(i, 0, curStr);
     }
     prevCard = userCards[i];
   }
