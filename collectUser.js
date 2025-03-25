@@ -52,6 +52,7 @@ async function loadCards() {
     let cardResult = document.querySelector(".c" + i);
     cardResult.src = "img/" + userCards[i] + ".png";
     cardResult.style.width = "110px";
+    cardResult.style.border = "none";
     if (userCards[i] == prevCard) {
       let prevCardResult = document.querySelector(".c" + (i - 1));
       prevCardResult.style.border = "2px yellow solid";
