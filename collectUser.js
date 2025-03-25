@@ -1,8 +1,8 @@
 //USER'S COLLECTION FUNCTIONS
 
+
 //Loads in Cards to List from User's Collection
-loadCards();
-async function loadCards() {
+function loadCards() {
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   let prevCard = "";
@@ -16,7 +16,18 @@ async function loadCards() {
           .where('name', '==', userList)
           .get();
     const doc = userQuery.docs[0];
-    userCards = doc.data().cards.sort();
+    userCards = doc.data().cards;
+    
+    let sortType = document.querySelector(".sortSelect");
+    if(sortType.value=="num"){
+      userCards=userCards.sort();
+    } else if(sortType.value=="numRev"){
+      userCards=userCards.sort();
+      userCards=userCards.reverse();
+    } else if(sortType.value=="rec"){
+      userCards=userCards.reverse();
+    }
+    
   } else{
     const userQuery = await userRef.get();
     userCards = userQuery.docs[0].data().cards.concat(
@@ -26,6 +37,7 @@ async function loadCards() {
       userQuery.docs[4].data().cards, 
       userQuery.docs[5].data().cards).sort();
   }
+  
   if(userList=="sets"){
     colList.style.display = "none";
     loadSets(userCards);
@@ -46,6 +58,7 @@ async function loadCards() {
     prevCard = userCards[i];
   }
 }
+loadCards();
 
 //Loads All Sets if That Collect Sets Page is Opened
 async function loadSets(allCards) {
