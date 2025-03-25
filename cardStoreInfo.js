@@ -1,18 +1,18 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,3,6];
-let packCost = [1,1,2];
+let packSizes = [4,7,6];
+let packCost = [1,2,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/30 Chance for First Edition Variant!<br>1/40 Chance for BUTTON Meme Card!<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Maryland Variant!<br>1/40 Chance for BUTTON Meme Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
-let Pack2_Name='First Edition Variant Pack';
-let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until 3/24<br>EXPIRES TODAY!<br>3 Cards<br>1 Pack Tokens';
-let Pack2_Image='icons/First_Icon.png';
-let Pack2_Time=1742875199000; //3/23
+let Pack2_Name='Maryland Variant Pack';
+let Pack2_Description='1/10 Chance for Maryland Variant!<br>For Sale: Until 3/28<br><br>7 Cards<br>2 Pack Tokens';
+let Pack2_Image='icons/MD_Icon.png';
+let Pack2_Time=1743220799000; //3/28
 //Pack 3 Info
 let Pack3_Name='BUTTON Meme Pack';
 let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/30<br><br>6 Cards<br>2 Pack Tokens';
@@ -24,6 +24,7 @@ let Pack3_Time=1743393599000; //3/30
 //let Pack3_Name='Pack Not Available';
 //let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
 //let Pack3_Image='icons/Null_Icon.png';
+
 
 // ----- CARDS -----
 
@@ -37,7 +38,7 @@ let V1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8"];
 let V2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8"];
 let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
 
-let VarSet = V1; //Pack 2 Variant
+let VarSet = V2; //Pack 2 Variant
 let SpeSet = S1; //Pack 3 Variant
 
 
@@ -76,3 +77,12 @@ let Vrarity = 30;
 let Srarity = 40;
 let P2Vrarity = 10;
 let P3Srarity = 15;
+
+
+
+//Retired Packs:
+//First Edition 3/22-3/24
+//let Pack2_Name='First Edition Variant Pack';
+//let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until 3/24<br>EXPIRES TODAY!<br>3 Cards<br>1 Pack Tokens';
+//let Pack2_Image='icons/First_Icon.png';
+//let Pack2_Time=1742875199000; //3/23
