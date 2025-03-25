@@ -65,7 +65,7 @@ async function loadCards() {
         console.log(i);
         cardResult.style.border = "2px yellow solid";
       }
-      userCards.storeCards(i, 0, curStr);
+      storeCards.splice(i, 0, curStr);
     }
     prevCard = userCards[i];
   }
