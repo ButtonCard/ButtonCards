@@ -148,7 +148,6 @@ let savedTrade = "";
 let tradeTo = "";
 
 async function craftCards() {
-  document.getElementById("craft").disabled = true;
   
   //check craftCards is full
   if(tradeCards.filter(card => card !== "").length!==9){
