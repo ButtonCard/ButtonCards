@@ -46,6 +46,7 @@ async function loadCards() {
     return;
   }
   console.log(userCards);
+  let storeCards = userCards;
   
   for (let i = 0; i < userCards.length; i++) {
     console.log(i);
@@ -59,7 +60,8 @@ async function loadCards() {
       cardResult.style.border = "2px yellow solid";
     } else {
       let curStr = userCards.splice(i, 1);
-      if (userCards.includes(curStr[0])) {
+      if (storeCards.includes(curStr[0])) {
+        console.log(i);
         cardResult.style.border = "2px yellow solid";
       }
       userCards.splice(i, 0, curStr);
