@@ -2,7 +2,7 @@
 
 
 //Loads in Cards to List from User's Collection
-function loadCards() {
+async function loadCards() {
   const userRef = db.collection('users');
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   let prevCard = "";
