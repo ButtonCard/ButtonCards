@@ -148,11 +148,12 @@ let savedTrade = "";
 let tradeTo = "";
 
 async function craftCards() {
-  
+  document.getElementById('craft').disabled = true;
   //check craftCards is full
   if(tradeCards.filter(card => card !== "").length!==9){
     console.log("notFull");
     window.alert("You must select 9 cards to craft. Please try again.");
+    document.getElementById('craft').disabled = false;
     return;
   }
   
