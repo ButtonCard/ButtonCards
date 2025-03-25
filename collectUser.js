@@ -26,6 +26,8 @@ async function loadCards() {
       userCards=userCards.reverse();
     } else if(sortType.value=="rec"){
       userCards=userCards.reverse();
+    } else if(sortType.value=="rar"){
+      userCards=sortByLastDigit(userCards.sort());
     } else if(sortType.value!=="old"){
       userCards=userCards.sort();
     }
@@ -185,7 +187,7 @@ async function clicked() {
   }
 }
 
-//Generates Random Color for Card Shadow
+//Generates Random Color for Clicker Button
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let color = '#';
@@ -193,5 +195,14 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
+}
+
+//Sorts array of cards by last digit
+function sortByLastDigit(arr) {
+    return arr.sort((a, b) => {
+        const lastDigitA = parseInt(a.slice(-1), 10);
+        const lastDigitB = parseInt(b.slice(-1), 10);
+        return lastDigitA - lastDigitB;
+    });
 }
 
