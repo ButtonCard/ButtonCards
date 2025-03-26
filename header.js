@@ -59,8 +59,7 @@ window.onload = async function() {
       let newTokens = curTokens+1;
       await doc.ref.update({
         open: now.getTime(),
-        tokens: newTokens,
-        lastLogin: exNow
+        tokens: newTokens
       });
       curTokens++;
     } else {
