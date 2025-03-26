@@ -49,6 +49,7 @@ window.onload = async function() {
     let now = new Date();
     now.setMinutes(0, 0, 0);
     opened.setMinutes(0, 0, 0);
+    let exNow = new Date();
 
     console.log(now);
     console.log(opened);
@@ -59,7 +60,8 @@ window.onload = async function() {
       let newTokens = curTokens+1;
       await doc.ref.update({
         open: now.getTime(),
-        tokens: newTokens
+        tokens: newTokens,
+        lastLogin: exNow
       });
       curTokens++;
     } else {
