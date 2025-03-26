@@ -41,7 +41,6 @@ window.onload = async function() {
       document.getElementById('username').textContent = `User: Voidmaxmph`;
     } else if(currentUser.username=="zav"){
       document.getElementById('username').textContent = `User: zaveeya785`;
-      alert("Missingno");
     } else{
       document.getElementById('username').textContent = `User: SketchyMan`;
     }
