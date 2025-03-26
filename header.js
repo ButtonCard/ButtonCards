@@ -49,7 +49,6 @@ window.onload = async function() {
     let now = new Date();
     now.setMinutes(0, 0, 0);
     opened.setMinutes(0, 0, 0);
-    let exNow = new Date();
 
     console.log(now);
     console.log(opened);
@@ -67,6 +66,10 @@ window.onload = async function() {
     } else {
       console.log("No New Token");
     }
+    let exNow = new Date();
+    await doc.ref.update({
+        lastLogin: exNow
+      });
 
     document.getElementById('token').textContent = `Pack Tokens: ` + curTokens;
 }
