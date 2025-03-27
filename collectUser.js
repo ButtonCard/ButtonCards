@@ -306,5 +306,6 @@ async function addOwned(cardSrc){
   
   console.log("own add");
   ownText.innerHTML = ownText.innerHTML.substring(0, ownText.innerHTML.length - 2);
+  console.log("owners " + ownText.innerHTML);
 }
 
