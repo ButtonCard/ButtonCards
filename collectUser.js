@@ -277,9 +277,11 @@ async function awardChecker() {
 
 
 async function addOwned(cardSrc){
+  
   const userRef = db.collection('users');
   const allQuery = await userRef.get();
   let ownText = document.querySelector(".owned");
+  ownText.display = "block";
   
   if ((allQuery.docs[0].data().cards).includes(cardSrc)) {
     ownText.innerHTML += "DCGem, ";
