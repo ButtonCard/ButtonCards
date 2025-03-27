@@ -220,11 +220,11 @@ async function awardChecker() {
 
   const allQuery = await userRef.get();
   let allCards = allQuery.docs[0].data().cards.concat(
-    userQuery.docs[1].data().cards, 
-    userQuery.docs[2].data().cards, 
-    userQuery.docs[3].data().cards,
-    userQuery.docs[4].data().cards, 
-    userQuery.docs[5].data().cards).sort();
+    allQuery.docs[1].data().cards, 
+    allQuery.docs[2].data().cards, 
+    allQuery.docs[3].data().cards,
+    allQuery.docs[4].data().cards, 
+    allQuery.docs[5].data().cards).sort();
   
   let awarded=false;
   for (let i = 1; i < allSets.length; i++) {
