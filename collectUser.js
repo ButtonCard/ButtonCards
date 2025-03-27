@@ -86,8 +86,8 @@ async function loadSets(allCards) {
     filledCards = allCards;
   } else {
     const userQuery = await userRef
-          .where('name', '==', listName.value)
-          .get();
+      .where('name', '==', listName.value)
+      .get();
     
     const doc = userQuery.docs[0];
     compareCards = doc.data().cards.sort();
@@ -211,7 +211,7 @@ function sortByLastDigit(arr) {
 //Sorts array of cards by last digit
 async function awardChecker() {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
+  const userRef = db.collection('users');
   const userQuery = await userRef
         .where('name', '==', currentUser)
         .get();
@@ -225,6 +225,7 @@ async function awardChecker() {
     userQuery.docs[4].data().cards, 
     userQuery.docs[5].data().cards).sort();
   
+  let awarded=false;
   for (let i = 1; i < allSets.length; i++) {
     let list = allSets[i];
 
@@ -235,6 +236,7 @@ async function awardChecker() {
     let containsAll = requiredCards.every(card => userCards.includes(card));
 
     if (containsAll) {
+      awarded=true;
       console.log("Set awarded: " + i);
       // Remove the required cards from userCards
       userCards = userCards.filter(card => !requiredCards.includes(card));
@@ -256,6 +258,12 @@ async function awardChecker() {
         alert("Award earned!");
       }
     }
+  }
+  if(awarded){
+    console.log("awarding");
+    await doc.ref.update({
+      cards: userCards
+    });
   }
 }
 
