@@ -243,6 +243,7 @@ async function awardChecker() {
 
     // Check if userCards contains all requiredCards
     let containsAll = requiredCards.every(card => userCards.includes(card));
+    let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
 
     if (containsAll) {
       awarded=true;
@@ -257,7 +258,6 @@ async function awardChecker() {
       });
 
       // Check if the -P card is already in allCards
-      let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
       let minusPCard = cardWithoutAorP + '-P';
       let minusACard = cardWithoutAorP + '-A';
 
