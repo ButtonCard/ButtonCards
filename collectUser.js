@@ -282,24 +282,25 @@ async function addOwned(cardSrc){
   const allQuery = await userRef.get();
   let ownText = document.querySelector(".owned");
   ownText.display = "block";
+  let cutSrc = cardSrc.split("img/")[1].replace(".png", "");
 
-  console.log("cards" + (allQuery.docs[0].data().cards) + " - " + cardSrc);
-  if ((allQuery.docs[0].data().cards).includes(cardSrc)) {
+  console.log("cards" + (allQuery.docs[0].data().cards) + " - " + cutSrc);
+  if ((allQuery.docs[0].data().cards).includes(cutSrc)) {
     ownText.innerHTML += "DCGem, ";
   }
-  if ((allQuery.docs[1].data().cards).includes(cardSrc)) {
+  if ((allQuery.docs[1].data().cards).includes(cutSrc)) {
     ownText.innerHTML += "DCMetro, ";
   }
-  if ((allQuery.docs[2].data().cards).includes(cardSrc)) {
-    ownText.innerHTML += "Jiggster, ";
+  if ((allQuery.docs[2].data().cards).includes(cutSrc)) {
+    ownText.innerHTML += "Jig, ";
   }
-  if ((allQuery.docs[3].data().cards).includes(cardSrc)) {
+  if ((allQuery.docs[3].data().cards).includes(cutSrc)) {
     ownText.innerHTML += "Peach, ";
   }
-  if ((allQuery.docs[4].data().cards).includes(cardSrc)) {
+  if ((allQuery.docs[4].data().cards).includes(cutSrc)) {
     ownText.innerHTML += "VoidMax, ";
   }
-  if ((allQuery.docs[5].data().cards).includes(cardSrc)) {
+  if ((allQuery.docs[5].data().cards).includes(cutSrc)) {
     ownText.innerHTML += "Zaveeya, ";
   }
   
