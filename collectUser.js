@@ -208,3 +208,60 @@ function sortByLastDigit(arr) {
     });
 }
 
+//Sorts array of cards by last digit
+async function awardChecker() {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+  const userQuery = await userRef
+        .where('name', '==', currentUser)
+        .get();
+  const doc = userQuery.docs[0];
+  let userCards = doc.data().cards;
+  
+  let allCards = userQuery.docs[0].data().cards.concat(
+    userQuery.docs[1].data().cards, 
+    userQuery.docs[2].data().cards, 
+    userQuery.docs[3].data().cards,
+    userQuery.docs[4].data().cards, 
+    userQuery.docs[5].data().cards).sort();
+  
+  for (let i = 1; i < allSets.length; i++) {
+    let list = allSets[i];
+
+    // Filter out items ending in A or P
+    let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
+
+    // Check if userCards contains all requiredCards
+    let containsAll = requiredCards.every(card => userCards.includes(card));
+
+    if (containsAll) {
+      console.log("Set awarded: " + i);
+      // Remove the required cards from userCards
+      userCards = userCards.filter(card => !requiredCards.includes(card));
+
+      // Check if the -P card is already in allCards
+      let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
+      let minusPCard = cardWithoutAorP + '-P';
+      let minusACard = cardWithoutAorP + '-A';
+
+      if (!allCards.includes(minusPCard)&&allSets[i].includes(minusPCard)) {
+        console.log("Award P");
+        // Add the -P card to userCards if not in allCards
+        userCards.push(minusPCard);
+        alert("Prime Award earned!");
+      } else {
+        console.log("Award A");
+        // Add the -A card to userCards if the -P card is already in allCards
+        userCards.push(minusACard);
+        alert("Award earned!");
+      }
+    }
+  }
+}
+
+let colList = document.querySelector('.collectionList');
+let userList = colList.id;
+if(userList=="all"){
+  awardChecker()
+}
+
