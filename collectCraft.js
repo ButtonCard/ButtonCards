@@ -11,7 +11,8 @@ async function loadUserCards() {
         .where('name', '==', currentUsername)
         .get();
   const doc = userQuery.docs[0];
-  Tlist = doc.data().cards.sort();
+  Tlist = doc.data().cards;
+  Tlist = sortByLastDigit(Tlist.sort());
 
   let noTdupes = [];
   let Tdupes = [];
@@ -189,4 +190,15 @@ async function craftCards() {
 
   window.alert("Craft Completed.  +1 Pack Token");
   location.reload();
+}
+
+//Sorts array of cards by last digit
+function sortByLastDigit(arr) {
+    return arr.sort((a, b) => {
+        const lastCharA = a.slice(-1);
+        const lastCharB = b.slice(-1);
+        const lastDigitA = isNaN(lastCharA) ? 20 : parseInt(lastCharA, 10);
+        const lastDigitB = isNaN(lastCharB) ? 20 : parseInt(lastCharB, 10);
+        return lastDigitA - lastDigitB;
+    });
 }
