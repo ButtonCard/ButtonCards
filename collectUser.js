@@ -144,6 +144,7 @@ function enlarge(card) {
   let showEnlarge = document.querySelector(".large");
   showEnlarge.src = cardImg.src;
   showEnlarge.style.display = "block";
+  addOwned(cardImg.src);
   window.scrollTo(0, 0);
 }
 
@@ -153,6 +154,9 @@ function hide() {
   let hideEnlarge = document.querySelector(".large");
   hideEnlarge.src = "Pack.png";
   hideEnlarge.style.display = "none";
+  let ownText = document.querySelector(".owned");
+  ownText.innerHTML = "";
+  ownText.display = "none";
 }
 
 //Clicker Button
@@ -270,3 +274,33 @@ async function awardChecker() {
     });
   }
 }
+
+
+function addOwned(cardSrc){
+
+  const allQuery = await userRef.get();
+  let ownText = document.querySelector(".owned");
+  
+  if ((allQuery.docs[0].data().cards).includes(cardSrc)) {
+    ownText.innerHTML += "DCGem, ";
+  }
+  if ((allQuery.docs[1].data().cards).includes(cardSrc)) {
+    ownText.innerHTML += "DCMetro, ";
+  }
+  if ((allQuery.docs[2].data().cards).includes(cardSrc)) {
+    ownText.innerHTML += "Jiggster, ";
+  }
+  if ((allQuery.docs[3].data().cards).includes(cardSrc)) {
+    ownText.innerHTML += "Peach, ";
+  }
+  if ((allQuery.docs[4].data().cards).includes(cardSrc)) {
+    ownText.innerHTML += "VoidMax, ";
+  }
+  if ((allQuery.docs[5].data().cards).includes(cardSrc)) {
+    ownText.innerHTML += "Zaveeya, ";
+  }
+  
+  console.log("own add");
+  ownText.innerHTML = ownText.innerHTML.substring(0, ownText.innerHTML.length - 2);
+}
+
