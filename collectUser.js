@@ -10,6 +10,9 @@ async function loadCards() {
 
   let colList = document.querySelector('.collectionList');
   let userList = colList.id;
+  if(userList=="all"){
+    awardChecker();
+  }
   if(userList!=="all" && userList!=="sets"){
     console.log(userList);
     const userQuery = await userRef
@@ -267,10 +270,3 @@ async function awardChecker() {
     });
   }
 }
-
-let colList = document.querySelector('.collectionList');
-let userList = colList.id;
-if(userList=="all"){
-  awardChecker()
-}
-
