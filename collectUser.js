@@ -217,8 +217,9 @@ async function awardChecker() {
         .get();
   const doc = userQuery.docs[0];
   let userCards = doc.data().cards;
-  
-  let allCards = userQuery.docs[0].data().cards.concat(
+
+  const allQuery = await userRef.get();
+  let allCards = allQuery.docs[0].data().cards.concat(
     userQuery.docs[1].data().cards, 
     userQuery.docs[2].data().cards, 
     userQuery.docs[3].data().cards,
