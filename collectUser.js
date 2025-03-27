@@ -282,6 +282,7 @@ async function addOwned(cardSrc){
   const allQuery = await userRef.get();
   let ownText = document.querySelector(".owned");
   ownText.style.display = "block";
+  ownText.innerHTML = "";
   let cutSrc = cardSrc.split("img/")[1].replace(".png", "");
 
   console.log("cards" + (allQuery.docs[0].data().cards) + " - " + cutSrc);
