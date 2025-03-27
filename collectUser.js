@@ -277,7 +277,7 @@ async function awardChecker() {
 
 
 async function addOwned(cardSrc){
-
+  const userRef = db.collection('users');
   const allQuery = await userRef.get();
   let ownText = document.querySelector(".owned");
   
