@@ -248,7 +248,13 @@ async function awardChecker() {
       awarded=true;
       console.log("Set awarded: " + i);
       // Remove the required cards from userCards
-      userCards = userCards.filter(card => !requiredCards.includes(card));
+      userCards = userCards.filter(card => {
+          if (requiredCards.includes(card)) {
+              requiredCards = requiredCards.filter(requiredCard => requiredCard !== card);
+              return false;
+          }
+          return true;
+      });
 
       // Check if the -P card is already in allCards
       let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
