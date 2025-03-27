@@ -59,7 +59,7 @@ let ListV2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8", "V
 let ListS1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8", "S1-A"];
 let ListS9 = ["S9-1"];
 let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, ListV1, ListV2, ListS1, ListS9];
-
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, ListV2, ListS1];
 
 //Counts of Each Card Rarity
 let Lcount = 1;
