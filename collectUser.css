@@ -129,6 +129,10 @@ h3 {
   display: none;
 }
 
+.owned{
+  display:none;
+}
+
 /* ----- Clicker Button ----- */
 .clicker{
   margin: auto;
