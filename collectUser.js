@@ -227,8 +227,8 @@ async function awardChecker() {
     allQuery.docs[5].data().cards).sort();
   
   let awarded=false;
-  for (let i = 1; i < allSets.length; i++) {
-    let list = allSets[i];
+  for (let i = 1; i < awardSets.length; i++) {
+    let list = awardSets[i];
 
     // Filter out items ending in A or P
     let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
@@ -247,7 +247,7 @@ async function awardChecker() {
       let minusPCard = cardWithoutAorP + '-P';
       let minusACard = cardWithoutAorP + '-A';
 
-      if (!allCards.includes(minusPCard)&&allSets[i].includes(minusPCard)) {
+      if (!allCards.includes(minusPCard)&&awardSets[i].includes(minusPCard)) {
         console.log("Award P");
         // Add the -P card to userCards if not in allCards
         userCards.push(minusPCard);
