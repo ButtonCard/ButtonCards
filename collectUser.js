@@ -282,7 +282,8 @@ async function addOwned(cardSrc){
   const allQuery = await userRef.get();
   let ownText = document.querySelector(".owned");
   ownText.display = "block";
-  
+
+  console.log("cards" + (allQuery.docs[0].data().cards) + " - " + cardSrc);
   if ((allQuery.docs[0].data().cards).includes(cardSrc)) {
     ownText.innerHTML += "DCGem, ";
   }
