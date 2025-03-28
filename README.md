@@ -1,5 +1,3 @@
 # ButtonCards
-Coming Soon
+Out Now
 https://buttoncard.github.io/ButtonCards/index.html
-DC e
-Gem r
