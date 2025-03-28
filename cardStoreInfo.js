@@ -9,10 +9,10 @@ let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Maryland 
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
-let Pack2_Name='Maryland Variant Pack';
-let Pack2_Description='1/10 Chance for Maryland Variant!<br>For Sale: Until 3/28<br><br>7 Cards<br>2 Pack Tokens';
-let Pack2_Image='icons/MD_Icon.png';
-let Pack2_Time=1743220799000; //3/28
+//let Pack2_Name='Maryland Variant Pack';
+//let Pack2_Description='1/10 Chance for Maryland Variant!<br>For Sale: Until 3/28<br>EXPIRES TODAY!<br>7 Cards<br>2 Pack Tokens';
+//let Pack2_Image='icons/MD_Icon.png';
+//let Pack2_Time=1743220799000; //3/28
 //Pack 3 Info
 let Pack3_Name='BUTTON Meme Pack';
 let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br><br>6 Cards<br>2 Pack Tokens';
@@ -24,6 +24,11 @@ let Pack3_Time=1743393599000; //3/29
 //let Pack3_Name='Pack Not Available';
 //let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
 //let Pack3_Image='icons/Null_Icon.png';
+
+let Pack2_Name='Backrooms Variant Pack';
+let Pack2_Description='1/10 Chance for Backrooms Variant!<br>For Sale: Until 3/28<br><br>3 Cards<br>1 Pack Tokens';
+let Pack2_Image='icons/Back_Icon.png';
+let Pack2_Time=1743739199000; //4/3
 
 
 // ----- CARDS -----
@@ -90,4 +95,3 @@ let P3Srarity = 15;
 //let Pack2_Name='First Edition Variant Pack';
 //let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until 3/24<br>EXPIRES TODAY!<br>3 Cards<br>1 Pack Tokens';
 //let Pack2_Image='icons/First_Icon.png';
-//let Pack2_Time=1742875199000; //3/24
