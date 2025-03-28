@@ -15,9 +15,9 @@ let Pack2_Image='icons/MD_Icon.png';
 let Pack2_Time=1743220799000; //3/28
 //Pack 3 Info
 let Pack3_Name='BUTTON Meme Pack';
-let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/30<br><br>6 Cards<br>2 Pack Tokens';
+let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br><br>6 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Memes_Icon.png';
-let Pack3_Time=1743393599000; //3/30
+let Pack3_Time=1743393599000; //3/29
 //Epoch Time Coverter 23:59:59 in milliseconds
 
 //Unavailable Pack
