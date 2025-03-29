@@ -87,7 +87,7 @@ let P3Srarity = 15;
 
 
 let now = new Date();
-if(1743271200000<now.getTime()){
+if(1743267600000<now.getTime()){
   let Pack3_Name='Make It Memes Pack';
   let Pack3_Description='1/15 Chance for Make It Meme Card!<br>For Sale: Until 4/1<br><br>5 Cards<br>2 Pack Tokens';
   let Pack3_Image='icons/Make_Icon.png';
