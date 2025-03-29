@@ -24,12 +24,7 @@ let Pack3_Time=1743393599000; //3/29
 //let Pack3_Name='Pack Not Available';
 //let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
 //let Pack3_Image='icons/Null_Icon.png';
-/*
-let Pack3_Name='Make It Memes Pack';
-let Pack3_Description='1/15 Chance for Make It Meme Card!<br>For Sale: Until 4/1<br><br>5 Cards<br>2 Pack Tokens';
-let Pack3_Image='icons/Memes_Icon.png';
-let Pack3_Time=1743566399000; //4/1
-*/
+
 
 // ----- CARDS -----
 
@@ -44,6 +39,7 @@ let V2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8"];
 let V3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8"];
 let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
 let S2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8"];
+let S3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8"];
 
 let VarSet = V3; //Pack 2 Variant
 let SpeSet = S1; //Pack 3 Variant
@@ -89,6 +85,17 @@ let Srarity = 40;
 let P2Vrarity = 10;
 let P3Srarity = 15;
 
+
+let now = new Date();
+if(1743271200000<now.getTime()){
+  let Pack3_Name='Make It Memes Pack';
+  let Pack3_Description='1/15 Chance for Make It Meme Card!<br>For Sale: Until 4/1<br><br>5 Cards<br>2 Pack Tokens';
+  let Pack3_Image='icons/Make_Icon.png';
+  let Pack3_Time=1743566399000; //4/1
+  let SpeSet = S3;
+  let packSizes = [4,3,5];
+  let packCost = [1,1,2];
+}
 
 
 //Retired Packs:
