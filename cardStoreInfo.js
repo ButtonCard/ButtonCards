@@ -1,18 +1,18 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,7,6];
-let packCost = [1,2,2];
+let packSizes = [4,3,6];
+let packCost = [1,1,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Maryland Variant!<br>1/40 Chance for BUTTON Meme Card!<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br>1/40 Chance for BUTTON Meme Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
-let Pack2_Name='Maryland Variant Pack';
-let Pack2_Description='1/10 Chance for Maryland Variant!<br>For Sale: Until 3/28<br>EXPIRES TODAY!<br>7 Cards<br>2 Pack Tokens';
-let Pack2_Image='icons/MD_Icon.png';
-let Pack2_Time=1743220799000; //3/28
+//let Pack2_Name='Maryland Variant Pack';
+//let Pack2_Description='1/10 Chance for Maryland Variant!<br>For Sale: Until 3/28<br>EXPIRES TODAY!<br>7 Cards<br>2 Pack Tokens';
+//let Pack2_Image='icons/MD_Icon.png';
+//let Pack2_Time=1743220799000; //3/28
 //Pack 3 Info
 let Pack3_Name='BUTTON Meme Pack';
 let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br><br>6 Cards<br>2 Pack Tokens';
@@ -25,10 +25,10 @@ let Pack3_Time=1743393599000; //3/29
 //let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
 //let Pack3_Image='icons/Null_Icon.png';
 
-//let Pack2_Name='Backrooms Variant Pack';
-//let Pack2_Description='1/10 Chance for Backrooms Variant!<br>For Sale: Until 4/3<br><br>3 Cards<br>1 Pack Token';
-//let Pack2_Image='icons/Back_Icon.png';
-//let Pack2_Time=1743739199000; //4/3
+let Pack2_Name='Backrooms Variant Pack';
+let Pack2_Description='1/10 Chance for Backrooms Variant!<br>For Sale: Until 4/3<br><br>3 Cards<br>1 Pack Token';
+let Pack2_Image='icons/Back_Icon.png';
+let Pack2_Time=1743739199000; //4/3
 
 
 // ----- CARDS -----
@@ -45,7 +45,7 @@ let V3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8"];
 let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
 let S2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8"];
 
-let VarSet = V2; //Pack 2 Variant
+let VarSet = V3; //Pack 2 Variant
 let SpeSet = S1; //Pack 3 Variant
 
 
