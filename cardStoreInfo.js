@@ -5,7 +5,7 @@
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br>1/40 Chance for BUTTON Meme Card!<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br>1/40 Chance for Make It Meme Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
@@ -88,7 +88,7 @@ let P3Srarity = 15;
 
 //let now = new Date();
 //if(1743267600000<now.getTime()){
-  let Pack3_Name='Make It Memes Pack';
+  let Pack3_Name='Make It Meme Pack';
   let Pack3_Description='1/15 Chance for Make It Meme Card!<br>For Sale: Until 4/1<br><br>5 Cards<br>2 Pack Tokens';
   let Pack3_Image='icons/Make_Icon.png';
   let Pack3_Time=1743566399000; //4/1
