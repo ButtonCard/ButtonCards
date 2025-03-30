@@ -1,7 +1,7 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-//let packSizes = [4,3,6];
-//let packCost = [1,1,2];
+let packSizes = [4,3,6];
+let packCost = [1,1,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
@@ -14,10 +14,10 @@ let Pack2_Description='1/10 Chance for Backrooms Variant!<br>For Sale: Until 4/3
 let Pack2_Image='icons/Back_Icon.png';
 let Pack2_Time=1743739199000; //4/3
 //Pack 3 Info
-//let Pack3_Name='BUTTON Meme Pack';
-//let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br>Expires Today!<br>6 Cards<br>2 Pack Tokens';
-//let Pack3_Image='icons/Memes_Icon.png';
-//let Pack3_Time=1743393599000; //3/29
+let Pack3_Name='Make It Meme Pack';
+let Pack3_Description='1/15 Chance for Make It Meme Card!<br>For Sale: Until 4/1<br><br>6 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Make_Icon.png';
+let Pack3_Time=1743566399000; //4/1
 //Epoch Time Coverter 23:59:59 in milliseconds
 
 //Unavailable Pack
@@ -29,11 +29,11 @@ let Pack2_Time=1743739199000; //4/3
 // ----- CARDS -----
 
 //All Cards Available Sorted by Rarity:
-let C = ["01-1", "01-2", "02-1", "02-2", "02-3", "03-1", "03-2", "04-1", "04-2", "05-1", "05-2", "06-1", "06-2", "07-1", "07-2", "08-1", "08-2", "09-1", "09-2", "10-1", "10-2", "11-1", "11-2", "11-3"];
-let U = ["01-3", "01-4", "02-4", "02-5", "03-3", "03-4", "04-3", "04-4", "05-3", "05-4", "06-3", "06-4", "07-3", "07-4", "08-3", "08-4", "09-3", "09-4", "10-3", "10-4", "11-4", "11-5"];
-let R = ["01-5", "01-6", "02-6", "03-5", "03-6", "04-5", "05-5", "06-5", "07-5", "08-5", "09-5", "10-5", "11-6"];
-let E = ["01-7", "01-8", "02-7", "03-7", "04-6", "05-6", "06-6", "07-6", "08-6", "09-6", "10-6", "11-7"];
-let L = ["01-9", "02-8", "03-8", "04-7", "05-7", "06-7", "07-7", "08-7", "09-7", "10-7", "11-8"];
+let C = ["01-1", "01-2", "02-1", "02-2", "02-3", "03-1", "03-2", "04-1", "04-2", "05-1", "05-2", "06-1", "06-2", "07-1", "07-2", "08-1", "08-2", "09-1", "09-2", "10-1", "10-2", "11-1", "11-2", "11-3", "12-1", "12-2"];
+let U = ["01-3", "01-4", "02-4", "02-5", "03-3", "03-4", "04-3", "04-4", "05-3", "05-4", "06-3", "06-4", "07-3", "07-4", "08-3", "08-4", "09-3", "09-4", "10-3", "10-4", "11-4", "11-5", "12-3", "12-4", "12-5"];
+let R = ["01-5", "01-6", "02-6", "03-5", "03-6", "04-5", "05-5", "06-5", "07-5", "08-5", "09-5", "10-5", "11-6", "12-6"];
+let E = ["01-7", "01-8", "02-7", "03-7", "04-6", "05-6", "06-6", "07-6", "08-6", "09-6", "10-6", "11-7", "12-7"];
+let L = ["01-9", "02-8", "03-8", "04-7", "05-7", "06-7", "07-7", "08-7", "09-7", "10-7", "11-8", "12-8"];
 let V1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8"];
 let V2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8"];
 let V3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8"];
@@ -42,7 +42,7 @@ let S2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8"];
 let S3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8"];
 
 let VarSet = V3; //Pack 2 Variant
-//let SpeSet = S1; //Pack 3 Variant
+let SpeSet = S2; //Pack 3 Variant
 
 
 //All Sets Current Available
@@ -57,15 +57,18 @@ let List08 = ["08-1", "08-2", "08-3", "08-4", "08-5", "08-6", "08-7", "08-A", "0
 let List09 = ["09-1", "09-2", "09-3", "09-4", "09-5", "09-6", "09-7", "09-A", "09-P"];
 let List10 = ["10-1", "10-2", "10-3", "10-4", "10-5", "10-6", "10-7", "10-A", "10-P"];
 let List11 = ["11-1", "11-2", "11-3", "11-4", "11-5", "11-6", "11-7", "11-8", "11-A", "11-P"];
+let List12 = ["12-1", "12-2", "12-3", "12-4", "12-5", "12-6", "12-7", "12-8", "12-A", "12-P"];
+
 let ListV1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8", "V1-A"];
 let ListV2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8", "V2-A"];
 let ListV3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8", "V3-A"];
+
 let ListS1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8", "S1-A"];
 let ListS2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8", "S2-A"];
 let ListS3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8", "S3-A"];
 let ListS9 = ["S9-1"];
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, ListV1, ListV2, ListV3, ListS1, ListS3, ListS9];
-let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, ListV3, ListS1];
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, ListV1, ListV2, ListV3, ListS1, ListS3, ListS9];
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, ListV3, ListS3];
 
 //Counts of Each Card Rarity
 let Lcount = 1;
@@ -86,18 +89,6 @@ let P2Vrarity = 10;
 let P3Srarity = 15;
 
 
-//let now = new Date();
-//if(1743267600000<now.getTime()){
-  let Pack3_Name='Make It Meme Pack';
-  let Pack3_Description='1/15 Chance for Make It Meme Card!<br>For Sale: Until 4/1<br><br>5 Cards<br>2 Pack Tokens';
-  let Pack3_Image='icons/Make_Icon.png';
-  let Pack3_Time=1743566399000; //4/1
-  let SpeSet = S3;
-  let packSizes = [4,3,5];
-  let packCost = [1,1,2];
-//}
-
-
 //Retired Packs:
 //First Edition 3/22-3/24
 //let Pack2_Name='First Edition Variant Pack';
@@ -108,3 +99,8 @@ let P3Srarity = 15;
 //let Pack2_Name='Maryland Variant Pack';
 //let Pack2_Description='1/10 Chance for Maryland Variant!<br>For Sale: Until 3/28<br>EXPIRES TODAY!<br>7 Cards<br>2 Pack Tokens';
 //let Pack2_Image='icons/MD_Icon.png';
+
+//BUTTON Memes 3/22-3/29
+//let Pack3_Name='BUTTON Meme Pack';
+//let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br>Expires Today!<br>6 Cards<br>2 Pack Tokens';
+//let Pack3_Image='icons/Memes_Icon.png';
