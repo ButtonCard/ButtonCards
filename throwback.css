@@ -1,0 +1,28 @@
+/* ----- User's Collection List ----- */
+.collectionList, .set, .tradeList, .yourList, .resultList, .myList, .viewYourList, .viewTheirList{
+  background-color: blue;
+  border: 6px solid darkblue;
+  border-radius: 0px;
+}
+
+button{
+  border: darkblue 2px solid;
+  background-color: blue;
+}
+
+button:hover {
+  border: black 2px solid;
+  background-color: white;
+  color: black;
+}
+
+/* ----- Trade Page Selector ----- */
+.tradePageSelect {
+  border: 4px solid blue;
+}
+
+/* ----- Clicker Button ----- */
+.clicker{
+  border: darkblue 6px solid;
+  background-color:blue;
+}
