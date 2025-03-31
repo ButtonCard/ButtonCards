@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mission - BUTTON Cards</title>
+  <link rel="icon" type="image/png" href="BC_Icon.png">
+  <link href="collectUser.css" rel="stylesheet" type="text/css" />
+  <link href="header.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body oncontextmenu="return false;">
+
+  <!-- Header Section -->
+  <div class="logoBack">
+    <a class="logoLink" href="home.html">
+      <img class="logo" src="BC_Logo.png" alt="Logo">
+    </a>
+    <div class="user-info">
+      <p id="username">User: Loading</p>
+      <p id="token">Pack Tokens: -</p>
+      <button class="logout-button" onclick="handleLogout()">LOGOUT</button>
+    </div>
+  </div>
+  <div class=line></div>
+  <div class="topnav">
+    <a href="home.html">Pack Store</a>
+    <a href="clicker.html">Clicker</a>
+    <a href="collectAll.html">All Cards</a>
+    <a href="collectSets.html">Sets</a>
+    <a href="collectMission.html">Mission</a>
+    <a href="collectTrade.html">Trading</a>
+    <a href="collectCraft.html">Crafting</a>
+    <a href="collectCompare.html">Compare</a>
+    <a href="collectGem.html">DCGem</a>
+    <a class="active" href="collectDC.html">DCMetro</a>
+    <a href="collectJig.html">Jig</a>
+    <a href="collectPeach.html">Peach</a>
+    <a href="collectVoid.html">VoidMax</a>
+    <a href="collectZav.html">Zaveeya</a>
+  </div>
+  <div class=line></div>
+
+  <!-- Enlarged Card -->
+  <img class=large src="Pack.png" onClick="hide()"></img>
+  <h3 class=owned></h3>
+
+  <h2 class=resultTitle>Current Mission:</h2>
+
+  <div class=collectionTitle>Be the first to own these 6 cards to get a pack token!</div>
+  <img class=card0 src="Pack.png" onClick="enlarge('card0')"></img>
+  <img class=card1 src="Pack.png" onClick="enlarge('card1')"></img>
+  <img class=card2 src="Pack.png" onClick="enlarge('card2')"></img>
+  <img class=card3 src="Pack.png" onClick="enlarge('card3')"></img>
+  <img class=card4 src="Pack.png" onClick="enlarge('card4')"></img>
+  <img class=card5 src="Pack.png" onClick="enlarge('card5')"></img>
+
+  <button class=claim onClick="checkMiss()">Claim Mission</button>
+  
+  <!-- Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+  <script src="header.js"></script>
+  <script src="collectUser.js"></script>
+</body>
+
+</html>
