@@ -13,7 +13,7 @@ async function loadCards() {
   if(userList=="all"){
     awardChecker();
   }
-  if(userList!=="all" && userList!=="sets"){
+  if(userList!=="all" && userList!=="sets" && userList!=="mission"){
     console.log(userList);
     const userQuery = await userRef
           .where('name', '==', userList)
