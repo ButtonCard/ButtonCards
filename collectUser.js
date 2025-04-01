@@ -386,7 +386,7 @@ function randMission(deck, all) {
   while (newMiss.length < 6 && deck.length > 0) {
     let randomIndex = Math.floor(Math.random() * deck.length);
     console.log(deck[randomIndex]);
-    if(all.contains(deck[randomIndex])){
+    if(all.includes(deck[randomIndex])){
       newMiss.push(deck[randomIndex]);
       deck.splice(randomIndex, 1);
     }
