@@ -357,7 +357,7 @@ async function checkMiss() {
   if(!containsAll){
     console.log("Not Complete");
     alert("You have not completed the Mission.");
-    //return;
+    return;
   }
   // Adds token if mission complete
   newTokens=newTokens+1;
@@ -378,6 +378,7 @@ async function checkMiss() {
     cards: newMission,
     missNum: missNum
   });
+  location.reload();
 }
 
 function randMission(deck, all) {
