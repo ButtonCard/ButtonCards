@@ -35,6 +35,11 @@ async function loadCards() {
       userCards=userCards.sort();
     }
     
+  } else if(userList=="mission"){
+    const missRef = db.collection('mission');
+    const missQuery = await missRef.get();
+    userCards = missQuery.docs[0].data().cards;
+    console.log(userCards);
   } else{
     const userQuery = await userRef.get();
     userCards = userQuery.docs[0].data().cards.concat(
@@ -215,7 +220,7 @@ function sortByLastDigit(arr) {
     });
 }
 
-//Sorts array of cards by last digit
+//Checks if an award has been earned and awards it
 async function awardChecker() {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   const userRef = db.collection('users');
@@ -317,5 +322,75 @@ async function addOwned(cardSrc){
   console.log("own add");
   ownText.innerHTML = ownText.innerHTML.substring(0, ownText.innerHTML.length - 2);
   console.log("owners " + ownText.innerHTML);
+}
+
+
+//Checks if mission is complete
+async function checkMiss() {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const userRef = db.collection('users');
+  const userQuery = await userRef
+        .where('name', '==', currentUser.username)
+        .get();
+  const doc = userQuery.docs[0];
+  let userCards = doc.data().cards;
+  let newTokens = doc.data().tokens;
+
+  const allQuery = await userRef.get();
+  let allCards = allQuery.docs[0].data().cards.concat(
+    allQuery.docs[1].data().cards, 
+    allQuery.docs[2].data().cards, 
+    allQuery.docs[3].data().cards,
+    allQuery.docs[4].data().cards, 
+    allQuery.docs[5].data().cards).sort();
+  
+  let awarded=false;
+  for (let i = 1; i < awardSets.length; i++) {
+    let list = awardSets[i];
+
+    // Filter out items ending in A or P
+    let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
+
+    // Check if userCards contains all requiredCards
+    let containsAll = requiredCards.every(card => userCards.includes(card));
+    let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
+
+    if (containsAll) {
+      awarded=true;
+      console.log("Set awarded: " + i);
+      // Remove the required cards from userCards
+      userCards = userCards.filter(card => {
+          if (requiredCards.includes(card)) {
+              requiredCards = requiredCards.filter(requiredCard => requiredCard !== card);
+              return false;
+          }
+          return true;
+      });
+
+      // Check if the -P card is already in allCards
+      let minusPCard = cardWithoutAorP + '-P';
+      let minusACard = cardWithoutAorP + '-A';
+
+      newTokens=newTokens+2;
+      if (!allCards.includes(minusPCard)&&awardSets[i].includes(minusPCard)) {
+        console.log("Award P");
+        // Add the -P card to userCards if not in allCards
+        userCards.push(minusPCard);
+        alert("Prime Award earned! +2 Tokens");
+      } else {
+        console.log("Award A");
+        // Add the -A card to userCards if the -P card is already in allCards
+        userCards.push(minusACard);
+        alert("Award earned! +2 Tokens");
+      }
+    }
+  }
+  if(awarded){
+    console.log("awarding");
+    await doc.ref.update({
+      cards: userCards,
+      tokens: newTokens
+    });
+  }
 }
 
