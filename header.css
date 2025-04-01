@@ -100,3 +100,73 @@ body{
   background-color: #485867ff;
   color: white;
 }
+
+
+
+/* THROWBACK */
+body{
+  background-color:#00CCEE;
+}
+
+.logoBack {
+  background-color: white;
+}
+
+.line{
+  background-color:darkblue;
+}
+
+.user-info {
+  color: white;
+}
+
+.user-info p {
+  color: darkblue;
+}
+
+.topnav {
+  background-color: #0033BB;
+}
+
+.topnav a {
+  color: #f2f2f2;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #0077DD;
+  color: white;
+}
+
+/* ----- User's Collection List ----- */
+.collectionList, .set, .tradeList, .yourList, .resultList, .myList, .viewYourList, .viewTheirList{
+  background-color: blue;
+  border: 6px solid darkblue;
+  border-radius: 0px;
+}
+
+button{
+  border: darkblue 2px solid;
+  background-color: blue;
+}
+
+button:hover {
+  border: black 2px solid;
+  background-color: white;
+  color: black;
+}
+
+/* ----- Trade Page Selector ----- */
+.tradePageSelect {
+  border: 4px solid blue;
+}
+
+/* ----- Clicker Button ----- */
+.clicker{
+  border: darkblue 6px solid;
+  background-color:blue;
+}
