@@ -201,12 +201,9 @@ async function openPack(pack_Num) {
       if (inPack < packSize && Math.floor(Math.random() * 3) + 1 == 1) {
 
         let randCard = S4[Math.floor(Math.random() * (S4.length))];
-        
-        if (backUp <= 99) {
-          pack.push(randCard + ".png");
-          inPack++;
-          console.log(randCard);
-        }
+        pack.push(randCard + ".png");
+        inPack++;
+        console.log(randCard);
       }
     }
   }
