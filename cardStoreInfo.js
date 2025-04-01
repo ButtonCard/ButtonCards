@@ -40,6 +40,7 @@ let V3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8"];
 let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
 let S2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8"];
 let S3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8"];
+let S4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8"];
 
 let VarSet = V3; //Pack 2 Variant
 let SpeSet = S3; //Pack 3 Variant
@@ -67,9 +68,10 @@ let ListV3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8", "V
 let ListS1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8", "S1-A"];
 let ListS2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8", "S2-A"];
 let ListS3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8", "S3-A"];
+let ListS4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8", "S4-A"];
 let ListS9 = ["S9-1"];
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, ListV1, ListV2, ListV3, ListS1, ListS3, ListS9];
-let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, ListV3, ListS3];
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, ListV1, ListV2, ListV3, ListS1, ListS3, ListS4, ListS9];
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, ListV3, ListS3, ListS4];
 
 //Counts of Each Card Rarity
 let Lcount = 1;
