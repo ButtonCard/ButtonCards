@@ -362,12 +362,12 @@ async function checkMiss() {
 
   // Gets new Mission
   let cardDeck = missionSets.flat();
-  let newMission = randMission(deck);
+  let newMission = randMission(cardDeck);
   missNum=missNum+1;
 
   let missDoc = missQuery.docs[0];
   await missDoc.ref.update({
-    cards: newTokens,
+    cards: newMission,
     missNum: missNum
   });
 }
