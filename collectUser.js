@@ -333,6 +333,13 @@ async function checkMiss() {
         .where('name', '==', currentUser.username)
         .get();
   const doc = userQuery.docs[0];
+  const allQuery = await userRef.get();
+  let allCards = allQuery.docs[0].data().cards.concat(
+    allQuery.docs[1].data().cards, 
+    allQuery.docs[2].data().cards, 
+    allQuery.docs[3].data().cards,
+    allQuery.docs[4].data().cards, 
+    allQuery.docs[5].data().cards).sort();
   let userCards = doc.data().cards;
   let newTokens = doc.data().tokens;
 
@@ -340,7 +347,7 @@ async function checkMiss() {
   const missRef = db.collection('mission');
   const missQuery = await missRef.get();
   let missCards = missQuery.docs[0].data().cards;
-  let missNum = missQuery.docs[0].data().cards;
+  let missNum = missQuery.docs[0].data().missNum;
   console.log(missCards);
   
   // Check if userCards contains all missCards
@@ -362,7 +369,8 @@ async function checkMiss() {
 
   // Gets new Mission
   let cardDeck = missionSets.flat();
-  let newMission = randMission(cardDeck);
+  let newMission = randMission(cardDeck, allCards);
+  console.log(newMission);
   missNum=missNum+1;
 
   let missDoc = missQuery.docs[0];
@@ -372,15 +380,18 @@ async function checkMiss() {
   });
 }
 
-function randMission(deck) {
-    let newMiss = [];
-    
-    while (newMiss.length < 6 && deck.length > 0) {
-        let randomIndex = Math.floor(Math.random() * deck.length);
-        newMiss.push(deck[randomIndex]);
-        deck.splice(randomIndex, 1);
+function randMission(deck, all) {
+  let newMiss = [];
+  
+  while (newMiss.length < 6 && deck.length > 0) {
+    let randomIndex = Math.floor(Math.random() * deck.length);
+    console.log(deck[randomIndex]);
+    if(all.contains(deck[randomIndex])){
+      newMiss.push(deck[randomIndex]);
+      deck.splice(randomIndex, 1);
     }
+  }
 
-    return newMiss;
+  return newMiss;
 }
 
