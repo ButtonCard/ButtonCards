@@ -14,7 +14,7 @@ let Pack2_Description='1/10 Chance for Backrooms Variant!<br>For Sale: Until 4/3
 let Pack2_Image='icons/Back_Icon.png';
 let Pack2_Time=1743739199000; //4/3
 //Pack 3 Info
-let Pack3_Name='3 Years of ButttonCraft 3 Pack';
+let Pack3_Name='3 Years of Button 3 Pack';
 let Pack3_Description='1/12 Chance for Button 3 Anniversary Card!<br>For Sale: Until 4/2<br><br>3 Cards<br>1 Pack Tokens';
 let Pack3_Image='icons/Btn3_Icon.png';
 let Pack3_Time=1743652799000; //4/2
