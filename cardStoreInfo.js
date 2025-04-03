@@ -5,8 +5,7 @@ let packCost = [1,1,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br><br>4 Cards<br>1 Pack Token';
-//let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br>1/45 Chance for BUTTON Media Card!<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br>1/45 Chance for BUTTON Media Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
@@ -17,8 +16,8 @@ let Pack2_Time=1743739199000; //4/3
 //Pack 3 Info
 let Pack3_Name='BUTTON Media Pack';
 let Pack3_Description='1/16 Chance for BUTTON Media Card!<br>For Sale: Until 4/10<br><br>5 Cards<br>2 Pack Tokens';
-let Pack3_Image='icons/Btn3_Icon.png';
-let Pack3_Time=1743652799000; //4/2
+let Pack3_Image='icons/Media_Icon.png';
+let Pack3_Time=1744329599000; //4/10
 //Epoch Time Coverter 23:59:59 in milliseconds
 
 //Unavailable Pack
