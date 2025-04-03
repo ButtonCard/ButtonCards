@@ -15,16 +15,16 @@ let Pack2_Description='1/10 Chance for Backrooms Variant!<br>For Sale: Until 4/3
 let Pack2_Image='icons/Back_Icon.png';
 let Pack2_Time=1743739199000; //4/3
 //Pack 3 Info
-//let Pack3_Name='BUTTON Media Pack';
-//let Pack3_Description='1/16 Chance for BUTTON Media Card!<br>For Sale: Until 4/10<br><br>5 Cards<br>2 Pack Tokens';
-//let Pack3_Image='icons/Btn3_Icon.png';
+let Pack3_Name='BUTTON Media Pack';
+let Pack3_Description='1/16 Chance for BUTTON Media Card!<br>For Sale: Until 4/10<br><br>5 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Btn3_Icon.png';
 let Pack3_Time=1743652799000; //4/2
 //Epoch Time Coverter 23:59:59 in milliseconds
 
 //Unavailable Pack
-let Pack3_Name='Pack Not Available';
-let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
-let Pack3_Image='icons/Null_Icon.png';
+//let Pack3_Name='Pack Not Available';
+//let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
+//let Pack3_Image='icons/Null_Icon.png';
 
 
 // ----- CARDS -----
@@ -33,7 +33,7 @@ let Pack3_Image='icons/Null_Icon.png';
 let C = ["01-1", "01-2", "02-1", "02-2", "02-3", "03-1", "03-2", "04-1", "04-2", "05-1", "05-2", "06-1", "06-2", "07-1", "07-2", "08-1", "08-2", "09-1", "09-2", "10-1", "10-2", "11-1", "11-2", "11-3", "12-1", "12-2", "13-1", "13-2", "13-3"];
 let U = ["01-3", "01-4", "02-4", "02-5", "03-3", "03-4", "04-3", "04-4", "05-3", "05-4", "06-3", "06-4", "07-3", "07-4", "08-3", "08-4", "09-3", "09-4", "10-3", "10-4", "11-4", "11-5", "12-3", "12-4", "12-5", "13-4", "13-5"];
 let R = ["01-5", "01-6", "02-6", "03-5", "03-6", "04-5", "05-5", "06-5", "07-5", "08-5", "09-5", "10-5", "11-6", "12-6", "13-6"];
-let E = ["01-7", "01-8", "02-7", "03-7", "04-6", "05-6", "06-6", "07-6", "08-6", "09-6", "10-6", "11-7", "12-7"];
+let E = ["01-7", "01-8", "02-7", "03-7", "04-6", "05-6", "06-6", "07-6", "08-6", "09-6", "10-6", "11-7", "12-7", "13-7"];
 let L = ["01-9", "02-8", "03-8", "04-7", "05-7", "06-7", "07-7", "08-7", "09-7", "10-7", "11-8", "12-8"];
 let V1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8"];
 let V2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8"];
@@ -46,7 +46,7 @@ let S5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8"];
 let S9 = ["S9-1", "S9-2"];
 
 let VarSet = V3; //Pack 2 Variant
-let SpeSet = S9; //Pack 3 Variant
+let SpeSet = S2; //Pack 3 Variant
 
 
 //All Sets Current Available
@@ -75,9 +75,9 @@ let ListS3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8", "S
 let ListS4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8", "S4-A"];
 let ListS5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S5-A"];
 let ListS9 = ["S9-1", "S9-2"];
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, ListV1, ListV2, ListV3, ListV9, ListS1, ListS3, ListS4, ListS5, ListS9];
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, ListV1, ListV2, ListV3, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS9];
 let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, ListV3, ListS2];
-let missionSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, ListV1, ListV2, ListV3, ListV9, ListS1, ListS3, ListS4, ListS5, ListS9];
+let missionSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13];
 
 //Counts of Each Card Rarity
 let Lcount = 1;
