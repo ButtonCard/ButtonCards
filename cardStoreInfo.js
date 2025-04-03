@@ -1,11 +1,12 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,3,3];
-let packCost = [1,1,1];
+let packSizes = [4,3,5];
+let packCost = [1,1,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br>1/30 Chance for Button 3 Anniversary Card!<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br><br>4 Cards<br>1 Pack Token';
+//let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Backrooms Variant!<br>1/45 Chance for BUTTON Media Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
@@ -14,16 +15,16 @@ let Pack2_Description='1/10 Chance for Backrooms Variant!<br>For Sale: Until 4/3
 let Pack2_Image='icons/Back_Icon.png';
 let Pack2_Time=1743739199000; //4/3
 //Pack 3 Info
-let Pack3_Name='3 Years of Button 3 Pack';
-let Pack3_Description='1/12 Chance for Button 3 Anniversary Card!<br>For Sale: Until 4/2<br><b>EXPIRES TODAY!</b><br>3 Cards<br>1 Pack Tokens';
-let Pack3_Image='icons/Btn3_Icon.png';
+//let Pack3_Name='BUTTON Media Pack';
+//let Pack3_Description='1/16 Chance for BUTTON Media Card!<br>For Sale: Until 4/10<br><br>5 Cards<br>2 Pack Tokens';
+//let Pack3_Image='icons/Btn3_Icon.png';
 let Pack3_Time=1743652799000; //4/2
 //Epoch Time Coverter 23:59:59 in milliseconds
 
 //Unavailable Pack
-//let Pack3_Name='Pack Not Available';
-//let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
-//let Pack3_Image='icons/Null_Icon.png';
+let Pack3_Name='Pack Not Available';
+let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
+let Pack3_Image='icons/Null_Icon.png';
 
 
 // ----- CARDS -----
@@ -41,11 +42,11 @@ let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
 let S2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8"];
 let S3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8"];
 let S4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8"];
-let S5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S9-2"];
-
+let S5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8"];
+let S9 = ["S9-1", "S9-2"];
 
 let VarSet = V3; //Pack 2 Variant
-let SpeSet = S5; //Pack 3 Variant
+let SpeSet = S9; //Pack 3 Variant
 
 
 //All Sets Current Available
@@ -75,7 +76,7 @@ let ListS4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8", "S
 let ListS5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S5-A"];
 let ListS9 = ["S9-1", "S9-2"];
 let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, ListV1, ListV2, ListV3, ListV9, ListS1, ListS3, ListS4, ListS5, ListS9];
-let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, ListV3, ListS5];
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, ListV3, ListS2];
 let missionSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, ListV1, ListV2, ListV3, ListV9, ListS1, ListS3, ListS4, ListS5, ListS9];
 
 //Counts of Each Card Rarity
@@ -88,13 +89,13 @@ let Scount = 2;
 
 //Odds of Each Card Rarity (1/x per Card)
 let Lrarity = 85;
-let Erarity = 40;
+let Erarity = 45;
 let Rrarity = 12;
 let Urarity = 4;
 let Vrarity = 30;
-let Srarity = 30;
+let Srarity = 45;
 let P2Vrarity = 10;
-let P3Srarity = 12;
+let P3Srarity = 16;
 
 
 /*Retired Packs:
@@ -117,4 +118,8 @@ Make It Meme 3/29-4/1
 let Pack3_Name='Make It Meme Pack';
 let Pack3_Description='1/15 Chance for Make It Meme Card!<br>For Sale: Until 4/1<br><br>6 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Make_Icon.png';
+
+let Pack3_Name='3 Years of Button 3 Pack';
+let Pack3_Description='1/12 Chance for Button 3 Anniversary Card!<br>For Sale: Until 4/2<br><br>3 Cards<br>1 Pack Tokens';
+let Pack3_Image='icons/Btn3_Icon.png';
 */
