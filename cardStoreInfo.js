@@ -76,7 +76,7 @@ let ListS5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S
 let ListS9 = ["S9-1", "S9-2"];
 let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, ListV1, ListV2, ListV3, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS9];
 let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, ListV3, ListS2];
-let missionSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13];
+let missionSets = [C, U, R, E];
 
 //Counts of Each Card Rarity
 let Lcount = 1;
