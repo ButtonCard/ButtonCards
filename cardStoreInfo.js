@@ -45,7 +45,7 @@ let S4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8"];
 let S5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8"];
 let S9 = ["S9-1", "S9-2"];
 
-let VarSet = V3; //Pack 2 Variant
+let VarSet = V4; //Pack 2 Variant
 let SpeSet = S2; //Pack 3 Variant
 
 
