@@ -120,14 +120,23 @@ async function openPack(pack_Num) {
 
   //hide old page features for card opening
   let packOptions = document.querySelector(".pack-options");
-  packOptions.style.display = "none";
+  if (packOptions) packOptions.style.display = "none";
+  
   let pageTitle = document.querySelector(".pageTitle");
-  pageTitle.style.display = "none";
+  if (pageTitle) pageTitle.style.display = "none";
+  
   let tokenCount = document.querySelector(".tokenCount");
-  tokenCount.style.display = "none";
+  if (tokenCount) tokenCount.style.display = "none";
 
   //shows large card
   let cardPic = document.querySelector(".pack");
+  
+  // Check if cardPic exists before proceeding
+  if (!cardPic) {
+    console.error("Card picture element not found");
+    return;
+  }
+  
   cardPic.style.display = "block"; // Make sure it's visible
   
   if (num != 0) {
@@ -346,6 +355,83 @@ async function openPack(pack_Num) {
   // Set up the click handler for the next card
   num = 1;
   cardPic.onclick = function() { flipCard(cardPic); };
+  
+  // Apply special animation for legendary cards on first card
+  checkForSpecialCard(pack[0]);
+}
+
+// Function to check if a card is special/legendary and apply special animation
+function checkForSpecialCard(card) {
+  // Extract the base card code without .png
+  const cardCode = card.split('.')[0];
+  
+  // Check if it's a legendary, epic, variant, or special card
+  if (L.includes(cardCode)) {
+    applyLegendaryAnimation();
+  } else if (E.includes(cardCode)) {
+    applyEpicAnimation();
+  } else if (VarSet.includes(cardCode) || SpeSet.includes(cardCode)) {
+    applySpecialAnimation();
+  }
+}
+
+// Apply a special animation for legendary cards
+function applyLegendaryAnimation() {
+  const cardPic = document.querySelector(".pack");
+  if (!cardPic) return;
+  
+  // Gold shimmer effect
+  cardPic.style.boxShadow = "0 0 30px 15px gold";
+  cardPic.style.animation = "pulse 1.5s infinite";
+  
+  // Add CSS for the animation if it doesn't exist
+  if (!document.getElementById('special-animations')) {
+    const style = document.createElement('style');
+    style.id = 'special-animations';
+    style.textContent = `
+      @keyframes pulse {
+        0% { transform: scale(1); box-shadow: 0 0 30px 15px gold; }
+        50% { transform: scale(1.05); box-shadow: 0 0 40px 20px gold; }
+        100% { transform: scale(1); box-shadow: 0 0 30px 15px gold; }
+      }
+      
+      @keyframes epic-glow {
+        0% { box-shadow: 0 0 20px 10px purple; }
+        50% { box-shadow: 0 0 30px 15px purple; }
+        100% { box-shadow: 0 0 20px 10px purple; }
+      }
+      
+      @keyframes special-rainbow {
+        0% { box-shadow: 0 0 20px 10px red; }
+        16.6% { box-shadow: 0 0 20px 10px orange; }
+        33.3% { box-shadow: 0 0 20px 10px yellow; }
+        50% { box-shadow: 0 0 20px 10px green; }
+        66.6% { box-shadow: 0 0 20px 10px blue; }
+        83.3% { box-shadow: 0 0 20px 10px indigo; }
+        100% { box-shadow: 0 0 20px 10px violet; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+}
+
+// Apply a special animation for epic cards
+function applyEpicAnimation() {
+  const cardPic = document.querySelector(".pack");
+  if (!cardPic) return;
+  
+  // Purple glow effect
+  cardPic.style.boxShadow = "0 0 20px 10px purple";
+  cardPic.style.animation = "epic-glow 2s infinite";
+}
+
+// Apply a special animation for variant/special cards
+function applySpecialAnimation() {
+  const cardPic = document.querySelector(".pack");
+  if (!cardPic) return;
+  
+  // Rainbow effect
+  cardPic.style.animation = "special-rainbow 3s infinite";
 }
 
 //Shows next card when clicked, with animation
@@ -362,6 +448,8 @@ function flipCard(cardPic) {
       cardPic.style.width = "0";
       cardPic.style.display = "none";
       cardPic.classList.remove('slide-out');
+      cardPic.style.animation = "none";
+      cardPic.style.boxShadow = "none";
       
       // Clean up the pack container
       if (packContainer && packContainer.parentNode) {
@@ -379,6 +467,8 @@ function flipCard(cardPic) {
     cardPic.src = "Pack.png";
     cardPic.style.width = "0";
     cardPic.style.display = "none";
+    cardPic.style.animation = "none";
+    cardPic.style.boxShadow = "none";
     
     // Clean up the pack container
     if (packContainer && packContainer.parentNode) {
@@ -398,12 +488,18 @@ function flipCard(cardPic) {
     // After slide out, prepare the next card
     cardPic.classList.remove('slide-out');
     cardPic.style.opacity = "0";
+    cardPic.style.animation = "none";
+    cardPic.style.boxShadow = "none";
     
     setTimeout(() => {
       // Update to new card and fade in
       cardPic.src = "img/" + pack[num];
       cardPic.style.filter = `drop-shadow(0 0 20px ${getRandomColor()})`;
       cardPic.style.opacity = "1";
+      
+      // Check if this is a special card
+      checkForSpecialCard(pack[num]);
+      
       console.log(num);
       num++;
       isAnimating = false;
