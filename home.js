@@ -1,10 +1,13 @@
+// Fixed pack-animations.js
+
 //PACK OPENING FUNCTIONS
 
 let num = 0;
 let pack = [];
-let packNum=-1;
-let reopen=false;
+let packNum = -1;
+let reopen = false;
 let isAnimating = false; // Flag to prevent multiple clicks during animation
+let packContainer = null; // Track the pack container for cleanup
 
 //Loads in Pack Token Count
 async function loadTokens() {
@@ -19,29 +22,42 @@ async function loadTokens() {
 }
 loadTokens();
 
+// Initial setup to hide the pack image
+window.onload = function() {
+  const packImage = document.querySelector(".pack");
+  if (packImage) {
+    packImage.style.width = "0px";
+    packImage.style.display = "none";
+  }
+};
+
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
 async function openPack(pack_Num) {
   // Prevent multiple clicks while animating
   if (isAnimating) return;
 
   //Check if pack is expired
-  if(pack.length==0){
-    packNum=pack_Num;
+  if(pack.length == 0) {
+    packNum = pack_Num;
     console.log(packNum);
     let timeCompare = 0;
-    if(packNum==0){
-      timeCompare=Pack1_Time;
-    } else if(packNum==1){
-      timeCompare=Pack2_Time;
-    } else if(packNum==2){
-      timeCompare=Pack3_Time;
+    if(packNum == 0) {
+      timeCompare = Pack1_Time;
+    } else if(packNum == 1) {
+      timeCompare = Pack2_Time;
+    } else if(packNum == 2) {
+      timeCompare = Pack3_Time;
+    } else {
+      // Invalid pack selection - don't proceed
+      return;
     }
+    
     let now = new Date();
     console.log(timeCompare);
     console.log(now.getTime());
-    if(timeCompare<now.getTime()){
+    if(timeCompare < now.getTime()) {
       alert("This pack is expired.");
-      if(reopen){
+      if(reopen) {
         location.reload();
       }
       return;
@@ -65,10 +81,10 @@ async function openPack(pack_Num) {
   //check if user has enough tokens to open pack
   const doc = userQuery.docs[0];
   let curTokens = doc.data().tokens;
-  if(pack.length==0){
-    if(curTokens-packCost[packNum]<0){
+  if(pack.length == 0) {
+    if(curTokens - packCost[packNum] < 0) {
       alert("Not Enough Pack Tokens!");
-      if(reopen){
+      if(reopen) {
         location.reload();
       }
       return;
@@ -76,12 +92,18 @@ async function openPack(pack_Num) {
   }
     
   //updates pack token if pack is empty
-  if(pack.length==0){
+  if(pack.length == 0) {
     let newTokens = curTokens - packCost[packNum];
     await doc.ref.update({
       tokens: newTokens
     });
-    document.getElementById("token").innerHTML="Pack Tokens: " + newTokens;
+    document.getElementById("token").innerHTML = "Pack Tokens: " + newTokens;
+    
+    // Also update the token count at the top of the page
+    const tokenCountElement = document.querySelector('.tokenCount');
+    if (tokenCountElement) {
+      tokenCountElement.textContent = 'Pack Tokens: ' + newTokens;
+    }
   }
 
   //hide old page features for card opening
@@ -94,10 +116,13 @@ async function openPack(pack_Num) {
 
   //shows large card
   let cardPic = document.querySelector(".pack");
+  cardPic.style.display = "block"; // Make sure it's visible
+  
   if (num != 0) {
     cardPic.style.width = "300px";
     cardPic.style.filter = `drop-shadow(0 0 20px ${getRandomColor()})`;
-    cardPic.addEventListener("click", () => flipCard(cardPic, pack));
+    // Using a proper function reference instead of calling it directly
+    cardPic.onclick = function() { flipCard(cardPic, pack); };
     return;
   }
 
@@ -105,8 +130,9 @@ async function openPack(pack_Num) {
   let packSize = packSizes[packNum];
   console.log(packNum);
 
+  // Generate pack contents
   //SPECIAL - Pack 3
-  if (packNum==2){
+  if (packNum == 2) {
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * P3Srarity) + 1 == 1) {
         let randCard;
@@ -114,7 +140,7 @@ async function openPack(pack_Num) {
         let available = false;
         while (!available && backUp <= 100) {
           randCard = SpeSet[Math.floor(Math.random() * (SpeSet.length))];
-          if (countCards(allCards.concat(pack),randCard) < Scount) {
+          if (countCards(allCards.concat(pack), randCard) < Scount) {
             available = true;
           }
           backUp++;
@@ -129,7 +155,7 @@ async function openPack(pack_Num) {
   }
   
   //VARIANT - Pack 2
-  if (packNum==1){
+  if (packNum == 1) {
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * P2Vrarity) + 1 == 1) {
         let randCard;
@@ -137,7 +163,7 @@ async function openPack(pack_Num) {
         let available = false;
         while (!available && backUp <= 100) {
           randCard = VarSet[Math.floor(Math.random() * (VarSet.length))];
-          if (countCards(allCards.concat(pack),randCard) < Vcount) {
+          if (countCards(allCards.concat(pack), randCard) < Vcount) {
             available = true;
           }
           backUp++;
@@ -151,9 +177,8 @@ async function openPack(pack_Num) {
     }
   }
 
-  
   //SPECIAL - Standard
-  if (packNum==0){
+  if (packNum == 0) {
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * Srarity) + 1 == 1) {
         let randCard;
@@ -161,7 +186,7 @@ async function openPack(pack_Num) {
         let available = false;
         while (!available && backUp <= 100) {
           randCard = SpeSet[Math.floor(Math.random() * (SpeSet.length))];
-          if (countCards(allCards.concat(pack),randCard) < Scount) {
+          if (countCards(allCards.concat(pack), randCard) < Scount) {
             available = true;
           }
           backUp++;
@@ -176,7 +201,7 @@ async function openPack(pack_Num) {
   }
 
   //VARIANT - Standard
-  if (packNum==0){
+  if (packNum == 0) {
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * Vrarity) + 1 == 1) {
         let randCard;
@@ -184,7 +209,7 @@ async function openPack(pack_Num) {
         let available = false;
         while (!available && backUp <= 100) {
           randCard = VarSet[Math.floor(Math.random() * (VarSet.length))];
-          if (countCards(allCards.concat(pack),randCard) < Vcount) {
+          if (countCards(allCards.concat(pack), randCard) < Vcount) {
             available = true;
           }
           backUp++;
@@ -197,20 +222,6 @@ async function openPack(pack_Num) {
       }
     }
   }
-
-  //SPECIAL (April Fools Only) - Standard
-  /*
-  if (packNum==0){
-    for (let i = 0; i < packSize; i++) {
-      if (inPack < packSize && Math.floor(Math.random() * 2) + 1 == 1) {
-
-        let randCard = S4[Math.floor(Math.random() * (S4.length))];
-        pack.push(randCard + ".png");
-        inPack++;
-        console.log(randCard);
-      }
-    }
-  }*/
     
   //LEGENDARY
   for (let i = 0; i < packSize; i++) {
@@ -220,7 +231,7 @@ async function openPack(pack_Num) {
       let available = false;
       while (!available && backUp <= 100) {
         randCard = L[Math.floor(Math.random() * (L.length))];
-        if (countCards(allCards.concat(pack),randCard) < Lcount) {
+        if (countCards(allCards.concat(pack), randCard) < Lcount) {
           available = true;
         }
         backUp++;
@@ -242,7 +253,7 @@ async function openPack(pack_Num) {
       let available = false;
       while (!available && backUp <= 100) {
         randCard = E[Math.floor(Math.random() * (E.length))];
-        if (countCards(allCards.concat(pack),randCard) < Ecount) {
+        if (countCards(allCards.concat(pack), randCard) < Ecount) {
           available = true;
         }
         backUp++;
@@ -263,7 +274,7 @@ async function openPack(pack_Num) {
       let available = false;
       while (!available && backUp <= 100) {
         randCard = R[Math.floor(Math.random() * (R.length))];
-        if (countCards(allCards.concat(pack),randCard) < Rcount) {
+        if (countCards(allCards.concat(pack), randCard) < Rcount) {
           available = true;
         }
         backUp++;
@@ -284,7 +295,7 @@ async function openPack(pack_Num) {
       let available = false;
       while (!available && backUp <= 100) {
         randCard = U[Math.floor(Math.random() * (U.length))];
-        if (countCards(allCards.concat(pack),randCard) < Ucount) {
+        if (countCards(allCards.concat(pack), randCard) < Ucount) {
           available = true;
         }
         backUp++;
@@ -314,7 +325,7 @@ function startPackOpeningAnimation(cardPic) {
   isAnimating = true;
   
   // Create a wrapper for the pack animation
-  const packContainer = document.createElement('div');
+  packContainer = document.createElement('div');
   packContainer.className = 'pack-container';
   cardPic.parentNode.insertBefore(packContainer, cardPic);
   packContainer.appendChild(cardPic);
@@ -346,14 +357,14 @@ function startPackOpeningAnimation(cardPic) {
         num = 1;
         
         // Add click event for further card flips
-        cardPic.addEventListener("click", () => flipCard(cardPic, pack));
+        cardPic.onclick = function() { flipCard(cardPic, pack); };
         isAnimating = false;
       }, 300);
     }, 1000);
   }, 500);
 }
 
-//Flips to Next Card When Opening Pack, Calls to Show Results When Pack is Empty
+//Shows next card when clicked, no flip animation
 function flipCard(cardPic, pack) {
   if (isAnimating) return;
   isAnimating = true;
@@ -365,7 +376,15 @@ function flipCard(cardPic, pack) {
     setTimeout(() => {
       cardPic.src = "Pack.png";
       cardPic.style.width = "0";
+      cardPic.style.display = "none";
       cardPic.classList.remove('slide-out');
+      
+      // Clean up the pack container to remove blank space
+      if (packContainer) {
+        packContainer.parentNode.removeChild(packContainer);
+        packContainer = null;
+      }
+      
       console.log("results");
       results(pack);
       num++;
@@ -375,6 +394,14 @@ function flipCard(cardPic, pack) {
   } else if (num >= pack.length) {
     cardPic.src = "Pack.png";
     cardPic.style.width = "0";
+    cardPic.style.display = "none";
+    
+    // Clean up the pack container
+    if (packContainer) {
+      packContainer.parentNode.removeChild(packContainer);
+      packContainer = null;
+    }
+    
     console.log("remove");
     isAnimating = false;
     return;
@@ -446,7 +473,7 @@ async function results(pack) {
     console.log(i);
     let cardResult = document.querySelector(".i" + i);
     cardResult.src = "img/" + pack[i];
-    cardResult.style.width = "100px";
+    cardResult.style.width = "0px"; // Start at 0 width
     cardResult.style.margin = "5px";
     cardResult.style.opacity = "0";
     cardResult.style.transform = "translateY(20px)";
@@ -470,6 +497,7 @@ async function results(pack) {
         for (let i = 0; i < pack.length; i++) {
           setTimeout(() => {
             let cardResult = document.querySelector(".i" + i);
+            cardResult.style.width = "100px"; // Now show the card
             cardResult.style.opacity = "1";
             cardResult.style.transform = "translateY(0)";
           }, i * 150);
@@ -497,6 +525,15 @@ function enlargePack(card) {
   let cardImg = document.querySelector("." + card);
   let hidePack = document.querySelector(".pack");
   
+  // Make sure pack container exists for displaying the enlarged card
+  if (!packContainer) {
+    packContainer = document.createElement('div');
+    packContainer.className = 'pack-container';
+    hidePack.parentNode.insertBefore(packContainer, hidePack);
+    packContainer.appendChild(hidePack);
+  }
+  
+  hidePack.style.display = "block";
   // Animate the enlargement
   hidePack.style.opacity = "0";
   hidePack.style.transform = "scale(0.9)";
@@ -528,8 +565,15 @@ function hidePack() {
   setTimeout(() => {
     hidePack.src = "Pack.png";
     hidePack.style.width = "0px";
+    hidePack.style.display = "none";
     hidePack.style.marginTop = "0px";
     hidePack.style.marginBottom = "0px";
+    
+    // Clean up the pack container
+    if (packContainer) {
+      packContainer.parentNode.removeChild(packContainer);
+      packContainer = null;
+    }
   }, 300);
 }
 
@@ -549,9 +593,9 @@ function countCards(curDeck, searchCard) {
 }
 
 //resets page to open the same pack again
-function resetPage(){
-  num=0;
-  pack=[];
+function resetPage() {
+  num = 0;
+  pack = [];
   isAnimating = false;
   
   // Fade out the results
@@ -565,6 +609,13 @@ function resetPage(){
   resCards.style.opacity = "0";
   resetButton.style.opacity = "0";
   
+  // Hide cards in the result list
+  const resultCards = resList.querySelectorAll("img");
+  for (let i = 0; i < resultCards.length; i++) {
+    resultCards[i].style.width = "0px";
+    resultCards[i].style.opacity = "0";
+  }
+  
   setTimeout(() => {
     resList.style.display = "none";
     resTitle.style.display = "none";
@@ -572,22 +623,30 @@ function resetPage(){
     resetButton.style.display = "none";
     
     console.log(packNum);
-    reopen=true;
+    reopen = true;
     openPack(packNum);
   }, 500);
 }
 
-
-//Store Updater
-//Pack 1 Info
-document.getElementById("PackName1").innerHTML=Pack1_Name;
-document.getElementById("PackDesc1").innerHTML=Pack1_Description;
-document.getElementById("Pack1").src=Pack1_Image;
-//Pack 2 Info
-document.getElementById("PackName2").innerHTML=Pack2_Name;
-document.getElementById("PackDesc2").innerHTML=Pack2_Description;
-document.getElementById("Pack2").src=Pack2_Image;
-//Pack 3 Info
-document.getElementById("PackName3").innerHTML=Pack3_Name;
-document.getElementById("PackDesc3").innerHTML=Pack3_Description;
-document.getElementById("Pack3").src=Pack3_Image;
+// Store Updater
+document.addEventListener('DOMContentLoaded', function() {
+  //Pack 1 Info
+  document.getElementById("PackName1").innerHTML = Pack1_Name;
+  document.getElementById("PackDesc1").innerHTML = Pack1_Description;
+  document.getElementById("Pack1").src = Pack1_Image;
+  //Pack 2 Info
+  document.getElementById("PackName2").innerHTML = Pack2_Name;
+  document.getElementById("PackDesc2").innerHTML = Pack2_Description;
+  document.getElementById("Pack2").src = Pack2_Image;
+  //Pack 3 Info
+  document.getElementById("PackName3").innerHTML = Pack3_Name;
+  document.getElementById("PackDesc3").innerHTML = Pack3_Description;
+  document.getElementById("Pack3").src = Pack3_Image;
+  
+  // Hide the initial pack image
+  const packImage = document.querySelector(".pack");
+  if (packImage) {
+    packImage.style.width = "0px";
+    packImage.style.display = "none";
+  }
+});
