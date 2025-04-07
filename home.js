@@ -1,5 +1,3 @@
-// Fixed pack-animations.js
-
 //PACK OPENING FUNCTIONS
 
 let num = 0;
@@ -29,6 +27,20 @@ window.onload = function() {
     packImage.style.width = "0px";
     packImage.style.display = "none";
   }
+  
+  //Store Updater
+  //Pack 1 Info
+  document.getElementById("PackName1").innerHTML = Pack1_Name;
+  document.getElementById("PackDesc1").innerHTML = Pack1_Description;
+  document.getElementById("Pack1").src = Pack1_Image;
+  //Pack 2 Info
+  document.getElementById("PackName2").innerHTML = Pack2_Name;
+  document.getElementById("PackDesc2").innerHTML = Pack2_Description;
+  document.getElementById("Pack2").src = Pack2_Image;
+  //Pack 3 Info
+  document.getElementById("PackName3").innerHTML = Pack3_Name;
+  document.getElementById("PackDesc3").innerHTML = Pack3_Description;
+  document.getElementById("Pack3").src = Pack3_Image;
 };
 
 //Checks for Token, Opens Pack and Changes Page to Start Pack Opening Sequence
@@ -121,8 +133,8 @@ async function openPack(pack_Num) {
   if (num != 0) {
     cardPic.style.width = "300px";
     cardPic.style.filter = `drop-shadow(0 0 20px ${getRandomColor()})`;
-    // Using a proper function reference instead of calling it directly
-    cardPic.onclick = function() { flipCard(cardPic, pack); };
+    // Using a proper function reference instead of directly calling it
+    cardPic.onclick = function() { flipCard(cardPic); };
     return;
   }
 
@@ -316,56 +328,28 @@ async function openPack(pack_Num) {
   shuffle(pack);
   console.log(pack);
 
-  // Start the peel-back animation and initial card display
-  startPackOpeningAnimation(cardPic);
-}
-
-// Add the peel-back animation to reveal the first card
-function startPackOpeningAnimation(cardPic) {
-  isAnimating = true;
-  
-  // Create a wrapper for the pack animation
-  packContainer = document.createElement('div');
-  packContainer.className = 'pack-container';
-  cardPic.parentNode.insertBefore(packContainer, cardPic);
-  packContainer.appendChild(cardPic);
-  
-  // Set initial pack image
-  cardPic.src = "Pack.png";
+  // Simply show the first card without the peel-back animation
+  cardPic.src = "img/" + pack[0];
   cardPic.style.width = "300px";
+  cardPic.style.filter = `drop-shadow(0 0 20px ${getRandomColor()})`;
   
-  // Create peel-back effect elements
-  const packOverlay = document.createElement('div');
-  packOverlay.className = 'pack-overlay';
-  packContainer.appendChild(packOverlay);
+  // Create and attach the container div if it doesn't exist
+  if (!packContainer) {
+    packContainer = document.createElement('div');
+    packContainer.className = 'pack-container';
+    if (cardPic.parentNode) {
+      cardPic.parentNode.insertBefore(packContainer, cardPic);
+      packContainer.appendChild(cardPic);
+    }
+  }
   
-  // Start peel-back animation
-  setTimeout(() => {
-    packOverlay.classList.add('peel-back');
-    
-    // After peel-back animation completes, show the first card
-    setTimeout(() => {
-      packOverlay.remove();
-      cardPic.style.opacity = '0';
-      
-      setTimeout(() => {
-        cardPic.src = "img/" + pack[0];
-        cardPic.style.opacity = '1';
-        cardPic.style.filter = `drop-shadow(0 0 20px ${getRandomColor()})`;
-        
-        // Increment card counter
-        num = 1;
-        
-        // Add click event for further card flips
-        cardPic.onclick = function() { flipCard(cardPic, pack); };
-        isAnimating = false;
-      }, 300);
-    }, 1000);
-  }, 500);
+  // Set up the click handler for the next card
+  num = 1;
+  cardPic.onclick = function() { flipCard(cardPic); };
 }
 
-//Shows next card when clicked, no flip animation
-function flipCard(cardPic, pack) {
+//Shows next card when clicked, with animation
+function flipCard(cardPic) {
   if (isAnimating) return;
   isAnimating = true;
   
@@ -379,8 +363,8 @@ function flipCard(cardPic, pack) {
       cardPic.style.display = "none";
       cardPic.classList.remove('slide-out');
       
-      // Clean up the pack container to remove blank space
-      if (packContainer) {
+      // Clean up the pack container
+      if (packContainer && packContainer.parentNode) {
         packContainer.parentNode.removeChild(packContainer);
         packContainer = null;
       }
@@ -397,7 +381,7 @@ function flipCard(cardPic, pack) {
     cardPic.style.display = "none";
     
     // Clean up the pack container
-    if (packContainer) {
+    if (packContainer && packContainer.parentNode) {
       packContainer.parentNode.removeChild(packContainer);
       packContainer = null;
     }
@@ -411,15 +395,15 @@ function flipCard(cardPic, pack) {
   cardPic.classList.add('slide-out');
   
   setTimeout(() => {
-    // After slide out, fade in the next card
-    cardPic.style.opacity = '0';
+    // After slide out, prepare the next card
     cardPic.classList.remove('slide-out');
+    cardPic.style.opacity = "0";
     
     setTimeout(() => {
       // Update to new card and fade in
       cardPic.src = "img/" + pack[num];
       cardPic.style.filter = `drop-shadow(0 0 20px ${getRandomColor()})`;
-      cardPic.style.opacity = '1';
+      cardPic.style.opacity = "1";
       console.log(num);
       num++;
       isAnimating = false;
@@ -468,7 +452,7 @@ async function results(pack) {
       cards: newCards
   });
 
-  // Add cards to results with staggered animation
+  // Add cards to results with initial hidden state
   for (let i = 0; i < pack.length; i++) {
     console.log(i);
     let cardResult = document.querySelector(".i" + i);
@@ -523,18 +507,15 @@ function shuffle(array) {
 function enlargePack(card) {
   console.log("enlargePack");
   let cardImg = document.querySelector("." + card);
+  
+  if (!cardImg) return;
+  
+  // Create the pack container if it doesn't exist
   let hidePack = document.querySelector(".pack");
   
-  // Make sure pack container exists for displaying the enlarged card
-  if (!packContainer) {
-    packContainer = document.createElement('div');
-    packContainer.className = 'pack-container';
-    hidePack.parentNode.insertBefore(packContainer, hidePack);
-    packContainer.appendChild(hidePack);
-  }
+  if (!hidePack) return;
   
   hidePack.style.display = "block";
-  // Animate the enlargement
   hidePack.style.opacity = "0";
   hidePack.style.transform = "scale(0.9)";
   
@@ -557,7 +538,8 @@ function hidePack() {
   console.log("hidePack");
   let hidePack = document.querySelector(".pack");
   
-  // Animate the hiding
+  if (!hidePack) return;
+  
   hidePack.style.opacity = "0";
   hidePack.style.transform = "scale(0.9)";
   hidePack.style.transition = "all 0.3s ease";
@@ -568,12 +550,6 @@ function hidePack() {
     hidePack.style.display = "none";
     hidePack.style.marginTop = "0px";
     hidePack.style.marginBottom = "0px";
-    
-    // Clean up the pack container
-    if (packContainer) {
-      packContainer.parentNode.removeChild(packContainer);
-      packContainer = null;
-    }
   }, 300);
 }
 
@@ -604,6 +580,10 @@ function resetPage() {
   let resCards = document.querySelector(".resultCards");
   let resetButton = document.querySelector(".resetBtn");
   
+  if (!resList || !resTitle || !resCards || !resetButton) {
+    return;
+  }
+  
   resList.style.opacity = "0";
   resTitle.style.opacity = "0";
   resCards.style.opacity = "0";
@@ -627,26 +607,3 @@ function resetPage() {
     openPack(packNum);
   }, 500);
 }
-
-// Store Updater
-document.addEventListener('DOMContentLoaded', function() {
-  //Pack 1 Info
-  document.getElementById("PackName1").innerHTML = Pack1_Name;
-  document.getElementById("PackDesc1").innerHTML = Pack1_Description;
-  document.getElementById("Pack1").src = Pack1_Image;
-  //Pack 2 Info
-  document.getElementById("PackName2").innerHTML = Pack2_Name;
-  document.getElementById("PackDesc2").innerHTML = Pack2_Description;
-  document.getElementById("Pack2").src = Pack2_Image;
-  //Pack 3 Info
-  document.getElementById("PackName3").innerHTML = Pack3_Name;
-  document.getElementById("PackDesc3").innerHTML = Pack3_Description;
-  document.getElementById("Pack3").src = Pack3_Image;
-  
-  // Hide the initial pack image
-  const packImage = document.querySelector(".pack");
-  if (packImage) {
-    packImage.style.width = "0px";
-    packImage.style.display = "none";
-  }
-});
