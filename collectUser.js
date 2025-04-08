@@ -436,8 +436,10 @@ async function awardChecker() {
     let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
 
     // Loop through all users to check if they need awards
-    for(let num = 0; num < allQuery.docs.length; num++){
-      curCards=allQuery.docs[num].cards;
+    for(let num = 0; num < 6; num++){
+      curCards=allQuery.docs[num].data().cards;
+      console.log(curCards + " " + num);
+      console.log(cards);
       // Check if current User's Cards contains all requiredCards
       let containsAll = requiredCards.every(card => curCards.includes(card));
       let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
@@ -475,6 +477,11 @@ async function awardChecker() {
         console.log("adding cards");
         await doc.ref.update({
           cards: userCards
+        });
+
+        const docAll = allQuery.docs[num];
+        await docAll.ref.update({
+          cards: curCards
         });
       }
     }
