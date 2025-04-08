@@ -459,24 +459,19 @@ async function awardChecker() {
         let minusACard = cardWithoutAorP + '-A';
   
         newTokens=newTokens+3;
-        let curName=allQuery.docs[num].fullName;
+        let curName=allQuery.docs[num].data().fullName;
         if (!allCards.includes(minusPCard)&&awardSets[i].includes(minusPCard)) {
-          console.log("Award P");
+          console.log("Award P " + minusPCard);
           // Add the -P card to userCards if not in allCards
           userCards.push(minusPCard);
           alert("Prime Award earned from " + curName + "! +3 Tokens");
         } else {
-          console.log("Award A");
+          console.log("Award A " + minusACard);
           // Add the -A card to userCards if the -P card is already in allCards
           userCards.push(minusACard);
           alert("Award earned from" + curName + "! +3 Tokens");
         }
-
-        console.log("adding cards");
-        await doc.ref.update({
-          cards: userCards
-        });
-
+        
         const docAll = allQuery.docs[num];
         await docAll.ref.update({
           cards: curCards
@@ -486,6 +481,7 @@ async function awardChecker() {
     if(awarded){
       console.log("awarding");
       await doc.ref.update({
+        cards: userCards,
         tokens: newTokens
       });
     }
