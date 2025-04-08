@@ -439,7 +439,6 @@ async function awardChecker() {
     for(let num = 0; num < 6; num++){
       curCards=allQuery.docs[num].data().cards;
       console.log(curCards + " " + num);
-      console.log(cards);
       // Check if current User's Cards contains all requiredCards
       let containsAll = requiredCards.every(card => curCards.includes(card));
       let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
