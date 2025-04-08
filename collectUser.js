@@ -429,7 +429,7 @@ async function awardChecker() {
   
   let awarded=false;
   let curCards=allQuery.docs[0].cards;
-  for (let i = 1; i < awardSets.length; i++) {
+  for (let i = 0; i < awardSets.length; i++) {
     // Loop through all users to check if they need awards
     for(let num = 0; num < 6; num++){
       let list = awardSets[i];
@@ -469,7 +469,7 @@ async function awardChecker() {
           console.log("Award A " + minusACard);
           // Add the -A card to userCards if the -P card is already in allCards
           userCards.push(minusACard);
-          alert("Award earned from" + curName + "! +3 Tokens");
+          alert("Award earned from " + curName + "! +3 Tokens");
         }
         
         const docAll = allQuery.docs[num];
