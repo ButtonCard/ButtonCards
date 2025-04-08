@@ -409,8 +409,6 @@ async function awardChecker() {
 
 //Checks if an award has been earned and awards it
 async function awardChecker() {
-  alert("This Page is Under Maintenance");
-  location.reload();
   
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   const userRef = db.collection('users');
@@ -460,24 +458,29 @@ async function awardChecker() {
         let minusPCard = cardWithoutAorP + '-P';
         let minusACard = cardWithoutAorP + '-A';
   
-        newTokens=newTokens+2;
+        newTokens=newTokens+3;
+        let curName=allQuery.docs[num].fullName;
         if (!allCards.includes(minusPCard)&&awardSets[i].includes(minusPCard)) {
           console.log("Award P");
           // Add the -P card to userCards if not in allCards
           userCards.push(minusPCard);
-          alert("Prime Award earned! +2 Tokens");
+          alert("Prime Award earned from " + curName + "! +3 Tokens");
         } else {
           console.log("Award A");
           // Add the -A card to userCards if the -P card is already in allCards
           userCards.push(minusACard);
-          alert("Award earned! +2 Tokens");
+          alert("Award earned from" + curName + "! +3 Tokens");
         }
+
+        console.log("adding cards");
+        await doc.ref.update({
+          cards: userCards
+        });
       }
     }
     if(awarded){
       console.log("awarding");
       await doc.ref.update({
-        cards: userCards,
         tokens: newTokens
       });
     }
