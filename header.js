@@ -71,6 +71,9 @@ window.onload = async function() {
       });
 
     document.getElementById('token').textContent = `Pack Tokens: ` + curTokens;
+    if(currentUser.username=="zav"){
+      document.getElementById('token').textContent = `Pack Tokens: 0.5`;
+    }
 }
 
 
