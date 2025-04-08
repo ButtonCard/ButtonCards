@@ -437,7 +437,7 @@ async function awardChecker() {
       let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
       
       curCards=allQuery.docs[num].data().cards;
-      console.log(curCards + " " + num);
+      console.log(allQuery.docs[num].data().name + " " + num);
       // Check if current User's Cards contains all requiredCards
       let containsAll = requiredCards.every(card => curCards.includes(card));
       let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
