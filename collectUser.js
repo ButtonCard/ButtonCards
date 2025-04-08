@@ -430,13 +430,12 @@ async function awardChecker() {
   let awarded=false;
   let curCards=allQuery.docs[0].cards;
   for (let i = 1; i < awardSets.length; i++) {
-    let list = awardSets[i];
-
-    // Filter out items ending in A or P
-    let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
-
     // Loop through all users to check if they need awards
     for(let num = 0; num < 6; num++){
+      let list = awardSets[i];
+      // Filter out items ending in A or P
+      let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
+      
       curCards=allQuery.docs[num].data().cards;
       console.log(curCards + " " + num);
       // Check if current User's Cards contains all requiredCards
