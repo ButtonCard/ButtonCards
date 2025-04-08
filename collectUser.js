@@ -474,12 +474,13 @@ async function awardChecker() {
         }
       }
     }
-  if(awarded){
-    console.log("awarding");
-    await doc.ref.update({
-      cards: userCards,
-      tokens: newTokens
-    });
+    if(awarded){
+      console.log("awarding");
+      await doc.ref.update({
+        cards: userCards,
+        tokens: newTokens
+      });
+    }
   }
 }
 
