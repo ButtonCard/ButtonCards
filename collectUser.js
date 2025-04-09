@@ -417,7 +417,6 @@ async function awardChecker() {
         .get();
   const doc = userQuery.docs[0];
   let userCards = doc.data().cards;
-  let newTokens = doc.data().tokens;
 
   const allQuery = await userRef.get();
   let allCards = allQuery.docs[0].data().cards.concat(
@@ -433,6 +432,7 @@ async function awardChecker() {
     // Loop through all users to check if they need awards
     for(let num = 0; num < 6; num++){
       let list = awardSets[i];
+      let newTokens=allQuery.docs[num].data().tokens;
       // Filter out items ending in A or P
       let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
       
@@ -462,28 +462,22 @@ async function awardChecker() {
         let curName=allQuery.docs[num].data().fullName;
         if (!allCards.includes(minusPCard)&&awardSets[i].includes(minusPCard)) {
           console.log("Award P " + minusPCard);
-          // Add the -P card to userCards if not in allCards
-          userCards.push(minusPCard);
-          alert("Prime Award earned from " + curName + "! +3 Tokens");
+          // Add the -P card to curCards if not in allCards
+          curCards.push(minusPCard);
+          alert("Set " + cardWithoutAorP + " Prime Award earned for " + curName + "! +3 Tokens");
         } else {
           console.log("Award A " + minusACard);
-          // Add the -A card to userCards if the -P card is already in allCards
-          userCards.push(minusACard);
-          alert("Award earned from " + curName + "! +3 Tokens");
+          // Add the -A card to curCards if the -P card is already in allCards
+          curCards.push(minusACard);
+          alert("Set " + cardWithoutAorP + " Award earned for " + curName + "! +3 Tokens");
         }
         
         const docAll = allQuery.docs[num];
         await docAll.ref.update({
-          cards: curCards
+          cards: curCards,
+          tokens: newTokens
         });
       }
-    }
-    if(awarded){
-      console.log("awarding");
-      await doc.ref.update({
-        cards: userCards,
-        tokens: newTokens
-      });
     }
   }
 }
