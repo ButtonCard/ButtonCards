@@ -464,12 +464,12 @@ async function awardChecker() {
           console.log("Award P " + minusPCard);
           // Add the -P card to curCards if not in allCards
           curCards.push(minusPCard);
-          alert("Set " + cardWithoutAorP + " Prime Award earned for " + curName + "! +3 Tokens");
+          alert("Set " + cardWithoutAorP + " Prime Award & 3 Tokens earned for " + curName + "!");
         } else {
           console.log("Award A " + minusACard);
           // Add the -A card to curCards if the -P card is already in allCards
           curCards.push(minusACard);
-          alert("Set " + cardWithoutAorP + " Award earned for " + curName + "! +3 Tokens");
+          alert("Set " + cardWithoutAorP + " Award & 3 Tokens earned for " + curName + "!");
         }
         
         const docAll = allQuery.docs[num];
