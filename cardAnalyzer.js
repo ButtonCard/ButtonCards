@@ -26,16 +26,16 @@ async function loadCardData() {
     countAvailableCards(R, 'R', Rcount, allCards);
     countAvailableCards(E, 'E', Ecount, allCards);
     countAvailableCards(L, 'L', Lcount, allCards);
-    countAvailableCards(V3, 'V', Vcount, allCards);
-    countAvailableCards(S2, 'S', Scount, allCards);
+    countAvailableCards(VarSet, 'V', Vcount, allCards);
+    countAvailableCards(SpeSet, 'S', Scount, allCards);
     
     // Second pass: process cards with proper formula
     processCardGroup(U, 'U', Urarity, Ucount, allCards);
     processCardGroup(R, 'R', Rrarity, Rcount, allCards);
     processCardGroup(E, 'E', Erarity, Ecount, allCards);
     processCardGroup(L, 'L', Lrarity, Lcount, allCards);
-    processCardGroup(V3, 'V', Vrarity, Vcount, allCards);
-    processCardGroup(S2, 'S', Srarity, Scount, allCards);
+    processCardGroup(VarSet, 'V', Vrarity, Vcount, allCards);
+    processCardGroup(SpeSet, 'S', Srarity, Scount, allCards);
     
     console.log("Cards processed:", cardDataArray.length);
     
@@ -47,12 +47,6 @@ async function loadCardData() {
 // Count distinct available cards per rarity
 function countAvailableCards(cardGroup, rarityLabel, maxCount, allCards) {
   cardGroup.forEach(card => {
-    // Skip cards from unwanted sets
-    if (card.startsWith('S1-') || card.startsWith('S5-') || 
-        card.startsWith('V1-') || card.startsWith('V2-') ||
-        card.startsWith('S3-') || card.startsWith('S4-')) {
-      return;
-    }
     
     const cardCount = countCards(allCards, card);
     const availability = Math.max(0, maxCount - cardCount);
@@ -66,13 +60,7 @@ function countAvailableCards(cardGroup, rarityLabel, maxCount, allCards) {
 
 function processCardGroup(cardGroup, rarityLabel, rarityOdds, maxCount, allCards) {
   cardGroup.forEach(card => {
-    // Skip cards from unwanted sets
-    if (card.startsWith('S1-') || card.startsWith('S5-') || 
-        card.startsWith('V1-') || card.startsWith('V2-') ||
-        card.startsWith('S3-') || card.startsWith('S4-')) {
-      return;
-    }
-    
+
     const cardCount = countCards(allCards, card);
     const availability = Math.max(0, maxCount - cardCount);
     
