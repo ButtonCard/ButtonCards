@@ -162,7 +162,7 @@ async function displayCards() {
     
     image.classList.add('card-image');
     image.onclick = function() { 
-      if (card.isOwned || L.includes(card.id)) {
+      if (card.isOwned || allCards.includes(PawardCard)) {
         enlarge(card.id);
       }
     };
