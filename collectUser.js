@@ -28,7 +28,7 @@ async function loadCards() {
     } else if(sortType.value=="rec"){
       userCards=userCards.reverse();
     } else if(sortType.value=="rar"){
-      userCards=sortByLastDigit(userCards.sort());
+      userCards=sortByRarity(userCards.sort());
     } else if(sortType.value!=="old"){
       userCards=userCards.sort();
     }
@@ -328,13 +328,56 @@ function getRandomColor() {
 
 //Sorts array of cards by last digit
 function sortByLastDigit(arr) {
-    return arr.sort((a, b) => {
-        const lastCharA = a.slice(-1);
-        const lastCharB = b.slice(-1);
-        const lastDigitA = isNaN(lastCharA) ? 20 : parseInt(lastCharA, 10);
-        const lastDigitB = isNaN(lastCharB) ? 20 : parseInt(lastCharB, 10);
-        return lastDigitA - lastDigitB;
-    });
+  return arr.sort((a, b) => {
+    const lastCharA = a.slice(-1);
+    const lastCharB = b.slice(-1);
+    const lastDigitA = isNaN(lastCharA) ? 20 : parseInt(lastCharA, 10);
+    const lastDigitB = isNaN(lastCharB) ? 20 : parseInt(lastCharB, 10);
+    return lastDigitA - lastDigitB;
+  });
+}
+
+function sortByRarity(arr){
+  const arrayOrder = {
+    C: 0,
+    U: 1,
+    R: 2,
+    E: 3,
+    L: 4
+  };
+  const allArrays = { C, U, R, E, L };
+  
+  const stringToOrderMap = {};
+  for (const [key, array] of Object.entries(allArrays)) {
+      array.forEach((str, idx) => {
+          stringToOrderMap[str] = { order: arrayOrder[key], index: idx };
+      });
+  }
+
+  // Filter the input array to include only strings from C, U, R, E, or L
+  const rarArray = arr.filter(str => stringToOrderMap[str]);
+
+  // Sort the filtered array based on the order of the arrays and index within each array
+  rarArray.sort((a, b) => {
+      const orderA = stringToOrderMap[a].order;
+      const orderB = stringToOrderMap[b].order;
+
+      // First compare by the order of arrays (C first, U second, etc.)
+      if (orderA === orderB) {
+          // If they belong to the same array, compare by their index in that array
+          return stringToOrderMap[a].index - stringToOrderMap[b].index;
+      } else {
+          return orderA - orderB;
+      }
+  });
+
+  console.log(arr);
+  console.log(rarArray);
+  console.log(rarArray.length);
+  let newArray = arr.slice(rarArray.length);
+  console.log(newArray);
+  newArray = newArray.concat(rarArray);
+  return newArray;
 }
 
 /*
