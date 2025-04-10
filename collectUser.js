@@ -371,12 +371,14 @@ function sortByRarity(arr){
       }
   });
 
+  const aOrPStrings = randomArray.filter(str => (str.endsWith("A") || str.endsWith("P")) && !stringToOrderMap[str]);
+  rarArray = aOrPStrings.concat(rarArray);
   console.log(arr.sort());
   console.log(rarArray);
   console.log(rarArray.length);
   let newArray = arr.sort().slice(rarArray.length);
   console.log(newArray);
-  newArray = newArray.concat(rarArray);
+  newArray = rarArray.concat(newArray);
   return newArray;
 }
 
