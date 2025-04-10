@@ -150,7 +150,7 @@ function displayCards() {
     
     image.classList.add('card-image');
     image.onclick = function() { 
-      if (card.isOwned) {
+      if (card.isOwned || L.includes(card.id)) {
         enlarge(card.id);
       }
     };
