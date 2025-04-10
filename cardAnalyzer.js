@@ -85,7 +85,7 @@ function processCardGroup(cardGroup, rarityLabel, rarityOdds, maxCount, allCards
   });
 }
 
-function displayCards() {
+async function displayCards() {
   sortCardData();
   
   const cardListElement = document.getElementById('cardList');
