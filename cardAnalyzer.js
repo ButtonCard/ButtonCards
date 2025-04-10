@@ -87,6 +87,15 @@ function processCardGroup(cardGroup, rarityLabel, rarityOdds, maxCount, allCards
 
 async function displayCards() {
   sortCardData();
+
+  const userRef = db.collection('users');
+  const allQuery = await userRef.get();
+  let allCards = allQuery.docs[0].data().cards.concat(
+    allQuery.docs[1].data().cards, 
+    allQuery.docs[2].data().cards, 
+    allQuery.docs[3].data().cards,
+    allQuery.docs[4].data().cards, 
+    allQuery.docs[5].data().cards);
   
   const cardListElement = document.getElementById('cardList');
   cardListElement.innerHTML = '';
@@ -140,15 +149,6 @@ async function displayCards() {
     
     const imageCell = document.createElement('td');
     const image = document.createElement('img');
-
-    const userRef = db.collection('users');
-    const allQuery = await userRef.get();
-    let allCards = allQuery.docs[0].data().cards.concat(
-      allQuery.docs[1].data().cards, 
-      allQuery.docs[2].data().cards, 
-      allQuery.docs[3].data().cards,
-      allQuery.docs[4].data().cards, 
-      allQuery.docs[5].data().cards);
 
     let PawardCard = card.replace(/(\d)-\d/, '$1-P');
     
