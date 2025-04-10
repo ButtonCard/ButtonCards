@@ -150,7 +150,8 @@ async function displayCards() {
     const imageCell = document.createElement('td');
     const image = document.createElement('img');
 
-    let PawardCard = card.replace(/(\d)-\d/, '$1-P');
+    let parts = card.id.split('-');
+    let PawardCard = parts[0] + '-P';
     
     // Check if the card is owned by anyone
     if (card.isOwned || allCards.includes(PawardCard)) {
