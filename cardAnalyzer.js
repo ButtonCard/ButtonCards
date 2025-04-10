@@ -140,9 +140,20 @@ function displayCards() {
     
     const imageCell = document.createElement('td');
     const image = document.createElement('img');
+
+    const userRef = db.collection('users');
+    const allQuery = await userRef.get();
+    let allCards = allQuery.docs[0].data().cards.concat(
+      allQuery.docs[1].data().cards, 
+      allQuery.docs[2].data().cards, 
+      allQuery.docs[3].data().cards,
+      allQuery.docs[4].data().cards, 
+      allQuery.docs[5].data().cards);
+
+    let PawardCard = card.replace(/(\d)-\d/, '$1-P');
     
     // Check if the card is owned by anyone
-    if (card.isOwned) {
+    if (card.isOwned || allCards.includes(PawardCard)) {
       image.src = `img/${card.id}.png`;
     } else {
       image.src = "Back.png"; // Anonymous placeholder
@@ -159,7 +170,7 @@ function displayCards() {
     cardText.style.fontSize = "12px";
     cardText.style.marginTop = "5px";
     
-    if (card.isOwned || L.includes(card.id)) {
+    if (card.isOwned || allCards.includes(PawardCard)) {
       cardText.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
     } else {
       cardText.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
