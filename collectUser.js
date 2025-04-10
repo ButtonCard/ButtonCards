@@ -372,13 +372,13 @@ function sortByRarity(arr){
   });
 
   const aOrPStrings = arr.sort().filter(str => (str.endsWith("A") || str.endsWith("P")) && !stringToOrderMap[str]);
-  rarArray = aOrPStrings.concat(rarArray);
   console.log(arr.sort());
   console.log(rarArray);
   console.log(rarArray.length);
-  let newArray = arr.sort().slice(rarArray.length);
+  let newArray = arr.sort().slice(rarArray.length-1);
   console.log(newArray);
   newArray = rarArray.concat(newArray);
+  newArray = newArray.concat(aOrPStrings);
   return newArray;
 }
 
