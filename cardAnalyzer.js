@@ -159,7 +159,7 @@ function displayCards() {
     cardText.style.fontSize = "12px";
     cardText.style.marginTop = "5px";
     
-    if (card.isOwned) {
+    if (card.isOwned || L.includes(card.id)) {
       cardText.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
     } else {
       cardText.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
