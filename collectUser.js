@@ -374,7 +374,7 @@ function sortByRarity(arr){
   console.log(arr);
   console.log(rarArray);
   console.log(rarArray.length);
-  let newArray = arr.slice(rarArray.length);
+  let newArray = arr.sort().slice(rarArray.length);
   console.log(newArray);
   newArray = newArray.concat(rarArray);
   return newArray;
