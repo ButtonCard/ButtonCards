@@ -379,7 +379,7 @@ function sortByRarity(arr){
   console.log(arr.sort());
   console.log(rarArray);
   console.log(rarArray.length);
-  let newArray = arr.sort().slice(rarArray.length+aOrpPStrings.length-1);
+  let newArray = arr.sort().slice(rarArray.length+aOrPStrings.length-1);
   console.log(newArray);
   newArray = rarArray.concat(newArray);
   newArray = newArray.concat(aOrPStrings);
