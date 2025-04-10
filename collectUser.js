@@ -355,7 +355,7 @@ function sortByRarity(arr){
   }
 
   // Filter the input array to include only strings from C, U, R, E, or L
-  const rarArray = arr.filter(str => stringToOrderMap[str]);
+  let rarArray = arr.filter(str => stringToOrderMap[str]);
 
   // Sort the filtered array based on the order of the arrays and index within each array
   rarArray.sort((a, b) => {
