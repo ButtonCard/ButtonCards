@@ -67,9 +67,9 @@ function processCardGroup(cardGroup, rarityLabel, rarityOdds, maxCount, allCards
     // Apply the corrected formula:
     // 1/(rarity chance) * 1/(# of different types of cards within that rarity available)
     let pullChance = 0;
-    if (availability > 0 && availableCardCounts[rarityLabel] > 0) {
+    /*if (availability > 0 && availableCardCounts[rarityLabel] > 0) {
       pullChance = (1/rarityOdds) * (1/availableCardCounts[rarityLabel]);
-    }
+    }*/
     
     cardDataArray.push({
       id: card,
@@ -126,7 +126,20 @@ async function displayCards() {
   cardDataArray.forEach(card => {
     const cardItem = document.createElement('div');
     cardItem.className = 'card-grid-item';
+
+    // --- TEXT BELOW IMAGE ---
+    const cardInfo = document.createElement('div');
+    cardInfo.className = 'card-info';
   
+    let parts = card.id.split('-');
+    let PawardCard = parts[0] + '-P';
+  
+    if (card.isOwned || allCards.includes(PawardCard)) {
+      cardInfo.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
+    } else {
+      cardInfo.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
+    }
+    
     // --- IMAGE ---
     const image = document.createElement('img');
     image.className = 'card-image';
@@ -146,19 +159,6 @@ async function displayCards() {
     if (card.availability === 0) {
       image.style.filter = "grayscale(100%)";
       image.style.opacity = "0.6";
-    }
-
-    // --- TEXT BELOW IMAGE ---
-    const cardInfo = document.createElement('div');
-    cardInfo.className = 'card-info';
-  
-    let parts = card.id.split('-');
-    let PawardCard = parts[0] + '-P';
-  
-    if (card.isOwned || allCards.includes(PawardCard)) {
-      cardInfo.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
-    } else {
-      cardInfo.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
     }
   
     // --- PROGRESS BAR ---
@@ -187,8 +187,8 @@ async function displayCards() {
     progressBarContainer.appendChild(progressBar);
   
     // --- APPEND EVERYTHING IN ORDER ---
-    cardItem.appendChild(cardInfo);
     cardItem.appendChild(image);
+    cardItem.appendChild(cardInfo);
     cardItem.appendChild(progressBarContainer);
   
     cardGridElement.appendChild(cardItem);
