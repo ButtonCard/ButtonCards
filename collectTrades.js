@@ -19,9 +19,6 @@ function loadMenu() {
   });
 }
 
-let fromNames = [];
-let theirTradeCards = [];
-let yourTradeCards = [];
 let curTradeNum = -1;
 async function loadTrades(){
   await getTrades();
@@ -595,53 +592,96 @@ async function selectTrade() {
 
 
 //TRADE VIEWING FUNCTIONS
+let toNames = [];
+let fromNames = [];
+let toTradeCards = [];
+let fromTradeCards = [];
+
+function breakTrade(tradeStr) {
+    const parts = tradeStr.trim().split(' ');
+
+    // First two words
+    const toUser = parts[0];
+    const fromUser = parts[1];
+
+    // Remaining parts are comma-separated ID groups
+    const idGroups = parts.slice(2).join(' ').split(' ');
+
+    // Create individual arrays for each group
+    const toCards = idGroups[0] ? idGroups[0].split(',') : [];
+    const fromCards = idGroups[1] ? idGroups[1].split(',') : [];
+
+    return {
+        toUser,
+        fromUser,
+        toCards,
+        fromCards
+    };
+}
 
 async function getTrades() {
-  const userRef = db.collection('users');
-  const userQuery = await userRef
-        .where('name', '==', currentUsername)
-        .get();
-  if (!userQuery.empty) {
-      const doc = userQuery.docs[0];        
-      let currentTrades = doc.data().trades;
-      currentTrades.forEach(curTrade => {
-        let parts = curTrade.split(" ");
-        fromNames.push(parts[0]);
-        theirTradeCards.push(parts[1].split(","));
-        yourTradeCards.push(parts[2].split(","));
-      });
-      console.log(fromNames);
-      console.log(theirTradeCards);
-      console.log(yourTradeCards);
-  }
+  const tradeRef = db.collection('trading');
+  const tradeQuery = await tradeRef.get();
+  
+  const doc = tradeQuery.docs[0];
+  let currentTrades = doc.data().curTrades;
+  currentTrades.forEach(curTrade => {
+    let tradeInfo = breakTrade(curTrade);
+    toNames.push(tradeInfo.toUser);
+    fromNames.push(tradeInfo.fromUser);
+    toTradeCards.push(tradeInfo.toCards);
+    fromTradeCards.push(tradeInfo.fromCards);
+  });
+  console.log(toNames);
+  console.log(fromNames);
+  console.log(toTradeCards);
+  console.log(fromTradeCards);
 }
 
 // Function to populate the tradesSelect dropdown
 function populateTradesSelect() {
   const tradesSelect = document.querySelector('.tradesSelect');  // Get the select element
   fromNames.forEach((name, index) => {
-    // Create a new option element for each name
-    const option = document.createElement('option');
-    option.value = name; // Set the value of the option to the name
-    if(name=="dc"){
-      option.textContent = "DCMetro";
-    } else if(name=="gem"){
-      option.textContent = "DCGem";
-    } else if(name=="jig"){
-      option.textContent = "Jiggster";
-    } else if(name=="peach"){
-      option.textContent = "Peach";
-    } else if(name=="void"){
-      option.textContent = "VoidMax";
-    } else if(name=="zav"){
-      option.textContent = "Zaveeya";
-    } else{
-      option.textContent = "Lurker";
+    if(currentUsername==name || currentUsername==toName[index]){
+      const option = document.createElement('option');
+      option.value = name;
+      
+      if(currentUsername==name){
+        if(toName[index]=="dc"){
+          option.textContent = "Sent to DCMetro";
+        } else if(toName[index]=="gem"){
+          option.textContent = "Sent to DCGem";
+        } else if(toName[index]=="jig"){
+          option.textContent = "Sent to Jiggster";
+        } else if(toName[index]=="peach"){
+          option.textContent = "Sent to Peach";
+        } else if(toName[index]=="void"){
+          option.textContent = "Sent to VoidMax";
+        } else if(toName[index]=="zav"){
+          option.textContent = "Sent to Zaveeya";
+        } else{
+          option.textContent = "Sent to Lurker";
+        }
+      } else{
+        if(name=="dc"){
+          option.textContent = "Recieved from DCMetro";
+        } else if(name=="gem"){
+          option.textContent = "Recieved from DCGem";
+        } else if(name=="jig"){
+          option.textContent = "Recieved from Jiggster";
+        } else if(name=="peach"){
+          option.textContent = "Recieved from Peach";
+        } else if(name=="void"){
+          option.textContent = "Recieved from VoidMax";
+        } else if(name=="zav"){
+          option.textContent = "Recieved from Zaveeya";
+        } else{
+          option.textContent = "Recieved from Lurker";
+        }
+      }
+      option.classList.add(`t${index + 1}`); // Add a class like t1, t2, t3, ...
+      tradesSelect.appendChild(option);
     }
-    option.classList.add(`t${index + 1}`); // Add a class like t1, t2, t3, ...
-    
-    // Append the option to the select element
-    tradesSelect.appendChild(option);
   });
 }
 
