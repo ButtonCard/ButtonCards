@@ -1,6 +1,6 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,3,6];
+let packSizes = [4,3,5];
 let packCost = [1,1,2];
 
 //Pack 1 Info
@@ -14,14 +14,10 @@ let Pack2_Description='1/12 Chance for Minecraft Variant!<br>For Sale: Until 4/1
 let Pack2_Image='icons/Mine_Icon.png';
 let Pack2_Time=1774151999000; //2026
 //Pack 3 Info
-let Pack3_Name='3 Years of Button 3 Pack';
-let Pack3_Description='1/12 Chance for Button 3 Anniversary Card!<br>For Sale: Until 4/11<br><br>6 Cards<br>2 Pack Tokens';
-let Pack3_Image='icons/Btn3_Icon.png';
+let Pack3_Name='BUTTON Photos Pack';
+let Pack3_Description='1/16 Chance for BUTTON Photos Card!<br>For Sale: Until 4/17<br><br>5 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Photo_Icon.png';
 let Pack3_Time=1774151999000; //2026
-//Pack 3 Info
-//let Pack3_Name='BUTTON Photos Pack';
-//let Pack3_Description='1/16 Chance for BUTTON Photos Card!<br>For Sale: Until 4/17<br><br>2 Cards<br>2 Pack Tokens';
-//let Pack3_Image='icons/Photo_Icon.png';
 //Epoch Time Coverter 23:59:59 in milliseconds
 
 //Unavailable Pack
@@ -98,7 +94,7 @@ let Vcount = 4;
 let Scount = 2;
 
 //Odds of Each Card Rarity (1/x per Card)
-let Lrarity = 85;
+let Lrarity = 75;
 let Erarity = 45;
 let Rrarity = 12;
 let Urarity = 4;
