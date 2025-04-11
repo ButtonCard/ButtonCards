@@ -119,37 +119,13 @@ async function displayCards() {
   
   // First pass to assign ranks
   cardDataArray.forEach((card, index) => {
-    if (index > 0) {
-      if (card.pullChance !== previousPullChance) {
-        // New rank
-        currentRank += skipCount + 1;
-        skipCount = 0;
-      } else {
-        // Same rank
-        skipCount++;
-      }
-    }
-    card.rank = currentRank;
-    previousPullChance = card.pullChance;
+    card.rank = 0;
   });
   
   // Display all cards
   cardDataArray.forEach(card => {
     const cardItem = document.createElement('div');
     cardItem.className = 'card-grid-item';
-  
-    // --- TEXT ABOVE IMAGE ---
-    const cardInfo = document.createElement('div');
-    cardInfo.className = 'card-info';
-  
-    let parts = card.id.split('-');
-    let PawardCard = parts[0] + '-P';
-  
-    if (card.isOwned || allCards.includes(PawardCard)) {
-      cardInfo.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
-    } else {
-      cardInfo.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
-    }
   
     // --- IMAGE ---
     const image = document.createElement('img');
@@ -170,6 +146,19 @@ async function displayCards() {
     if (card.availability === 0) {
       image.style.filter = "grayscale(100%)";
       image.style.opacity = "0.6";
+    }
+
+    // --- TEXT BELOW IMAGE ---
+    const cardInfo = document.createElement('div');
+    cardInfo.className = 'card-info';
+  
+    let parts = card.id.split('-');
+    let PawardCard = parts[0] + '-P';
+  
+    if (card.isOwned || allCards.includes(PawardCard)) {
+      cardInfo.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
+    } else {
+      cardInfo.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
     }
   
     // --- PROGRESS BAR ---
