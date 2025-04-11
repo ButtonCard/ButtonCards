@@ -210,7 +210,7 @@ function saveTrade() {
   let cardsString = saveCards.join(',');
   // Combine the name and the cards string
   tradeTo = document.querySelector(".Tplayers").value;
-  savedTrade = currentUsername + " " + cardsString;
+  savedTrade = tradeTo + " " + currentUsername + " " + cardsString;
   console.log(savedTrade);
   console.log(tradeTo);
 }
