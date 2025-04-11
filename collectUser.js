@@ -116,87 +116,6 @@ async function loadCards() {
 }
 loadCards();
 
-/*
-//Loads in Cards to List from User's Collection
-async function loadCards() {
-  const userRef = db.collection('users');
-  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  let prevCard = "";
-  let userCards = [];
-
-  let colList = document.querySelector('.collectionList');
-  let userList = colList.id;
-  if(userList=="all"){
-    awardChecker();
-  }
-  if(userList!=="all" && userList!=="sets" && userList!=="mission"){
-    console.log(userList);
-    const userQuery = await userRef
-          .where('name', '==', userList)
-          .get();
-    const doc = userQuery.docs[0];
-    userCards = doc.data().cards;
-    
-    let sortType = document.querySelector(".sortSelect");
-    if(sortType.value=="num"){
-      userCards=userCards.sort();
-    } else if(sortType.value=="numRev"){
-      userCards=userCards.sort();
-      userCards=userCards.reverse();
-    } else if(sortType.value=="rec"){
-      userCards=userCards.reverse();
-    } else if(sortType.value=="rar"){
-      userCards=sortByLastDigit(userCards.sort());
-    } else if(sortType.value!=="old"){
-      userCards=userCards.sort();
-    }
-    
-  } else if(userList=="mission"){
-    const missRef = db.collection('mission');
-    const missQuery = await missRef.get();
-    userCards = missQuery.docs[0].data().cards;
-    console.log(userCards);
-  } else{
-    const userQuery = await userRef.get();
-    userCards = userQuery.docs[0].data().cards.concat(
-      userQuery.docs[1].data().cards, 
-      userQuery.docs[2].data().cards, 
-      userQuery.docs[3].data().cards,
-      userQuery.docs[4].data().cards, 
-      userQuery.docs[5].data().cards).sort();
-  }
-  
-  if(userList=="sets"){
-    colList.style.display = "none";
-    loadSets(userCards);
-    return;
-  }
-  console.log(userCards);
-  let storeCards = userCards.slice();
-  
-  for (let i = 0; i < userCards.length; i++) {
-    console.log(i);
-    let cardResult = document.querySelector(".c" + i);
-    cardResult.src = "img/" + userCards[i] + ".png";
-    cardResult.style.width = "110px";
-    cardResult.style.border = "none";
-    if (userCards[i] == prevCard) {
-      let prevCardResult = document.querySelector(".c" + (i - 1));
-      prevCardResult.style.border = "2px yellow solid";
-      cardResult.style.border = "2px yellow solid";
-    } else {
-      let curStr = storeCards.splice(i, 1);
-      if (storeCards.includes(curStr[0])) {
-        console.log(curStr[0]);
-        cardResult.style.border = "2px yellow solid";
-      }
-      storeCards.splice(i, 0, curStr[0]);
-    }
-    prevCard = userCards[i];
-  }
-}
-loadCards();
-*/
 
 //Loads All Sets if That Collect Sets Page is Opened
 async function loadSets(allCards) {
@@ -474,28 +393,27 @@ async function awardChecker() {
     allQuery.docs[3].data().cards,
     allQuery.docs[4].data().cards, 
     allQuery.docs[5].data().cards).sort();
+  let usersTokens = [allQuery.docs[0].data().tokens,allQuery.docs[1].data().tokens,allQuery.docs[2].data().tokens,allQuery.docs[3].data().tokens,allQuery.docs[4].data().tokens,allQuery.docs[5].data().tokens];
+  let usersCards = [allQuery.docs[0].data().cards,allQuery.docs[1].data().cards,allQuery.docs[2].data().cards,allQuery.docs[3].data().cards,allQuery.docs[4].data().cards,allQuery.docs[5].data().cards];
   
   let awarded=false;
-  let curCards=allQuery.docs[0].cards;
   for (let i = 0; i < awardSets.length; i++) {
     // Loop through all users to check if they need awards
     for(let num = 0; num < 6; num++){
       let list = awardSets[i];
-      let newTokens=allQuery.docs[num].data().tokens;
       // Filter out items ending in A or P
       let requiredCards = list.filter(card => !card.endsWith('A') && !card.endsWith('P'));
       
-      curCards=allQuery.docs[num].data().cards;
       console.log(allQuery.docs[num].data().name + " " + num);
       // Check if current User's Cards contains all requiredCards
-      let containsAll = requiredCards.every(card => curCards.includes(card));
+      let containsAll = requiredCards.every(card => usersCards[num].includes(card));
       let cardWithoutAorP = requiredCards[0].slice(0, -2); // Remove -1, -2, etc.
   
       if (containsAll) {
         awarded=true;
         console.log("Set awarded: " + i);
         // Remove the required cards from the current User's Cards
-        curCards = curCards.filter(card => {
+        usersCards[num] = usersCards[num].filter(card => {
             if (requiredCards.includes(card)) {
                 requiredCards = requiredCards.filter(requiredCard => requiredCard !== card);
                 return false;
@@ -507,27 +425,29 @@ async function awardChecker() {
         let minusPCard = cardWithoutAorP + '-P';
         let minusACard = cardWithoutAorP + '-A';
   
-        newTokens=newTokens+3;
+        usersTokens[num]=usersTokens[num]+3;
         let curName=allQuery.docs[num].data().fullName;
         if (!allCards.includes(minusPCard)&&awardSets[i].includes(minusPCard)) {
           console.log("Award P " + minusPCard);
-          // Add the -P card to curCards if not in allCards
-          curCards.push(minusPCard);
+          // Add the -P card to usersCards[num] if not in allCards
+          usersCards[num].push(minusPCard);
           alert("Set " + cardWithoutAorP + " Prime Award & 3 Tokens earned for " + curName + "!");
         } else {
           console.log("Award A " + minusACard);
-          // Add the -A card to curCards if the -P card is already in allCards
-          curCards.push(minusACard);
+          // Add the -A card to usersCards[num] if the -P card is already in allCards
+          usersCards[num].push(minusACard);
           alert("Set " + cardWithoutAorP + " Award & 3 Tokens earned for " + curName + "!");
         }
-        
-        const docAll = allQuery.docs[num];
-        await docAll.ref.update({
-          cards: curCards,
-          tokens: newTokens
-        });
       }
     }
+  }
+
+  for(let num = 0; num < 6; num++){
+    const docAll = allQuery.docs[num];
+    await docAll.ref.update({
+      cards: usersCards[num],
+      tokens: usersTokens[num]
+    });
   }
 }
 
