@@ -100,16 +100,6 @@ async function displayCards() {
   const cardGridElement = document.getElementById('cardGrid');
   cardGridElement.innerHTML = '';
   
-  // Add a header row
-  const headerRow = document.createElement('tr');
-  const headerCell = document.createElement('td');
-  headerCell.colSpan = 3;
-  headerCell.style.backgroundColor = "#242c37ff";
-  headerCell.style.textAlign = "center";
-  headerCell.innerHTML = `<strong>Showing all ${cardDataArray.length} cards sorted by ${sortMethod === "easiest" ? "easiest" : "hardest"} to pull</strong>`;
-  headerRow.appendChild(headerCell);
-  cardGridElement.appendChild(headerRow);
-  
   // Display message if no cards found
   if (cardDataArray.length === 0) {
     const noCardsRow = document.createElement('tr');
@@ -148,16 +138,29 @@ async function displayCards() {
     const cardItem = document.createElement('div');
     cardItem.className = 'card-grid-item';
   
-    const image = document.createElement('img');
+    // --- TEXT ABOVE IMAGE ---
+    const cardInfo = document.createElement('div');
+    cardInfo.className = 'card-info';
+  
     let parts = card.id.split('-');
     let PawardCard = parts[0] + '-P';
-    
+  
+    if (card.isOwned || allCards.includes(PawardCard)) {
+      cardInfo.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
+    } else {
+      cardInfo.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
+    }
+  
+    // --- IMAGE ---
+    const image = document.createElement('img');
+    image.className = 'card-image';
+  
     if (card.isOwned || allCards.includes(PawardCard)) {
       image.src = `img/${card.id}.png`;
     } else {
       image.src = "Back.png";
     }
-    image.className = 'card-image';
+  
     image.onclick = () => {
       if (card.isOwned || allCards.includes(PawardCard)) {
         enlarge(card.id);
@@ -169,14 +172,7 @@ async function displayCards() {
       image.style.opacity = "0.6";
     }
   
-    const cardInfo = document.createElement('div');
-    cardInfo.className = 'card-info';
-    if (card.isOwned || allCards.includes(PawardCard)) {
-      cardInfo.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
-    } else {
-      cardInfo.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
-    }
-  
+    // --- PROGRESS BAR ---
     const progressBarContainer = document.createElement('div');
     progressBarContainer.className = 'card-progress';
   
@@ -201,8 +197,9 @@ async function displayCards() {
     progressBar.appendChild(progress);
     progressBarContainer.appendChild(progressBar);
   
-    cardItem.appendChild(image);
+    // --- APPEND EVERYTHING IN ORDER ---
     cardItem.appendChild(cardInfo);
+    cardItem.appendChild(image);
     cardItem.appendChild(progressBarContainer);
   
     cardGridElement.appendChild(cardItem);
