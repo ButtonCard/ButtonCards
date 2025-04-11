@@ -97,6 +97,8 @@ async function openPack(pack_Num) {
   pageTitle.style.display = "none";
   let tokenCount = document.querySelector(".tokenCount");
   tokenCount.style.display = "none";
+  let statsText = document.querySelector(".stats");
+  statsText.style.display = "none";
 
   let inPack = 0;
   let packSize = packSizes[packNum];
