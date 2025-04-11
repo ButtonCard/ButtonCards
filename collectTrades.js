@@ -642,22 +642,22 @@ async function getTrades() {
 function populateTradesSelect() {
   const tradesSelect = document.querySelector('.tradesSelect');  // Get the select element
   fromNames.forEach((name, index) => {
-    if(currentUsername==name || currentUsername==toName[index]){
+    if(currentUsername==name || currentUsername==toNames[index]){
       const option = document.createElement('option');
       option.value = name;
       
       if(currentUsername==name){
-        if(toName[index]=="dc"){
+        if(toNames[index]=="dc"){
           option.textContent = "Sent to DCMetro";
-        } else if(toName[index]=="gem"){
+        } else if(toNames[index]=="gem"){
           option.textContent = "Sent to DCGem";
-        } else if(toName[index]=="jig"){
+        } else if(toNames[index]=="jig"){
           option.textContent = "Sent to Jiggster";
-        } else if(toName[index]=="peach"){
+        } else if(toNames[index]=="peach"){
           option.textContent = "Sent to Peach";
-        } else if(toName[index]=="void"){
+        } else if(toNames[index]=="void"){
           option.textContent = "Sent to VoidMax";
-        } else if(toName[index]=="zav"){
+        } else if(toNames[index]=="zav"){
           option.textContent = "Sent to Zaveeya";
         } else{
           option.textContent = "Sent to Lurker";
