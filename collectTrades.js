@@ -769,13 +769,13 @@ async function acceptTrade(){
             cards: newYourCards
         });
         console.log("accepted");
-        declineTrade();
+        declineTrade(true);
       } else {
         console.log("fail accept");
         if (window.confirm("One side of the trade does not have all the cards. Click OK to keep the trade. Click cancel to delete the trade.")){
           return;
         } else{
-          declineTrade();
+          declineTrade(true);
         }
       }
   }
@@ -826,22 +826,37 @@ function removeCardsArray(playCards, remCards) {
   return playCards;
 }
 
-async function declineTrade(){
+async function declineTrade(isAcc){
   console.log("declining");
   if (curTradeNum==-1){
     return;
   }
+
+
   const tradeRef = db.collection('trading');
   const tradeQuery = await tradeRef.get();
   const doc = tradeQuery.docs[0];        
   
   let currentTrades = doc.data().curTrades;
+  let storeTrade = currentTrades[curTradeNum];
   currentTrades.splice(curTradeNum,1);
   curTradeNum = -1;
 
-  await doc.ref.update({
-      curTrades: currentTrades
-  });
+  if(isAcc){
+    let acceptTrades = doc.data().accTrades;
+    acceptTrades.push(storeTrade);
+    await doc.ref.update({
+      curTrades: currentTrades,
+      accTrades: acceptTrades
+    });
+  } else {
+    let declineTrades = doc.data().decTrades;
+    declineTrades.push(storeTrade);
+    await doc.ref.update({
+      curTrades: currentTrades,
+      decTrades: declineTrades
+    });
+  }
   
   location.reload();
 }
