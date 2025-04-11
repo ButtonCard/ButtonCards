@@ -700,8 +700,15 @@ function changeTrade(){
     let tradeNum = parseInt(classValue.substring(1))-1;
     curTradeNum = tradeNum;
     console.log("changed to " + curTradeNum);
-    let tCards = fromTradeCards[tradeNum];
-    let yCards = toTradeCards[tradeNum];
+    let tCards = [];
+    let yCards = [];
+    if(currentUsername==fromNames[curTradeNum]){
+      tCards = fromTradeCards[tradeNum];
+      yCards = toTradeCards[tradeNum];
+    } else {
+      yCards = fromTradeCards[tradeNum];
+      tCards = toTradeCards[tradeNum];
+    }
     console.log(tCards + " " + tradeNum);
     console.log(yCards + " " + tradeNum);
     let num = 0;
