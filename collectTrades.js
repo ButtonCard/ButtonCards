@@ -476,21 +476,17 @@ async function sendTrade() {
   savedTrade = savedTrade + " " + cardsString;
   console.log(savedTrade);
 
-  const userRef = db.collection('users');
-  const userQuery = await userRef
-        .where('name', '==', tradeTo)
-        .get();
-  if (!userQuery.empty) {
-      const doc = userQuery.docs[0];        
-      let currentTrades = doc.data().trades;
-      currentTrades.push(savedTrade);
-      console.log(doc.data().trades);
-      console.log(currentTrades);
-      
-      await doc.ref.update({
-          trades: currentTrades
-      });
-  }
+  const tradeRef = db.collection('trades');
+  const tradeQuery = await tradeRef.get();
+  const doc = tradeQuery.docs[0];        
+  let currentTrades = doc.data().curTrades;
+  currentTrades.push(savedTrade);
+  console.log(doc.data().trades);
+  console.log(currentTrades);
+  
+  await doc.ref.update({
+      curTrades: currentTrades
+  });
   location.reload();
 }
 
