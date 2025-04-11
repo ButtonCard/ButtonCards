@@ -196,8 +196,6 @@ async function displayCards() {
 }
 
 function sortCardData() {
-  const sortSelect = document.querySelector('.sortSelect');
-  sortMethod = sortSelect.value;
   
   switch(sortMethod) {
     case "easiest":
