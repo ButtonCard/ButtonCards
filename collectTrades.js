@@ -747,8 +747,8 @@ async function acceptTrade(){
         .get();
       const doc2 = theirQuery.docs[0];        
       let curYourCards = doc2.data().cards;
-      let thisYourTradeCards = toTradeCards[curTradeNum];
-      let thisTheirTradeCards = fromTradeCards[curTradeNum];
+      let thisYourTradeCards = fromTradeCards[curTradeNum];
+      let thisTheirTradeCards = toTradeCards[curTradeNum];
       console.log(toTradeCards);
       console.log(fromTradeCards);
       if (compareArrays(thisYourTradeCards, curYourCards) && compareArrays(thisTheirTradeCards, curTheirCards)){
