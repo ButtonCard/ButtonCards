@@ -47,7 +47,7 @@ let S6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8"];
 let S9 = ["S9-1", "S9-2", "S9-3"];
 
 let VarSet = V4; //Pack 2 Variant
-let SpeSet = S5; //Pack 3 Variant
+let SpeSet = S6; //Pack 3 Variant
 
 
 //All Sets Current Available
