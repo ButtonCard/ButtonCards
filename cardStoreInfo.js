@@ -18,6 +18,10 @@ let Pack3_Name='3 Years of Button 3 Pack';
 let Pack3_Description='1/12 Chance for Button 3 Anniversary Card!<br>For Sale: Until 4/11<br><br>6 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Btn3_Icon.png';
 let Pack3_Time=1774151999000; //2026
+//Pack 3 Info
+//let Pack3_Name='BUTTON Photos Pack';
+//let Pack3_Description='1/16 Chance for BUTTON Photos Card!<br>For Sale: Until 4/17<br><br>2 Cards<br>2 Pack Tokens';
+//let Pack3_Image='icons/Photo_Icon.png';
 //Epoch Time Coverter 23:59:59 in milliseconds
 
 //Unavailable Pack
