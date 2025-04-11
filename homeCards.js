@@ -97,8 +97,8 @@ async function displayCards() {
     allQuery.docs[4].data().cards, 
     allQuery.docs[5].data().cards);
   
-  const cardListElement = document.getElementById('cardList');
-  cardListElement.innerHTML = '';
+  const cardGridElement = document.getElementById('cardGrid');
+  cardGridElement.innerHTML = '';
   
   // Add a header row
   const headerRow = document.createElement('tr');
@@ -108,7 +108,7 @@ async function displayCards() {
   headerCell.style.textAlign = "center";
   headerCell.innerHTML = `<strong>Showing all ${cardDataArray.length} cards sorted by ${sortMethod === "easiest" ? "easiest" : "hardest"} to pull</strong>`;
   headerRow.appendChild(headerCell);
-  cardListElement.appendChild(headerRow);
+  cardGridElement.appendChild(headerRow);
   
   // Display message if no cards found
   if (cardDataArray.length === 0) {
@@ -118,7 +118,7 @@ async function displayCards() {
     noCardsCell.innerHTML = '<strong>No cards found to display</strong>';
     noCardsCell.style.padding = '20px';
     noCardsRow.appendChild(noCardsCell);
-    cardListElement.appendChild(noCardsRow);
+    cardGridElement.appendChild(noCardsRow);
     return;
   }
   
@@ -145,56 +145,47 @@ async function displayCards() {
   
   // Display all cards
   cardDataArray.forEach(card => {
-    const row = document.createElement('tr');
-    
-    const imageCell = document.createElement('td');
+    const cardItem = document.createElement('div');
+    cardItem.className = 'card-grid-item';
+  
     const image = document.createElement('img');
-
     let parts = card.id.split('-');
     let PawardCard = parts[0] + '-P';
     
-    // Check if the card is owned by anyone
     if (card.isOwned || allCards.includes(PawardCard)) {
       image.src = `img/${card.id}.png`;
     } else {
-      image.src = "Back.png"; // Anonymous placeholder
+      image.src = "Back.png";
     }
-    
-    image.classList.add('card-image');
-    image.onclick = function() { 
+    image.className = 'card-image';
+    image.onclick = () => {
       if (card.isOwned || allCards.includes(PawardCard)) {
         enlarge(card.id);
       }
     };
-    
-    const cardText = document.createElement('div');
-    cardText.style.fontSize = "12px";
-    cardText.style.marginTop = "5px";
-    
-    if (card.isOwned || allCards.includes(PawardCard)) {
-      cardText.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
-    } else {
-      cardText.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
-    }
-    
-    // Apply grayscale to cards with 0 availability
+  
     if (card.availability === 0) {
       image.style.filter = "grayscale(100%)";
       image.style.opacity = "0.6";
     }
-    
-    imageCell.appendChild(image);
-    imageCell.appendChild(cardText);
-    row.appendChild(imageCell);
-    
-    const availCell = document.createElement('td');
+  
+    const cardInfo = document.createElement('div');
+    cardInfo.className = 'card-info';
+    if (card.isOwned || allCards.includes(PawardCard)) {
+      cardInfo.innerHTML = `<strong>${card.id}</strong><br>${card.rarityName}`;
+    } else {
+      cardInfo.innerHTML = `<strong>Anonymous</strong><br>${card.rarityName}`;
+    }
+  
+    const progressBarContainer = document.createElement('div');
+    progressBarContainer.className = 'card-progress';
+  
     const progressBar = document.createElement('div');
-    progressBar.classList.add('progress-bar');
-    
+    progressBar.className = 'progress-bar';
+  
     const progress = document.createElement('div');
-    progress.classList.add('progress');
-    
-    // Different style for unavailable cards
+    progress.className = 'progress';
+  
     if (card.availability === 0) {
       progress.style.backgroundColor = "#777";
       progress.style.width = "100%";
@@ -203,28 +194,18 @@ async function displayCards() {
       const percentage = (card.availability / card.maxCount) * 100;
       progress.style.width = `${percentage}%`;
       progress.textContent = `${card.availability}/${card.maxCount}`;
-      
-      // Color gradient from red (low availability) to green (high availability)
-      const hue = (percentage / 100) * 120; // 0 is red, 120 is green
+      const hue = (percentage / 100) * 120;
       progress.style.backgroundColor = `hsl(${hue}, 80%, 45%)`;
     }
-    
+  
     progressBar.appendChild(progress);
-    availCell.appendChild(progressBar);
-    row.appendChild(availCell);
-    
-    const rankCell = document.createElement('td');
-    const rankText = `RANK #${card.rank}`;
-    rankCell.innerHTML = `<strong>${rankText}</strong>`;
-    
-    // Make the rank more prominent
-    rankCell.style.fontSize = "16px";
-    rankCell.style.fontWeight = "bold";
-    rankCell.style.textAlign = "center";
-    
-    row.appendChild(rankCell);
-    
-    cardListElement.appendChild(row);
+    progressBarContainer.appendChild(progressBar);
+  
+    cardItem.appendChild(image);
+    cardItem.appendChild(cardInfo);
+    cardItem.appendChild(progressBarContainer);
+  
+    cardGridElement.appendChild(cardItem);
   });
 }
 
