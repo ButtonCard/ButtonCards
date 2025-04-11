@@ -476,7 +476,7 @@ async function sendTrade() {
   savedTrade = savedTrade + " " + cardsString;
   console.log(savedTrade);
 
-  const tradeRef = db.collection('trades');
+  const tradeRef = db.collection('trading');
   const tradeQuery = await tradeRef.get();
   const doc = tradeQuery.docs[0];        
   let currentTrades = doc.data().curTrades;
