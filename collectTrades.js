@@ -641,6 +641,8 @@ async function getTrades() {
 // Function to populate the tradesSelect dropdown
 function populateTradesSelect() {
   const tradesSelect = document.querySelector('.tradesSelect');  // Get the select element
+  console.log(fromNames);
+  console.log(toNames);
   fromNames.forEach((name, index) => {
     if(currentUsername==name || currentUsername==toNames[index]){
       const option = document.createElement('option');
@@ -686,15 +688,15 @@ function populateTradesSelect() {
 }
 
 function changeTrade(){
-      console.log("change");
-      for (let i = 0; i < 6; i++) {
-        let tRem = document.querySelector(".d" + i);
-        let yRem = document.querySelector(".e" + i);
-        tRem.src = "Pack.png";
-        tRem.style.width = "0px";
-        yRem.src = "Pack.png";
-        yRem.style.width = "0px";
-      }
+    console.log("change");
+    for (let i = 0; i < 6; i++) {
+      let tRem = document.querySelector(".d" + i);
+      let yRem = document.querySelector(".e" + i);
+      tRem.src = "Pack.png";
+      tRem.style.width = "0px";
+      yRem.src = "Pack.png";
+      yRem.style.width = "0px";
+    }
   
     let tradesSelect = document.querySelector(".tradesSelect");
     let selectedOption = tradesSelect.selectedOptions[0];
@@ -702,8 +704,8 @@ function changeTrade(){
     let tradeNum = parseInt(classValue.substring(1))-1;
     curTradeNum = tradeNum;
     console.log("changed to " + curTradeNum);
-    let tCards = theirTradeCards[tradeNum];
-    let yCards = yourTradeCards[tradeNum];
+    let tCards = fromTradeCards[tradeNum];
+    let yCards = toTradeCards[tradeNum];
     console.log(tCards + " " + tradeNum);
     console.log(yCards + " " + tradeNum);
     let num = 0;
@@ -727,6 +729,8 @@ function changeTrade(){
 }
 
 async function acceptTrade(){
+  window.confirm("This function is out of service.");
+  location.reload();
   console.log("accept");
   if (curTradeNum==-1){
     console.log("ret -1");
@@ -823,6 +827,8 @@ function removeCardsArray(playCards, remCards) {
 }
 
 async function declineTrade(){
+  window.confirm("This function is out of service.");
+  location.reload();
   console.log("declining");
   if (curTradeNum==-1){
     return;
