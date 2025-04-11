@@ -725,17 +725,20 @@ function changeTrade(){
 }
 
 async function acceptTrade(){
-  window.confirm("This function is out of service.");
-  location.reload();
   console.log("accept");
   if (curTradeNum==-1){
     console.log("ret -1");
     return;
   }
+
+  if(currentUsername==fromNames[curTradeNum]){
+    window.alert("You cannot accept your own trade.");
+    return;
+  }
   const userRef = db.collection('users');
   const userQuery = await userRef
-        .where('name', '==', currentUsername)
-        .get();
+    .where('name', '==', currentUsername)
+    .get();
   if (!userQuery.empty) {
       const doc = userQuery.docs[0];
       let curTheirCards = doc.data().cards;
@@ -744,10 +747,10 @@ async function acceptTrade(){
         .get();
       const doc2 = theirQuery.docs[0];        
       let curYourCards = doc2.data().cards;
-      let thisYourTradeCards = yourTradeCards[curTradeNum];
-      let thisTheirTradeCards = theirTradeCards[curTradeNum];
-      console.log(yourTradeCards);
-      console.log(theirTradeCards);
+      let thisYourTradeCards = toTradeCards[curTradeNum];
+      let thisTheirTradeCards = fromTradeCards[curTradeNum];
+      console.log(toTradeCards);
+      console.log(fromTradeCards);
       if (compareArrays(thisYourTradeCards, curYourCards) && compareArrays(thisTheirTradeCards, curTheirCards)){
         let newYourCards = removeCardsArray(curYourCards, thisYourTradeCards);
         console.log(newYourCards);
@@ -769,10 +772,11 @@ async function acceptTrade(){
         declineTrade();
       } else {
         console.log("fail accept");
-        if (window.confirm("One side of the trade does not have all the cards. Click OK to decline the trade. Click cancel to keep the trade.")){
+        if (window.confirm("One side of the trade does not have all the cards. Click OK to keep the trade. Click cancel to delete the trade.")){
+          return;
+        } else{
           declineTrade();
         }
-        return;
       }
   }
   return;
@@ -823,25 +827,21 @@ function removeCardsArray(playCards, remCards) {
 }
 
 async function declineTrade(){
-  window.confirm("This function is out of service.");
-  location.reload();
   console.log("declining");
   if (curTradeNum==-1){
     return;
   }
-  const userRef = db.collection('users');
-  const userQuery = await userRef
-        .where('name', '==', currentUsername)
-        .get();
-  if (!userQuery.empty) {
-      const doc = userQuery.docs[0];        
-      let currentTrades = doc.data().trades;
-      currentTrades.splice(curTradeNum,1);
-      curTradeNum = -1;
-    
-      await doc.ref.update({
-          trades: currentTrades
-      });
-  }
+  const tradeRef = db.collection('trading');
+  const tradeQuery = await tradeRef.get();
+  const doc = tradeQuery.docs[0];        
+  
+  let currentTrades = doc.data().curTrades;
+  currentTrades.splice(curTradeNum,1);
+  curTradeNum = -1;
+
+  await doc.ref.update({
+      curTrades: currentTrades
+  });
+  
   location.reload();
 }
