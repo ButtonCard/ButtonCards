@@ -6,6 +6,7 @@ async function initPage() {
   await loadCardData();
   displayCards();
 }
+await initPage();
 
 async function loadCardData() {
   try {
@@ -257,4 +258,3 @@ function hide() {
   hideEnlarge.style.display = "none";
 }
 
-window.onload = initPage;
