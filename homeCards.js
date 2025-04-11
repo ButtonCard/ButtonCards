@@ -6,7 +6,9 @@ async function initPage() {
   await loadCardData();
   displayCards();
 }
-await initPage();
+window.addEventListener("load", async () => {
+  await initPage();
+});
 
 async function loadCardData() {
   try {
