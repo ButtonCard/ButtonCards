@@ -77,6 +77,59 @@
         width: 80px;
       }
     }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .card-grid-item {
+      background-color: #070552ff;
+      border: 3px solid #ffce00ff;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+    
+    .card-grid-item img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 8px;
+      transition: transform 0.2s;
+    }
+    
+    .card-grid-item img:hover {
+      transform: scale(1.05);
+    }
+    
+    .card-info {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    
+    .card-progress {
+      width: 100%;
+    }
+    
+    .card-progress .progress-bar {
+      height: 24px;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .card-progress .progress {
+      height: 100%;
+      text-align: center;
+      line-height: 24px;
+      color: white;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -120,17 +173,7 @@
   </select>
   <button class=sortButton onClick="sortCards()">Sort</button>
   
-  <table class="availabilityTable">
-    <thead>
-      <tr>
-        <th>Card</th>
-        <th>Availability</th>
-        <th>Odds</th>
-      </tr>
-    </thead>
-    <tbody id="cardList">
-    </tbody>
-  </table>
+  <div id="cardGrid" class="card-grid"></div>
 
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
