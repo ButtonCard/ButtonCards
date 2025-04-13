@@ -84,7 +84,7 @@ let ListS4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8", "S
 let ListS5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S5-A"];
 let ListS6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8", "S6-A"];
 let ListS9 = ["S9-1", "S9-2", "S9-3"];
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, ListV1, ListV2, ListV3, ListV4, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS9];
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, ListV1, ListV2, ListV3, ListV4, ListV5, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS9];
 let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, ListV5, ListS5];
 let missionSets = [C, U, R, E, V5];
 
