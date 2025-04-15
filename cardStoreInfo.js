@@ -70,6 +70,7 @@ let List15 = ["15-1", "15-2", "15-3", "15-4", "15-5", "15-6", "15-7", "15-8", "1
 let List16 = ["16-1", "16-2", "16-3", "16-4", "16-5", "16-6", "16-7", "16-A", "16-P"];
 let List17 = ["17-1", "17-2", "17-3", "17-4", "17-5", "17-6", "17-7", "17-A", "17-P"];
 let List18 = ["18-1", "18-2", "18-3", "18-4", "18-5", "18-6", "18-7", "18-A", "18-P"];
+let List19 = ["19-1", "19-2", "19-3", "19-4", "19-5", "19-6", "19-7", "19-8", "19-A", "19-P"];
 
 let ListV1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8", "V1-A"];
 let ListV2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8", "V2-A"];
@@ -85,8 +86,8 @@ let ListS4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8", "S
 let ListS5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S5-A"];
 let ListS6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8", "S6-A"];
 let ListS9 = ["S9-1", "S9-2", "S9-3"];
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, ListV1, ListV2, ListV3, ListV4, ListV5, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS9];
-let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, ListV5, ListS5];
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, ListV1, ListV2, ListV3, ListV4, ListV5, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS9];
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, ListV5, ListS5];
 let missionSets = [C, U, R, E, V5];
 
 //Counts of Each Card Rarity
