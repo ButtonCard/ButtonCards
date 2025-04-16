@@ -1,17 +1,17 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,3,5];
-let packCost = [1,1,2];
+let packSizes = [4,4,5];
+let packCost = [1,2,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Hacker Variant!<br>1/45 Chance for BUTTON Photos Card!<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Banana Variant!<br>1/45 Chance for BUTTON Photos Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
-let Pack2_Name='Hacker Variant Pack';
-let Pack2_Description='1/12 Chance for Hacker Variant!<br>For Sale: Until 4/18<br><br>3 Cards<br>1 Pack Token';
-let Pack2_Image='icons/Hack_Icon.png';
+let Pack2_Name='Banana Variant Pack';
+let Pack2_Description='1/12 Chance for Banana Variant!<br>For Sale: Until 4/21<br><br>4 Cards<br>2 Pack Tokens';
+let Pack2_Image='icons/Bana_Icon.png';
 let Pack2_Time=1774151999000; //2026
 //Pack 3 Info
 let Pack3_Name='BUTTON Photos Pack';
@@ -39,6 +39,7 @@ let V2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8"];
 let V3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8"];
 let V4 = ["V4-1", "V4-2", "V4-3", "V4-4", "V4-5", "V4-6", "V4-7", "V4-8"];
 let V5 = ["V5-1", "V5-2", "V5-3", "V5-4", "V5-5", "V5-6", "V5-7", "V5-8"];
+let V6 = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8"];
 let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
 let S2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8"];
 let S3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8"];
@@ -46,7 +47,7 @@ let S4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8"];
 let S5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8"];
 let S6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8", "S9-4"];
 
-let VarSet = V5; //Pack 2 Variant
+let VarSet = V6; //Pack 2 Variant
 let SpeSet = S6; //Pack 3 Variant
 
 
@@ -76,6 +77,7 @@ let ListV2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8", "V
 let ListV3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8", "V3-A"];
 let ListV4 = ["V4-1", "V4-2", "V4-3", "V4-4", "V4-5", "V4-6", "V4-7", "V4-8", "V4-A"];
 let ListV5 = ["V5-1", "V5-2", "V5-3", "V5-4", "V5-5", "V5-6", "V5-7", "V5-8", "V5-A"];
+let ListV6 = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8", "V6-A"];
 let ListV9 = ["V9-1", "V9-2", "V9-3", "V9-4"];
 
 let ListS1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8", "S1-A"];
@@ -85,9 +87,9 @@ let ListS4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8", "S
 let ListS5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S5-A"];
 let ListS6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8", "S6-A"];
 let ListS9 = ["S9-1", "S9-2", "S9-3", "S9-4"];
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, ListV1, ListV2, ListV3, ListV4, ListV5, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS9];
-let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, ListV5, ListS6];
-let missionSets = [C, U, R, E, V5];
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS9];
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, ListV6, ListS6];
+let missionSets = [C, U, R, E, V6];
 
 //Counts of Each Card Rarity
 let Lcount = 1;
@@ -111,17 +113,17 @@ let P3Srarity = 16;
 /*Retired Packs:
 First Edition 3/22-3/24
 let Pack2_Name='First Edition Variant Pack';
-let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until 3/24<br>EXPIRES TODAY!<br>3 Cards<br>1 Pack Tokens';
+let Pack2_Description='1/10 Chance for First Edition Variant!<br>For Sale: Until 3/24<br><br>3 Cards<br>1 Pack Tokens';
 let Pack2_Image='icons/First_Icon.png';
 
 Maryland 3/25-3/28
 let Pack2_Name='Maryland Variant Pack';
-let Pack2_Description='1/10 Chance for Maryland Variant!<br>For Sale: Until 3/28<br>EXPIRES TODAY!<br>7 Cards<br>2 Pack Tokens';
+let Pack2_Description='1/10 Chance for Maryland Variant!<br>For Sale: Until 3/28<br><br>7 Cards<br>2 Pack Tokens';
 let Pack2_Image='icons/MD_Icon.png';
 
 BUTTON Memes 3/22-3/28
 let Pack3_Name='BUTTON Meme Pack';
-let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br>Expires Today!<br>6 Cards<br>2 Pack Tokens';
+let Pack3_Description='1/15 Chance for BUTTON Meme Card!<br>For Sale: Until 3/29<br><br>6 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Memes_Icon.png';
 
 Make It Meme 3/29-4/1
@@ -149,5 +151,9 @@ let Pack2_Name='Minecraft Variant Pack';
 let Pack2_Description='1/12 Chance for Minecraft Variant!<br>For Sale: Until 4/11<br><br>3 Cards<br>1 Pack Token';
 let Pack2_Image='icons/Mine_Icon.png';
 
+Hacker 4/12-4/15
+let Pack2_Name='Hacker Variant Pack';
+let Pack2_Description='1/12 Chance for Hacker Variant!<br>For Sale: Until 4/15<br><br>3 Cards<br>1 Pack Token';
+let Pack2_Image='icons/Hack_Icon.png';
 
 */
