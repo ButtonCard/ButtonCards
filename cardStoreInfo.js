@@ -10,7 +10,7 @@ let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
 let Pack2_Name='Banana Variant Pack';
-let Pack2_Description='1/12 Chance for Banana Variant!<br>For Sale: Until 4/21<br><br>4 Cards<br>2 Pack Tokens';
+let Pack2_Description='1/8 Chance for Banana Variant!<br>For Sale: Until 4/21<br><br>4 Cards<br>2 Pack Tokens';
 let Pack2_Image='icons/Bana_Icon.png';
 let Pack2_Time=1774151999000; //2026
 //Pack 3 Info
@@ -106,7 +106,7 @@ let Rrarity = 12;
 let Urarity = 4;
 let Vrarity = 30;
 let Srarity = 45;
-let P2Vrarity = 12;
+let P2Vrarity = 8;
 let P3Srarity = 16;
 
 
