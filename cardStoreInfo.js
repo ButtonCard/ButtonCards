@@ -78,7 +78,7 @@ let ListV3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8", "V
 let ListV4 = ["V4-1", "V4-2", "V4-3", "V4-4", "V4-5", "V4-6", "V4-7", "V4-8", "V4-A"];
 let ListV5 = ["V5-1", "V5-2", "V5-3", "V5-4", "V5-5", "V5-6", "V5-7", "V5-8", "V5-A"];
 let ListV6 = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8", "V6-A"];
-let ListV9 = ["V9-1", "V9-2", "V9-3", "V9-4"];
+let ListV9 = ["V9-1", "V9-2", "V9-3", "V9-4", "V9-5", "V9-6"];
 
 let ListS1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8", "S1-A"];
 let ListS2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8", "S2-A"];
@@ -100,7 +100,7 @@ let Vcount = 4;
 let Scount = 2;
 
 //Odds of Each Card Rarity (1/x per Card)
-let Lrarity = 55;
+let Lrarity = 50;
 let Erarity = 45;
 let Rrarity = 12;
 let Urarity = 4;
