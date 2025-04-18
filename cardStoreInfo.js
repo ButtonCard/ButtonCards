@@ -100,7 +100,7 @@ let Vcount = 4;
 let Scount = 2;
 
 //Odds of Each Card Rarity (1/x per Card)
-let Lrarity = 60;
+let Lrarity = 55;
 let Erarity = 45;
 let Rrarity = 12;
 let Urarity = 4;
