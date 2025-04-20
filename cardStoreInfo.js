@@ -15,7 +15,7 @@ let Pack2_Image='icons/Bana_Icon.png';
 let Pack2_Time=1774151999000; //2026
 //Pack 3 Info
 let Pack3_Name='BUTTON Photos Pack';
-let Pack3_Description='1/16 Chance for BUTTON Photos Card!<br>For Sale: Until 4/17<br><br>5 Cards<br>2 Pack Tokens';
+let Pack3_Description='1/16 Chance for BUTTON Photos Card!<br>For Sale: Until 4/20<br><br>5 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Photo_Icon.png';
 let Pack3_Time=1774151999000; //2026
 //Epoch Time Coverter 23:59:59 in milliseconds
