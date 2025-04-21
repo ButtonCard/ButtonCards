@@ -40,12 +40,14 @@ let V3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8"];
 let V4 = ["V4-1", "V4-2", "V4-3", "V4-4", "V4-5", "V4-6", "V4-7", "V4-8"];
 let V5 = ["V5-1", "V5-2", "V5-3", "V5-4", "V5-5", "V5-6", "V5-7", "V5-8"];
 let V6 = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8"];
+let V7 = ["V7-1", "V7-2", "V7-3", "V7-4", "V7-5", "V7-6", "V7-7", "V7-8"];
 let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
 let S2 = ["S2-1", "S2-2", "S2-3", "S2-4", "S2-5", "S2-6", "S2-7", "S2-8"];
 let S3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8"];
 let S4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8"];
 let S5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8"];
-let S6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8", "S9-4"];
+let S6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8"];
+let S7 = ["S7-1", "S7-2", "S7-3", "S7-4", "S7-5", "S7-6", "S7-7", "S7-8"];
 
 let VarSet = V6; //Pack 2 Variant
 let SpeSet = S6; //Pack 3 Variant
@@ -80,6 +82,7 @@ let ListV3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8", "V
 let ListV4 = ["V4-1", "V4-2", "V4-3", "V4-4", "V4-5", "V4-6", "V4-7", "V4-8", "V4-A"];
 let ListV5 = ["V5-1", "V5-2", "V5-3", "V5-4", "V5-5", "V5-6", "V5-7", "V5-8", "V5-A"];
 let ListV6 = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8", "V6-A"];
+let ListV7 = ["V7-1", "V7-2", "V7-3", "V7-4", "V7-5", "V7-6", "V7-7", "V7-8", "V7-A"];
 let ListV9 = ["V9-1", "V9-2", "V9-3", "V9-4", "V9-5", "V9-6"];
 
 let ListS1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8", "S1-A"];
@@ -88,8 +91,10 @@ let ListS3 = ["S3-1", "S3-2", "S3-3", "S3-4", "S3-5", "S3-6", "S3-7", "S3-8", "S
 let ListS4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8", "S4-A"];
 let ListS5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S5-A"];
 let ListS6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8", "S6-A"];
+let ListS7 = ["S7-1", "S7-2", "S7-3", "S7-4", "S7-5", "S7-6", "S7-7", "S7-8", "S7-A"];
 let ListS9 = ["S9-1", "S9-2", "S9-3", "S9-4"];
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS9];
+
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS7, ListS9];
 let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, ListV6, ListS6];
 let missionSets = [C, U, R, E, V6];
 
