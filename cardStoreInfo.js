@@ -1,6 +1,6 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,4,5];
+let packSizes = [4,4,6];
 let packCost = [1,2,2];
 
 //Pack 1 Info
