@@ -20,6 +20,10 @@ let Pack3_Image='icons/Photo_Icon.png';
 let Pack3_Time=1774151999000; //2026
 //Epoch Time Coverter 23:59:59 in milliseconds
 
+//let Pack3_Name='Missing Pack';
+//let Pack3_Description='1/16 Chance for Missing Card!<br>For Sale: Until 4/26<br><br>6 Cards<br>2 Pack Tokens';
+//let Pack3_Image='icons/Miss_Icon.png';
+
 //Unavailable Pack
 //let Pack3_Name='Pack Not Available';
 //let Pack3_Description='TBA<br>For Sale: Until N/A<br><br>N/A Cards<br>N/A Pack Token';
