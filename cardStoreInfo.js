@@ -14,15 +14,11 @@ let Pack2_Description='1/8 Chance for Banana Variant!<br>For Sale: Until 4/21<br
 let Pack2_Image='icons/Bana_Icon.png';
 let Pack2_Time=1774151999000; //2026
 //Pack 3 Info
-let Pack3_Name='BUTTON Photos Pack';
-let Pack3_Description='1/16 Chance for BUTTON Photos Card!<br>For Sale: Until 4/20<br><br>5 Cards<br>2 Pack Tokens';
-let Pack3_Image='icons/Photo_Icon.png';
+let Pack3_Name='Missing Pack';
+let Pack3_Description='1/16 Chance for Missing Card!<br>For Sale: Until 4/26<br><br>6 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Miss_Icon.png';
 let Pack3_Time=1774151999000; //2026
 //Epoch Time Coverter 23:59:59 in milliseconds
-
-//let Pack3_Name='Missing Pack';
-//let Pack3_Description='1/16 Chance for Missing Card!<br>For Sale: Until 4/26<br><br>6 Cards<br>2 Pack Tokens';
-//let Pack3_Image='icons/Miss_Icon.png';
 
 //Unavailable Pack
 //let Pack3_Name='Pack Not Available';
@@ -54,7 +50,7 @@ let S6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8"];
 let S7 = ["S7-1", "S7-2", "S7-3", "S7-4", "S7-5", "S7-6", "S7-7", "S7-8"];
 
 let VarSet = V6; //Pack 2 Variant
-let SpeSet = S6; //Pack 3 Variant
+let SpeSet = S7; //Pack 3 Variant
 
 
 //All Sets Current Available
@@ -99,7 +95,7 @@ let ListS7 = ["S7-1", "S7-2", "S7-3", "S7-4", "S7-5", "S7-6", "S7-7", "S7-8", "S
 let ListS9 = ["S9-1", "S9-2", "S9-3", "S9-4"];
 
 let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV9, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS7, ListS9];
-let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, ListV6, ListS6];
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, ListV6, ListS7];
 let missionSets = [C, U, R, E, V6];
 
 //Counts of Each Card Rarity
@@ -166,5 +162,10 @@ Hacker 4/12-4/15
 let Pack2_Name='Hacker Variant Pack';
 let Pack2_Description='1/12 Chance for Hacker Variant!<br>For Sale: Until 4/15<br><br>3 Cards<br>1 Pack Token';
 let Pack2_Image='icons/Hack_Icon.png';
+
+BUTTON Photos 4/11-4/20
+let Pack3_Name='BUTTON Photos Pack';
+let Pack3_Description='1/16 Chance for BUTTON Photos Card!<br>For Sale: Until 4/20<br><br>5 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Photo_Icon.png';
 
 */
