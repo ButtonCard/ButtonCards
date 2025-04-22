@@ -1,21 +1,17 @@
 // ----- PACKS -----
 //Store Info About Pack Opened
-let packSizes = [4,4,6];
-let packCost = [1,2,2];
+let packSizes = [4,3,6];
+let packCost = [1,1,2];
 
 //Pack 1 Info
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/30 Chance for Banana Variant!<br>1/45 Chance for BUTTON Photos Card!<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/30 Chance for End Variant!<br>1/45 Chance for Missing Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
 let Pack1_Time=1774151999000; //2026
 //Pack 2 Info
-let Pack2_Name='Banana Variant Pack';
-let Pack2_Description='1/8 Chance for Banana Variant!<br>For Sale: Until 4/21<br><br>4 Cards<br>2 Pack Tokens';
-let Pack2_Image='icons/Bana_Icon.png';
-
-//let Pack2_Name='End Variant Pack';
-//let Pack2_Description='1/10 Chance for End Variant!<br>For Sale: Until 4/26<br><br>3 Cards<br>1 Pack Token1';
-//let Pack2_Image='icons/End_Icon.png';
+let Pack2_Name='End Variant Pack';
+let Pack2_Description='1/9 Chance for End Variant!<br>For Sale: Until 4/26<br><br>3 Cards<br>1 Pack Token1';
+let Pack2_Image='icons/End_Icon.png';
 let Pack2_Time=1774151999000; //2026
 //Pack 3 Info
 let Pack3_Name='Missing Pack';
@@ -118,7 +114,7 @@ let Rrarity = 12;
 let Urarity = 4;
 let Vrarity = 30;
 let Srarity = 45;
-let P2Vrarity = 8; //10
+let P2Vrarity = 9;
 let P3Srarity = 16;
 
 
