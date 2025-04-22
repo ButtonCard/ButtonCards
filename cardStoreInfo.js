@@ -12,6 +12,10 @@ let Pack1_Time=1774151999000; //2026
 let Pack2_Name='Banana Variant Pack';
 let Pack2_Description='1/8 Chance for Banana Variant!<br>For Sale: Until 4/21<br><br>4 Cards<br>2 Pack Tokens';
 let Pack2_Image='icons/Bana_Icon.png';
+
+//let Pack2_Name='End Variant Pack';
+//let Pack2_Description='1/10 Chance for End Variant!<br>For Sale: Until 4/26<br><br>3 Cards<br>1 Pack Token1';
+//let Pack2_Image='icons/End_Icon.png';
 let Pack2_Time=1774151999000; //2026
 //Pack 3 Info
 let Pack3_Name='Missing Pack';
@@ -114,7 +118,7 @@ let Rrarity = 12;
 let Urarity = 4;
 let Vrarity = 30;
 let Srarity = 45;
-let P2Vrarity = 8;
+let P2Vrarity = 8; //10
 let P3Srarity = 16;
 
 
@@ -168,5 +172,10 @@ BUTTON Photos 4/11-4/20
 let Pack3_Name='BUTTON Photos Pack';
 let Pack3_Description='1/16 Chance for BUTTON Photos Card!<br>For Sale: Until 4/20<br><br>5 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Photo_Icon.png';
+
+Banana 4/16-4/21
+let Pack2_Name='Banana Variant Pack';
+let Pack2_Description='1/8 Chance for Banana Variant!<br>For Sale: Until 4/21<br><br>4 Cards<br>2 Pack Tokens';
+let Pack2_Image='icons/Bana_Icon.png';
 
 */
