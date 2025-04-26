@@ -558,3 +558,168 @@ function randMission(deck, all) {
   return newMiss;
 }
 
+
+
+// Function to dynamically populate the set selector dropdown
+function populateSetSelector() {
+  const setSelector = document.querySelector(".setSelector");
+  
+  // Clear existing options
+  setSelector.innerHTML = "";
+  
+  // Add "All Sets" option
+  const allOption = document.createElement("option");
+  allOption.value = "all";
+  allOption.textContent = "All Sets";
+  setSelector.appendChild(allOption);
+  
+  // Add regular sets (up to 50)
+  for (let i = 1; i <= 50; i++) {
+    // Check if this set exists in allSets array and has cards
+    if (i < allSets.length && allSets[i] && allSets[i].length > 0) {
+      const option = document.createElement("option");
+      option.value = i.toString();
+      // Format set number with leading zero for single digits
+      option.textContent = "Set " + (i < 10 ? "0" + i : i);
+      setSelector.appendChild(option);
+    }
+  }
+  
+  // Add V sets (up to V25)
+  for (let i = 1; i <= 25; i++) {
+    // Calculate the index in allSets array for V sets
+    // Assuming V sets start after regular sets in allSets array
+    const vIndex = 50 + i;
+    if (vIndex < allSets.length && allSets[vIndex] && allSets[vIndex].length > 0) {
+      const option = document.createElement("option");
+      option.value = vIndex.toString();
+      option.textContent = "Set V" + i;
+      setSelector.appendChild(option);
+    }
+  }
+  
+  // Add S sets (up to S25)
+  for (let i = 1; i <= 25; i++) {
+    // Calculate the index in allSets array for S sets
+    // Assuming S sets start after V sets in allSets array
+    const sIndex = 75 + i;
+    if (sIndex < allSets.length && allSets[sIndex] && allSets[sIndex].length > 0) {
+      const option = document.createElement("option");
+      option.value = sIndex.toString();
+      option.textContent = "Set S" + i;
+      setSelector.appendChild(option);
+    }
+  }
+}
+
+// Update the loadSelectedSet function to handle the new indices correctly
+function loadSelectedSet() {
+  let allCards;
+  let compareCards;
+  let filledCards;
+  let listName = document.querySelector(".players");
+  let setSelector = document.querySelector(".setSelector");
+  const selectedSetValue = setSelector.value;
+  
+  // First, hide all sets
+  for (let setList = 1; setList < allSets.length; setList++) {
+    let setBox = document.querySelector(".s" + setList);
+    if (setBox) {
+      setBox.style.display = "none";
+    }
+  }
+  
+  // If "all" is selected, show all sets, otherwise just show the selected set
+  if (selectedSetValue === "all") {
+    // Load all sets as before
+    loadCards();
+  } else {
+    // Convert the selected value to a number and load just that set
+    const setNumber = parseInt(selectedSetValue);
+    if (setNumber >= 1 && setNumber < allSets.length) {
+      // Get user-specific cards for comparison
+      const userRef = db.collection('users');
+      
+      async function loadSingleSet() {
+        if (listName.value == "all") {
+          const allQuery = await userRef.get();
+          compareCards = allQuery.docs[0].data().cards.concat(
+            allQuery.docs[1].data().cards, 
+            allQuery.docs[2].data().cards, 
+            allQuery.docs[3].data().cards,
+            allQuery.docs[4].data().cards, 
+            allQuery.docs[5].data().cards).sort();
+          filledCards = compareCards;
+        } else {
+          const userQuery = await userRef
+            .where('name', '==', listName.value)
+            .get();
+          
+          const doc = userQuery.docs[0];
+          compareCards = doc.data().cards.sort();
+          
+          const allQuery = await userRef.get();
+          filledCards = allQuery.docs[0].data().cards.concat(
+            allQuery.docs[1].data().cards, 
+            allQuery.docs[2].data().cards, 
+            allQuery.docs[3].data().cards,
+            allQuery.docs[4].data().cards, 
+            allQuery.docs[5].data().cards).sort();
+        }
+
+        // Display only the selected set
+        let setBox = document.querySelector(".s" + setNumber);
+        if (setBox) {
+          setBox.style.display = "flex";
+          let setCards = allSets[setNumber];
+          
+          if (setCards && setCards.length > 0) {
+            for (let i = 0; i < setCards.length; i++) {
+              let cardResult = document.querySelector(".s" + setNumber + "c" + i);
+              if (cardResult) {
+                cardResult.style.border = "none";
+                cardResult.style.opacity = "1";
+
+                if (compareCards.includes(setCards[i])) {
+                  cardResult.src = "img/" + setCards[i] + ".png";
+                  cardResult.style.width = "110px";
+                }
+                else {
+                  if (filledCards.includes(setCards[i])) {
+                    cardResult.src = "img/" + setCards[i] + ".png";
+                    cardResult.style.border = "2px lightcyan solid";
+                    cardResult.style.opacity = "0.6";
+                  }
+                  else {
+                    cardResult.src = "Back.png";
+                  }
+                  cardResult.style.width = "110px";
+                }
+                if (setCards[i].includes("-A")) {
+                  cardResult.style.border = "2px red solid";
+                }
+                if (setCards[i].includes("-P")) {
+                  cardResult.style.border = "2px blue solid";
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      loadSingleSet();
+    }
+  }
+}
+
+// Call populateSetSelector when the page loads to set up the dropdown
+document.addEventListener("DOMContentLoaded", function() {
+  // Hide the unused table
+  const unusedTable = document.querySelector(".collectionList");
+  if (unusedTable) {
+    unusedTable.style.display = "none";
+  }
+  
+  // Populate the set selector dropdown
+  populateSetSelector();
+});
