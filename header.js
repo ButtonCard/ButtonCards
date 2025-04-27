@@ -55,8 +55,8 @@ window.onload = async function() {
     let curTokens = doc.data().tokens;
     // Compare the dates
     if (now - opened >= 3600000) { // 86400000 ms = 1 day
-      console.log("+1 Token");
-      let newTokens = curTokens+1;
+      console.log("+2 Token");
+      let newTokens = curTokens+2;    //2 Tokens
       await doc.ref.update({
         open: now.getTime(),
         tokens: newTokens
