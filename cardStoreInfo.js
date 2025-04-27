@@ -4,31 +4,33 @@ let packSizes = [4,3,6];
 let packCost = [1,1,2];
 
 //Pack 1 Info
+/*
 let Pack1_Name='Standard Pack';
 let Pack1_Description='All Standard Cards Available<br>1/25 Chance for End Variant!<br>1/45 Chance for Missing Card!<br>For Sale: Until 4/26<br><b>EXPIRES TOMORROW!</b><br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
-
-/*
-let Pack1_Name='ButtonCraft Anniversary Pack';
-let Pack1_Description='All Standard Cards Available<br>1/20 Chance for Diamond Variant!<br>1/40 Chance for ----- Card!<br>For Sale: Until 5/3<br>4 Cards<br>1 Pack Token';
-let Pack1_Image='icons/Fifth_Icon.png';
 */
+let Pack1_Name='ButtonCraft 5th Anniversary Pack';
+let Pack1_Description='All Standard Cards Available<br>1/5 Chance for 5 Years of Button Card!<br>1/20 Chance for Diamond Variant!<br>1/40 Chance for ??? Card!<br>For Sale: Until 5/3<br>4 Cards<br>1 Pack Token';
+let Pack1_Image='icons/Fifth_Icon.png';
+
 
 //Pack 2 Info
-let Pack2_Name='End Variant Pack';
-let Pack2_Description='1/8 Chance for End Variant!<br>For Sale: Until 4/26<br><b>EXPIRES TOMORROW!</b><br>3 Cards<br>1 Pack Token';
-let Pack2_Image='icons/End_Icon.png';
-
-/*
 let Pack2_Name='Diamond Variant Pack';
 let Pack2_Description='1/6 Chance for Diamond Variant!<br>For Sale: Until 5/3<br><br>3 Cards<br>1 Pack Token';
-let Pack2_Image='icons/End_Icon.png';
-*/
+let Pack2_Image='icons/Diam_Icon.png';
+
 
 //Pack 3 Info
-let Pack3_Name='Missing Pack';
-let Pack3_Description='1/16 Chance for Missing Card!<br>For Sale: Until 4/26<br><b>EXPIRES TOMORROW!</b><br>6 Cards<br>2 Pack Tokens';
+let Pack3_Name='??? Pack';
+let Pack3_Description='1/16 Chance for ??? Card!<br>For Sale: Until 5/3<br><br>6 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Miss_Icon.png';
+
+
+/*
+let Pack3_Name='Postcard Pack';
+let Pack3_Description='1/16 Chance for Postcard Card!<br>For Sale: Until 5/3<br><br>6 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Post_Icon.png';
+*/
 
 //Unavailable Pack
 //let Pack3_Name='Pack Not Available';
@@ -198,5 +200,15 @@ Banana 4/16-4/21
 let Pack2_Name='Banana Variant Pack';
 let Pack2_Description='1/8 Chance for Banana Variant!<br>For Sale: Until 4/21<br><br>4 Cards<br>2 Pack Tokens';
 let Pack2_Image='icons/Bana_Icon.png';
+
+End 4/22-4/26
+let Pack2_Name='End Variant Pack';
+let Pack2_Description='1/8 Chance for End Variant!<br>For Sale: Until 4/26<br><b>EXPIRES TOMORROW!</b><br>3 Cards<br>1 Pack Token';
+let Pack2_Image='icons/End_Icon.png';
+
+Missing 4/21-4/26
+let Pack3_Name='Missing Pack';
+let Pack3_Description='1/16 Chance for Missing Card!<br>For Sale: Until 4/26<br><b>EXPIRES TOMORROW!</b><br>6 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Miss_Icon.png';
 
 */
