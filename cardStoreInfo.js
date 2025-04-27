@@ -10,7 +10,7 @@ let Pack1_Description='All Standard Cards Available<br>1/25 Chance for End Varia
 let Pack1_Image='icons/Pack_Icon.png';
 */
 let Pack1_Name='ButtonCraft 5th Anniversary Pack';
-let Pack1_Description='All Standard Cards Available<br>1/5 Chance for 5 Years of Button Card!<br>1/20 Chance for Diamond Variant!<br>1/40 Chance for ??? Card!<br>For Sale: Until 5/3<br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/5 Chance for 5 Years of Button Card!<br>1/20 Chance for Diamond Variant!<br>1/40 Chance for Postcard Card!<br>For Sale: Until 5/3<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Fifth_Icon.png';
 
 
@@ -21,16 +21,10 @@ let Pack2_Image='icons/Diam_Icon.png';
 
 
 //Pack 3 Info
-let Pack3_Name='??? Pack';
-let Pack3_Description='1/16 Chance for ??? Card!<br>For Sale: Until 5/3<br><br>6 Cards<br>2 Pack Tokens';
-let Pack3_Image='icons/Miss_Icon.png';
-
-
-/*
 let Pack3_Name='Postcard Pack';
 let Pack3_Description='1/16 Chance for Postcard Card!<br>For Sale: Until 5/3<br><br>6 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Post_Icon.png';
-*/
+
 
 //Unavailable Pack
 //let Pack3_Name='Pack Not Available';
