@@ -66,7 +66,7 @@ let S4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8"];
 let S5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8"];
 let S6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8"];
 let S7 = ["S7-1", "S7-2", "S7-3", "S7-4", "S7-5", "S7-6", "S7-7", "S7-8"];
-let S8 = ["S8-1", "S8-2", "S8-3", "S8-4", "S8-5", "S8-6", "S8-7", "S8-8"];
+let S8 = ["S8-1", "S8-2", "S8-3", "S8-4", "S8-5", "S8-6"];
 
 let VarSet = V8; //Pack 2 Variant
 let SpeSet = S8; //Pack 3 Variant
@@ -119,7 +119,7 @@ let ListS4 = ["S4-1", "S4-2", "S4-3", "S4-4", "S4-5", "S4-6", "S4-7", "S4-8", "S
 let ListS5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8", "S5-A"];
 let ListS6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8", "S6-A"];
 let ListS7 = ["S7-1", "S7-2", "S7-3", "S7-4", "S7-5", "S7-6", "S7-7", "S7-8", "S7-A"];
-let ListS8 = ["S8-1", "S8-2", "S8-3", "S8-4", "S8-5", "S8-6", "S8-7", "S8-8", "S8-A"];
+let ListS8 = ["S8-1", "S8-2", "S8-3", "S8-4", "S8-5", "S8-6", "S8-A"];
 let ListS9 = ["S9-1", "S9-2", "S9-3", "S9-4", "S9-5"];
 
 let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, List22, List23, List24, List25, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV8, ListV9, ListB1, ListB2, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS7, ListS8, ListS9];
