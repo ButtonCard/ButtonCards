@@ -600,7 +600,18 @@ async function awardChecker() {
   
         usersTokens[num]=usersTokens[num]+3;
         let curName=allQuery.docs[num].data().fullName;
-        if (!allCards.includes(minusPCard)&&awardSets[i].includes(minusPCard)) {
+        if(cardWithoutAorP=="B1"){
+          let randSelec = [...B2, minusACard];
+          let ranIndex = Math.floor(Math.random() * arr.length);
+          console.log("Award B " + minusACard);
+          usersCards[num].push(randSelec[ranIndex]);
+          if(ranIndex==6){
+            alert("Set B1 Award & 3 Tokens earned for " + curName + "!");
+          } else{
+            alert("Ruby Edition Card " + randSelec[ranIndex] + " & 3 Tokens earned for " + curName + "!");
+          }
+        }
+        else if (!allCards.includes(minusPCard)&&awardSets[i].includes(minusPCard)) {
           console.log("Award P " + minusPCard);
           // Add the -P card to usersCards[num] if not in allCards
           usersCards[num].push(minusPCard);
