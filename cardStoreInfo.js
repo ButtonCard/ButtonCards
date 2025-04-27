@@ -123,8 +123,8 @@ let ListS8 = ["S8-1", "S8-2", "S8-3", "S8-4", "S8-5", "S8-6", "S8-7", "S8-8", "S
 let ListS9 = ["S9-1", "S9-2", "S9-3", "S9-4", "S9-5"];
 
 let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, List22, List23, List24, List25, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV8, ListV9, ListB1, ListB2, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS7, ListS8, ListS9];
-let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, ListB1, ListB2, ListV7, ListS7];
-let missionSets = [C, U, R, E, V6];
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, ListB1, ListB2, ListV8, ListS8];
+let missionSets = [C, U, R, E, V8, B1, B2];
 
 //Counts of Each Card Rarity
 let Lcount = 1;
