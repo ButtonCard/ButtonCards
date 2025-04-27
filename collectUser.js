@@ -602,7 +602,7 @@ async function awardChecker() {
         let curName=allQuery.docs[num].data().fullName;
         if(cardWithoutAorP=="B1"){
           let randSelec = [...B2, minusACard];
-          let ranIndex = Math.floor(Math.random() * arr.length);
+          let ranIndex = Math.floor(Math.random() * randSelec.length);
           console.log("Award B " + minusACard);
           usersCards[num].push(randSelec[ranIndex]);
           if(ranIndex==6){
