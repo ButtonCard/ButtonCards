@@ -4,27 +4,19 @@ let packSizes = [4,3,6];
 let packCost = [1,1,2];
 
 //Pack 1 Info
-/*
 let Pack1_Name='Standard Pack';
-let Pack1_Description='All Standard Cards Available<br>1/25 Chance for End Variant!<br>1/45 Chance for Missing Card!<br>For Sale: Until 4/26<br><b>EXPIRES TOMORROW!</b><br>4 Cards<br>1 Pack Token';
+let Pack1_Description='All Standard Cards Available<br>1/25 Chance for Space Variant!<br>1/45 Chance for Star Wars Movie Card!<br>4 Cards<br>1 Pack Token';
 let Pack1_Image='icons/Pack_Icon.png';
-*/
-let Pack1_Name='ButtonCraft 5th Anniversary Pack';
-let Pack1_Description='All Standard Cards Available<br>1/5 Chance for 5 Years of Button Card!<br>1/20 Chance for Diamond Variant!<br>1/40 Chance for Postcard Card!<br>For Sale: Until 5/3<br>4 Cards<br>1 Pack Token';
-let Pack1_Image='icons/Fifth_Icon.png';
-
 
 //Pack 2 Info
-let Pack2_Name='Diamond Variant Pack';
-let Pack2_Description='1/6 Chance for Diamond Variant!<br>For Sale: Until 5/3<br><br>3 Cards<br>1 Pack Token';
-let Pack2_Image='icons/Diam_Icon.png';
-
+let Pack2_Name='Space Variant Pack';
+let Pack2_Description='1/6 Chance for Space Variant!<br>For Sale: Until 5/10<br><br>3 Cards<br>1 Pack Token';
+let Pack2_Image='icons/Space_Icon.png';
 
 //Pack 3 Info
-let Pack3_Name='Postcard Pack';
-let Pack3_Description='1/16 Chance for Postcard Card!<br>For Sale: Until 5/3<br><br>6 Cards<br>2 Pack Tokens';
-let Pack3_Image='icons/Post_Icon.png';
-
+let Pack3_Name='Star Wars Movies Pack';
+let Pack3_Description='1/16 Chance for Star Wars Movie Card!<br>For Sale: Until 5/12<br><br>6 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Star_Icon.png';
 
 //Unavailable Pack
 //let Pack3_Name='Pack Not Available';
@@ -38,11 +30,11 @@ let Pack3_Time=1774151999000; //2026
 // ----- CARDS -----
 
 //All Cards Available Sorted by Rarity:
-let C = ["01-0", "01-1", "02-1", "02-2", "02-3", "03-1", "03-2", "04-1", "04-2", "05-1", "05-2", "06-1", "06-2", "07-1", "07-2", "08-1", "08-2", "09-1", "09-2", "10-1", "10-2", "11-1", "11-2", "11-3", "12-1", "12-2", "13-1", "13-2", "13-3", "14-1", "14-2", "15-1", "15-2", "16-1", "16-2", "17-1", "17-2", "18-1", "18-2", "19-1", "19-2", "20-1", "20-2", "20-3", "21-1", "21-2", "22-1", "22-2", "23-1", "23-2", "24-1", "24-2", "25-1", "25-2"];
-let U = ["01-2", "01-3", "02-4", "02-5", "03-3", "03-4", "04-3", "04-4", "05-3", "05-4", "06-3", "06-4", "07-3", "07-4", "08-3", "08-4", "09-3", "09-4", "10-3", "10-4", "11-4", "11-5", "12-3", "12-4", "12-5", "13-4", "13-5", "14-3", "14-4", "15-3", "15-4", "15-5", "16-3", "16-4", "17-3", "17-4", "18-3", "18-4", "19-3", "19-4", "20-4", "20-5", "21-3", "21-4", "22-3", "22-4", "23-3", "23-4", "24-3", "24-4", "25-3", "25-4", "25-5"];
-let R = ["01-4", "01-5", "02-6", "03-5", "03-6", "04-5", "05-5", "06-5", "07-5", "08-5", "09-5", "10-5", "11-6", "12-6", "13-6", "14-5", "14-6", "15-6", "16-5", "17-5", "18-5", "19-5", "19-6", "20-6", "21-5", "22-5", "23-5", "24-5", "25-6"];
-let E = ["01-6", "01-7", "01-8", "02-7", "03-7", "04-6", "05-6", "06-6", "07-6", "08-6", "09-6", "10-6", "11-7", "12-7", "13-7", "14-7", "15-7", "16-6", "17-6", "18-6", "19-7", "20-7", "21-6", "22-6", "23-6", "24-6", "25-7"];
-let L = ["01-9", "02-8", "03-8", "04-7", "05-7", "06-7", "07-7", "08-7", "09-7", "10-7", "11-8", "12-8", "13-8", "14-8", "15-8", "16-7", "17-7", "18-7", "19-8", "20-8", "21-7", "22-7", "23-7", "24-7", "25-8"];
+let C = ["01-0", "01-1", "02-1", "02-2", "02-3", "03-1", "03-2", "04-1", "04-2", "05-1", "05-2", "06-1", "06-2", "07-1", "07-2", "08-1", "08-2", "09-1", "09-2", "10-1", "10-2", "11-1", "11-2", "11-3", "12-1", "12-2", "13-1", "13-2", "13-3", "14-1", "14-2", "15-1", "15-2", "16-1", "16-2", "17-1", "17-2", "18-1", "18-2", "19-1", "19-2", "20-1", "20-2", "20-3", "21-1", "21-2", "22-1", "22-2", "23-1", "23-2", "24-1", "24-2", "25-1", "25-2", "26-1", "26-2"];
+let U = ["01-2", "01-3", "02-4", "02-5", "03-3", "03-4", "04-3", "04-4", "05-3", "05-4", "06-3", "06-4", "07-3", "07-4", "08-3", "08-4", "09-3", "09-4", "10-3", "10-4", "11-4", "11-5", "12-3", "12-4", "12-5", "13-4", "13-5", "14-3", "14-4", "15-3", "15-4", "15-5", "16-3", "16-4", "17-3", "17-4", "18-3", "18-4", "19-3", "19-4", "20-4", "20-5", "21-3", "21-4", "22-3", "22-4", "23-3", "23-4", "24-3", "24-4", "25-3", "25-4", "25-5", "26-3", "26-4"];
+let R = ["01-4", "01-5", "02-6", "03-5", "03-6", "04-5", "05-5", "06-5", "07-5", "08-5", "09-5", "10-5", "11-6", "12-6", "13-6", "14-5", "14-6", "15-6", "16-5", "17-5", "18-5", "19-5", "19-6", "20-6", "21-5", "22-5", "23-5", "24-5", "25-6", "26-5"];
+let E = ["01-6", "01-7", "01-8", "02-7", "03-7", "04-6", "05-6", "06-6", "07-6", "08-6", "09-6", "10-6", "11-7", "12-7", "13-7", "14-7", "15-7", "16-6", "17-6", "18-6", "19-7", "20-7", "21-6", "22-6", "23-6", "24-6", "25-7", "26-6"];
+let L = ["01-9", "02-8", "03-8", "04-7", "05-7", "06-7", "07-7", "08-7", "09-7", "10-7", "11-8", "12-8", "13-8", "14-8", "15-8", "16-7", "17-7", "18-7", "19-8", "20-8", "21-7", "22-7", "23-7", "24-7", "25-8", "26-7"];
 let V1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8"];
 let V2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8"];
 let V3 = ["V3-1", "V3-2", "V3-3", "V3-4", "V3-5", "V3-6", "V3-7", "V3-8"];
@@ -51,6 +43,7 @@ let V5 = ["V5-1", "V5-2", "V5-3", "V5-4", "V5-5", "V5-6", "V5-7", "V5-8"];
 let V6 = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8"];
 let V7 = ["V7-1", "V7-2", "V7-3", "V7-4", "V7-5", "V7-6", "V7-7", "V7-8"];
 let V8 = ["V8-1", "V8-2", "V8-3", "V8-4", "V8-5", "V8-6", "V8-7", "V8-8"];
+let V10 = ["V10-1", "V10-2", "V10-3", "V10-4", "V10-5", "V10-6", "V10-7", "V10-8"];
 let B1 = ["B1-1", "B1-2", "B1-3", "B1-4", "B1-5", "B1-6"];
 let B2 = ["B2-1", "B2-2", "B2-3", "B2-4", "B2-5", "B2-6"];
 let S1 = ["S1-1", "S1-2", "S1-3", "S1-4", "S1-5", "S1-6", "S1-7", "S1-8"];
@@ -61,9 +54,10 @@ let S5 = ["S5-1", "S5-2", "S5-3", "S5-4", "S5-5", "S5-6", "S5-7", "S5-8"];
 let S6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8"];
 let S7 = ["S7-1", "S7-2", "S7-3", "S7-4", "S7-5", "S7-6", "S7-7", "S7-8"];
 let S8 = ["S8-1", "S8-2", "S8-3", "S8-4", "S8-5", "S8-6"];
+let S10 = ["S10-1", "S10-2", "S10-3", "S10-4", "S10-5", "S10-6", "S10-7", "S10-8"];
 
-let VarSet = V8; //Pack 2 Variant
-let SpeSet = S8; //Pack 3 Variant
+let VarSet = V10; //Pack 2 Variant
+let SpeSet = S10; //Pack 3 Variant
 
 
 //All Sets Current Available
@@ -92,6 +86,7 @@ let List22 = ["22-1", "22-2", "22-3", "22-4", "22-5", "22-6", "22-7", "22-A", "2
 let List23 = ["23-1", "23-2", "23-3", "23-4", "23-5", "23-6", "23-7", "23-A", "23-P"];
 let List24 = ["24-1", "24-2", "24-3", "24-4", "24-5", "24-6", "24-7", "24-A", "24-P"];
 let List25 = ["25-1", "25-2", "25-3", "25-4", "25-5", "25-6", "25-7", "25-8", "25-A", "25-P"];
+let List26 = ["26-1", "26-2", "26-3", "26-4", "26-5", "26-6", "26-7", "26-A", "26-P"];
 
 let ListV1 = ["V1-1", "V1-2", "V1-3", "V1-4", "V1-5", "V1-6", "V1-7", "V1-8", "V1-A"];
 let ListV2 = ["V2-1", "V2-2", "V2-3", "V2-4", "V2-5", "V2-6", "V2-7", "V2-8", "V2-A"];
@@ -102,6 +97,7 @@ let ListV6 = ["V6-1", "V6-2", "V6-3", "V6-4", "V6-5", "V6-6", "V6-7", "V6-8", "V
 let ListV7 = ["V7-1", "V7-2", "V7-3", "V7-4", "V7-5", "V7-6", "V7-7", "V7-8", "V7-A"];
 let ListV8 = ["V8-1", "V8-2", "V8-3", "V8-4", "V8-5", "V8-6", "V8-7", "V8-8", "V8-A"];
 let ListV9 = ["V9-1", "V9-2", "V9-3", "V9-4", "V9-5", "V9-6", "V9-7"];
+let ListV10 = ["V10-1", "V10-2", "V10-3", "V10-4", "V10-5", "V10-6", "V10-7", "V10-8", "V10-A"];
 
 let ListB1 = ["B1-1", "B1-2", "B1-3", "B1-4", "B1-5", "B1-6", "B1-A"];
 let ListB2 = ["B2-1", "B2-2", "B2-3", "B2-4", "B2-5", "B2-6", "B2-A"];
@@ -115,10 +111,11 @@ let ListS6 = ["S6-1", "S6-2", "S6-3", "S6-4", "S6-5", "S6-6", "S6-7", "S6-8", "S
 let ListS7 = ["S7-1", "S7-2", "S7-3", "S7-4", "S7-5", "S7-6", "S7-7", "S7-8", "S7-A"];
 let ListS8 = ["S8-1", "S8-2", "S8-3", "S8-4", "S8-5", "S8-6", "S8-A"];
 let ListS9 = ["S9-1", "S9-2", "S9-3", "S9-4", "S9-5"];
+let ListS10 = ["S10-1", "S10-2", "S10-3", "S10-4", "S10-5", "S10-6", "S10-7", "S10-8", "S10-A"];
 
-let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, List22, List23, List24, List25, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV8, ListV9, ListB1, ListB2, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS7, ListS8, ListS9];
-let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, List22, List23, List24, List25, ListB1, ListB2, ListV8, ListS8];
-let missionSets = [C, U, R, E, V8, B1, B2];
+let allSets = [null, List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, List22, List23, List24, List25, List26, ListV1, ListV2, ListV3, ListV4, ListV5, ListV6, ListV7, ListV8, ListV9, ListV10, ListB1, ListB2, ListS1, ListS2, ListS3, ListS4, ListS5, ListS6, ListS7, ListS8, ListS9, ListS10];
+let awardSets = [List01, List02, List03, List04, List05, List06, List07, List08, List09, List10, List11, List12, List13, List14, List15, List16, List17, List18, List19, List20, List21, List22, List23, List24, List25, List26, ListB1, ListB2, ListV10, ListS10];
+let missionSets = [C, U, R, E, V10];
 
 //Counts of Each Card Rarity
 let Lcount = 1;
@@ -204,5 +201,20 @@ Missing 4/21-4/26
 let Pack3_Name='Missing Pack';
 let Pack3_Description='1/16 Chance for Missing Card!<br>For Sale: Until 4/26<br><b>EXPIRES TOMORROW!</b><br>6 Cards<br>2 Pack Tokens';
 let Pack3_Image='icons/Miss_Icon.png';
+
+ButtonCraft 5th 4/27-5/3
+let Pack1_Name='ButtonCraft 5th Anniversary Pack';
+let Pack1_Description='All Standard Cards Available<br>1/5 Chance for 5 Years of Button Card!<br>1/20 Chance for Diamond Variant!<br>1/40 Chance for Postcard Card!<br>For Sale: Until 5/3<br>4 Cards<br>1 Pack Token';
+let Pack1_Image='icons/Fifth_Icon.png';
+
+Diamond 4/27-5/3
+let Pack2_Name='Diamond Variant Pack';
+let Pack2_Description='1/6 Chance for Diamond Variant!<br>For Sale: Until 5/3<br><br>3 Cards<br>1 Pack Token';
+let Pack2_Image='icons/Diam_Icon.png';
+
+Postcard 4/27-5/3
+let Pack3_Name='Postcard Pack';
+let Pack3_Description='1/16 Chance for Postcard Card!<br>For Sale: Until 5/3<br><br>6 Cards<br>2 Pack Tokens';
+let Pack3_Image='icons/Post_Icon.png';
 
 */
