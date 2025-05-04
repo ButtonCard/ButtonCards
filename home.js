@@ -212,6 +212,7 @@ async function openPack(pack_Num) {
   }*/
 
   //SPECIAL (ButtonCraft 5th) - Standard
+  /*
   if (packNum==0){
     for (let i = 0; i < packSize; i++) {
       if (inPack < packSize && Math.floor(Math.random() * 5) + 1 == 1) {
@@ -221,7 +222,7 @@ async function openPack(pack_Num) {
         console.log(randCard);
       }
     }
-  }
+  }*/
     
   //LEGENDARY
   for (let i = 0; i < packSize; i++) {
