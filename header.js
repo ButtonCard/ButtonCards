@@ -18,10 +18,10 @@ const db = firebase.firestore();
 //Load Username into Header
 window.onload = async function() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (!currentUser) {
+    //if (!currentUser) {
         // If no user is logged in, redirect to login page
-        window.location.href = 'index.html';
-    }
+    //    window.location.href = 'index.html';
+    //}
   
     const userRef = db.collection('users');
     const userQuery = await userRef
